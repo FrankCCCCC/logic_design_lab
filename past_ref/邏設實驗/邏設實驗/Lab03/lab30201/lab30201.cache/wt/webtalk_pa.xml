@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Sun Mar 10 15:34:22 2019">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="4456faa7bbca4630a82cee8712deaffc" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddSources" value="1" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+<property name="OpenProject" value="2" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, divider26 (divider26.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_OPEN_PROJECT, Open Project" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 114, 110" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 129, 143" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 135, 126" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 138, 177" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 139, 158" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 141, 104" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 141, 124" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 142, 118" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 142, 157" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 142, 159" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 142, 186" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 161, 112" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 188, 109" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="49" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="41" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

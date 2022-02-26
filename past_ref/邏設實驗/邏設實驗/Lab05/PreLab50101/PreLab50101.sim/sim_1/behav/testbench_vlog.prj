@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../PreLab50101.srcs/sources_1/new/fsm.v"
+verilog xil_defaultlib  "../../../PreLab50101.srcs/sources_1/imports/lab4_4_107061106_ver1/downcounter30_new.v"
+verilog xil_defaultlib  "../../../PreLab50101.srcs/sources_1/new/onepulse.v"
+verilog xil_defaultlib  "../../../PreLab50101.srcs/sources_1/new/stopwatch.v"
+verilog xil_defaultlib  "../../../PreLab50101.srcs/sim_1/new/testbench.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

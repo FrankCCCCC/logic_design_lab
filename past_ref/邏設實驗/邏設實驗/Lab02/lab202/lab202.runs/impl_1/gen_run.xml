@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1551529843">
+  <File Type="ROUTE-STATUS-PB" Name="smux2_route_status.pb"/>
+  <File Type="PA-TCL" Name="smux2.tcl"/>
+  <File Type="OPT-DCP" Name="smux2_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="smux2_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="smux2_methodology_drc_opted.rpt"/>
+  <File Type="RDI-RDI" Name="smux2.vdi"/>
+  <File Type="PWROPT-DRC" Name="smux2_drc_pwropted.rpt"/>
+  <File Type="OPT-DRC" Name="smux2_drc_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="smux2_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="smux2.hwdef"/>
+  <File Type="OPT-TIMING" Name="smux2_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="smux2_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="smux2_placed.dcp"/>
+  <File Type="PLACE-IO" Name="smux2_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="smux2_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="smux2_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="smux2_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="smux2_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="smux2_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="smux2_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="smux2_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="smux2_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="smux2_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="smux2_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="smux2_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="smux2_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-DCP" Name="smux2_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="smux2_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="smux2_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="smux2_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="smux2_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="smux2_methodology_drc_routed.pb"/>
+  <File Type="BG-BIT" Name="smux2.bit"/>
+  <File Type="ROUTE-PWR" Name="smux2_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="smux2_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="smux2_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="smux2_route_status.rpt"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="smux2_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="smux2_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="smux2_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="smux2_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="smux2_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="smux2_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="smux2_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="smux2_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="smux2_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="smux2_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIN" Name="smux2.bin"/>
+  <File Type="BITSTR-MSK" Name="smux2.msk"/>
+  <File Type="BITSTR-RBT" Name="smux2.rbt"/>
+  <File Type="BITSTR-NKY" Name="smux2.nky"/>
+  <File Type="BITSTR-BMM" Name="smux2_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="smux2.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="smux2.sysdef"/>
+  <File Type="BG-BGN" Name="smux2.bgn"/>
+  <File Type="BG-DRC" Name="smux2.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/smux2.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="smux2"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/SMUx.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/SMUx.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

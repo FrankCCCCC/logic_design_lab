@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sat Mar 16 15:07:08 2019
+# Process ID: 10588
+# Current directory: C:/Users/HP 15/Desktop/digitaldesignnnn/Lab04/lab40101/lab40101.runs/synth_1
+# Command line: vivado.exe -log upcounter.vds -mode batch -messageDb vivado.pb -notrace -source upcounter.tcl
+# Log file: C:/Users/HP 15/Desktop/digitaldesignnnn/Lab04/lab40101/lab40101.runs/synth_1/upcounter.vds
+# Journal file: C:/Users/HP 15/Desktop/digitaldesignnnn/Lab04/lab40101/lab40101.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source upcounter.tcl -notrace

@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon May 20 13:13:19 2019
+# Process ID: 3784
+# Current directory: D:/logicdesign/M/lab90101
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent232 D:\logicdesign\M\lab90101\lab90101.xpr
+# Log file: D:/logicdesign/M/lab90101/vivado.log
+# Journal file: D:/logicdesign/M/lab90101\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/logicdesign/M/lab90101/lab90101.xpr
+update_compile_order -fileset sources_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/logicdesign/M/lab90101/lab90101.runs/impl_1/lab901.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/logicdesign/M/lab90101/lab90101.runs/impl_1/lab901.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/logicdesign/M/lab90101/lab90101.runs/impl_1/lab901.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]

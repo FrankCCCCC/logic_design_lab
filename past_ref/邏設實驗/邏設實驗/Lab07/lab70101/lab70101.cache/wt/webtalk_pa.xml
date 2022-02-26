@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Sat Apr 20 22:15:13 2019">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="c4b9bace20784182849fa8e37c19b0cf" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddSources" value="10" type="JavaHandler"/>
+<property name="EditPaste" value="2" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+<property name="SaveFileProxyHandler" value="2" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="FINISH, Finish" value="11" type="GuiResourceData"/>
+<property name="NEXT, Next " value="14" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, counter" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, debounce" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, decoder" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, display" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, divider26" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, fsm" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, onepulse" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, rst" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, ssd_freqdiv" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, stopwatch" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Add Sources..." value="10" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="11" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints], 0, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, counter (counter.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, debounce (debounce.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, decoder (decoder.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, display (display.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, divider26 (divider26.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, fsm (fsm.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, onepulse (onepulse.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, rst (rst.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, second (counter.v" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, ssd_freqdiv (ssd_freqdiv.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, stopwatch (stopwatch.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, true, false, false, false, true, false" value="8" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, null, -1, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, Create New Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_FAMILY_CHOOSER, Artix-7, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PARTS, xc7a35tcpg236-1 ; 236 ; 50 ; 90 ; 41600 ; 2 ; 2 ; 106 ; 20800 ; 5 ; 1 ; 85 ; 0 ; 85 ; C ; 1.05 ; 0.95 ; 0.95, 1, xc7a35tcpg236-1, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PARTS, xc7a35tcpg236-1 ; 236 ; 50 ; 90 ; 41600 ; 2 ; 2 ; 106 ; 20800 ; 5 ; 1 ; 85 ; 0 ; 85 ; C ; 1.05 ; 0.95 ; 0.95, 1, xc7a35tcpg236-1, 0, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PART_PACKAGE_CHOOSER, cpg236, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PART_SPEED_CHOOSER, -1, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, lab70101" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="11" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="12" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="20" type="GuiResourceData"/>
+<property name="counter.v, 1, 84" value="1" type="GuiResourceData"/>
+<property name="counter.v, 112, 96" value="1" type="GuiResourceData"/>
+<property name="counter.v, 114, 105" value="1" type="GuiResourceData"/>
+<property name="counter.v, 116, 275" value="1" type="GuiResourceData"/>
+<property name="counter.v, 119, 158" value="1" type="GuiResourceData"/>
+<property name="counter.v, 120, 144" value="1" type="GuiResourceData"/>
+<property name="counter.v, 120, 181" value="1" type="GuiResourceData"/>
+<property name="counter.v, 120, 90" value="1" type="GuiResourceData"/>
+<property name="counter.v, 122, 126" value="1" type="GuiResourceData"/>
+<property name="counter.v, 140, 128" value="1" type="GuiResourceData"/>
+<property name="counter.v, 141, 88" value="1" type="GuiResourceData"/>
+<property name="counter.v, 142, 105" value="1" type="GuiResourceData"/>
+<property name="counter.v, 144, 84" value="1" type="GuiResourceData"/>
+<property name="counter.v, 150, 122" value="1" type="GuiResourceData"/>
+<property name="counter.v, 150, 158" value="1" type="GuiResourceData"/>
+<property name="counter.v, 162, 66" value="1" type="GuiResourceData"/>
+<property name="counter.v, 163, 99" value="1" type="GuiResourceData"/>
+<property name="counter.v, 167, 108" value="1" type="GuiResourceData"/>
+<property name="counter.v, 169, 85" value="1" type="GuiResourceData"/>
+<property name="counter.v, 169, 85, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="counter.v, 176, 84" value="1" type="GuiResourceData"/>
+<property name="counter.v, 176, 84, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="counter.v, 178, 248" value="1" type="GuiResourceData"/>
+<property name="counter.v, 178, 70" value="1" type="GuiResourceData"/>
+<property name="counter.v, 178, 70, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="counter.v, 184, 158" value="1" type="GuiResourceData"/>
+<property name="counter.v, 184, 158, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="counter.v, 198, 123" value="1" type="GuiResourceData"/>
+<property name="counter.v, 203, 129" value="1" type="GuiResourceData"/>
+<property name="counter.v, 210, 126" value="1" type="GuiResourceData"/>
+<property name="counter.v, 24, 44" value="1" type="GuiResourceData"/>
+<property name="counter.v, 24, 46" value="1" type="GuiResourceData"/>
+<property name="counter.v, 25, 10" value="1" type="GuiResourceData"/>
+<property name="counter.v, 25, 120" value="1" type="GuiResourceData"/>
+<property name="counter.v, 26, 10" value="1" type="GuiResourceData"/>
+<property name="counter.v, 26, 49" value="1" type="GuiResourceData"/>
+<property name="counter.v, 27, 10" value="1" type="GuiResourceData"/>
+<property name="counter.v, 300, 168" value="1" type="GuiResourceData"/>
+<property name="counter.v, 39, 162" value="1" type="GuiResourceData"/>
+<property name="counter.v, 42, 176" value="1" type="GuiResourceData"/>
+<property name="counter.v, 428, 126" value="1" type="GuiResourceData"/>
+<property name="counter.v, 46, 146" value="1" type="GuiResourceData"/>
+<property name="counter.v, 52, 256" value="1" type="GuiResourceData"/>
+<property name="counter.v, 54, 80" value="1" type="GuiResourceData"/>
+<property name="counter.v, 59, 86" value="1" type="GuiResourceData"/>
+<property name="counter.v, 59, 86, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="counter.v, 78, 154" value="1" type="GuiResourceData"/>
+<property name="counter.v, 8, 276" value="1" type="GuiResourceData"/>
+<property name="counter.v, 95, 148" value="1" type="GuiResourceData"/>
+<property name="debounce.v, 42, 62" value="1" type="GuiResourceData"/>
+<property name="decoder.v, 364, 130" value="1" type="GuiResourceData"/>
+<property name="decoder.v, 41, 68" value="1" type="GuiResourceData"/>
+<property name="display.v, 100, 140" value="1" type="GuiResourceData"/>
+<property name="display.v, 101, 125" value="1" type="GuiResourceData"/>
+<property name="display.v, 101, 48" value="1" type="GuiResourceData"/>
+<property name="display.v, 102, 113" value="1" type="GuiResourceData"/>
+<property name="display.v, 105, 182" value="1" type="GuiResourceData"/>
+<property name="display.v, 108, 50" value="1" type="GuiResourceData"/>
+<property name="display.v, 118, 83" value="1" type="GuiResourceData"/>
+<property name="display.v, 123, 105" value="1" type="GuiResourceData"/>
+<property name="display.v, 125, 121" value="1" type="GuiResourceData"/>
+<property name="display.v, 126, 110" value="1" type="GuiResourceData"/>
+<property name="display.v, 126, 143" value="1" type="GuiResourceData"/>
+<property name="display.v, 127, 162" value="1" type="GuiResourceData"/>
+<property name="display.v, 128, 103" value="1" type="GuiResourceData"/>
+<property name="display.v, 128, 62" value="1" type="GuiResourceData"/>
+<property name="display.v, 135, 126" value="1" type="GuiResourceData"/>
+<property name="display.v, 136, 174" value="1" type="GuiResourceData"/>
+<property name="display.v, 140, 106" value="1" type="GuiResourceData"/>
+<property name="display.v, 140, 106, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="display.v, 141, 85" value="1" type="GuiResourceData"/>
+<property name="display.v, 167, 100" value="1" type="GuiResourceData"/>
+<property name="display.v, 168, 120" value="1" type="GuiResourceData"/>
+<property name="display.v, 169, 56" value="1" type="GuiResourceData"/>
+<property name="display.v, 170, 140" value="1" type="GuiResourceData"/>
+<property name="display.v, 170, 81" value="1" type="GuiResourceData"/>
+<property name="display.v, 174, 168" value="1" type="GuiResourceData"/>
+<property name="display.v, 174, 86" value="1" type="GuiResourceData"/>
+<property name="display.v, 175, 68" value="1" type="GuiResourceData"/>
+<property name="display.v, 200, 88" value="1" type="GuiResourceData"/>
+<property name="display.v, 201, 166" value="1" type="GuiResourceData"/>
+<property name="display.v, 207, 160" value="1" type="GuiResourceData"/>
+<property name="display.v, 208, 102" value="1" type="GuiResourceData"/>
+<property name="display.v, 210, 30" value="1" type="GuiResourceData"/>
+<property name="display.v, 213, 176" value="1" type="GuiResourceData"/>
+<property name="display.v, 214, 202" value="1" type="GuiResourceData"/>
+<property name="display.v, 221, 103" value="1" type="GuiResourceData"/>
+<property name="display.v, 224, 86" value="1" type="GuiResourceData"/>
+<property name="display.v, 224, 86, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="display.v, 230, 29" value="1" type="GuiResourceData"/>
+<property name="display.v, 232, 83" value="1" type="GuiResourceData"/>
+<property name="display.v, 234, 123" value="1" type="GuiResourceData"/>
+<property name="display.v, 235, 140" value="1" type="GuiResourceData"/>
+<property name="display.v, 237, 104" value="1" type="GuiResourceData"/>
+<property name="display.v, 238, 102" value="1" type="GuiResourceData"/>
+<property name="display.v, 238, 103" value="1" type="GuiResourceData"/>
+<property name="display.v, 24, 26" value="1" type="GuiResourceData"/>
+<property name="display.v, 240, 147" value="1" type="GuiResourceData"/>
+<property name="display.v, 249, 114" value="1" type="GuiResourceData"/>
+<property name="display.v, 249, 86" value="1" type="GuiResourceData"/>
+<property name="display.v, 251, 68" value="1" type="GuiResourceData"/>
+<property name="display.v, 258, 108" value="1" type="GuiResourceData"/>
+<property name="display.v, 258, 180" value="1" type="GuiResourceData"/>
+<property name="display.v, 259, 128" value="1" type="GuiResourceData"/>
+<property name="display.v, 260, 157" value="1" type="GuiResourceData"/>
+<property name="display.v, 262, 105" value="1" type="GuiResourceData"/>
+<property name="display.v, 263, 85" value="1" type="GuiResourceData"/>
+<property name="display.v, 3, 105" value="1" type="GuiResourceData"/>
+<property name="display.v, 302, 110" value="1" type="GuiResourceData"/>
+<property name="display.v, 325, 145" value="1" type="GuiResourceData"/>
+<property name="display.v, 41, 104" value="1" type="GuiResourceData"/>
+<property name="display.v, 41, 49" value="1" type="GuiResourceData"/>
+<property name="display.v, 42, 125" value="1" type="GuiResourceData"/>
+<property name="display.v, 42, 145" value="1" type="GuiResourceData"/>
+<property name="display.v, 46, 165" value="1" type="GuiResourceData"/>
+<property name="display.v, 47, 102" value="1" type="GuiResourceData"/>
+<property name="display.v, 52, 182" value="1" type="GuiResourceData"/>
+<property name="display.v, 52, 201" value="1" type="GuiResourceData"/>
+<property name="display.v, 60, 85" value="1" type="GuiResourceData"/>
+<property name="display.v, 67, 104" value="1" type="GuiResourceData"/>
+<property name="display.v, 70, 180" value="1" type="GuiResourceData"/>
+<property name="display.v, 79, 106" value="1" type="GuiResourceData"/>
+<property name="display.v, 79, 58" value="1" type="GuiResourceData"/>
+<property name="display.v, 82, 150" value="1" type="GuiResourceData"/>
+<property name="display.v, 83, 160" value="1" type="GuiResourceData"/>
+<property name="display.v, 84, 106" value="1" type="GuiResourceData"/>
+<property name="display.v, 85, 84" value="1" type="GuiResourceData"/>
+<property name="display.v, 88, 139" value="1" type="GuiResourceData"/>
+<property name="display.v, 94, 23" value="1" type="GuiResourceData"/>
+<property name="display.v, 94, 66" value="1" type="GuiResourceData"/>
+<property name="display.v, 97, 198" value="1" type="GuiResourceData"/>
+<property name="display.v, 97, 99" value="1" type="GuiResourceData"/>
+<property name="display.v, 98, 116" value="1" type="GuiResourceData"/>
+<property name="display.v, 98, 160" value="1" type="GuiResourceData"/>
+<property name="display.v, 99, 216" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 109, 251" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 42, 63" value="1" type="GuiResourceData"/>
+<property name="fsm.v, 15, 315" value="1" type="GuiResourceData"/>
+<property name="fsm.v, 179, 386" value="1" type="GuiResourceData"/>
+<property name="fsm.v, 191, 359" value="1" type="GuiResourceData"/>
+<property name="fsm.v, 41, 126" value="1" type="GuiResourceData"/>
+<property name="onepulse.v, 41, 28" value="1" type="GuiResourceData"/>
+<property name="rst.v, 41, 144" value="1" type="GuiResourceData"/>
+<property name="ssd_freqdiv.v, 41, 104" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 0, 103" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 0, 313" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 0, 330" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 0, 68" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 1, 256" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 1, 328" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 100, 255" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 101, 198" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 101, 390" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 101, 390, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 101, 408" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 101, 68" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 101, 68, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 101, 9" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 101, 9, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 102, 122" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 102, 216" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 102, 238" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 103, 382" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 107, 279" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 107, 392" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 108, 348" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 109, 366" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 110, 199" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 111, 139" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 112, 217" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 112, 293" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 112, 327" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 113, 238" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 113, 272" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 113, 316" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 113, 368" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 113, 390" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 114, 198" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 114, 256" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 114, 294" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 115, 158" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 115, 335" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 115, 369" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 115, 370" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 115, 390" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 115, 65" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 115, 90" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 115, 90, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 116, 284" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 116, 294" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 116, 430" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 118, 271" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 119, 14" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 119, 14, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 119, 272" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 119, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 119, 48" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 120, 300" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 121, 260" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 121, 260, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 121, 282" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 121, 316" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 121, 332" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 122, 222" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 122, 259" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 123, 164" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 123, 182" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 123, 353" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 123, 353, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 124, 264" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 125, 274" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 125, 315" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 125, 332" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 125, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 127, 105" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 127, 105, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 127, 144" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 127, 144, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 127, 316" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 128, 289" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 129, 135" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 129, 226" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 129, 308" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 131, 147" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 131, 147, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 131, 277" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 131, 284" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 131, 374" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 131, 390" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 133, 87" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 133, 87, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 136, 136" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 136, 136, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 136, 155" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 136, 184" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 137, 216" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 137, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 137, 52" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 137, 52, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 14, 408" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 140, 277" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 140, 277, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 141, 296" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 141, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 142, 224" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 142, 368" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 142, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 143, 292" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 143, 332" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 143, 352" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 143, 367" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 143, 386" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 144, 234" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 144, 351" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 145, 173" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 145, 385" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 145, 386" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 146, 313" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 146, 320, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 146, 321" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 148, 71" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 153, 390" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 154, 183" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 155, 382" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 159, 301" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 159, 318" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 16, 104" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 167, 244" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 169, 376" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 17, 165" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 17, 308" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 18, 296" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 185, 379" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 192, 349" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 194, 110" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 194, 110, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 2, 290" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 2, 352" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 2, 353" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 21, 183" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 21, 183, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 21, 354" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 211, 183" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 211, 183, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 211, 90" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 211, 90, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 212, 321" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 221, 304" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 229, 315" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 229, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 23, 199" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 23, 256" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 232, 196" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 239, 150" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 24, 292" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 25, 336" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 26, 351" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 27, 256" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 27, 352" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 27, 412" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 28, 202" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 28, 202, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 28, 350" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 29, 217" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 291, 190" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 296, 396" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 3, 370" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 307, 434" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 32, 212" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 32, 212, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 33, 292" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 33, 396" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 33, 88" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 34, 356" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 35, 179" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 35, 388" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 35, 388, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 36, 410" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 37, 219" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 37, 386" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 38, 276" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 38, 294" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 38, 309" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 38, 404" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 39, 162" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 39, 162, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 39, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 40, 316" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 40, 374" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 41, 180" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 41, 234" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 41, 354" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 41, 367" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 41, 388" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 41, 406" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 41, 433" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 42, 162" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 42, 351" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 42, 388" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 42, 389" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 42, 444" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 43, 350" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 43, 393" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 43, 412" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 44, 183" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 44, 183, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 45, 261" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 45, 261, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 45, 351" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 45, 392" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 46, 315" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 46, 331" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 46, 333" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 46, 350" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 46, 402" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 127" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 196" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 236" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 310" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 348" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 352" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 391" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 391, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 393" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 47, 428" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 136" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 162" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 164" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 219" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 277, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 278" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 308" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 310" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 314" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 314, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 354" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 370, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 48, 385" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 49, 122" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 49, 139" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 49, 216" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 49, 257" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 49, 258" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 49, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 49, 394" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 49, 409" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 50, 296" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 50, 296, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 50, 331" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 50, 350" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 50, 408" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 50, 62" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 50, 88" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 51, 260" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 51, 311" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 52, 295" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 53, 162" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 53, 268" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 53, 385" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 54, 141" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 54, 250" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 54, 316" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 54, 316, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 54, 332" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 54, 350" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 54, 369" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 54, 389" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 55, 155" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 55, 155, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 55, 203" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 55, 311" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 55, 316" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 55, 350" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 55, 388" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 56, 408" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 167" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 167, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 195" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 252" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 292" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 392" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 404" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 57, 99" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 58, 292" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 58, 372" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 58, 384" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 58, 385" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 58, 415" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 58, 415, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 58, 429" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 59, 181" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 59, 182" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 59, 277" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 59, 294" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 59, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 59, 349" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 59, 368" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 59, 410" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 60, 200" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 60, 219" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 60, 225" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 60, 355" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 60, 406" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 16" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 238" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 263" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 313" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 328" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 331" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 369" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 370" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 386" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 409" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 61, 426" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 62, 143" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 62, 163" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 62, 401" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 62, 408" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 154" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 154, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 181" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 181, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 238" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 252" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 313" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 314" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 334, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 352" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 63, 391" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 64, 120" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 64, 197" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 64, 296" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 64, 32" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 105" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 176" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 216" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 277" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 29" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 313" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 348" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 369" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 372" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 65, 406" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 66, 103" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 66, 295" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 66, 370" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 66, 390" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 122" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 179" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 234" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 238" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 257" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 261" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 368" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 368, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 387" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 67, 428" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 68, 238" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 68, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 68, 368" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 68, 391" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 68, 392" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 104" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 104, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 214" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 253" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 254" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 346" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 346, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 389" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 389, false, false, false, false, true" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 69, 43" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 70, 142" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 70, 408" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 71, 142" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 71, 142, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 71, 162" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 71, 166" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 71, 242" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 71, 292" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 72, 109" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 72, 109, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 72, 374" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 73, 159" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 73, 159, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 73, 160" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 73, 220" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 73, 220, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 73, 31" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 73, 31, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 73, 367" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 74, 119" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 74, 160" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 74, 165" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 74, 395" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 75, 162" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 75, 223" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 75, 258" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 75, 258, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 75, 339" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 75, 48" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 220" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 238" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 238, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 348" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 348, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 368" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 402" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 411" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 64" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 76, 64, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 77, 105" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 77, 105, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 77, 236" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 77, 404" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 77, 48" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 77, 63" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 77, 63, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 78, 160" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 78, 215" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 78, 241" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 78, 241, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 78, 312" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 78, 312, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 78, 354" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 78, 449" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 79, 292" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 79, 292, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 79, 369" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 79, 369, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 79, 414" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 8, 313" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 80, 199" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 80, 199, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 80, 330" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 80, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 81, 162" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 81, 217" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 81, 217, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 81, 220" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 81, 220, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 81, 53" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 81, 53, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 82, 124" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 82, 317" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 82, 317, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 82, 67" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 239" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 276" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 313" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 332" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 332, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 336" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 349" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 350" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 352" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 355" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 366" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 366, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 372" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 410" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 410, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 64" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 83, 64, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 181" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 198" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 198, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 256" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 260" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 332" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 358" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 388" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 410" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 414" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 84, 67" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 142" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 218" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 258" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 335" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 352" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 370" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 424" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 50" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 85, 50, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 86, 388" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 86, 413" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 190" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 201" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 201, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 312" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 315" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 328" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 328, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 368" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 368, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 391" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 411" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 412, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 66" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 87, 66, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 88, 331" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 88, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 88, 387" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 158" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 202" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 255" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 255, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 313" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 345, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 348" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 387" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 388" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 389" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 406" value="2" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 406, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 89, 66" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 90, 337, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 90, 338" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 90, 365" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 90, 390" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 90, 408" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 91, 256" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 91, 350" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 91, 362" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 91, 389" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 91, 391" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 91, 408" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 92, 280" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 92, 280, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 92, 406" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 93, 307" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 93, 307, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 93, 352" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 93, 371" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 93, 371, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 94, 200" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 94, 373" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 94, 402" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 95, 246" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 95, 252" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 96, 214" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 96, 293" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 96, 293, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 96, 301" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 96, 405" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 96, 405, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 96, 406" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 97, 238" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 97, 272" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 97, 272, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 97, 329" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 97, 329, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 97, 334" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 97, 334, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 99, 14" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 99, 14, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 99, 255" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 99, 432" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 99, 90" value="1" type="GuiResourceData"/>
+<property name="stopwatch.v, 99, 90, false, false, false, false, true" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="88" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="75" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

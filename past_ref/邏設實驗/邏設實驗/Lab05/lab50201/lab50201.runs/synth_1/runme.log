@@ -1,0 +1,356 @@
+
+*** Running vivado
+    with args -log stopwatch.vds -m64 -mode batch -messageDb vivado.pb -notrace -source stopwatch.tcl
+
+
+****** Vivado v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source stopwatch.tcl -notrace
+Command: synth_design -top stopwatch -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5216 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 270.742 ; gain = 64.145
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'stopwatch' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/stopwatch.v:23]
+INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/debounce.v:23]
+INFO: [Synth 8-256] done synthesizing module 'debounce' (1#1) [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/debounce.v:23]
+WARNING: [Synth 8-689] width (2) of port connection 'clk' does not match port width (1) of module 'debounce' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/stopwatch.v:38]
+INFO: [Synth 8-638] synthesizing module 'divider26' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/divider26.v:23]
+WARNING: [Synth 8-5788] Register clk_out_reg in module divider26 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/divider26.v:39]
+INFO: [Synth 8-256] done synthesizing module 'divider26' (2#1) [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/divider26.v:23]
+INFO: [Synth 8-638] synthesizing module 'onepulse' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/onepulse.v:23]
+INFO: [Synth 8-256] done synthesizing module 'onepulse' (3#1) [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/onepulse.v:23]
+WARNING: [Synth 8-689] width (2) of port connection 'clk' does not match port width (1) of module 'onepulse' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/stopwatch.v:58]
+INFO: [Synth 8-638] synthesizing module 'fsm' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/fsm.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/fsm.v:33]
+INFO: [Synth 8-256] done synthesizing module 'fsm' (4#1) [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/fsm.v:23]
+INFO: [Synth 8-638] synthesizing module 'ssd_freqdiv' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/ssd_freqdiv.v:23]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_cnt_reg' and it is trimmed from '27' to '26' bits. [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/ssd_freqdiv.v:35]
+INFO: [Synth 8-256] done synthesizing module 'ssd_freqdiv' (5#1) [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/ssd_freqdiv.v:23]
+WARNING: [Synth 8-689] width (2) of port connection 'clk_ctl' does not match port width (1) of module 'ssd_freqdiv' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/stopwatch.v:81]
+INFO: [Synth 8-638] synthesizing module 'downcounter' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/downcounter.v:23]
+INFO: [Synth 8-256] done synthesizing module 'downcounter' (6#1) [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/downcounter.v:23]
+WARNING: [Synth 8-3848] Net rst_n in module/entity stopwatch does not have driver. [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/stopwatch.v:39]
+INFO: [Synth 8-256] done synthesizing module 'stopwatch' (7#1) [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/stopwatch.v:23]
+WARNING: [Synth 8-3331] design downcounter has unconnected port clk_ctl[1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 307.219 ; gain = 100.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 307.219 ; gain = 100.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 307.219 ; gain = 100.621
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-5544] ROM "pb_debounced_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "clk_out" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "B" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 324.910 ; gain = 118.313
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+	  14 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module divider26 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module onepulse 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module fsm 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module ssd_freqdiv 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module downcounter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  14 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 423.199 ; gain = 216.602
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "U3/clk_out" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 425.320 ; gain = 218.723
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 425.320 ; gain = 218.723
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'U2/c_reg' (FDC) to 'U2/d_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U2/d_reg[2]' (FDP) to 'U2/d_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U2/d_reg[3]' (FDP) to 'U2/D_ssd_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\U2/D_ssd_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[8]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[7]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[6]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[5]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[4]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[3]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[2]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[1]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/cnt_h_reg[0]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (F1/clk_out_reg) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (U2/c_reg) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (U2/d_reg[2]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (U2/D_ssd_reg[0]) is unused and will be removed from module stopwatch.
+WARNING: [Synth 8-3332] Sequential element (U2/d_reg[3]) is unused and will be removed from module stopwatch.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net count_en with 1st driver pin 'i_63/O' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/divider26.v:36]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net count_en with 2nd driver pin 'U6/one_pulse_reg/Q' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/onepulse.v:42]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in_use with 1st driver pin 'U5/pb_debounced_reg/Q' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/debounce.v:46]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in_use with 2nd driver pin 'U4/pb_debounced_reg/Q' [C:/Users/HP 15/Desktop/digitaldesignnnn/Lab05/lab50201/lab50201.srcs/sources_1/imports/lab501/debounce.v:46]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        2|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    11|
+|3     |LUT1   |    43|
+|4     |LUT2   |    33|
+|5     |LUT3   |     1|
+|6     |LUT4   |    11|
+|7     |LUT5   |     7|
+|8     |LUT6   |    10|
+|9     |FDRE   |    75|
+|10    |IBUF   |     2|
+|11    |OBUF   |    28|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+------------+------+
+|      |Instance |Module      |Cells |
++------+---------+------------+------+
+|1     |top      |            |   222|
+|2     |  F1     |ssd_freqdiv |    36|
+|3     |  U0     |onepulse    |     4|
+|4     |  U1     |fsm         |     1|
+|5     |  U2     |downcounter |    42|
+|6     |  U3     |divider26   |    93|
+|7     |  U4     |debounce    |     6|
+|8     |  U5     |debounce_0  |     6|
+|9     |  U6     |onepulse_1  |     3|
++------+---------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 4 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 445.676 ; gain = 239.078
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 445.676 ; gain = 239.078
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+32 Infos, 21 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 506.934 ; gain = 300.336
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 506.934 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 01 12:49:21 2019...

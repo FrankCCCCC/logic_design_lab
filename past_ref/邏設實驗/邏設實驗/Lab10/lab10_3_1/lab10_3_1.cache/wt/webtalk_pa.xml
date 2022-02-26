@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Sun May 26 21:49:30 2019">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="e00cd03177184645a0b61202c26ffe73" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddSources" value="2" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="FINISH, Finish" value="3" type="GuiResourceData"/>
+<property name="NEXT, Next " value="6" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Add Sources..." value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, lab10_2 (lab10_2.v" value="9" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, false, false, false, false, true, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, Create New Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_FAMILY_CHOOSER, Artix-7, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PARTS, xc7a35tcpg236-1 ; 236 ; 50 ; 90 ; 41600 ; 2 ; 2 ; 106 ; 20800 ; 5 ; 1 ; 85 ; 0 ; 85 ; C ; 1.05 ; 0.95 ; 0.95, 1, xc7a35tcpg236-1, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PARTS, xc7a35tcpg236-1 ; 236 ; 50 ; 90 ; 41600 ; 2 ; 2 ; 106 ; 20800 ; 5 ; 1 ; 85 ; 0 ; 85 ; C ; 1.05 ; 0.95 ; 0.95, 1, xc7a35tcpg236-1, 0, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PART_PACKAGE_CHOOSER, cpg236, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PART_SPEED_CHOOSER, -1, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, lab10_3_1" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="3" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="2" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 0, 104" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 0, 124" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 0, 232" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 0, 254" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 0, 332" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 0, 369" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 1, 201" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 1, 236" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 1, 276" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 1, 296" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 100, 316" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 100, 316, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 101, 404" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 102, 166" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 102, 166, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 102, 237" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 102, 237, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 102, 286" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 102, 286, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 104, 183" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 104, 183, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 104, 198" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 104, 198, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 104, 322" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 104, 322, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 105, 262" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 105, 262, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 106, 272" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 106, 272, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 106, 292" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 106, 292, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 106, 350" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 107, 342" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 107, 342, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 108, 290" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 108, 290, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 108, 336" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 108, 336, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 109, 392" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 109, 392, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 110, 156" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 110, 156, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 111, 351" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 111, 351, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 111, 378" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 111, 378, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 112, 148" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 113, 194" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 113, 194, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 113, 207" value="2" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 113, 207, false, false, false, false, true" value="2" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 113, 86" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 115, 180" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 115, 180, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 115, 319, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 115, 320" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 115, 418" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 115, 418, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 116, 215" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 116, 215, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 118, 333" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 118, 333, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 118, 412" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 118, 412, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 120, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 121, 229" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 121, 229, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 122, 163" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 122, 333" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 124, 201" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 124, 201, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 124, 256" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 125, 158" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 127, 214" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 127, 214, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 130, 365" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 131, 164" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 132, 296" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 133, 124" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 133, 332" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 134, 124" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 134, 200" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 134, 219" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 136, 122" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 136, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 136, 182" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 136, 198" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 137, 160" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 138, 144" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 138, 237" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 139, 144" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 14, 236" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 14, 236, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 143, 140" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 143, 181" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 144, 144" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 144, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 145, 124" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 145, 141" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 145, 160" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 145, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 145, 86" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 146, 206" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 148, 144" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 149, 196" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 154, 140" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 155, 333" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 157, 238" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 157, 87" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 162, 350" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 166, 124" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 168, 214" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 182, 247" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 194, 250" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 2, 218" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 2, 238" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 2, 240" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 2, 351, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 2, 352" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 200, 125" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 202, 236" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 206, 159" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 21, 104" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 210, 257" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 213, 347" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 219, 140" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 223, 141" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 228, 264" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 228, 264, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 230, 124" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 238, 329" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 239, 296" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 239, 296, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 240, 214" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 243, 236" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 243, 236, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 244, 205" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 244, 205, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 246, 236" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 25, 121" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 256, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 256, 162, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 258, 217" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 258, 217, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 259, 181" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 259, 181, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 259, 254" value="2" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 259, 254, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 26, 182" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 264, 240" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 264, 255" value="2" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 264, 255, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 264, 351" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 266, 256" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 266, 256, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 267, 299" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 270, 391" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 272, 376" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 278, 134" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 278, 256" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 279, 355" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 280, 363" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 283, 324" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 284, 254" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 286, 164" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 286, 178" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 289, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 294, 259" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 296, 188" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 296, 201" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 296, 255" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 3, 118" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 3, 140" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 3, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 301, 222" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 318, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 325, 236" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 35, 168" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 4, 104" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 4, 158" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 4, 315" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 46, 166" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 48, 161" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 48, 254" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 48, 356" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 48, 356, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 48, 66" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 52, 179" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 6, 353" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 64, 176" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 66, 160" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 67, 144" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 67, 144, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 69, 180" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 70, 160" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 70, 160, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 70, 162" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 72, 65" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 72, 66" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 73, 180" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 74, 272" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 76, 258" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 76, 258, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 77, 234" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 77, 234, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 78, 106" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 78, 106, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 82, 223" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 82, 223, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 83, 267" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 85, 167" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 85, 256" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 85, 256, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 86, 450" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 86, 450, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 86, 98" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 94, 272" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 94, 272, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 95, 270" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 95, 270, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 96, 184" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 96, 184, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="buzzer_ctl.v, 96, 258" value="1" type="GuiResourceData"/>
+<property name="lab10_2.v, 110, 88" value="1" type="GuiResourceData"/>
+<property name="lab10_2.v, 118, 106" value="1" type="GuiResourceData"/>
+<property name="lab10_2.v, 173, 237" value="1" type="GuiResourceData"/>
+<property name="lab10_2.v, 222, 102" value="1" type="GuiResourceData"/>
+<property name="lab10_2.v, 242, 158" value="1" type="GuiResourceData"/>
+<property name="lab10_2.v, 82, 142" value="1" type="GuiResourceData"/>
+<property name="speaker.v, 102, 164" value="1" type="GuiResourceData"/>
+<property name="speaker.v, 125, 348" value="1" type="GuiResourceData"/>
+<property name="speaker.v, 132, 141" value="1" type="GuiResourceData"/>
+<property name="speaker.v, 36, 185" value="1" type="GuiResourceData"/>
+<property name="speaker.v, 36, 185, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="speaker.v, 70, 181" value="1" type="GuiResourceData"/>
+<property name="speaker.v, 70, 181, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="speaker.v, 86, 181" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="104" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="86" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

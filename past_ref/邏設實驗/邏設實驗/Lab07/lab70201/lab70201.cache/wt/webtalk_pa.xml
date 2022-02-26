@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Sun Apr 21 13:23:15 2019">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="fad7e43125bc48a2b23964a68ee57143" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddSources" value="13" type="JavaHandler"/>
+<property name="EditDelete" value="1" type="JavaHandler"/>
+<property name="EditSimulationSets" value="1" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+<property name="OpenProject" value="1" type="JavaHandler"/>
+<property name="SaveFileProxyHandler" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="FINISH, Finish" value="1" type="GuiResourceData"/>
+<property name="NEXT, Next " value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, downcounter" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Add Sources..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, debounce (debounce.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, decoder (decoder.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, display (display.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, divider26 (divider26.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, downcounter (downcounter.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, fsm (fsm.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, hour (hour.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, onepulse (onepulse.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, second (minute.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, set (set.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, ssd_freqdiv (ssd_freqdiv.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_OPEN_PROJECT, Open Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="2" type="GuiResourceData"/>
+<property name="debounce.v, 39, 198" value="1" type="GuiResourceData"/>
+<property name="decoder.v, 42, 85" value="1" type="GuiResourceData"/>
+<property name="display.v, 42, 84" value="1" type="GuiResourceData"/>
+<property name="divider26.v, 41, 198" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 0, 275" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 0, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 0, 349" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 0, 353" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 1, 237" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 1, 292" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 1, 313" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 1, 330" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 101, 260" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 101, 276" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 101, 296" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 101, 296, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 101, 312" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 101, 335" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 101, 338" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 101, 338, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 102, 256" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 102, 291" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 102, 310" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 103, 183" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 103, 313" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 103, 71" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 103, 71, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 104, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 104, 335" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 105, 222" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 105, 48" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 105, 48, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 106, 220" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 106, 220, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 107, 222, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 107, 370" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 107, 389" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 108, 255" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 108, 369" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 108, 390" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 108, 423" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 109, 374" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 109, 389" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 109, 390" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 109, 46" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 109, 46, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 109, 57" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 109, 57, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 110, 300" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 111, 350" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 111, 371" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 112, 216" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 112, 312" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 113, 162" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 113, 255" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 113, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 113, 390" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 113, 391" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 114, 182" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 114, 182, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 115, 123" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 115, 123, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 115, 191" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 115, 200" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 115, 219" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 115, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 115, 389" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 116, 390" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 117, 312" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 117, 330" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 117, 370" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 118, 106" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 118, 106, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 119, 119" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 119, 119, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 119, 182" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 119, 50" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 119, 50, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 12, 397" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 120, 86" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 121, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 122, 27" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 122, 27, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 123, 219" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 125, 161" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 125, 311" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 125, 311, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 126, 168" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 127, 124" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 127, 224" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 127, 286" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 127, 372" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 127, 388" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 127, 396" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 129, 191" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 133, 298" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 133, 394" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 134, 161" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 135, 298" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 137, 177" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 14, 356" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 14, 356, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 140, 64" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 140, 64, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 142, 159" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 142, 195" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 142, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 142, 424" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 143, 314" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 143, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 143, 371" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 144, 258" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 144, 386" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 144, 388" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 145, 354" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 145, 389" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 145, 407" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 146, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 147, 328" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 147, 366" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 147, 376" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 149, 228" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 150, 130" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 151, 424" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 153, 240" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 153, 240, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 155, 255" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 157, 270" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 157, 346" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 16, 292" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 161, 202" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 17, 348" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 171, 421" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 183, 398" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 19, 312" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 19, 312, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 190, 371" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 194, 355" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 206, 310" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 216, 194" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 23, 218" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 24, 351" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 242, 298" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 25, 159" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 25, 274" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 25, 297" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 25, 297, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 26, 352" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 26, 380" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 28, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 29, 391" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 3, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 31, 144" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 31, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 31, 411" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 32, 160" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 32, 160, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 32, 234" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 32, 234, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 32, 406" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 32, 406, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 33, 194" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 33, 331" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 33, 334" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 33, 334, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 33, 373" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 33, 373, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 34, 144, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 34, 389" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 34, 407" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 35, 315" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 35, 426" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 35, 426, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 36, 198" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 36, 405" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 144" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 144, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 310" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 310, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 351" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 351, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 406" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 407" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 37, 407, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 39, 178" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 39, 178, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 39, 316" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 39, 409" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 39, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 39, 444" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 40, 122" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 40, 122, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 40, 217" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 40, 217, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 40, 314" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 40, 352" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 40, 383" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 40, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 41, 241" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 41, 241, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 41, 349" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 41, 385" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 41, 385, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 41, 404" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 41, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 42, 254" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 43, 293" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 43, 296" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 43, 347" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 43, 347, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 43, 348" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 43, 348, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 43, 408" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 43, 430" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 44, 276" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 44, 352" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 44, 408" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 45, 409" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 45, 442" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 46, 213" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 46, 253" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 46, 258" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 46, 362" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 46, 414" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 47, 144" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 47, 270" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 47, 347" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 48, 172" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 48, 314" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 48, 349" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 48, 350" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 48, 390" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 220" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 232" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 232, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 292" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 314" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 350" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 352" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 383" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 383, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 404" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 404, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 49, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 5, 265" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 50, 221" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 50, 353" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 50, 444" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 51, 178" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 51, 349" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 51, 410" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 51, 412" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 51, 423" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 51, 426, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 51, 427" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 52, 218" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 52, 270" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 52, 411" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 142" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 178" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 238" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 255" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 270" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 350" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 392" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 392, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 401" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 428" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 428, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 53, 429" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 216" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 216, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 25" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 250" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 250, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 311" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 369" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 384" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 54, 408" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 252" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 310" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 310, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 348" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 349" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 354" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 443" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 443, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 55, 85" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 233" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 260" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 330" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 368, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 403" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 405" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 405, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 430" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 57, 430, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 58, 293" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 238" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 259" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 259, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 331" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 349" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 349, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 365" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 370" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 371" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 425" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 59, 425, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 60, 218" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 60, 350" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 60, 392" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 162" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 180" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 184" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 238" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 274" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 274, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 297" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 336" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 346" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 353" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 366" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 413" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 61, 413, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 62, 235" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 62, 235, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 62, 241" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 62, 277" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 152" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 262" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 320" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 334" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 371" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 388" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 388, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 63, 428" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 64, 141" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 64, 158" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 64, 236" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 64, 310" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 64, 364" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 64, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 64, 370" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 64, 408" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 235" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 285" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 294" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 312" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 329" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 354" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 367" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 371" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 388" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 68" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 65, 68, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 66, 232" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 66, 276" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 66, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 164" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 238" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 260" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 332, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 350" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 353" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 366" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 383" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 406" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 426" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 67, 445" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 68, 237" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 68, 310" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 68, 330" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 68, 369" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 101" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 198" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 214" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 216" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 252" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 252, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 272" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 273" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 282" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 408" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 69, 427" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 70, 277" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 70, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 70, 356" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 70, 365" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 70, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 70, 368, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 70, 385" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 71, 200" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 71, 234" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 71, 297" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 71, 352" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 71, 407" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 71, 412" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 71, 440" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 72, 278" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 72, 334" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 72, 345" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 72, 388" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 197" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 220" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 234" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 330" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 367" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 390" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 390, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 429" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 429, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 73, 84, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 74, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 74, 393" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 74, 84" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 75, 349" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 75, 349, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 75, 388" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 75, 92" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 75, 92, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 76, 197" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 76, 198" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 76, 234" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 76, 252" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 76, 333" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 76, 333, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 76, 334" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 76, 391" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 122" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 122, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 162" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 277" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 277, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 295" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 295, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 350" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 369" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 372" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 77, 394" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 105" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 105, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 106" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 106, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 167" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 167, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 216" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 231" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 231, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 237" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 253" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 275" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 330" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 352" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 353" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 353, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 78, 419" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 196" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 238" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 258" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 258, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 368" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 391" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 45" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 79, 45, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 80, 184" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 80, 184, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 80, 219" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 80, 315" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 80, 348" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 80, 66" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 80, 66, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 81, 14" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 81, 371" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 81, 375" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 81, 375, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 81, 68" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 81, 68, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 103" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 103, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 222" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 222, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 238" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 348" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 367" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 63" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 82, 63, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 83, 220" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 83, 220, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 83, 239" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 83, 294" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 83, 330" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 83, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 83, 370" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 84, 294" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 84, 313" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 84, 440" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 84, 49" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 84, 49, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 84, 51" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 84, 51, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 214" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 217" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 22" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 22, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 222" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 235" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 256" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 273" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 295" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 330" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 350" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 354" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 371" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 388" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 390" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 85, 452" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 86, 132" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 86, 141" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 86, 369" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 87, 102" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 87, 102, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 87, 106" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 87, 183" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 87, 264" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 87, 273" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 87, 287" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 88, 235" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 88, 235, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 88, 253" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 88, 296" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 88, 88" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 88, 88, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 89, 188" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 89, 188, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 89, 310" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 89, 370" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 9, 340" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 9, 340, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 90, 219" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 90, 220, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 90, 252" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 90, 387" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 91, 180" value="2" type="GuiResourceData"/>
+<property name="downcounter.v, 91, 220" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 91, 220, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 91, 53" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 91, 53, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 91, 66" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 91, 66, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 93, 218" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 93, 28" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 93, 28, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 93, 412" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 93, 428" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 93, 50" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 93, 50, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 94, 390" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 94, 409" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 95, 120" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 95, 120, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 95, 160" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 95, 168" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 95, 168, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 95, 332" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 95, 391" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 96, 350" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 97, 257" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 97, 278" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 97, 388" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 97, 50" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 98, 178" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 98, 219" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 98, 254" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 98, 340" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 98, 376" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 99, 236" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 99, 236, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 99, 256" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 99, 291" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 99, 313" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 99, 32" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 99, 334" value="1" type="GuiResourceData"/>
+<property name="downcounter.v, 99, 334, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="fsm.v, 41, 197" value="1" type="GuiResourceData"/>
+<property name="hour.v, 41, 83" value="1" type="GuiResourceData"/>
+<property name="minute.v, 119, 317" value="1" type="GuiResourceData"/>
+<property name="minute.v, 157, 216" value="1" type="GuiResourceData"/>
+<property name="minute.v, 164, 272" value="1" type="GuiResourceData"/>
+<property name="minute.v, 197, 382" value="1" type="GuiResourceData"/>
+<property name="minute.v, 41, 85" value="1" type="GuiResourceData"/>
+<property name="minute.v, 42, 85" value="1" type="GuiResourceData"/>
+<property name="minute.v, 44, 311" value="1" type="GuiResourceData"/>
+<property name="minute.v, 45, 297" value="1" type="GuiResourceData"/>
+<property name="minute.v, 63, 316" value="1" type="GuiResourceData"/>
+<property name="minute.v, 65, 219" value="1" type="GuiResourceData"/>
+<property name="minute.v, 67, 336" value="1" type="GuiResourceData"/>
+<property name="minute.v, 67, 87" value="1" type="GuiResourceData"/>
+<property name="minute.v, 67, 87, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="minute.v, 85, 317" value="1" type="GuiResourceData"/>
+<property name="minute.v, 91, 200" value="1" type="GuiResourceData"/>
+<property name="onepulse.v, 40, 86" value="1" type="GuiResourceData"/>
+<property name="set.v, 43, 197" value="1" type="GuiResourceData"/>
+<property name="ssd_freqdiv.v, 43, 104" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="90" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="77" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

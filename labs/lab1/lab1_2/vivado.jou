@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Feb 27 00:26:20 2022
+# Process ID: 13184
+# Current directory: D:/data/logic_design_lab/labs/lab1/lab1_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6304 D:\data\logic_design_lab\labs\lab1\lab1_2\lab1_2.xpr
+# Log file: D:/data/logic_design_lab/labs/lab1/lab1_2/vivado.log
+# Journal file: D:/data/logic_design_lab/labs/lab1/lab1_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/data/logic_design_lab/labs/lab1/lab1_2/lab1_2.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source lab1_2_test.tcl
+close_sim
