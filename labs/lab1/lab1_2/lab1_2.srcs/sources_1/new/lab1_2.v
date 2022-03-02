@@ -38,6 +38,9 @@ module lab1_2(
     full_adder U1(.a(a[1]), .b(b[1] ^ m), .c_in(C_OUT_0), .sum(s[1]), .c_out(C_OUT_1));
     full_adder U2(.a(a[2]), .b(b[2] ^ m), .c_in(C_OUT_1), .sum(s[2]), .c_out(C_OUT_2));
     full_adder U3(.a(a[3]), .b(b[3] ^ m), .c_in(C_OUT_2), .sum(s[3]), .c_out(c_OUT_3));
-    assign v = c_OUT_3 ^ m;
+//    assign v = c_OUT_3 ^ m;
+    assign v = (c_OUT_3 ^ s[3]) & (~(a[3] ^ b[3]) ^ m);
+//    assign v = (c_OUT_3 ^ s[3]) & (~(a[3] ^ b[3]) & ~m);
+//    assign v = ~(a[3] ^ b[3]);
     
 endmodule
