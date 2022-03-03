@@ -27,5 +27,5 @@ module mux(
     output z
     );
     
-    assign z = (~s) * a + a * b + s * (~a) * b;
+    assign z = ((~s) & a) | (a & b) | (s & (~a) & b);
 endmodule
