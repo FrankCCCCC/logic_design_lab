@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1646306287">
-  <File Type="BITSTR-BMM" Name="SMUX_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="SMUX_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="SMUX_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="SMUX_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="SMUX.tcl"/>
-  <File Type="OPT-TIMING" Name="SMUX_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="SMUX_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="SMUX_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="SMUX_reports.tcl"/>
-  <File Type="OPT-DRC" Name="SMUX_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="SMUX.hwdef"/>
-  <File Type="PWROPT-DCP" Name="SMUX_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="SMUX_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="SMUX_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="SMUX_placed.dcp"/>
-  <File Type="PLACE-IO" Name="SMUX_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="SMUX_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="SMUX_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="SMUX_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="SMUX_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="SMUX_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="SMUX_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="SMUX_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="SMUX_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="SMUX.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="SMUX_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="SMUX_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="SMUX_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="SMUX.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="SMUX_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="SMUX_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="SMUX_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="SMUX_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="SMUX_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="SMUX_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="SMUX_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="SMUX.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="SMUX_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SMUX_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SMUX_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="SMUX_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="SMUX_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="SMUX_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="SMUX_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="SMUX_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="SMUX_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="SMUX_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="SMUX_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="SMUX_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="SMUX_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="SMUX_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="SMUX_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SMUX_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SMUX_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SMUX_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SMUX_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="SMUX_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="SMUX_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="SMUX.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="SMUX_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="SMUX.rbt"/>
-  <File Type="BITSTR-NKY" Name="SMUX.nky"/>
-  <File Type="PDI-FILE" Name="SMUX.pdi"/>
-  <File Type="RCFI_FILE" Name="SMUX.rcfi"/>
-  <File Type="CFI_FILE" Name="SMUX.cfi"/>
-  <File Type="RNPI_FILE" Name="SMUX.rnpi"/>
-  <File Type="NPI_FILE" Name="SMUX.npi"/>
-  <File Type="RBD_FILE" Name="SMUX.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1646312956">
+  <File Type="BITSTR-BMM" Name="gray_code_convertor_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="gray_code_convertor_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="gray_code_convertor_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="gray_code_convertor_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="gray_code_convertor.tcl"/>
+  <File Type="OPT-TIMING" Name="gray_code_convertor_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="gray_code_convertor_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="gray_code_convertor_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="gray_code_convertor_reports.tcl"/>
+  <File Type="OPT-DRC" Name="gray_code_convertor_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="gray_code_convertor.hwdef"/>
+  <File Type="PWROPT-DCP" Name="gray_code_convertor_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="gray_code_convertor_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="gray_code_convertor_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="gray_code_convertor_placed.dcp"/>
+  <File Type="PLACE-IO" Name="gray_code_convertor_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="gray_code_convertor_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="gray_code_convertor_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="gray_code_convertor_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="gray_code_convertor_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="gray_code_convertor_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="gray_code_convertor_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="gray_code_convertor_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="gray_code_convertor_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="gray_code_convertor.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="gray_code_convertor_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="gray_code_convertor_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="gray_code_convertor_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="gray_code_convertor.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="gray_code_convertor_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="gray_code_convertor_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="gray_code_convertor_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="gray_code_convertor_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="gray_code_convertor_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="gray_code_convertor_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="gray_code_convertor_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="gray_code_convertor.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="gray_code_convertor_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="gray_code_convertor_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="gray_code_convertor_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="gray_code_convertor_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="gray_code_convertor_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="gray_code_convertor_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="gray_code_convertor_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="gray_code_convertor_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="gray_code_convertor_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="gray_code_convertor_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="gray_code_convertor_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="gray_code_convertor_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="gray_code_convertor_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="gray_code_convertor_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="gray_code_convertor_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="gray_code_convertor_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="gray_code_convertor_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="gray_code_convertor_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="gray_code_convertor_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="gray_code_convertor_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="gray_code_convertor_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="gray_code_convertor.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="gray_code_convertor_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="gray_code_convertor.rbt"/>
+  <File Type="BITSTR-NKY" Name="gray_code_convertor.nky"/>
+  <File Type="PDI-FILE" Name="gray_code_convertor.pdi"/>
+  <File Type="RCFI_FILE" Name="gray_code_convertor.rcfi"/>
+  <File Type="CFI_FILE" Name="gray_code_convertor.cfi"/>
+  <File Type="RNPI_FILE" Name="gray_code_convertor.rnpi"/>
+  <File Type="NPI_FILE" Name="gray_code_convertor.npi"/>
+  <File Type="RBD_FILE" Name="gray_code_convertor.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="SMUX.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="SMUX.sysdef"/>
-  <File Type="BG-BGN" Name="SMUX.bgn"/>
-  <File Type="BG-DRC" Name="SMUX.drc"/>
-  <File Type="RDI-RDI" Name="SMUX.vdi"/>
+  <File Type="BITSTR-LTX" Name="gray_code_convertor.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="gray_code_convertor.sysdef"/>
+  <File Type="BG-BGN" Name="gray_code_convertor.bgn"/>
+  <File Type="BG-DRC" Name="gray_code_convertor.drc"/>
+  <File Type="RDI-RDI" Name="gray_code_convertor.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/smux.v">
+    <File Path="$PSRCDIR/sources_1/new/gray_code_convertor.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -86,7 +86,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="SMUX"/>
+      <Option Name="TopModule" Val="gray_code_convertor"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -110,9 +110,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

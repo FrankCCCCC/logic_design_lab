@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log SMUX.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SMUX.tcl
+EAStep vivado -log gray_code_convertor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source gray_code_convertor.tcl

@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log SMUX.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SMUX.tcl" );
+         "-log gray_code_convertor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source gray_code_convertor.tcl" );
 
 
 
