@@ -10,27 +10,252 @@
 
 </head>
 <body class="markdown-body">
-<h1 dir="auto" id="lab-1---verilog">Lab 1 - Verilog</h1>
-<h2 dir="auto" id="lab-1---1"><a href="./lab1_1/">Lab 1 - 1</a></h2>
-<p dir="auto">4-Bit Binary-To-Gray-Code Converter</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">
-\pi
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span></span></span></p>
+<h1 dir="auto" id="lab-1---verilog-report">Lab 1 - Verilog Report</h1>
+<p dir="auto">106033233 資工大四 周聖諺</p>
+<hr dir="auto">
+<h2 dir="auto" id="lab-1---1-4-bit-binary-to-gray-code-converter">Lab 1 - 1: 4-Bit Binary-To-Gray-Code Converter</h2>
+<h3 dir="auto" id="design-specification">Design Specification</h3>
+<p dir="auto"><a href="./lab1_1/">Source Code</a></p>
+<p dir="auto">Input: a, b, c, d</p>
+<p dir="auto">Output: w, x, y, z</p>
+<h3 dir="auto" id="design-implementation">Design Implementation</h3>
+<p dir="auto">First, we can observe that the MSB of the Gray code and binary code are always the same so it doesn't need any conversion. The Boolean equation is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">a = w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span></p>
+<p dir="auto">In addition, if you list the table of the conversion from 4-bit Gray-code to binary code, you can observe that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>⊕</mo><mi>b</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">a \oplus b = x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>⊕</mo><mi>c</mi><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">b \oplus c = y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> and, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>⊕</mo><mi>d</mi><mo>=</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">c \oplus d = z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span>. Thus, we can design the circuit as the following code.</p>
+<p dir="auto"><strong>Boolean Equation:</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">a = w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span></span></p>
 </math>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>⊕</mo><mi>b</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">a \oplus b = x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span></span></p>
+</math>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>⊕</mo><mi>c</mi><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">b \oplus c = y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span></span></p>
+</math>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>⊕</mo><mi>d</mi><mo>=</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">c \oplus d = z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span></span></p>
+</math>
+<p dir="auto"><strong>BCD to Gray Code Truth Table</strong></p>
+<table dir="auto">
+<thead dir="auto">
+<tr dir="auto">
+<th>Decimal</th>
+<th>Binary Code (abcd)</th>
+<th>Gray Code (wxyz)</th>
+</tr>
+</thead>
+<tbody dir="auto">
+<tr dir="auto">
+<td>0</td>
+<td>0000</td>
+<td>0000</td>
+</tr>
+<tr dir="auto">
+<td>1</td>
+<td>0001</td>
+<td>0001</td>
+</tr>
+<tr dir="auto">
+<td>2</td>
+<td>0010</td>
+<td>0011</td>
+</tr>
+<tr dir="auto">
+<td>3</td>
+<td>0011</td>
+<td>0010</td>
+</tr>
+<tr dir="auto">
+<td>4</td>
+<td>0100</td>
+<td>0110</td>
+</tr>
+<tr dir="auto">
+<td>5</td>
+<td>0101</td>
+<td>0111</td>
+</tr>
+<tr dir="auto">
+<td>6</td>
+<td>0110</td>
+<td>0101</td>
+</tr>
+<tr dir="auto">
+<td>7</td>
+<td>0111</td>
+<td>0100</td>
+</tr>
+<tr dir="auto">
+<td>8</td>
+<td>1000</td>
+<td>1100</td>
+</tr>
+<tr dir="auto">
+<td>9</td>
+<td>1001</td>
+<td>1100</td>
+</tr>
+<tr dir="auto">
+<td>10</td>
+<td>1010</td>
+<td>1111</td>
+</tr>
+<tr dir="auto">
+<td>11</td>
+<td>1011</td>
+<td>1110</td>
+</tr>
+<tr dir="auto">
+<td>12</td>
+<td>1100</td>
+<td>1010</td>
+</tr>
+<tr dir="auto">
+<td>13</td>
+<td>1101</td>
+<td>1011</td>
+</tr>
+<tr dir="auto">
+<td>14</td>
+<td>1110</td>
+<td>1001</td>
+</tr>
+<tr dir="auto">
+<td>15</td>
+<td>1111</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto"><strong>Verilog Code</strong></p>
+<pre><code class="code-line language-verilog" dir="auto"><div><span class="hljs-keyword">assign</span> w = a;
+<span class="hljs-keyword">assign</span> x = a ^ b;
+<span class="hljs-keyword">assign</span> y = b ^ c;
+<span class="hljs-keyword">assign</span> z = c ^ d;
+</div></code></pre>
+<p dir="auto"><strong>Block Diagram</strong></p>
+<p dir="auto"><img src="img/lab1-1_diag.jpg" alt="Lab 1-1 Logic Diagram" class="loading" id="image-hash--1908486208" data-src="img/lab1-1_diag.jpg"></p>
+<p dir="auto"><strong>RTL Simulation</strong></p>
+<p dir="auto"><img src="img/lab1-1_sim.png" alt="Lab 1-1 RTL Simulation" class="loading" id="image-hash-2038104944" data-src="img/lab1-1_sim.png"></p>
 <h3 dir="auto" id="reference">Reference</h3>
 <ul dir="auto">
-<li dir="auto"><a href="https://www.javatpoint.com/">Java T Point - Binary to Gray code conversion</a></li>
-<li dir="auto"><a href="https://en.wikipedia.org/wiki/Two%27s_complement">Wikipedia - Two's complement</a></li>
+<li dir="auto"><a href="https://www.javatpoint.com/binary-to-gray-code-cconversion-in-digital-electronics">Java T Point - Binary to Gray code conversion</a></li>
 </ul>
-<h2 dir="auto" id="lab-1---2"><a href="./lab1_2/">Lab 1 - 2</a></h2>
-<p dir="auto">4-Bit Adder-Subtractor</p>
+<h2 dir="auto" id="lab-1---2-4-bit-adder-subtractor">Lab 1 - 2: 4-Bit Adder-Subtractor</h2>
+<p dir="auto"><a href="./lab1_2/">Source Code</a></p>
+<h3 dir="auto" id="design-specification-1">Design Specification</h3>
+<p dir="auto"><strong>Full Adder</strong></p>
+<p dir="auto">Input: a, b, c_in</p>
+<p dir="auto">Output: sum, c_out</p>
+<p dir="auto"><strong>4-Bit Adder-Subtractor</strong></p>
+<p dir="auto">Input [3:0]a, [3:0]b, m</p>
+<p dir="auto">Output [3:0]s, v</p>
+<h3 dir="auto" id="design-implementation-1">Design Implementation</h3>
+<h4 dir="auto" id="full-adder">Full Adder</h4>
+<p dir="auto">For 1-bit addition, it would yield 0 when 1 + 1 or 0 + 0. Otherwise, it would yield 1. As a result, we can use XOR gate to implement the addition operation like the following code.</p>
+<p dir="auto"><strong>Boolean Equation:</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>u</mi><mi>m</mi><mo>=</mo><mi>a</mi><mo>⊕</mo><mi>b</mi><mo>⊕</mo><msub><mi>c</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">sum = a \oplus b \oplus c_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</math>
+<p dir="auto">where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the carry-in bit c_in.</p>
+<p dir="auto"><strong>Verilog Code</strong></p>
+<pre><code class="code-line language-verilog" dir="auto"><div><span class="hljs-keyword">assign</span> sum = (a ^ b) ^ c_in;
+</div></code></pre>
+<p dir="auto">As for the carry bit, we've known that the carry bit would be 1 while two of the input bits: a, b and c_in (the carry bit of the previous one) are 1. Thus, we can express the Boolean equation  as the follow</p>
+<p dir="auto"><strong>Boolean Equation:</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mo>∧</mo><mi>b</mi><mo stretchy="false">)</mo><mo>∨</mo><mo stretchy="false">(</mo><msub><mi>c</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub><mo>∧</mo><mo stretchy="false">(</mo><mi>a</mi><mo>⊕</mo><mi>b</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">c_{out} = (a \land b) \lor(c_{in} \land (a \oplus b))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
+</math>
+<p dir="auto">where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the carry-in bit c_in.</p>
+<p dir="auto"><strong>Verilog Code</strong></p>
+<pre><code class="code-line language-verilog" dir="auto"><div><span class="hljs-keyword">assign</span> c_out = (a &amp; b) | c_in &amp; (a ^ b);
+</div></code></pre>
+<p dir="auto"><strong>Logic Diagram</strong></p>
+<p dir="auto"><img src="img/lab1-2_adders_diag.jpg" alt="Lab 1-2 Adders Logic Diagram" class="loading" id="image-hash--1829741673" data-src="img/lab1-2_adders_diag.jpg"></p>
+<p dir="auto"><strong>RTL Simulation</strong></p>
+<p dir="auto"><img src="img/lab1-2_full_adder_sim.png" alt="Lab 1-2 Full Adder RTL Simulation" class="loading" id="image-hash--895414926" data-src="img/lab1-2_full_adder_sim.png"></p>
+<h4 dir="auto" id="4-bit-adder-subtractor">4-Bit Adder-Subtractor</h4>
+<p dir="auto">As for 4-bit adder, all we need to do is that concatenate the 4 full-adder. Thanks to 2's complement. The full-adder also works when the input number is negative in the form of 2's complement. To adapt the subtraction, we only need to invert the number and set the carry-in as 1.</p>
+<pre><code class="code-line language-verilog" dir="auto"><div><span class="hljs-keyword">wire</span> C_IN;
+<span class="hljs-keyword">wire</span> C_OUT_0, C_OUT_1, c_OUT_2, c_OUT_3;
+<span class="hljs-keyword">assign</span> C_IN = m;
+full_adder U0(<span class="hljs-variable">.a</span>(a[<span class="hljs-number">0</span>]), <span class="hljs-variable">.b</span>(b[<span class="hljs-number">0</span>] ^ m), <span class="hljs-variable">.c_in</span>(C_IN), <span class="hljs-variable">.sum</span>(s[<span class="hljs-number">0</span>]), <span class="hljs-variable">.c_out</span>(C_OUT_0));
+full_adder U1(<span class="hljs-variable">.a</span>(a[<span class="hljs-number">1</span>]), <span class="hljs-variable">.b</span>(b[<span class="hljs-number">1</span>] ^ m), <span class="hljs-variable">.c_in</span>(C_OUT_0), <span class="hljs-variable">.sum</span>(s[<span class="hljs-number">1</span>]), <span class="hljs-variable">.c_out</span>(C_OUT_1));
+full_adder U2(<span class="hljs-variable">.a</span>(a[<span class="hljs-number">2</span>]), <span class="hljs-variable">.b</span>(b[<span class="hljs-number">2</span>] ^ m), <span class="hljs-variable">.c_in</span>(C_OUT_1), <span class="hljs-variable">.sum</span>(s[<span class="hljs-number">2</span>]), <span class="hljs-variable">.c_out</span>(C_OUT_2));
+full_adder U3(<span class="hljs-variable">.a</span>(a[<span class="hljs-number">3</span>]), <span class="hljs-variable">.b</span>(b[<span class="hljs-number">3</span>] ^ m), <span class="hljs-variable">.c_in</span>(C_OUT_2), <span class="hljs-variable">.sum</span>(s[<span class="hljs-number">3</span>]), <span class="hljs-variable">.c_out</span>(c_OUT_3));
+</div></code></pre>
+<p dir="auto">However, we need to handle the overflow or underflow exceptions. We've known that the overflow might occur in 4 cases: (1) positive + positive, (2) negative + negative, (3) negative - positive, or (4) positive - negative. In this 4 cases, if we detect the last carry-out bit is different from the MSB of the summation, it means there is an overflow.</p>
+<p dir="auto">To detect the 4 possible cases:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">[</mo><mn>3</mn><mo stretchy="false">]</mo><mo>⊕</mo><mi>b</mi><mo stretchy="false">[</mo><mn>3</mn><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>⊕</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\lnot (a[3] \oplus b[3]) \oplus m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord">3</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mopen">[</span><span class="mord">3</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span></span></p>
+</math>
+<p dir="auto">To detect the difference between carry out and the MSB.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><mo>⊕</mo><mi>s</mi><mo stretchy="false">[</mo><mn>3</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">c_{out} \oplus s[3]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord">3</span><span class="mclose">]</span></span></span></span></span></p>
+</math>
+<p dir="auto">where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{out}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the last carry-out bit.</p>
+<p dir="auto"><strong>Boolean Equation:</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mo stretchy="false">(</mo><msub><mi>c</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><mo>⊕</mo><mi>s</mi><mo stretchy="false">[</mo><mn>3</mn><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">[</mo><mn>3</mn><mo stretchy="false">]</mo><mo>⊕</mo><mi>b</mi><mo stretchy="false">[</mo><mn>3</mn><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>⊕</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">v = (c_{out} \oplus s[3]) \land (\lnot (a[3] \oplus b[3]) \oplus m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord">3</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">¬</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord">3</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mopen">[</span><span class="mord">3</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></span></p>
+</math>
+<p dir="auto"><strong>Verilog Code</strong></p>
+<pre><code class="code-line language-verilog" dir="auto"><div><span class="hljs-keyword">assign</span> v = (c_OUT_3 ^ s[<span class="hljs-number">3</span>]) &amp; (~(a[<span class="hljs-number">3</span>] ^ b[<span class="hljs-number">3</span>]) ^ m);
+</div></code></pre>
+<p dir="auto"><strong>Logic Diagram</strong></p>
+<p dir="auto"><img src="img/lab1-2_diag.jpg" alt="Lab 1-2 Logic Diagram" class="loading" id="image-hash--2104999713" data-src="img/lab1-2_diag.jpg"></p>
+<p dir="auto"><strong>RTL Simulation</strong></p>
+<p dir="auto"><img src="img/lab1-2_sim.png" alt="Lab 1-2 RTL Simulation" class="loading" id="image-hash-230650481" data-src="img/lab1-2_sim.png"></p>
 <h3 dir="auto" id="reference-1">Reference</h3>
 <ul dir="auto">
 <li dir="auto"><a href="https://www.geeksforgeeks.org/4-bit-binary-adder-subtractor/amp/">GEEKSFORGEEKS - 4-bit binary Adder-Subtractor</a></li>
 <li dir="auto"><a href="https://www.electronics-tutorials.ws/combination/comb_7.html">Electronics Tutorials - Binary Adder</a></li>
+<li dir="auto"><a href="https://en.wikipedia.org/wiki/Two%27s_complement">Wikipedia - Two's complement</a></li>
 </ul>
-<h2 dir="auto" id="lab-1---3"><a href="./lab1_3/">Lab 1 - 3</a></h2>
-<p dir="auto">3-Bit Signed Binary Max</p>
+<h2 dir="auto" id="lab-1---3-3-bit-signed-binary-max">Lab 1 - 3: 3-Bit Signed Binary Max</h2>
+<h3 dir="auto" id="design-specification-2">Design Specification</h3>
+<p dir="auto"><a href="./lab1_3/">Source Code</a></p>
+<p dir="auto"><strong>Full Adder</strong></p>
+<p dir="auto">Input: a, b, c_in</p>
+<p dir="auto">Output: sum, c_out</p>
+<p dir="auto"><strong>3-Bit Adder-Subtractor</strong></p>
+<p dir="auto">Input [2:0]a, [2:0]b, m</p>
+<p dir="auto">Output [2:0]s, v</p>
+<p dir="auto"><strong>Multiplexer</strong></p>
+<p dir="auto">Input: a, b, s</p>
+<p dir="auto">Output: z</p>
+<p dir="auto"><strong>3-Bit Signed Binary Max</strong></p>
+<p dir="auto">Input: [2:0]a, [2:0]b</p>
+<p dir="auto">Output: [2:0]o</p>
+<h3 dir="auto" id="design-implementation-2">Design Implementation</h3>
+<h4 dir="auto" id="full-adder-1">Full Adder</h4>
+<p dir="auto">Same as the module in Lab 1-2.</p>
+<h4 dir="auto" id="3-bit-adder-subtractor">3-Bit Adder-Subtractor</h4>
+<p dir="auto">Same as the module in Lab 1-2.</p>
+<h4 dir="auto" id="multiplexermux">Multiplexer(MUX)</h4>
+<p dir="auto">In the file <em>mux.v</em>, it's just a 1-bit simple multiplexer. If m is 0, it would output the signal of input a, vice versa. Following are the Boolean equation and the code.</p>
+<p dir="auto"><strong>Boolean Equation</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>s</mi><mo stretchy="false">)</mo><mo>∧</mo><mi>a</mi><mo stretchy="false">)</mo><mo>∨</mo><mo stretchy="false">(</mo><mi>a</mi><mo>∧</mo><mi>b</mi><mo stretchy="false">)</mo><mo>∨</mo><mo stretchy="false">(</mo><mi>s</mi><mo>∧</mo><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>a</mi><mo stretchy="false">)</mo><mo>∧</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">z = ((\lnot s) \land a) \lor (a \land b) \lor (s \land (\lnot a) \land b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord">¬</span><span class="mord mathdefault">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">¬</span><span class="mord mathdefault">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span></span></p>
+</math>
+<p dir="auto"><strong>Verilog Code</strong></p>
+<pre><code class="code-line language-verilog" dir="auto"><div><span class="hljs-keyword">assign</span> z = ((~s) &amp; a) | (a &amp; b) | (s &amp; (~a) &amp; b);
+</div></code></pre>
+<p dir="auto"><strong>Logic Diagram</strong></p>
+<p dir="auto"><img src="img/lab1-3_mux_diag.jpg" alt="Lab 1-3 MUX Logic Diagram" class="loading" id="image-hash--1643088499" data-src="img/lab1-3_mux_diag.jpg"></p>
+<p dir="auto"><strong>RTL Simulation</strong></p>
+<p dir="auto"><img src="img/lab1-3_mux_sim.png" alt="Lab 1-3 MUX RTL Simulation" class="loading" id="image-hash-522645507" data-src="img/lab1-3_mux_sim.png"></p>
+<h4 dir="auto" id="3-bit-signed-binary-max">3-Bit Signed Binary Max</h4>
+<p dir="auto">It's easy to know that if the 2 number a and b have different sign, we only need to choose the positive one. Otherwise, we need to use the subtractor and let a minus b to determine which one is larger. If the MSB is 0, number a is larger. If the MSB is 1, number b is larger. We can simply form the Boolean equation of the multiplexer selection as the following.</p>
+<p dir="auto"><strong>Boolean Equation</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>E</mi><mi>L</mi><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mo>∧</mo><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>b</mi><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>∨</mo><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mo>∧</mo><mi>S</mi><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>∨</mo><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>a</mi><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>b</mi><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>∧</mo><mi>S</mi><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">SEL = (a[2] \land (\lnot b[2])) \lor (a[2] \land S[2]) \lor ((\lnot a[2]) \land (\lnot b[2]) \land S[2])</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">¬</span><span class="mord mathdefault">b</span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord">¬</span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">¬</span><span class="mord mathdefault">b</span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mclose">)</span></span></span></span></span></p>
+</math>
+<p dir="auto">where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> is the difference between number a and b and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>E</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">SEL</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault">L</span></span></span></span> is the selection input of the multiplexer. To output the larger number, we only need to apply the multiplexer and the selection to each bit.</p>
+<p dir="auto"><strong>Verilog Code</strong></p>
+<pre><code class="code-line language-verilog" dir="auto"><div><span class="hljs-keyword">wire</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>]S;
+<span class="hljs-keyword">wire</span> M;
+<span class="hljs-keyword">wire</span> SEL;
+
+<span class="hljs-keyword">assign</span> M = <span class="hljs-number">1</span>;
+bit3_add_sub U0(<span class="hljs-variable">.a</span>(a), <span class="hljs-variable">.b</span>(b), <span class="hljs-variable">.m</span>(M), <span class="hljs-variable">.s</span>(S));
+<span class="hljs-keyword">assign</span> minus = S;
+<span class="hljs-keyword">assign</span> SEL = (a[<span class="hljs-number">2</span>] &amp; (~b[<span class="hljs-number">2</span>])) | (a[<span class="hljs-number">2</span>] &amp; S[<span class="hljs-number">2</span>]) | ((~a[<span class="hljs-number">2</span>]) &amp; (~b[<span class="hljs-number">2</span>]) &amp; S[<span class="hljs-number">2</span>]);
+
+mux U1(<span class="hljs-variable">.a</span>(a[<span class="hljs-number">0</span>]), <span class="hljs-variable">.b</span>(b[<span class="hljs-number">0</span>]), <span class="hljs-variable">.s</span>(SEL), <span class="hljs-variable">.z</span>(o[<span class="hljs-number">0</span>]));
+mux U2(<span class="hljs-variable">.a</span>(a[<span class="hljs-number">1</span>]), <span class="hljs-variable">.b</span>(b[<span class="hljs-number">1</span>]), <span class="hljs-variable">.s</span>(SEL), <span class="hljs-variable">.z</span>(o[<span class="hljs-number">1</span>]));
+mux U3(<span class="hljs-variable">.a</span>(a[<span class="hljs-number">2</span>]), <span class="hljs-variable">.b</span>(b[<span class="hljs-number">2</span>]), <span class="hljs-variable">.s</span>(SEL), <span class="hljs-variable">.z</span>(o[<span class="hljs-number">2</span>]));
+</div></code></pre>
+<p dir="auto"><strong>Logic Diagram</strong></p>
+<p dir="auto"><strong>RTL Simulation</strong></p>
+<p dir="auto"><img src="img/lab1-3_sim.png" alt="Lab 1-3 RTL Simulation" class="loading" id="image-hash--1576803982" data-src="img/lab1-3_sim.png"></p>
 
 </body>
 </html>

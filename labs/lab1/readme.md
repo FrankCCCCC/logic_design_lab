@@ -233,6 +233,8 @@ assign z = ((~s) & a) | (a & b) | (s & (~a) & b);
 
 **Logic Diagram**
 
+![Lab 1-3 MUX Logic Diagram](img/lab1-3_mux_diag.jpg)
+
 **RTL Simulation**
 
 ![Lab 1-3 MUX RTL Simulation](img/lab1-3_mux_sim.png)
