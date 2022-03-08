@@ -29,7 +29,7 @@ full_adder U0(.a(A), .b(B), .c_in(C_IN), .sum(SUM), .c_out(C_OUT));
 initial
 begin
 
-A=0; B=0; C_IN=0;
+    A=0; B=0; C_IN=0;
 #10 A=0; B=1; C_IN=0;
 #10 A=1; B=0; C_IN=0;
 #10 A=1; B=1; C_IN=0;
@@ -37,6 +37,6 @@ A=0; B=0; C_IN=0;
 #10 A=0; B=1; C_IN=1;
 #10 A=1; B=0; C_IN=1;
 #10 A=1; B=1; C_IN=1;
-
+#10; $finish;
 end
 endmodule

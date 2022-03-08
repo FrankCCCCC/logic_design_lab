@@ -3,9 +3,10 @@
 Nov  6 2019
 21:57:16
 D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sim_1/new/experiment_3.v,1646756195,verilog,,,,experiment_3,,,,,,,,
 D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sim_1/new/lab1_3_test.v,1646303388,verilog,,,,lab1_3_test,,,,,,,,
 D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sim_1/new/mux_test.v,1646281913,verilog,,,,mux_test,,,,,,,,
 D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sources_1/new/bit3_add_sub.v,1646299304,verilog,,D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sources_1/new/full_adder.v,,bit3_add_sub,,,,,,,,
 D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sources_1/new/full_adder.v,1646234921,verilog,,D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sources_1/new/lab1_3.v,,full_adder,,,,,,,,
 D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sources_1/new/lab1_3.v,1646303596,verilog,,D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sources_1/new/mux.v,,lab1_3,,,,,,,,
-D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sources_1/new/mux.v,1646303008,verilog,,D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sim_1/new/lab1_3_test.v,,mux,,,,,,,,
+D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sources_1/new/mux.v,1646303008,verilog,,D:/data/logic_design_lab/labs/lab1/lab1_3/lab1_3.srcs/sim_1/new/experiment_3.v,,mux,,,,,,,,
