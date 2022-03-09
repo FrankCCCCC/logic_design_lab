@@ -65,10 +65,6 @@ assign z = c ^ d;
 
 ![Lab 1-1 RTL Simulation](img/lab1-1_sim.png)
 
-### Reference
-
-- [Java T Point - Binary to Gray code conversion](https://www.javatpoint.com/binary-to-gray-code-cconversion-in-digital-electronics)
-
 ## Lab 1 - 2: 4-Bit Adder-Subtractor
 
 [Source Code](./lab1_2/)
@@ -171,12 +167,6 @@ assign v = (c_OUT_3 ^ s[3]) & (~(a[3] ^ b[3]) ^ m);
 
 ![Lab 1-2 RTL Simulation](img/lab1-2_sim.png)
 
-### Reference
-
-- [GEEKSFORGEEKS - 4-bit binary Adder-Subtractor](https://www.geeksforgeeks.org/4-bit-binary-adder-subtractor/amp/)
-- [Electronics Tutorials - Binary Adder](https://www.electronics-tutorials.ws/combination/comb_7.html)
-- [Wikipedia - Two's complement](https://en.wikipedia.org/wiki/Two%27s_complement)
-
 ## Lab 1 - 3: 3-Bit Signed Binary Max
 
 ### Design Specification
@@ -276,8 +266,24 @@ mux U3(.a(a[2]), .b(b[2]), .s(SEL), .z(o[2]));
 
 ## Discussion
 
-
+In the lab 1-3, I used the star symbol * to express the AND logic and plus symbol + to represent the OR logic. However, the logical operator is totally different from the computational operator and the simulation shown that it was wrong. Finally, I found the misuse and correct the errors.
 
 ## Conclusion
 
-In this lab, 
+In this lab, I've learned that how to design a logical circuit with Verilog and simulate the behavior with RTL simulation. In addition, thanks for this lab, I reviewed the logic design briefly to recap the design of the full adder and Gray code.
+
+## Reference
+
+- [Java T Point - Binary to Gray code conversion](https://www.javatpoint.com/binary-to-gray-code-cconversion-in-digital-electronics)
+  
+  Provide the design example of the binary-to-Gray-code convertor.
+
+- [GEEKSFORGEEKS - 4-bit binary Adder-Subtractor](https://www.geeksforgeeks.org/4-bit-binary-adder-subtractor/amp/)
+  
+  Provide the design example of the 4-bit binary Adder-Subtractor.
+- [Electronics Tutorials - Binary Adder](https://www.electronics-tutorials.ws/combination/comb_7.html)
+  
+  Provide the design example of the full adder.
+- [Wikipedia - Two's complement](https://en.wikipedia.org/wiki/Two%27s_complement)
+ 
+  Explain how the two's complement works.
