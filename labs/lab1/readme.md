@@ -268,6 +268,16 @@ mux U3(.a(a[2]), .b(b[2]), .s(SEL), .z(o[2]));
 
 **Logic Diagram**
 
+![Lab 1-3 Logic Diagram](img/lab1-3_diag.jpg)
+
 **RTL Simulation**
 
 ![Lab 1-3 RTL Simulation](img/lab1-3_sim.png)
+
+## Discussion
+
+
+
+## Conclusion
+
+In this lab, 
