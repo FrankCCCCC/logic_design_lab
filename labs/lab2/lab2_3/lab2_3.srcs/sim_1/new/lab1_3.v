@@ -33,9 +33,16 @@ module lab1_3(
     wire [3:0]B_D2;
     reg [2:0]BULL;
     reg [2:0]COW;
+    // a[7:0] be the first number    
+//    extract U0 (.x(a), .d1(A_D1), .d2(A_D2));
+    // b[7:0] be the second number
+//    extract U1 (.x(b), .d1(B_D1), .d2(B_D2));
+
+    extract U0 (.x({4'b0000, a[3:0]}), .d1(A_D1));
+    extract U1 (.x({4'b0000, a[7:4]}), .d1(A_D2));
     
-    extract U0 (.x(a), .d1(A_D1), .d2(A_D2));
-    extract U1 (.x(b), .d1(B_D1), .d2(B_D2));
+    extract U2 (.x({4'b0000, b[3:0]}), .d1(B_D1));
+    extract U3 (.x({4'b0000, b[7:4]}), .d1(B_D2));
     
     assign bull[2] = (A_D1 == B_D1) && (A_D2 == B_D2);
     assign bull[1] = (A_D1 == B_D1) ^ (A_D2 == B_D2);

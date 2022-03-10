@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1646312956">
   <File Type="PA-TCL" Name="gray_code_convertor.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="gray_code_convertor_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="gray_code_convertor_reports.tcl"/>
   <File Type="RDS-RDS" Name="gray_code_convertor.vds"/>
   <File Type="RDS-UTIL" Name="gray_code_convertor_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="gray_code_convertor_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="gray_code_convertor.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="gray_code_convertor_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="gray_code_convertor_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/gray_code_convertor.v">

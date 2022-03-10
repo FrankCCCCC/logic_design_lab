@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1646833190">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1646904944">
+  <File Type="OPT-HWDEF" Name="lab1_3.hwdef"/>
+  <File Type="ROUTE-BUS-SKEW" Name="lab1_3_bus_skew_routed.rpt"/>
+  <File Type="PA-DCP" Name="lab1_3.dcp"/>
   <File Type="BITSTR-BMM" Name="lab1_3_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="lab1_3_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="lab1_3_timing_summary_init.rpt"/>
@@ -10,7 +13,6 @@
   <File Type="ROUTE-PWR-SUM" Name="lab1_3_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="lab1_3_reports.tcl"/>
   <File Type="OPT-DRC" Name="lab1_3_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="lab1_3.hwdef"/>
   <File Type="PWROPT-DCP" Name="lab1_3_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="lab1_3_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="lab1_3_timing_summary_pwropted.rpt"/>
@@ -48,7 +50,6 @@
   <File Type="ROUTE-TIMING-RPX" Name="lab1_3_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="lab1_3_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="lab1_3_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="lab1_3_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="lab1_3_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="lab1_3_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="lab1_3_postroute_physopt.dcp"/>
