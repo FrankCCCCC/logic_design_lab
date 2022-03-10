@@ -25,7 +25,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log frequency_divider.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source frequency_divider.tcl -notrace" );
+         "-log lab3_1.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source lab3_1.tcl -notrace" );
 
 
 

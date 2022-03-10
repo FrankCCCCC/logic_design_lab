@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log frequency_divider.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source frequency_divider.tcl" );
+         "-log lab3_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab3_1.tcl" );
 
 
 

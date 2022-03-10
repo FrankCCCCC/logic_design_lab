@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log frequency_divider.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source frequency_divider.tcl -notrace
+EAStep vivado -log lab3_1.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source lab3_1.tcl -notrace
 
 

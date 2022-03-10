@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`define FREQ_DIV_BIT 26
+`define FREQ_DIV_BIT 2
 
 module frequency_divider(
     clk_out, // divided clock output

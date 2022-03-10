@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log frequency_divider.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source frequency_divider.tcl
+EAStep vivado -log lab3_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab3_1.tcl
