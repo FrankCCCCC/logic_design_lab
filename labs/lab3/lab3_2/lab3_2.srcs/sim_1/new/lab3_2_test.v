@@ -35,7 +35,9 @@ begin
     CLK = 0;
     RST = 0;
     #10 RST = 1;
-    #10 RST = 0;
+//    #10 RST = 1;
+//    #10 RST = 0;
+//    #10 RST = 0;
     #10 RST = 1;
 end
 

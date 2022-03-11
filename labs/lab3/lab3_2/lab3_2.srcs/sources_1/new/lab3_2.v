@@ -19,8 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`define FREQ_DIV_BITS 27
-`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd1000000
+`define FREQ_DIV_BITS 30
+//`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd1000000
+`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000000
 
 module lab3_2(
     clk_out,
@@ -34,6 +35,7 @@ module lab3_2(
     output clk_out;
 //    output counter;
     
+    reg clk_in;
     reg clk_out;
     reg [`FREQ_DIV_BITS-1:0] counter_in;
     reg [`FREQ_DIV_BITS-1:0] counter_out;
@@ -42,10 +44,12 @@ module lab3_2(
         if(counter_out < (`FREQ_DIV_COUNT - 1))
         begin
             counter_in <= counter_out + `FREQ_DIV_BITS'd1;
+            clk_in <= clk_out;
         end
         else
         begin
             counter_in <= `FREQ_DIV_BITS'd0;
+            clk_in <= ~clk_out;
         end
         
     always@(posedge clk or negedge rst)
@@ -57,35 +61,6 @@ module lab3_2(
         else
         begin
             counter_out <= counter_in;
-            if(counter_in == (`FREQ_DIV_COUNT - 1))
-            begin
-                clk_out <= ~clk_out;
-            end
+            clk_out <= clk_in;
         end
 endmodule
-
-//`define FREQ_DIV_BIT 2
-
-//module lab3_2(
-//    clk_out, // divided clock output
-//    clk, // global clock input
-//    rst // active low reset
-//);
-
-//    output clk_out; // divided output
-//    input clk; // global clock input
-//    input rst; // active low reset
-//    reg clk_out; // clk output (in always block)
-//    reg [`FREQ_DIV_BIT-2:0] cnt; // remainder of the counter
-//    reg [`FREQ_DIV_BIT-1:0] cnt_tmp; // input to dff (in always block)
-    
-//    // Combinational logics: increment, neglecting overflow 
-//    always @(clk_out or cnt)
-//        cnt_tmp = {clk_out,cnt} + 1'b1;
-    
-//    // Sequential logics: Flip flops
-//    always @(posedge clk or negedge rst)
-//        if (~rst) {clk_out, cnt}<=`FREQ_DIV_BIT'd0;
-//        else {clk_out,cnt}<=cnt_tmp;
-        
-//endmodule

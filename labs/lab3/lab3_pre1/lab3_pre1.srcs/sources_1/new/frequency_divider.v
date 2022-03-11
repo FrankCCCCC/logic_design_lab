@@ -1,0 +1,47 @@
+`define FREQ_DIV_BITS 30
+
+`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd2
+// 1 Hz
+//`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000000
+
+module frequency_divider(
+    clk_out,
+//    counter,
+    clk,
+    rst
+    );
+    
+    input clk;
+    input rst;
+    output clk_out;
+//    output counter;
+    
+    reg clk_in;
+    reg clk_out;
+    reg [`FREQ_DIV_BITS-1:0] counter_in;
+    reg [`FREQ_DIV_BITS-1:0] counter_out;
+    
+    always@(counter_out or clk_out)
+        if(counter_out < (`FREQ_DIV_COUNT - 1))
+        begin
+            counter_in <= counter_out + `FREQ_DIV_BITS'd1;
+            clk_in <= clk_out;
+        end
+        else
+        begin
+            counter_in <= `FREQ_DIV_BITS'd0;
+            clk_in <= ~clk_out;
+        end
+        
+    always@(posedge clk or negedge rst)
+        if(~rst)
+        begin
+            counter_out <= `FREQ_DIV_BITS'd0;
+            clk_out <= 1'd0;
+        end
+        else
+        begin
+            counter_out <= counter_in;
+            clk_out <= clk_in;
+        end
+endmodule
