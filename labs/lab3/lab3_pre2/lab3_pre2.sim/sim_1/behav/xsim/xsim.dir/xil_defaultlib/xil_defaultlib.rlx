@@ -1,0 +1,10 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.srcs/sim_1/new/shift_register.v,1647054034,verilog,,D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.srcs/sources_1/new/shifter.v,,shift_register,,,,,,,,
+D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.srcs/sim_1/new/shift_register_test.v,1647054163,verilog,,,,shift_register_test,,,,,,,,
+D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.srcs/sim_1/new/shifter_test.v,1647053490,verilog,,,,shifter_test,,,,,,,,
+D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.srcs/sources_1/new/frequency_divider.v,1647054230,verilog,,D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.srcs/sim_1/new/shift_register.v,,frequency_divider,,,,,,,,
+D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.srcs/sources_1/new/shifter.v,1647053329,verilog,,D:/data/logic_design_lab/labs/lab3/lab3_pre2/lab3_pre2.srcs/sim_1/new/shift_register_test.v,,shifter,,,,,,,,
