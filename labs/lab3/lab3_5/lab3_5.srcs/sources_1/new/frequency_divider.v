@@ -24,6 +24,7 @@
 // 1 Hz
 `define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000000
 //`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd2
+//`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd5000000
 
 module frequency_divider(
     clk_out,

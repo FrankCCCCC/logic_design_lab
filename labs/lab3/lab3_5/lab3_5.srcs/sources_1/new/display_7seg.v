@@ -22,6 +22,7 @@
 `define DIGIT_N 4
 `define SEGMENT_N 8
 `define NONE_BITS `SEGMENT_N'b1111111_0
+`define EMPTY_BITS `SEGMENT_N'b1111111_1
 
 module display_7seg(
     d_sel,
@@ -34,7 +35,7 @@ module display_7seg(
     d3
     );
     
-    output [`DIGIT_N-1:0]d_sel;
+    output [0:`DIGIT_N-1]d_sel;
     output [`SEGMENT_N-1:0]d_out;
     input clk;
     input rst;
@@ -43,26 +44,43 @@ module display_7seg(
     input [`SEGMENT_N-1:0]d2;
     input [`SEGMENT_N-1:0]d3;
     
-    reg [`DIGIT_N-1:0]d_sel;
+    reg [0:`DIGIT_N-1]d_sel;
     reg [`SEGMENT_N-1:0]d_out;
+    reg [0:`DIGIT_N-1]d_sel_temp;
+    reg [`SEGMENT_N-1:0]d_out_temp;
+    wire clk_out;
     
-    always@(posedge clk or negedge rst)
+//    initial
+//    begin
+//        d_sel_temp <= `DIGIT_N'b1110;
+//        d_out_temp <= `EMPTY_BITS;
+//    end
+
+    segment7_frequency_divider U0(.clk(clk), .rst(rst), .clk_out(clk_out));
+    
+    always@(d_sel)
+    begin
+        case((d_sel << 1) | (d_sel >> (`DIGIT_N-1)))
+            `DIGIT_N'b1110: d_out_temp <= d0;
+            `DIGIT_N'b1101: d_out_temp <= d1;
+            `DIGIT_N'b1011: d_out_temp <= d2;
+            `DIGIT_N'b0111: d_out_temp <= d3;
+            default: d_out_temp <= `NONE_BITS;
+        endcase
+        d_sel_temp <= (d_sel << 1) | (d_sel >> (`DIGIT_N-1));
+    end
+    
+    always@(posedge clk_out or negedge rst)
     begin
         if(~rst)
         begin
-            d_out <= `NONE_BITS;
-            d_sel <= d_sel + `DIGIT_N'd1;
+            d_out <= `EMPTY_BITS;
+            d_sel <= `DIGIT_N'b1110;
         end
         else
         begin
-            case(d_sel)
-                `DIGIT_N'b0001: d_out <= d0;
-                `DIGIT_N'b0010: d_out <= d1;
-                `DIGIT_N'b0100: d_out <= d2;
-                `DIGIT_N'b1000: d_out <= d3;
-                default: d_out <= `NONE_BITS;
-            endcase
-            d_sel <= d_sel + `DIGIT_N'd1;
+            d_out <= d_out_temp;
+            d_sel <= d_sel_temp;
         end
     end
         

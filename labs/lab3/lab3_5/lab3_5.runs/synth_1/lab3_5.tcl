@@ -17,6 +17,9 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -31,6 +34,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab3/lab3_5/lab3_5.srcs/sources_1/new/display_7seg.v
   D:/data/logic_design_lab/labs/lab3/lab3_5/lab3_5.srcs/sources_1/new/frequency_divider.v
+  D:/data/logic_design_lab/labs/lab3/lab3_5/lab3_5.srcs/sources_1/new/segment7_frequency_divider.v
   D:/data/logic_design_lab/labs/lab3/lab3_5/lab3_5.srcs/sources_1/new/shift_register.v
   D:/data/logic_design_lab/labs/lab3/lab3_5/lab3_5.srcs/sources_1/new/shifter.v
   D:/data/logic_design_lab/labs/lab3/lab3_5/lab3_5.srcs/sources_1/new/lab3_5.v
