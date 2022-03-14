@@ -101,7 +101,7 @@ assign d = i;
 
 #### 7-Segment Display Decoder
 
-We design the logic circuit with K-map to implement the decoder, but in Verilog, to simplify the code, we 
+We design the logic circuit with K-map to implement the decoder, but in Verilog, to simplify the code, we implement the logic with switch-case.
 
 **Boolean Equation:**
 
@@ -201,7 +201,8 @@ assign d2 = div[3:0];
 
 #### Bull-And-Cow Game
 
-In the file *mux.v*... Following are the Boolean equation and the code.
+In the file *lab2_3.v*, 
+Following are the Boolean equation and the code.
 
 **Boolean Equation**
 
