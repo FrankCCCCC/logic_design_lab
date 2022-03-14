@@ -1,0 +1,377 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 3200
+License: Customer
+
+Current time: 	Mon Mar 14 15:02:31 CST 2022
+Time zone: 	Taipei Standard Time (Asia/Taipei)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 150
+Available screens: 1
+Available disk space: 55 GB
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=18
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	quant
+User home directory: C:/Users/quant
+User working directory: D:/data/logic_design_lab/labs/lab2/lab2_3
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/quant/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/quant/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/quant/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	D:/data/logic_design_lab/labs/lab2/lab2_3/vivado.log
+Vivado journal file location: 	D:/data/logic_design_lab/labs/lab2/lab2_3/vivado.jou
+Engine tmp dir: 	D:/data/logic_design_lab/labs/lab2/lab2_3/.Xil/Vivado-3200-DESKTOP-0M9JO91
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 640 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 84 MB (+85108kb) [00:00:14]
+// [Engine Memory]: 604 MB (+481520kb) [00:00:14]
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: D:\data\logic_design_lab\labs\lab2\lab2_3\lab2_3.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 715 MB. GUI used memory: 56 MB. Current time: 3/14/22, 3:02:33 PM CST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 811 MB (+185616kb) [00:00:25]
+// [GUI Memory]: 103 MB (+16360kb) [00:00:26]
+// [GUI Memory]: 111 MB (+2542kb) [00:00:29]
+// WARNING: HEventQueue.dispatchEvent() is taking  7444 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:33 ; elapsed = 00:00:15 . Memory (MB): peak = 898.719 ; gain = 258.074 
+// Project name: lab2_3; location: D:/data/logic_design_lab/labs/lab2/lab2_3; part: xc7a35tcpg236-1
+// [Engine Memory]: 879 MB (+28787kb) [00:00:31]
+dismissDialog("Open Project"); // bB (cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 881 MB. GUI used memory: 61 MB. Current time: 3/14/22, 3:02:49 PM CST
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (lab1_3.v) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab1_3 (lab1_3.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab1_3 (lab1_3.v)]", 1, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// [GUI Memory]: 119 MB (+2208kb) [00:00:36]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab1_3 (lab1_3.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab1_3 (lab1_3.v)]", 1, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab1_3 (lab1_3.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab1_3 (lab1_3.v)]", 1, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 234ms to process. Increasing delay to 2000 ms.
+// Elapsed time: 45 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab1_3 (lab1_3.v), U0 : extract (extract.v)]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab1_3 (lab1_3.v), U0 : extract (extract.v)]", 2, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("extract.v", 222, 226); // ch (w, cr)
+typeControlKey((HResource) null, "extract.v", 'c'); // ch (w, cr)
+typeControlKey((HResource) null, "extract.v", 'c'); // ch (w, cr)
+// Elapsed time: 31 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lab1_3.v", 1); // i (h, cr)
+// Elapsed time: 17 seconds
+selectCodeEditor("lab1_3.v", 135, 312); // ch (w, cr)
+typeControlKey((HResource) null, "lab1_3.v", 'c'); // ch (w, cr)
+typeControlKey((HResource) null, "lab1_3.v", 'c'); // ch (w, cr)
+// Elapsed time: 85 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 7, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 7, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// PAPropertyPanels.initPanels (sim_1) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 8, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, extract_test (extract_test.v)]", 10, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, extract_test (extract_test.v)]", 10, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, extract_test (extract_test.v)]", 10, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, extract_test (extract_test.v)]", 10, true, false, false, false, true, false); // B (F, cr) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top extract_test [get_filesets sim_1] 
+// bB (cr):  Set as Top : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Set as Top"); // bB (cr)
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 407ms to process. Increasing delay to 3000 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cr)
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false, false, false, false, true, false); // u (O, cr) - Popup Trigger
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false, false, false, false, true, false); // u (O, cr) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_SETTINGS, "Simulation Settings..."); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_SETTINGS
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// I (cr): Settings: addNotify
+// 'dy' command handler elapsed time: 3 seconds
+// [Engine Memory]: 935 MB (+12580kb) [00:04:27]
+// WARNING: HEventQueue.dispatchEvent() is taking  3982 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 935 MB. GUI used memory: 79 MB. Current time: 3/14/22, 3:06:43 PM CST
+applyEscape(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, (String) null); // u (O, cr)
+applyEscape(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, (String) null); // L (E, I)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (I)
+dismissDialog("Settings"); // I (cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false, false, false, false, true, false); // u (O, cr) - Popup Trigger
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'extract_test' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj extract_test_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sources_1/new/extract.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module extract INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sim_1/new/extract_test.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module extract_test 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '4' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto f904acfb336a4154be38fad944815e7c --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot extract_test_behav xil_defaultlib.extract_test xil_defaultlib.glbl -log elaborate.log" 
+// Tcl Message: Vivado Simulator 2019.2 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved. Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto f904acfb336a4154be38fad944815e7c --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot extract_test_behav xil_defaultlib.extract_test xil_defaultlib.glbl -log elaborate.log  Using 2 slave threads. 
+// Tcl Message: Starting static elaboration Pass Through NonSizing Optimizer Completed static elaboration Starting simulation data flow analysis Completed simulation data flow analysis Time Resolution for simulation is 1ps Compiling module xil_defaultlib.extract Compiling module xil_defaultlib.extract_test Compiling module xil_defaultlib.glbl 
+// Tcl Message: Built simulation snapshot extract_test_behav 
+// Tcl Message:  ****** Webtalk v2019.2 (64-bit)   **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019   **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.  source D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim/xsim.dir/extract_test_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// [GUI Memory]: 141 MB (+16804kb) [00:04:59]
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [Common 17-186] 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim/xsim.dir/extract_test_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Mar 14 15:07:14 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Mon Mar 14 15:07:14 2022... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 967.605 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '15' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "extract_test_behav -key {Behavioral:sim_1:Functional:extract_test} -tclbatch {extract_test.tcl} -view {D:/data/logic_design_lab/labs/lab2/lab2_3/lab1_3_test_behav.wcfg} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2019.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  2126 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Elapsed time: 25 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// Waveform: addNotify
+// Tcl Message: open_wave_config D:/data/logic_design_lab/labs/lab2/lab2_3/lab1_3_test_behav.wcfg 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 944 MB. GUI used memory: 86 MB. Current time: 3/14/22, 3:07:20 PM CST
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// Tcl Message: source extract_test.tcl 
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// Tcl Message: $finish called at time : 230 ns : File "D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sim_1/new/extract_test.v" Line 55 
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: xsim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 967.605 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'extract_test_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 967.605 ; gain = 0.000 
+// 'd' command handler elapsed time: 28 seconds
+dismissDialog("Run Simulation"); // e (cr)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lab1_3_test_behav.wcfg", 3); // i (h, cr)
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 218ms to process. Increasing delay to 2000 ms.
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // E (f, cr)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 944 MB. GUI used memory: 88 MB. Current time: 3/14/22, 3:07:34 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 944 MB. GUI used memory: 88 MB. Current time: 3/14/22, 3:07:34 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 944 MB. GUI used memory: 88 MB. Current time: 3/14/22, 3:07:34 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 944 MB. GUI used memory: 88 MB. Current time: 3/14/22, 3:07:35 PM CST
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aL (aI, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, extract_test (extract_test.v)]", 9, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, lab1_3_test (lab1_3_test.v)]", 11, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, lab1_3_test (lab1_3_test.v)]", 11, true, false, false, false, true, false); // B (F, cr) - Popup Trigger - Node
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top lab1_3_test [get_filesets sim_1] 
+// TclEventType: FILE_SET_CHANGE
+// bB (cr):  Set as Top : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Set as Top"); // bB (cr)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: boost::filesystem::remove: The process cannot access the file because it is being used by another process: "D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim/simulate.log" 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: boost::filesystem::remove: The process cannot access the file because it is being used by another process: "D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim/simulate.log" 
+// HOptionPane Error: 'boost::filesystem::remove: The process cannot access the file because it is being used by another process: "D:/data/logic_design_lab/labs/lab2/lab2_ 3/lab2_3.sim/sim_1/behav/xsim/simulate.log" (Run Simulation)'
+// HMemoryUtils.trashcanNow. Engine heap size: 984 MB. GUI used memory: 89 MB. Current time: 3/14/22, 3:07:54 PM CST
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cr)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - extract_test", "DesignTask.SIMULATION");
+// A (cr): Confirm Close: addNotify
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", false); // g (Q, A): FALSE
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+// [Engine Memory]: 986 MB (+4304kb) [00:05:40]
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bB (cr):  Close : addNotify
+// TclEventType: WAVEFORM_CLOSE_WCFG
+dismissDialog("Confirm Close"); // A (cr)
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// WARNING: HEventQueue.dispatchEvent() is taking  1980 ms.
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// Tcl Message: close_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 1092.801 ; gain = 3.512 
+// Elapsed time: 11 seconds
+dismissDialog("Close"); // bB (cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'lab1_3_test' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj lab1_3_test_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sources_1/new/extract.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module extract INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sim_1/new/lab1_3.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module lab1_3 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sim_1/new/lab1_3_test.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module lab1_3_test 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '3' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto f904acfb336a4154be38fad944815e7c --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot lab1_3_test_behav xil_defaultlib.lab1_3_test xil_defaultlib.glbl -log elaborate.log" 
+// Tcl Message: Built simulation snapshot lab1_3_test_behav 
+// Tcl Message:  ****** Webtalk v2019.2 (64-bit)   **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019   **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.  source D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim/xsim.dir/lab1_3_test_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim/xsim.dir/lab1_3_test_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Mar 14 15:08:28 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Mon Mar 14 15:08:28 2022... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1092.801 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "lab1_3_test_behav -key {Behavioral:sim_1:Functional:lab1_3_test} -tclbatch {lab1_3_test.tcl} -view {D:/data/logic_design_lab/labs/lab2/lab2_3/lab1_3_test_behav.wcfg} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2019.2 
