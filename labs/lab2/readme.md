@@ -201,7 +201,11 @@ assign d2 = div[3:0];
 
 #### Bull-And-Cow Game
 
-In the file *lab2_3.v*, 
+In the file *lab2_3.v*, I implement the logic circuit of the Bull-And-Cow game. The Bull shows the number of the right numbers in the right positions, which means the digit 1 of guessed number is the same as the digit of the correct number, so as digit 2. Denote the variable A_D1 and A_D2 are the first digit and the second digit of guessed number and B_D1 and B_D2 are the digits of the correct number. If A_D1 is equal to B_D1 and A_D2 is equal to B_D2, there are 2 bulls. If only one digit is in the right place, there is 1 bull, which can be implemented with XOR gate.
+
+
+
+
 Following are the Boolean equation and the code.
 
 **Boolean Equation**
