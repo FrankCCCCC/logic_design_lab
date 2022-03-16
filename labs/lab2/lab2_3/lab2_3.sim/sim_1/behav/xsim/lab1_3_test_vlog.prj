@@ -1,6 +1,5 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../lab2_3.srcs/sources_1/new/extract.v" \
 "../../../../lab2_3.srcs/sim_1/new/lab1_3.v" \
 "../../../../lab2_3.srcs/sim_1/new/lab1_3_test.v" \
 

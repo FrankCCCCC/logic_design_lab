@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Thu Mar 10 17:36:59 2022
+| Date             : Wed Mar 16 15:55:46 2022
 | Host             : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command          : report_power -file lab1_3_power_routed.rpt -pb lab1_3_power_summary_routed.pb -rpx lab1_3_power_routed.rpx
 | Design           : lab1_3
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 6.198        |
+| Total On-Chip Power (W)  | 3.793        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 6.100        |
-| Device Static (W)        | 0.098        |
+| Dynamic (W)              | 3.710        |
+| Device Static (W)        | 0.083        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 54.0         |
-| Junction Temperature (C) | 56.0         |
+| Max Ambient (C)          | 66.0         |
+| Junction Temperature (C) | 44.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,12 +52,12 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.109 |       20 |       --- |             --- |
-|   LUT as Logic |     0.109 |       20 |     20800 |            0.10 |
-| Signals        |     0.231 |       36 |       --- |             --- |
-| I/O            |     5.761 |       22 |       106 |           20.75 |
-| Static Power   |     0.098 |          |           |                 |
-| Total          |     6.198 |          |           |                 |
+| Slice Logic    |     0.039 |       10 |       --- |             --- |
+|   LUT as Logic |     0.039 |       10 |     20800 |            0.05 |
+| Signals        |     0.164 |       26 |       --- |             --- |
+| I/O            |     3.507 |       22 |       106 |           20.75 |
+| Static Power   |     0.083 |          |           |                 |
+| Total          |     3.793 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -67,16 +67,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.434 |       0.403 |      0.031 |
-| Vccaux    |       1.800 |     0.224 |       0.209 |      0.015 |
-| Vcco33    |       3.300 |     1.614 |       1.613 |      0.001 |
+| Vccint    |       1.000 |     0.286 |       0.267 |      0.020 |
+| Vccaux    |       1.800 |     0.140 |       0.126 |      0.014 |
+| Vcco33    |       3.300 |     0.975 |       0.974 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -134,7 +134,7 @@ Table of Contents
 +--------+-----------+
 | Name   | Power (W) |
 +--------+-----------+
-| lab1_3 |     6.100 |
+| lab1_3 |     3.710 |
 +--------+-----------+
 
 

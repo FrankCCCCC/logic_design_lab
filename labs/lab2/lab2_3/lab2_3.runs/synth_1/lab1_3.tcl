@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,10 +28,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib {
-  D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sources_1/new/extract.v
-  D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sim_1/new/lab1_3.v
-}
+read_verilog -library xil_defaultlib D:/data/logic_design_lab/labs/lab2/lab2_3/lab2_3.srcs/sim_1/new/lab1_3.v
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
