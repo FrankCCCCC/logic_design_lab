@@ -1,45 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1646921198">
-  <File Type="OPT-HWDEF" Name="lab3_1.hwdef"/>
   <File Type="ROUTE-BUS-SKEW" Name="lab3_1_bus_skew_routed.rpt"/>
   <File Type="PA-DCP" Name="lab3_1.dcp"/>
-  <File Type="BITSTR-BMM" Name="lab3_1_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="lab3_1_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="lab3_1_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="lab3_1.hwdef"/>
   <File Type="ROUTE-PWR" Name="lab3_1_power_routed.rpt"/>
   <File Type="PA-TCL" Name="lab3_1.tcl"/>
-  <File Type="OPT-TIMING" Name="lab3_1_timing_summary_opted.rpt"/>
+  <File Type="BITSTR-BMM" Name="lab3_1_bd.bmm"/>
   <File Type="OPT-DCP" Name="lab3_1_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="lab3_1_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="lab3_1_reports.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="lab3_1_power_summary_routed.pb"/>
   <File Type="OPT-DRC" Name="lab3_1_drc_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="lab3_1_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="lab3_1_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="lab3_1_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="lab3_1_placed.dcp"/>
   <File Type="PLACE-IO" Name="lab3_1_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="lab3_1_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="lab3_1_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="lab3_1_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="lab3_1_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="lab3_1_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="lab3_1_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="lab3_1_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="lab3_1_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="lab3_1.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="lab3_1_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="lab3_1_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="lab3_1_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="lab3_1.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="lab3_1_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="lab3_1_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="lab3_1_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="lab3_1_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="lab3_1_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="lab3_1_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="lab3_1_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="lab3_1.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="lab3_1_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="lab3_1.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="lab3_1_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="lab3_1_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="lab3_1_power_routed.rpx"/>
@@ -48,19 +37,12 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="lab3_1_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="lab3_1_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="lab3_1_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="lab3_1_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="lab3_1_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="lab3_1_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="lab3_1_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="lab3_1_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="lab3_1_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="lab3_1_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="lab3_1_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="lab3_1_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="lab3_1_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="lab3_1_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="lab3_1.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="lab3_1_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="lab3_1.rbt"/>
   <File Type="BITSTR-NKY" Name="lab3_1.nky"/>
   <File Type="PDI-FILE" Name="lab3_1.pdi"/>
@@ -69,7 +51,6 @@
   <File Type="RNPI_FILE" Name="lab3_1.rnpi"/>
   <File Type="NPI_FILE" Name="lab3_1.npi"/>
   <File Type="RBD_FILE" Name="lab3_1.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="lab3_1.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="lab3_1.sysdef"/>
   <File Type="BG-BGN" Name="lab3_1.bgn"/>
@@ -136,5 +117,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>
