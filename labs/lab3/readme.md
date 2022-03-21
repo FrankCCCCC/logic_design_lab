@@ -377,7 +377,7 @@ Same as Lab3-Pre2.
 
 **1Hz 8-Cascaded Shift Registers**
 
-
+We can achieve this functionality with the 1 Hz frequency divider as the clock trigger of the 8-cascaded shift registers.
 
 **Verilog Code**
 
@@ -400,6 +400,58 @@ module shift_register(
     frequency_divider U0(.clk(clk), .rst(rst), .clk_out(CLK_OUT));
     shifter U1(.clk(CLK_OUT), .rst(rst), .q(q));
 endmodule
+```
+
+**Block Diagram**
+
+![Lab 3-Pre2 Logic Diagram](img/lab3-pre2_diag.jpg)
+
+## Lab 3 - 5: 1 Hz 10 Digit Marquee on 7-Segment Display
+
+### Design Specification
+
+[Source Code](./lab3_pre2/)
+
+**Frequency Divider**
+
+Input: rst, clk
+
+Output: clk_out
+
+**10-Cascaded Shift Registers**
+
+Input: rst, clk
+
+Output [9:0]q
+
+**1Hz 10-Cascaded Shift Registers**
+
+Input: rst, clk
+
+Output [9:0]q
+
+**1 Hz 7-Segment Display**
+
+
+
+### Design Implementation
+
+**Frequency Divider**
+
+Same as Lab3-2.
+
+**10-Cascaded Shift Registers**
+
+Simply extend the 8-digit shift registers in the Lab3-Pre2 to 10-digit. Each digit contains 8 bits to store the pattern shown on the 7-segment display.
+
+**1Hz 10-Cascaded Shift Registers**
+
+Simply extend the 8-digit shift register in Lab3-4 to the 10-digit one. 
+
+**Verilog Code**
+
+```verilog
+
 ```
 
 **Block Diagram**
