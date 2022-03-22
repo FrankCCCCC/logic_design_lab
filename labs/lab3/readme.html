@@ -1,0 +1,619 @@
+<h1 id="lab-3---counters-and-shifters-i-report">Lab 3 - Counters and
+Shifters I Report</h1>
+<p>106033233 資工大四 周聖諺</p>
+<hr />
+<h2 id="lab-3---pre-1-4-bit-synchronous-binary-up-counter">Lab 3 - Pre
+1: 4-bit Synchronous Binary Up Counter</h2>
+<h3 id="design-specification">Design Specification</h3>
+<p><a href="./lab3_pre1/">Source Code</a></p>
+<p><strong>4-bit Synchronous Binary Up Counter</strong></p>
+<p>Input: rst, clk</p>
+<p>Output [3:0]q</p>
+<h3 id="design-implementation">Design Implementation</h3>
+<p>To implement the binary up counter, I use a variable q_in to count
+from 0 to 15. Whenever the output of the counter q changes, the variable
+q_in should be changed to q + 1. In addition, when the circuit detects
+the raise of the clock, the output of the counter will change to the
+variable q_in. On the other hand, if the reset switch to 0 or the
+counter hit the upper limit(15), q will be reset to 0.</p>
+<p><strong>Verilog Code</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define BCD_COUNTER_BITS 4</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> binary_up_counter<span class="op">(</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    q<span class="op">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    clk<span class="op">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    rst</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`BCD_COUNTER_BITS</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`BCD_COUNTER_BITS</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`BCD_COUNTER_BITS</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q_in<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    always<span class="op">@(</span>q<span class="op">)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">begin</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        q_in <span class="op">&lt;=</span> q <span class="op">+</span> <span class="ot">`BCD_COUNTER_BITS</span><span class="bn">&#39;d1</span><span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    always<span class="op">@(</span><span class="kw">posedge</span> clk <span class="dt">or</span> <span class="kw">negedge</span> rst<span class="op">)</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">begin</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span><span class="op">(~</span>rst<span class="op">)</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>            q <span class="op">&lt;=</span> <span class="ot">`BCD_COUNTER_BITS</span><span class="bn">&#39;d0</span><span class="op">;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>            q <span class="op">&lt;=</span> q_in<span class="op">;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>Block Diagram</strong></p>
+<figure>
+<img src="img/lab3-pre1_diag.png" alt="Lab 3-Pre1 Logic Diagram" />
+<figcaption aria-hidden="true">Lab 3-Pre1 Logic Diagram</figcaption>
+</figure>
+<p><strong>RTL Simulation</strong></p>
+<figure>
+<img src="img/lab3-pre1_sim.png" alt="Lab 2-Pre1 RTL Simulation" />
+<figcaption aria-hidden="true">Lab 2-Pre1 RTL Simulation</figcaption>
+</figure>
+<h2 id="lab-3---pre-2-8-cascaded-shift-registers">Lab 3 - Pre 2:
+8-Cascaded Shift Registers</h2>
+<h3 id="design-specification-1">Design Specification</h3>
+<p><a href="./lab3_pre2/">Source Code</a></p>
+<p><strong>D Flip Flop</strong></p>
+<p>Input d, clk, rst</p>
+<p>Output q</p>
+<p><strong>8-Cascaded Shift Registers</strong></p>
+<p>Input: rst, clk</p>
+<p>Output [7:0]q</p>
+<h3 id="design-implementation-1">Design Implementation</h3>
+<p><strong>D Flip Flop</strong></p>
+<p>I use a variable d to store the input and q as the output of the flip
+flop. Whenever the clock is raised, the output variable q will be
+updated with the input variable d. In addition, when the reset is
+triggered, the output q will be 0.</p>
+<p><strong>8-Cascaded Shift Registers</strong></p>
+<p>I use a variable q with 8 entries to store the value. Whenever the
+clock is raised, it will shift the value in the previous register to the
+next one and the last one will be shift to the first register.</p>
+<p><strong>Verilog Code</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define BIT_WIDTH 8</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> shifter<span class="op">(</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    q<span class="op">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    clk<span class="op">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    rst</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`BIT_WIDTH</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q<span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst<span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`BIT_WIDTH</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q<span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    always<span class="op">@(</span><span class="kw">posedge</span> clk <span class="dt">or</span> <span class="kw">negedge</span> rst<span class="op">)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">begin</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span><span class="op">(~</span>rst<span class="op">)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            q <span class="op">&lt;=</span> <span class="ot">`BIT_WIDTH</span><span class="bn">&#39;b01010101</span><span class="op">;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>            q<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">&lt;=</span> q<span class="op">[</span><span class="dv">7</span><span class="op">];</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>            q<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">&lt;=</span> q<span class="op">[</span><span class="dv">0</span><span class="op">];</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>            q<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">&lt;=</span> q<span class="op">[</span><span class="dv">1</span><span class="op">];</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>            q<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">&lt;=</span> q<span class="op">[</span><span class="dv">2</span><span class="op">];</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>            q<span class="op">[</span><span class="dv">4</span><span class="op">]</span> <span class="op">&lt;=</span> q<span class="op">[</span><span class="dv">3</span><span class="op">];</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>            q<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">&lt;=</span> q<span class="op">[</span><span class="dv">4</span><span class="op">];</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>            q<span class="op">[</span><span class="dv">6</span><span class="op">]</span> <span class="op">&lt;=</span> q<span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>            q<span class="op">[</span><span class="dv">7</span><span class="op">]</span> <span class="op">&lt;=</span> q<span class="op">[</span><span class="dv">6</span><span class="op">];</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>Block Diagram</strong></p>
+<figure>
+<img src="img/lab3-pre2_diag.png" alt="Lab 3-Pre2 Logic Diagram" />
+<figcaption aria-hidden="true">Lab 3-Pre2 Logic Diagram</figcaption>
+</figure>
+<p><strong>RTL Simulation</strong></p>
+<figure>
+<img src="img/lab3-pre2_sim.png" alt="Lab 2-Pre2 RTL Simulation" />
+<figcaption aria-hidden="true">Lab 2-Pre2 RTL Simulation</figcaption>
+</figure>
+<h2 id="lab-3---1-1227-frequency-divider">Lab 3 - 1: <span
+class="math inline">1/2<sup>27</sup></span> Frequency Divider</h2>
+<h3 id="design-specification-2">Design Specification</h3>
+<p><a href="./lab3_1/">Source Code</a></p>
+<p>Input: rst_n, clk</p>
+<p>Output: clk_out</p>
+<h3 id="design-implementation-2">Design Implementation</h3>
+<p>To implement the frequency divider, I use a variable with 26 bits to
+count from 0 to <span class="math inline">1<sup>27</sup> − 1</span>. and
+then back to 0 while the variable hits <span
+class="math inline">1<sup>27</sup> − 1</span>.</p>
+<p>Actually, <span class="math inline">1/2<sup>27</sup></span> frequency
+divider can also be implemented by cascading 26 D-type flip flop.
+Whenever we cascade one flip flop, the frequency can be divided by
+2.</p>
+<p><strong>Verilog Code</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define FREQ_DIV_BIT 26</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> lab3_1<span class="op">(</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    clk_out<span class="op">,</span> <span class="co">// divided clock output</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    clk<span class="op">,</span> <span class="co">// global clock input</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    rst_n <span class="co">// active low reset</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> clk_out<span class="op">;</span> <span class="co">// divided output</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span> <span class="co">// global clock input</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst_n<span class="op">;</span> <span class="co">// active low reset</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> clk_out<span class="op">;</span> <span class="co">// clk output (in always block)</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`FREQ_DIV_BIT</span><span class="dv">-2</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span> cnt<span class="op">;</span> <span class="co">// remainder of the counter</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`FREQ_DIV_BIT</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span> cnt_tmp<span class="op">;</span> <span class="co">// input to dff (in always block)</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Combinational logics: increment, neglecting overflow </span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">always</span> <span class="op">@(</span>clk_out <span class="dt">or</span> cnt<span class="op">)</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        cnt_tmp <span class="op">=</span> <span class="op">{</span>clk_out<span class="op">,</span>cnt<span class="op">}</span> <span class="op">+</span> <span class="bn">1&#39;b1</span><span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Sequential logics: Flip flops</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">always</span> <span class="op">@(</span><span class="kw">posedge</span> clk <span class="dt">or</span> <span class="kw">negedge</span> rst_n<span class="op">)</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(~</span>rst_n<span class="op">)</span> <span class="op">{</span>clk_out<span class="op">,</span> cnt<span class="op">}&lt;=</span><span class="ot">`FREQ_DIV_BIT</span><span class="bn">&#39;d0</span><span class="op">;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> <span class="op">{</span>clk_out<span class="op">,</span>cnt<span class="op">}&lt;=</span>cnt_tmp<span class="op">;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>I/O Pin Assignment</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>I/O</th>
+<th>clk</th>
+<th>rst_n</th>
+<th>clk_out</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LOC</td>
+<td>W5</td>
+<td>V17</td>
+<td>U16</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Block Diagram</strong></p>
+<figure>
+<img src="img/lab3-1_diag.png" alt="Lab 3-1 Logic Diagram" />
+<figcaption aria-hidden="true">Lab 3-1 Logic Diagram</figcaption>
+</figure>
+<h2 id="lab-3---2-1hz-count-for-50m-frequency-divider">Lab 3 - 2: 1Hz
+Count-for-50M Frequency Divider</h2>
+<h3 id="design-specification-3">Design Specification</h3>
+<p><a href="./lab3_2/">Source Code</a></p>
+<p>Input: rst, clk</p>
+<p>Output: clk_out</p>
+<h3 id="design-implementation-3">Design Implementation</h3>
+<p>To generate the 1 Hz clock, I use variables counter_in and
+counter_out to count from 0 to 50M. The counter_in will store the value
+for the next time step and pass the value to the counter_out when the
+clock raises. The reason why we need 50M counting is each counting is
+triggered only when the clock raises, so the circuit will count 1 more
+for every twice clock pulses.</p>
+<p><strong>Verilog Code</strong></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define FREQ_DIV_BITS 30</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">//`define FREQ_DIV_COUNT `FREQ_DIV_BITS&#39;d1000000</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ot">`define FREQ_DIV_COUNT `FREQ_DIV_BITS&#39;d50000000</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> lab3_2<span class="op">(</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    clk_out<span class="op">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">//    counter,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    clk<span class="op">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    rst</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> clk_out<span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">//    output counter;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> clk_in<span class="op">;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> clk_out<span class="op">;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`FREQ_DIV_BITS</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span> counter_in<span class="op">;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`FREQ_DIV_BITS</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span> counter_out<span class="op">;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    always<span class="op">@(</span>counter_out <span class="dt">or</span> clk_out<span class="op">)</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span><span class="op">(</span>counter_out <span class="op">&lt;</span> <span class="op">(</span><span class="ot">`FREQ_DIV_COUNT</span> <span class="op">-</span> <span class="dv">1</span><span class="op">))</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>            counter_in <span class="op">&lt;=</span> counter_out <span class="op">+</span> <span class="ot">`FREQ_DIV_BITS</span><span class="bn">&#39;d1</span><span class="op">;</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>            clk_in <span class="op">&lt;=</span> clk_out<span class="op">;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>            counter_in <span class="op">&lt;=</span> <span class="ot">`FREQ_DIV_BITS</span><span class="bn">&#39;d0</span><span class="op">;</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>            clk_in <span class="op">&lt;=</span> <span class="op">~</span>clk_out<span class="op">;</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    always<span class="op">@(</span><span class="kw">posedge</span> clk <span class="dt">or</span> <span class="kw">negedge</span> rst<span class="op">)</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span><span class="op">(~</span>rst<span class="op">)</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>            counter_out <span class="op">&lt;=</span> <span class="ot">`FREQ_DIV_BITS</span><span class="bn">&#39;d0</span><span class="op">;</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>            clk_out <span class="op">&lt;=</span> <span class="bn">1&#39;d0</span><span class="op">;</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>            counter_out <span class="op">&lt;=</span> counter_in<span class="op">;</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>            clk_out <span class="op">&lt;=</span> clk_in<span class="op">;</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>I/O Pin Assignment</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>I/O</th>
+<th>clk</th>
+<th>rst</th>
+<th>clk_out</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LOC</td>
+<td>W5</td>
+<td>V17</td>
+<td>U16</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Block Diagram</strong></p>
+<figure>
+<img src="img/lab3-2_diag.png" alt="Lab 3-2 Logic Diagram" />
+<figcaption aria-hidden="true">Lab 3-2 Logic Diagram</figcaption>
+</figure>
+<h2 id="lab-3---3-1hz-4-bit-synchronous-binary-up-counter">Lab 3 - 3:
+1Hz 4-bit Synchronous Binary Up Counter</h2>
+<h3 id="design-specification-4">Design Specification</h3>
+<p><a href="./lab3_3/">Source Code</a></p>
+<p><strong>Frequency Divider</strong></p>
+<p>Input: rst, clk</p>
+<p>Output: clk_out</p>
+<p><strong>4-bit Synchronous Binary Up Counter</strong></p>
+<p>Input: rst, clk</p>
+<p>Output [3:0]q;</p>
+<p><strong>1Hz 4-bit Synchronous Binary Up Counter</strong></p>
+<p>Input: rst, clk</p>
+<p>Output [3:0]q;</p>
+<h3 id="design-implementation-4">Design Implementation</h3>
+<p><strong>Frequency Divider</strong></p>
+<p>Same as Lab3-2.</p>
+<p><strong>4-bit Synchronous Binary Up Counter</strong></p>
+<p>Same as Lab3-pre1.</p>
+<p><strong>1Hz 4-bit Synchronous Binary Up Counter</strong></p>
+<p>All we need to do is combine the 1 Hz frequency divider and the 4-bit
+binary up counter which triggered by the 1 Hz frequency divider.</p>
+<p><strong>Verilog Code</strong></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define BCD_COUNTER_BITS 4</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ot">`define RST_HIGH 1&#39;b1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> lab3_3<span class="op">(</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    q<span class="op">,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    rst<span class="op">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    clk</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`BCD_COUNTER_BITS</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst<span class="op">;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">//    reg [`BCD_COUNTER_BITS-1:0]q;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> DIV_CLK<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    frequency_divider U0<span class="op">(</span>.clk<span class="op">(</span>clk<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .clk_out<span class="op">(</span>DIV_CLK<span class="op">));</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    binary_up_counter U1<span class="op">(</span>.clk<span class="op">(</span>DIV_CLK<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .q<span class="op">(</span>q<span class="op">));</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>I/O Pin Assignment</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>I/O</th>
+<th>clk</th>
+<th>rst</th>
+<th>q[0]</th>
+<th>q[1]</th>
+<th>q[2]</th>
+<th>q[3]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LOC</td>
+<td>W5</td>
+<td>V17</td>
+<td>U16</td>
+<td>E19</td>
+<td>U19</td>
+<td>V19</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Block Diagram</strong></p>
+<figure>
+<img src="img/lab3-3_diag.png" alt="Lab 3-3 Logic Diagram" />
+<figcaption aria-hidden="true">Lab 3-3 Logic Diagram</figcaption>
+</figure>
+<h2 id="lab-3---4-1-hz-8-cascaded-shift-registers">Lab 3 - 4: 1 Hz
+8-Cascaded Shift Registers</h2>
+<h3 id="design-specification-5">Design Specification</h3>
+<p><a href="./lab3_4/">Source Code</a></p>
+<p><strong>Frequency Divider</strong></p>
+<p>Input: rst, clk</p>
+<p>Output: clk_out</p>
+<p><strong>8-Cascaded Shift Registers</strong></p>
+<p>Input: rst, clk</p>
+<p>Output [7:0]q</p>
+<p><strong>1 Hz 8-Cascaded Shift Registers</strong></p>
+<p>Input: rst, clk</p>
+<p>Output [7:0]q</p>
+<h3 id="design-implementation-5">Design Implementation</h3>
+<p><strong>Frequency Divider</strong></p>
+<p>Same as Lab3-2.</p>
+<p><strong>8-Cascaded Shift Registers</strong></p>
+<p>Same as Lab3-Pre2.</p>
+<p><strong>1 Hz 8-Cascaded Shift Registers</strong></p>
+<p>We can achieve this functionality with the 1 Hz frequency divider as
+the clock trigger of the 8-cascaded shift registers.</p>
+<p><strong>Verilog Code</strong></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define BIT_WIDTH 8</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> shift_register<span class="op">(</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    q<span class="op">,</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    clk<span class="op">,</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    rst</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`BIT_WIDTH</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q<span class="op">;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst<span class="op">;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`BIT_WIDTH</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q<span class="op">;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> CLK_OUT<span class="op">;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    frequency_divider U0<span class="op">(</span>.clk<span class="op">(</span>clk<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .clk_out<span class="op">(</span>CLK_OUT<span class="op">));</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    shifter U1<span class="op">(</span>.clk<span class="op">(</span>CLK_OUT<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .q<span class="op">(</span>q<span class="op">));</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>Block Diagram</strong></p>
+<figure>
+<img src="img/lab3-4_diag.png" alt="Lab 3-4 Logic Diagram" />
+<figcaption aria-hidden="true">Lab 3-4 Logic Diagram</figcaption>
+</figure>
+<p><strong>I/O Pin Assignment</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 7%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>I/O</th>
+<th>clk</th>
+<th>rst</th>
+<th>q[0]</th>
+<th>q[1]</th>
+<th>q[2]</th>
+<th>q[3]</th>
+<th>q[4]</th>
+<th>q[5]</th>
+<th>q[6]</th>
+<th>q[7]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LOC</td>
+<td>W5</td>
+<td>V17</td>
+<td>U16</td>
+<td>E19</td>
+<td>U19</td>
+<td>V19</td>
+<td>W18</td>
+<td>U15</td>
+<td>U14</td>
+<td>V14</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lab-3---5-1-hz-10-digit-marquee-on-7-segment-display">Lab 3 - 5:
+1 Hz 10 Digit Marquee on 7-Segment Display</h2>
+<h3 id="design-specification-6">Design Specification</h3>
+<p><a href="./lab3_5/">Source Code</a></p>
+<p><strong>Frequency Divider</strong></p>
+<p>Input: rst, clk</p>
+<p>Output: clk_out</p>
+<p><strong>10-Cascaded Shift Registers</strong></p>
+<p>Input: rst, clk</p>
+<p>Output [9:0]q</p>
+<p><strong>1Hz 10-Cascaded Shift Registers</strong></p>
+<p>Input: rst, clk</p>
+<p>Output [9:0]q</p>
+<p><strong>7-Segment Display</strong></p>
+<p>Output [0:3]d_sel, [7:0]d_out</p>
+<p>Input clk, rst, [7:0]d0, [7:0]d1, [7:0]d2, [7:0]d3</p>
+<p><strong>1 Hz 10 Digit Marquee on 7-Segment Display</strong></p>
+<p>Output [0:3]d_sel, [7:0]d_out</p>
+<p>Input clk, rst</p>
+<h3 id="design-implementation-6">Design Implementation</h3>
+<p><strong>Frequency Divider</strong></p>
+<p>Same as Lab3-2.</p>
+<p><strong>10-Cascaded Shift Registers</strong></p>
+<p>Simply extend the 8-digit shift registers in the Lab3-Pre2 to
+10-digit. Each digit contains 8 bits to store the pattern shown on the
+7-segment display.</p>
+<p><strong>1Hz 10-Cascaded Shift Registers</strong></p>
+<p>Simply extend the 8-digit shift register in Lab3-4 to the 10-digit
+one.</p>
+<p><strong>Verilog Code</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define SHIFTER_WIDTH 10</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ot">`define REG_SIZE 8</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> shift_register<span class="op">(</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    q0<span class="op">,</span> q1<span class="op">,</span> q2<span class="op">,</span> q3<span class="op">,</span> q4<span class="op">,</span> q5<span class="op">,</span> q6<span class="op">,</span> q7<span class="op">,</span> q8<span class="op">,</span> q9<span class="op">,</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    clk<span class="op">,</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    rst</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q0<span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q1<span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q2<span class="op">;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q3<span class="op">;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q4<span class="op">;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q5<span class="op">;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q6<span class="op">;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q7<span class="op">;</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q8<span class="op">;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q9<span class="op">;</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst<span class="op">;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q0<span class="op">;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q1<span class="op">;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q2<span class="op">;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q3<span class="op">;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q4<span class="op">;</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q5<span class="op">;</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q6<span class="op">;</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q7<span class="op">;</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q8<span class="op">;</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`REG_SIZE</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>q9<span class="op">;</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> CLK_OUT<span class="op">;</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    frequency_divider U0<span class="op">(</span>.clk<span class="op">(</span>clk<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .clk_out<span class="op">(</span>CLK_OUT<span class="op">));</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    shifter U1<span class="op">(</span>.clk<span class="op">(</span>CLK_OUT<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .q0<span class="op">(</span>q0<span class="op">),</span> .q1<span class="op">(</span>q1<span class="op">),</span> .q2<span class="op">(</span>q2<span class="op">),</span> .q3<span class="op">(</span>q3<span class="op">),</span> .q4<span class="op">(</span>q4<span class="op">),</span> .q5<span class="op">(</span>q5<span class="op">),</span> .q6<span class="op">(</span>q6<span class="op">),</span> .q7<span class="op">(</span>q7<span class="op">),</span> .q8<span class="op">(</span>q8<span class="op">),</span> .q9<span class="op">(</span>q9<span class="op">));</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>7-Segment Display</strong></p>
+<p>Since we can only control one digit of the 7-segment display each
+time, I design a module that takes the 4-digit patterns as input and
+shows the 1 digit on the display when the clock raises. Whenever the
+clock raises, the module will switch the control d_sel to different
+digit and shows the corresponding digit. Take an example, when the first
+clock raise occur, the module will set d_sel = 4’b1110 and d_out = d0.
+As for second clock pulse, the module will output d_sel = 4’b1101 and
+d_out = d1 and so on.</p>
+<p><strong>Verilog Code</strong></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define DIGIT_N 4</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ot">`define SEGMENT_N 8</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ot">`define NONE_BITS `SEGMENT_N&#39;b1111111_0</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ot">`define EMPTY_BITS `SEGMENT_N&#39;b1111111_1</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> display_7seg<span class="op">(</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    d_sel<span class="op">,</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    d_out<span class="op">,</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    clk<span class="op">,</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    rst<span class="op">,</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    d0<span class="op">,</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    d1<span class="op">,</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    d2<span class="op">,</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    d3</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="dv">0</span><span class="op">:</span><span class="ot">`DIGIT_N</span><span class="dv">-1</span><span class="op">]</span>d_sel<span class="op">;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d_out<span class="op">;</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst<span class="op">;</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d0<span class="op">;</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d1<span class="op">;</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d2<span class="op">;</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d3<span class="op">;</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="dv">0</span><span class="op">:</span><span class="ot">`DIGIT_N</span><span class="dv">-1</span><span class="op">]</span>d_sel<span class="op">;</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d_out<span class="op">;</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="dv">0</span><span class="op">:</span><span class="ot">`DIGIT_N</span><span class="dv">-1</span><span class="op">]</span>d_sel_temp<span class="op">;</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reg</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d_out_temp<span class="op">;</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> clk_out<span class="op">;</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    segment7_frequency_divider U0<span class="op">(</span>.clk<span class="op">(</span>clk<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .clk_out<span class="op">(</span>clk_out<span class="op">));</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    always<span class="op">@(</span>d_sel<span class="op">)</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">begin</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>        <span class="kw">case</span><span class="op">((</span>d_sel <span class="op">&lt;&lt;</span> <span class="dv">1</span><span class="op">)</span> <span class="op">|</span> <span class="op">(</span>d_sel <span class="op">&gt;&gt;</span> <span class="op">(</span><span class="ot">`DIGIT_N</span><span class="dv">-1</span><span class="op">)))</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>            <span class="ot">`DIGIT_N</span><span class="bn">&#39;b1110</span><span class="op">:</span> d_out_temp <span class="op">&lt;=</span> d0<span class="op">;</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>            <span class="ot">`DIGIT_N</span><span class="bn">&#39;b1101</span><span class="op">:</span> d_out_temp <span class="op">&lt;=</span> d1<span class="op">;</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>            <span class="ot">`DIGIT_N</span><span class="bn">&#39;b1011</span><span class="op">:</span> d_out_temp <span class="op">&lt;=</span> d2<span class="op">;</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>            <span class="ot">`DIGIT_N</span><span class="bn">&#39;b0111</span><span class="op">:</span> d_out_temp <span class="op">&lt;=</span> d3<span class="op">;</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>            <span class="kw">default</span><span class="op">:</span> d_out_temp <span class="op">&lt;=</span> <span class="ot">`NONE_BITS</span><span class="op">;</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>        <span class="kw">endcase</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>        d_sel_temp <span class="op">&lt;=</span> <span class="op">(</span>d_sel <span class="op">&lt;&lt;</span> <span class="dv">1</span><span class="op">)</span> <span class="op">|</span> <span class="op">(</span>d_sel <span class="op">&gt;&gt;</span> <span class="op">(</span><span class="ot">`DIGIT_N</span><span class="dv">-1</span><span class="op">));</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    always<span class="op">@(</span><span class="kw">posedge</span> clk_out <span class="dt">or</span> <span class="kw">negedge</span> rst<span class="op">)</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>    <span class="kw">begin</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span><span class="op">(~</span>rst<span class="op">)</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>            d_out <span class="op">&lt;=</span> <span class="ot">`EMPTY_BITS</span><span class="op">;</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>            d_sel <span class="op">&lt;=</span> <span class="ot">`DIGIT_N</span><span class="bn">&#39;b1110</span><span class="op">;</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>        <span class="kw">begin</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>            d_out <span class="op">&lt;=</span> d_out_temp<span class="op">;</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>            d_sel <span class="op">&lt;=</span> d_sel_temp<span class="op">;</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>1 Hz 10 Digit Marquee on 7-Segment Display</strong></p>
+<p>To implement the marquee, just simply combine the 1 Hz 10-cascaded
+shift registers and the 7-segment display. The 1 Hz 10-cascaded shift
+registers will store the patterns of each time step and shift the digits
+when the clock raises. Then I inject the digit 0 ~ 4 into the 7-segment
+display module to show the patterns.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`define DIGIT_N 4</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ot">`define SEGMENT_N 8</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ot">`define H_BITS `SEGMENT_N&#39;b1001000_1</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ot">`define N_BITS `SEGMENT_N&#39;b1101010_1</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ot">`define T_BITS `SEGMENT_N&#39;b1110000_1</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ot">`define U_BITS `SEGMENT_N&#39;b1000001_1</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> lab3_5<span class="op">(</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    d_sel<span class="op">,</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    d_out<span class="op">,</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    clk<span class="op">,</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    rst</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`DIGIT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d_sel<span class="op">;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>d_out<span class="op">;</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> clk<span class="op">;</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span> rst<span class="op">;</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>Q0<span class="op">;</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>Q1<span class="op">;</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>Q2<span class="op">;</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">wire</span> <span class="op">[</span><span class="ot">`SEGMENT_N</span><span class="dv">-1</span><span class="op">:</span><span class="dv">0</span><span class="op">]</span>Q3<span class="op">;</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    shift_register U0<span class="op">(</span>.clk<span class="op">(</span>clk<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .q0<span class="op">(</span>Q0<span class="op">),</span> .q1<span class="op">(</span>Q1<span class="op">),</span> .q2<span class="op">(</span>Q2<span class="op">),</span> .q3<span class="op">(</span>Q3<span class="op">));</span>    </span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    display_7seg U1<span class="op">(</span>.clk<span class="op">(</span>clk<span class="op">),</span> .rst<span class="op">(</span>rst<span class="op">),</span> .d0<span class="op">(</span>Q0<span class="op">),</span> .d1<span class="op">(</span>Q1<span class="op">),</span> .d2<span class="op">(</span>Q2<span class="op">),</span> .d3<span class="op">(</span>Q3<span class="op">),</span> .d_sel<span class="op">(</span>d_sel<span class="op">),</span> .d_out<span class="op">(</span>d_out<span class="op">));</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="kw">endmodule</span></span></code></pre></div>
+<p><strong>Block Diagram</strong></p>
+<figure>
+<img src="img/lab3-5_diag.png" alt="Lab 3-5 Logic Diagram" />
+<figcaption aria-hidden="true">Lab 3-5 Logic Diagram</figcaption>
+</figure>

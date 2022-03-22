@@ -35,5 +35,6 @@ module shift_register(
     wire CLK_OUT;
     
     frequency_divider U0(.clk(clk), .rst(rst), .clk_out(CLK_OUT));
-    shifter U1(.clk(CLK_OUT), .rst(rst), .q(q));
+//    shifter U1(.clk(CLK_OUT), .rst(rst), .q(q));
+    shifter U1(.clk(clk), .rst(rst), .q(q));
 endmodule

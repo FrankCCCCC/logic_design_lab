@@ -23,18 +23,18 @@
 module lab3_1_test();
 
 reg CLK;
-reg RST_N;
+reg RST;
 wire CLK_OUT;
 
-lab3_1 U0 (.clk(CLK), .rst_n(RST_N), .clk_out(CLK_OUT));
+lab3_1 U0 (.clk(CLK), .rst(RST), .clk_out(CLK_OUT));
 
 initial
 begin
     CLK = 0;
-    RST_N = 0;
-    #10 RST_N = 1;
-    #10 RST_N = 0;
-    #10 RST_N = 1;
+    RST = 0;
+    #10 RST = 1;
+    #10 RST = 0;
+    #10 RST = 1;
 end
 
 always
