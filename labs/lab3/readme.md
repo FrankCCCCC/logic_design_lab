@@ -644,3 +644,15 @@ endmodule
 | d_out[5] | d_out[6] | d_out[7] | d_sel[0] | d_sel[1] | d_sel[2] | d_sel[3]
 |-----|-----|-----|-----|-----|-----|-----|
 | U8 | W6 | W7 | U2 | U4 | V4 | W4 |
+
+## Discussion 
+
+In lab 3-5, first I use 100M Hz clock to trigger the 7-segment display to switch the controlling digits. However, I found it didn't work at all because the display cannot adapt such high-frequent switching. As a result, I gradually slower down the update frequency to 1000 Hz(which is divided by $50000 \times 2$) and the marquee finally worked.
+
+## Conclusion
+
+In the lab 3, we've learned how to implement a shift register and a frequency divider to demonstrate the time-depending circuit. In addition, we also review the state machine and relation between them and the sequential circuit.
+
+## Reference
+
+- None
