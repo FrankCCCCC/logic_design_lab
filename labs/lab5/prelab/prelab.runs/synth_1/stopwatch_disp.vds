@@ -1,0 +1,397 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Mar 24 19:08:03 2022
+# Process ID: 2648
+# Current directory: D:/data/logic_design_lab/labs/lab5/prelab/prelab.runs/synth_1
+# Command line: vivado.exe -log stopwatch_disp.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source stopwatch_disp.tcl
+# Log file: D:/data/logic_design_lab/labs/lab5/prelab/prelab.runs/synth_1/stopwatch_disp.vds
+# Journal file: D:/data/logic_design_lab/labs/lab5/prelab/prelab.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source stopwatch_disp.tcl -notrace
+Command: synth_design -top stopwatch_disp -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6060 
+WARNING: [Synth 8-2611] redeclaration of ansi port D is not allowed [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/segment7.v:33]
+WARNING: [Synth 8-2306] macro FREQ_DIV_COUNT redefined [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/segment7_frequency_divider.v:25]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 953.359 ; gain = 238.844
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'stopwatch_disp' [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/stopwatch_disp.v:25]
+INFO: [Synth 8-6157] synthesizing module 'frequency_divider' [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/frequency_divider.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'frequency_divider' (1#1) [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/frequency_divider.v:27]
+INFO: [Synth 8-6157] synthesizing module 'binary_down_2digit_counter' [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/binary_down_2digit_counter.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'binary_down_2digit_counter' (2#1) [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/binary_down_2digit_counter.v:24]
+INFO: [Synth 8-6157] synthesizing module 'extract' [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/extract.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'extract' (3#1) [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/extract.v:23]
+INFO: [Synth 8-6157] synthesizing module 'bcd_ssd' [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/bcd_ssd.v:34]
+INFO: [Synth 8-6157] synthesizing module 'segment7' [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/segment7.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'segment7' (4#1) [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/segment7.v:27]
+WARNING: [Synth 8-7023] instance 'U3' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/bcd_ssd.v:70]
+WARNING: [Synth 8-7023] instance 'U4' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/bcd_ssd.v:71]
+WARNING: [Synth 8-7023] instance 'U5' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/bcd_ssd.v:72]
+WARNING: [Synth 8-7023] instance 'U6' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/bcd_ssd.v:73]
+INFO: [Synth 8-6157] synthesizing module 'display_7seg' [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/display_7seg.v:28]
+INFO: [Synth 8-6157] synthesizing module 'segment7_frequency_divider' [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/segment7_frequency_divider.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'segment7_frequency_divider' (5#1) [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/segment7_frequency_divider.v:29]
+WARNING: [Synth 8-567] referenced signal 'd0' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/display_7seg.v:62]
+WARNING: [Synth 8-567] referenced signal 'd1' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/display_7seg.v:62]
+WARNING: [Synth 8-567] referenced signal 'd2' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/display_7seg.v:62]
+WARNING: [Synth 8-567] referenced signal 'd3' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/display_7seg.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'display_7seg' (6#1) [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/display_7seg.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bcd_ssd' (7#1) [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/bcd_ssd.v:34]
+WARNING: [Synth 8-7023] instance 'ssd_disp' of module 'bcd_ssd' has 8 connections declared, but only 7 given [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/stopwatch_disp.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch_disp' (8#1) [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/stopwatch_disp.v:25]
+WARNING: [Synth 8-3331] design stopwatch_disp has unconnected port mode
+WARNING: [Synth 8-3331] design stopwatch_disp has unconnected port in
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.383 ; gain = 284.867
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 999.383 ; gain = 284.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 999.383 ; gain = 284.867
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 999.383 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/constrs_1/new/prelab.xdc]
+Finished Parsing XDC File [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/constrs_1/new/prelab.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/constrs_1/new/prelab.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/stopwatch_disp_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/stopwatch_disp_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1099.844 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1099.844 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1099.844 ; gain = 385.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1099.844 ; gain = 385.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1099.844 ; gain = 385.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1099.844 ; gain = 385.328
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               30 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module frequency_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
++---Registers : 
+	               30 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module binary_down_2digit_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module segment7_frequency_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               30 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module display_7seg 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design stopwatch_disp has unconnected port mode
+WARNING: [Synth 8-3331] design stopwatch_disp has unconnected port in
+INFO: [Synth 8-3886] merging instance 'U0/counter_out_reg[26]' (FDC) to 'U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'U0/counter_out_reg[27]' (FDC) to 'U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'U0/counter_out_reg[28]' (FDC) to 'U0/counter_out_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/counter_out_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[15] )
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[16]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[17]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[18]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[19]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[20]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[21]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[22]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[23]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[24]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[25]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[26]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[27]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'ssd_disp/U7/U0/counter_out_reg[28]' (FDC) to 'ssd_disp/U7/U0/counter_out_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/counter_out_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/U0/clk_out_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ssd_disp/U7/d_sel_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_sel_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_sel_reg[1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_sel_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_out_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_out_reg[1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_out_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_out_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_out_reg[4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_out_reg[5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_out_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ssd_disp/U7/d_out_reg[7] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1099.844 ; gain = 385.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++---------------+---------------+---------------+----------------+
+|Module Name    | RTL Object    | Depth x Width | Implemented As | 
++---------------+---------------+---------------+----------------+
+|segment7       | D             | 32x8          | LUT            | 
+|stopwatch_disp | ssd_disp/U4/D | 32x8          | LUT            | 
+|stopwatch_disp | ssd_disp/U3/D | 32x8          | LUT            | 
++---------------+---------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1099.844 ; gain = 385.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1099.844 ; gain = 385.328
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1099.844 ; gain = 385.328
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1115.297 ; gain = 400.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1115.297 ; gain = 400.781
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1115.297 ; gain = 400.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1115.297 ; gain = 400.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1115.297 ; gain = 400.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1115.297 ; gain = 400.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |    12|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    12|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1115.297 ; gain = 400.781
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1115.297 ; gain = 300.320
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1115.297 ; gain = 400.781
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1115.297 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1125.453 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+73 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1125.453 ; gain = 701.992
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1125.453 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/labs/lab5/prelab/prelab.runs/synth_1/stopwatch_disp.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file stopwatch_disp_utilization_synth.rpt -pb stopwatch_disp_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 24 19:08:43 2022...
