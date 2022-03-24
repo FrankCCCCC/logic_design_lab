@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03/24/2022 06:38:48 PM
+// Create Date: 03/24/2022 08:55:34 PM
 // Design Name: 
 // Module Name: frequency_divider
 // Project Name: 
@@ -19,10 +19,11 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "global.v"
 
-`define FREQ_DIV_BITS 30
+//`define FREQ_DIV_BITS 30
 //`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd1000000
-`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000000
+//`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000000
 
 module frequency_divider(
     clk_out,

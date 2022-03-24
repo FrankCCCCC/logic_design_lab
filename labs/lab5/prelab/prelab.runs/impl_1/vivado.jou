@@ -2,11 +2,11 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Mar 24 19:09:25 2022
-# Process ID: 9092
+# Start of session at: Fri Mar 25 00:21:26 2022
+# Process ID: 2748
 # Current directory: D:/data/logic_design_lab/labs/lab5/prelab/prelab.runs/impl_1
-# Command line: vivado.exe -log stopwatch_disp.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source stopwatch_disp.tcl -notrace
-# Log file: D:/data/logic_design_lab/labs/lab5/prelab/prelab.runs/impl_1/stopwatch_disp.vdi
+# Command line: vivado.exe -log prelab.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source prelab.tcl -notrace
+# Log file: D:/data/logic_design_lab/labs/lab5/prelab/prelab.runs/impl_1/prelab.vdi
 # Journal file: D:/data/logic_design_lab/labs/lab5/prelab/prelab.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source stopwatch_disp.tcl -notrace
+source prelab.tcl -notrace

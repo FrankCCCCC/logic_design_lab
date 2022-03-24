@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03/24/2022 06:58:34 PM
+// Create Date: 03/24/2022 08:54:50 PM
 // Design Name: 
 // Module Name: binary_down_2digit_counter
 // Project Name: 
@@ -24,25 +24,40 @@
 module binary_down_2digit_counter(
     q,
     clk,
-    rst
+    rst,
+    is_pause
     );
     
     output [`BCD_COUNTER_BITS-1:0]q;
     input clk;
     input rst;
+    input is_pause;
     
     reg [`BCD_COUNTER_BITS-1:0]q;
     reg [`BCD_COUNTER_BITS-1:0]q_in;
     
+    initial
+    begin
+        q <= `BCD_COUNTER_LIMIT;
+    end
+    
     always@(q)
     begin
-        if(q == `BCD_COUNTER_BITS'd99)
+//        if(q == (`BCD_COUNTER_LIMIT - `BCD_COUNTER_BITS'd1))
+        if(q <= `BCD_COUNTER_BITS'd1)
         begin
-            q_in <= `BCD_COUNTER_BITS'd0;
+            q_in <= `BCD_COUNTER_LIMIT;
         end
         else
         begin
-            q_in <= q + `BCD_COUNTER_BITS'd1;
+            if(~is_pause)
+            begin
+                q_in <= q - `BCD_COUNTER_BITS'd1;
+            end
+            else
+            begin
+                q_in <= q;
+            end
         end
     end
     
@@ -50,7 +65,7 @@ module binary_down_2digit_counter(
     begin
         if(~rst)
         begin
-            q <= `BCD_COUNTER_BITS'd0;
+            q <= `BCD_COUNTER_LIMIT;
         end
         else
         begin

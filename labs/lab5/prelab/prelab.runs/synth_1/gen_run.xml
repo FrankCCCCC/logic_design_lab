@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1648120080">
-  <File Type="PA-TCL" Name="stopwatch_disp.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="stopwatch_disp_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="stopwatch_disp_reports.tcl"/>
-  <File Type="RDS-RDS" Name="stopwatch_disp.vds"/>
-  <File Type="RDS-UTIL" Name="stopwatch_disp_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="stopwatch_disp_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="stopwatch_disp.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="stopwatch_disp_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="stopwatch_disp_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1648138834">
+  <File Type="PA-TCL" Name="prelab.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="prelab_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="prelab_reports.tcl"/>
+  <File Type="RDS-RDS" Name="prelab.vds"/>
+  <File Type="RDS-UTIL" Name="prelab_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="prelab_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="prelab.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="prelab_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="prelab_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/global.v">
@@ -18,14 +18,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/bcd_ssd.v">
+    <File Path="$PSRCDIR/sources_1/new/binary_down_2digit_counter.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/binary_down_2digit_counter.v">
+    <File Path="$PSRCDIR/sources_1/new/debounce.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -53,6 +53,20 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/fsm.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/onepulse.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/segment7.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -67,32 +81,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/stopwatch_disp.v">
+    <File Path="$PSRCDIR/sources_1/new/prelab.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FSM.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/downcounter.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/stopwatch.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -100,7 +90,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="stopwatch_disp"/>
+      <Option Name="TopModule" Val="prelab"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

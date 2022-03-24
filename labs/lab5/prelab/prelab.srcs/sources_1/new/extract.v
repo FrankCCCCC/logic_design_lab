@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03/24/2022 06:59:27 PM
+// Create Date: 03/24/2022 08:57:12 PM
 // Design Name: 
 // Module Name: extract
 // Project Name: 
@@ -19,18 +19,19 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "global.v"
 
 module extract(
-    input [7:0] x,
-    output [3:0] d1,
-    output [3:0] d2
+    input [`BCD_COUNTER_BITS-1:0] x,
+    output [`SEGMENT_7_INPUT_BITS_N-1:0] d1,
+    output [`SEGMENT_7_INPUT_BITS_N-1:0] d2
     );
     
-    wire [7:0]mod;
-    wire [7:0]div;
+    wire [`BCD_COUNTER_BITS-1:0]mod;
+    wire [`BCD_COUNTER_BITS-1:0]div;
     assign mod = x % 10;
     assign div = x / 10;
     
-    assign d1 = mod[3:0];
-    assign d2 = div[3:0];
+    assign d1 = mod[`SEGMENT_7_INPUT_BITS_N-1:0];
+    assign d2 = div[`SEGMENT_7_INPUT_BITS_N-1:0];
 endmodule

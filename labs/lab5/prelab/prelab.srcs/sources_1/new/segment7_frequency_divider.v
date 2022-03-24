@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03/24/2022 06:37:40 PM
+// Create Date: 03/24/2022 08:54:07 PM
 // Design Name: 
 // Module Name: segment7_frequency_divider
 // Project Name: 
@@ -19,10 +19,11 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "global.v"
 
-`define FREQ_DIV_BITS 30
+//`define FREQ_DIV_BITS 30
 // 1 Hz
-`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000
+//`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000
 //`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd2
 //`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd5000000
 
@@ -38,25 +39,25 @@ module segment7_frequency_divider(
     
     reg clk_in;
     reg clk_out;
-    reg [`FREQ_DIV_BITS-1:0] counter_in;
-    reg [`FREQ_DIV_BITS-1:0] counter_out;
+    reg [`SEGMENT_7_FREQ_DIV_BITS-1:0] counter_in;
+    reg [`SEGMENT_7_FREQ_DIV_BITS-1:0] counter_out;
     
     always@(counter_out or clk_out)
-        if(counter_out < (`FREQ_DIV_COUNT - 1))
+        if(counter_out < (`SEGMENT_7_FREQ_DIV_COUNT - 1))
         begin
-            counter_in <= counter_out + `FREQ_DIV_BITS'd1;
+            counter_in <= counter_out + `SEGMENT_7_FREQ_DIV_BITS'd1;
             clk_in <= clk_out;
         end
         else
         begin
-            counter_in <= `FREQ_DIV_BITS'd0;
+            counter_in <= `SEGMENT_7_FREQ_DIV_BITS'd0;
             clk_in <= ~clk_out;
         end
         
     always@(posedge clk or negedge rst)
         if(~rst)
         begin
-            counter_out <= `FREQ_DIV_BITS'd0;
+            counter_out <= `SEGMENT_7_FREQ_DIV_BITS'd0;
             clk_out <= 1'd0;
         end
         else

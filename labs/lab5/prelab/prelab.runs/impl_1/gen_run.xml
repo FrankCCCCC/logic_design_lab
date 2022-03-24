@@ -1,80 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1648120157">
-  <File Type="OPT-HWDEF" Name="stopwatch_disp.hwdef"/>
-  <File Type="ROUTE-BUS-SKEW" Name="stopwatch_disp_bus_skew_routed.rpt"/>
-  <File Type="PA-DCP" Name="stopwatch_disp.dcp"/>
-  <File Type="BITSTR-BMM" Name="stopwatch_disp_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="stopwatch_disp_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="stopwatch_disp_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="stopwatch_disp_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="stopwatch_disp.tcl"/>
-  <File Type="OPT-TIMING" Name="stopwatch_disp_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="stopwatch_disp_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="stopwatch_disp_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="stopwatch_disp_reports.tcl"/>
-  <File Type="OPT-DRC" Name="stopwatch_disp_drc_opted.rpt"/>
-  <File Type="PWROPT-DCP" Name="stopwatch_disp_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="stopwatch_disp_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="stopwatch_disp_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="stopwatch_disp_placed.dcp"/>
-  <File Type="PLACE-IO" Name="stopwatch_disp_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="stopwatch_disp_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="stopwatch_disp_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="stopwatch_disp_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="stopwatch_disp_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="stopwatch_disp_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="stopwatch_disp_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="stopwatch_disp_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="stopwatch_disp_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="stopwatch_disp.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="stopwatch_disp_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="stopwatch_disp_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="stopwatch_disp_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="stopwatch_disp.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="stopwatch_disp_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="stopwatch_disp_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="stopwatch_disp_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="stopwatch_disp_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="stopwatch_disp_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="stopwatch_disp_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="stopwatch_disp_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="stopwatch_disp.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="stopwatch_disp_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="stopwatch_disp_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="stopwatch_disp_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="stopwatch_disp_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="stopwatch_disp_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="stopwatch_disp_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="stopwatch_disp_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="stopwatch_disp_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="stopwatch_disp_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="stopwatch_disp_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="stopwatch_disp_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="stopwatch_disp_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="stopwatch_disp_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="stopwatch_disp_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="stopwatch_disp_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="stopwatch_disp_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="stopwatch_disp_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="stopwatch_disp_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="stopwatch_disp_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="stopwatch_disp_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="stopwatch_disp.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="stopwatch_disp_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="stopwatch_disp.rbt"/>
-  <File Type="BITSTR-NKY" Name="stopwatch_disp.nky"/>
-  <File Type="PDI-FILE" Name="stopwatch_disp.pdi"/>
-  <File Type="RCFI_FILE" Name="stopwatch_disp.rcfi"/>
-  <File Type="CFI_FILE" Name="stopwatch_disp.cfi"/>
-  <File Type="RNPI_FILE" Name="stopwatch_disp.rnpi"/>
-  <File Type="NPI_FILE" Name="stopwatch_disp.npi"/>
-  <File Type="RBD_FILE" Name="stopwatch_disp.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1648138834">
+  <File Type="BITSTR-BMM" Name="prelab_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="prelab_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="prelab_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="prelab_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="prelab.tcl"/>
+  <File Type="OPT-TIMING" Name="prelab_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="prelab_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="prelab_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="prelab_reports.tcl"/>
+  <File Type="OPT-DRC" Name="prelab_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="prelab.hwdef"/>
+  <File Type="PWROPT-DCP" Name="prelab_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="prelab_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="prelab_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="prelab_placed.dcp"/>
+  <File Type="PLACE-IO" Name="prelab_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="prelab_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="prelab_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="prelab_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="prelab_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="prelab_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="prelab_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="prelab_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="prelab_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="prelab.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="prelab_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="prelab_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="prelab_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="prelab.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="prelab_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="prelab_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="prelab_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="prelab_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="prelab_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="prelab_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="prelab_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="prelab.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="prelab_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="prelab_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="prelab_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="prelab_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="prelab_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="prelab_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="prelab_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="prelab_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="prelab_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="prelab_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="prelab_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="prelab_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="prelab_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="prelab_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="prelab_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="prelab_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="prelab_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="prelab_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="prelab_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="prelab_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="prelab_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="prelab.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="prelab_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="prelab.rbt"/>
+  <File Type="BITSTR-NKY" Name="prelab.nky"/>
+  <File Type="PDI-FILE" Name="prelab.pdi"/>
+  <File Type="RCFI_FILE" Name="prelab.rcfi"/>
+  <File Type="CFI_FILE" Name="prelab.cfi"/>
+  <File Type="RNPI_FILE" Name="prelab.rnpi"/>
+  <File Type="NPI_FILE" Name="prelab.npi"/>
+  <File Type="RBD_FILE" Name="prelab.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="stopwatch_disp.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="stopwatch_disp.sysdef"/>
-  <File Type="BG-BGN" Name="stopwatch_disp.bgn"/>
-  <File Type="BG-DRC" Name="stopwatch_disp.drc"/>
-  <File Type="RDI-RDI" Name="stopwatch_disp.vdi"/>
+  <File Type="BITSTR-LTX" Name="prelab.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="prelab.sysdef"/>
+  <File Type="BG-BGN" Name="prelab.bgn"/>
+  <File Type="BG-DRC" Name="prelab.drc"/>
+  <File Type="RDI-RDI" Name="prelab.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -85,14 +84,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/bcd_ssd.v">
+    <File Path="$PSRCDIR/sources_1/new/binary_down_2digit_counter.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/binary_down_2digit_counter.v">
+    <File Path="$PSRCDIR/sources_1/new/debounce.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -120,6 +119,20 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/fsm.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/onepulse.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/segment7.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -134,32 +147,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/stopwatch_disp.v">
+    <File Path="$PSRCDIR/sources_1/new/prelab.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FSM.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/downcounter.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/stopwatch.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -167,7 +156,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="stopwatch_disp"/>
+      <Option Name="TopModule" Val="prelab"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

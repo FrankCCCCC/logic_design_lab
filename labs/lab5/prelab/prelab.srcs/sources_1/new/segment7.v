@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03/24/2022 06:14:16 PM
+// Create Date: 03/24/2022 08:56:13 PM
 // Design Name: 
 // Module Name: segment7
 // Project Name: 
@@ -20,12 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-`define INPUT_BITS_N 4
-`define SEGMENT_7_DISPALY_DIGIT_N 4
-`define SEGMENT_7_SEGMENT_N 8
+`include "global.v"
 
 module segment7(
-    input [`INPUT_BITS_N:0] i,
+    input [`SEGMENT_7_INPUT_BITS_N:0] i,
     output [`SEGMENT_7_DISPALY_DIGIT_N-1:0]P,
     output [`SEGMENT_7_SEGMENT_N-1:0]D
     );
