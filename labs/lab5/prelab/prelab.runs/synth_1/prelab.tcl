@@ -38,6 +38,7 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/extract.v
   D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/frequency_divider.v
   D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/fsm.v
+  D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/led_control.v
   D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/onepulse.v
   D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/segment7.v
   D:/data/logic_design_lab/labs/lab5/prelab/prelab.srcs/sources_1/new/segment7_frequency_divider.v

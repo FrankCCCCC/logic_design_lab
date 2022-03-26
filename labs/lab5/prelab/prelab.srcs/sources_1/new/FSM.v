@@ -24,22 +24,30 @@
 
 module fsm(
     is_pause,
+    is_restart,
     pause,
     clk,
-    reset,
+    restart
     );
     
     output is_pause;
+    output is_restart;
     input pause;
     input clk;
-    input reset;
+    input restart;
     
+    reg is_restart;
     reg is_pause;
     reg state;
     
     initial
     begin
         state = `STATE_START;
+    end
+    
+    always@(posedge restart)
+    begin
+        is_restart = is_restart ^ 1;
     end
     
     always@(posedge pause)

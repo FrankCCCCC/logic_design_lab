@@ -38,8 +38,12 @@
 // BCD Counter
 `define BCD_COUNTER_BITS 8
 `define BCD_COUNTER_LIMIT `BCD_COUNTER_BITS'd40
+`define BCD_COUNTER_ZERO `BCD_COUNTER_BITS'd0
 
 // Frequency Divider
 `define FREQ_DIV_BITS 30
 // 1 Hz
 `define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000000
+
+// LED control
+`define LEDS_NUM 16

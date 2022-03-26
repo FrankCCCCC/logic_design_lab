@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../exp_2.srcs/sources_1/new/binary_down_4digit_counter.v" \
+"../../../../exp_2.srcs/sources_1/new/debounce.v" \
+"../../../../exp_2.srcs/sources_1/new/display_7seg.v" \
+"../../../../exp_2.srcs/sources_1/new/frequency_divider.v" \
+"../../../../exp_2.srcs/sources_1/new/fsm.v" \
+"../../../../exp_2.srcs/sources_1/new/led_control.v" \
+"../../../../exp_2.srcs/sources_1/new/min_sec_seperate.v" \
+"../../../../exp_2.srcs/sources_1/new/onepulse.v" \
+"../../../../exp_2.srcs/sources_1/new/segment7.v" \
+"../../../../exp_2.srcs/sources_1/new/segment7_frequency_divider.v" \
+"../../../../exp_2.srcs/sources_1/new/exp_2.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -46,7 +46,7 @@ module binary_down_2digit_counter(
 //        if(q == (`BCD_COUNTER_LIMIT - `BCD_COUNTER_BITS'd1))
         if(q <= `BCD_COUNTER_BITS'd1)
         begin
-            q_in <= `BCD_COUNTER_LIMIT;
+            q_in <= `BCD_COUNTER_ZERO;
         end
         else
         begin
