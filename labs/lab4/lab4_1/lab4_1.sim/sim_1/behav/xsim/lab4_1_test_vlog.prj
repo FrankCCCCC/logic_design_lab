@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../lab4_1.srcs/sources_1/new/binary_down_counter.v" \
+"../../../../lab4_1.srcs/sources_1/new/frequency_divider.v" \
+"../../../../lab4_1.srcs/sources_1/new/lab4_1.v" \
+"../../../../lab4_1.srcs/sim_1/new/lab4_1_test.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

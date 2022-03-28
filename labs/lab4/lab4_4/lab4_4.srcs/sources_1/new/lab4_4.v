@@ -57,9 +57,9 @@ module lab4_4(
     extract U2(.x(q), .d1(D1_BINARY), .d2(D2_BINARY));
     
     // Convert binary to 7-segment 
-    segment7 U3(.i(D1_BINARY), .P(`P), .D(D1_SEGMENT7));
-    segment7 U4(.i(D2_BINARY), .P(`P), .D(D2_SEGMENT7));
+    segment7 U3(.i(D1_BINARY), .D(D1_SEGMENT7));
+    segment7 U4(.i(D2_BINARY), .D(D2_SEGMENT7));
     
     // Show
-    display_7seg(.clk(clk), .rst(rst), .d0(D1_SEGMENT7), .d1(D2_SEGMENT7), .d2(`NONE_SEG7), .d3(`NONE_SEG7), .d_sel(D_SEL), .d_out(D_OUT));
+    display_7seg U5(.clk(clk), .rst(rst), .d0(D1_SEGMENT7), .d1(D2_SEGMENT7), .d2(`NONE_SEG7), .d3(`NONE_SEG7), .d_sel(D_SEL), .d_out(D_OUT));
 endmodule

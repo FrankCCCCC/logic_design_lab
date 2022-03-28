@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab4/lab4_1/lab4_1.srcs/sources_1/new/binary_down_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module binary_down_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab4/lab4_1/lab4_1.srcs/sources_1/new/frequency_divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module frequency_divider
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab4/lab4_1/lab4_1.srcs/sources_1/new/lab4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab4/lab4_1/lab4_1.srcs/sim_1/new/lab4_1_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab4_1_test
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab4/lab4_1/lab4_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
