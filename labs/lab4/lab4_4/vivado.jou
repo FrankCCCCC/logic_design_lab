@@ -15,3 +15,4 @@ update_compile_order -fileset sources_1
 launch_simulation
 launch_simulation
 source lab4_4_test.tcl
+close_sim

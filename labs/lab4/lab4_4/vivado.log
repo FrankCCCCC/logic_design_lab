@@ -135,3 +135,8 @@ source lab4_4_test.tcl
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab4_4_test_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
 launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 942.551 ; gain = 33.750
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 951.203 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 28 23:48:25 2022...
