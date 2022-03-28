@@ -284,3 +284,7 @@ selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); //
 // HMemoryUtils.trashcanNow. Engine heap size: 861 MB. GUI used memory: 70 MB. Current time: 3/28/22, 9:05:21 PM CST
 // WARNING: HEventQueue.dispatchEvent() is taking  1061 ms.
 // HMemoryUtils.trashcanNow. Engine heap size: 861 MB. GUI used memory: 63 MB. Current time: 3/28/22, 9:35:22 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 861 MB. GUI used memory: 64 MB. Current time: 3/28/22, 10:05:22 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 861 MB. GUI used memory: 63 MB. Current time: 3/28/22, 10:35:22 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 861 MB. GUI used memory: 63 MB. Current time: 3/28/22, 11:05:22 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 861 MB. GUI used memory: 63 MB. Current time: 3/28/22, 11:35:23 PM CST
