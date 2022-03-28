@@ -9,3 +9,9 @@
 # Log file: D:/data/logic_design_lab/labs/lab4/lab4_4/vivado.log
 # Journal file: D:/data/logic_design_lab/labs/lab4/lab4_4\vivado.jou
 #-----------------------------------------------------------
+start_gui
+open_project D:/data/logic_design_lab/labs/lab4/lab4_4/lab4_4.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+source lab4_4_test.tcl

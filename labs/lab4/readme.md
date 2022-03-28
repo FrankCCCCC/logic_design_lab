@@ -6,9 +6,11 @@ CJKmainfont: "Microsoft JhengHei"
 CJKoptions: AutoFakeBold
 subject: "Lab 4 - Counters and Shifters II"
 keywords: [Markdown, Pandoc]
-titlepage: true
-titlepage-rule-color: "360049"
-titlepage-background: "background1.pdf"
+titlepage: true, 
+titlepage-text-color: "FFFFFF" 
+titlepage-rule-color: "360049" 
+titlepage-rule-height: 0 
+titlepage-background: "background.pdf"
 toc-own-page: true
 footer-left: false
 ---
@@ -45,7 +47,7 @@ Output [3:0]q
 
 ### Design Implementation
 
-**Frequency Divider**
+#### Frequency Divider
 
 To generate the 1 Hz clock, I use variables counter_in and counter_out to count from 0 to 50M. The counter_in will store the value for the next time step and pass the value to the counter_out when the clock raises. The reason why we need  50M counting is each counting is triggered only when the clock raises, so the circuit will count 1 more for every twice clock pulses.
 
@@ -97,7 +99,7 @@ module frequency_divider(
 endmodule
 ```
 
-**4-bit Synchronous Binary Down Counter**
+#### 4-bit Synchronous Binary Down Counter
 
 To implement the binary down counter, I use a variable q_in to count from 0 to 15. Whenever the output of the counter q changes, the variable q_in should be changed to q - 1. In addition, when the circuit detects the raise of the clock, the output of the counter will change to the variable q_in. On the other hand, if the reset switch to 0 or the counter hits 0, q will be reset to the upper limit 15.
 
@@ -138,7 +140,7 @@ module binary_down_counter(
 endmodule
 ```
 
-**1Hz 4-bit Synchronous Binary Down Counter**
+#### 1 Hz 4-bit Synchronous Binary Down Counter
 
 All we need to do is combine the 1 Hz frequency divider and the 4-bit binary down counter which triggered by the 1 Hz frequency divider.
 
@@ -163,17 +165,17 @@ module lab4_1(
 endmodule
 ```
 
-**I/O Pin Assignment**
+### I/O Pin Assignment
 
 | I/O | clk | rst | q[0] | q[1] | q[2] | q[3] |
 |-----|----|-----|-----|-----|-----|-----|
 | LOC | W5 | V17 | U16 | E19 | U19 | V19 |
 
-**Block Diagram**
+### Block Diagram
 
 ![Lab 4-1 Logic Diagram](img/lab4-1_diag.png)
 
-**RTL Simulation**
+### RTL Simulation
 
 ![Lab 4-1 RTL Simulation](img/lab4-1_sim.png)
 
@@ -197,7 +199,7 @@ Input: rst, clk
 
 Output [3:0]q
 
-**1Hz 4-bit Synchronous Binary Down Counter**
+**1 Hz 4-bit Synchronous Binary Down Counter**
 
 Input: rst, clk
 
@@ -209,7 +211,7 @@ Input [3:0] i
 
 Output [3:0]P, [7:0]D
 
-**1Hz 4-bit Synchronous Binary Down Counter To 7-Segment Display**
+**1 Hz 4-bit Synchronous Binary Down Counter To 7-Segment Display**
 
 Input rst, clk
 
@@ -217,19 +219,19 @@ Output [3:0]q,  [3:0]P, [7:0]D
 
 ### Design Implementation
 
-**Frequency Divider**
+#### Frequency Divider
 
-Same as lab 4-1.
+Same as [lab 4-1](####Frequency-Divider).
 
-**4-bit Synchronous Binary Down Counter**
+#### 4-bit Synchronous Binary Down Counter
 
-Same as lab 4-1.
+Same as [lab 4-1](####4-bit-Synchronous-Binary-Down-Counter).
 
-**1Hz 4-bit Synchronous Binary Down Counter**
+#### 1 Hz 4-bit Synchronous Binary Down Counter
 
-Same as lab 4-1.
+Same as [lab 4-1](####1-Hz-4-bit-Synchronous-Binary-Down-Counter).
 
-**Binary to 7-Segment Display**
+#### Binary to 7-Segment Display
 
 Convert 4-bit binary number to 7-segment display with switch-case syntax.
 
@@ -271,7 +273,7 @@ module segment7(
 endmodule
 ```
 
-**1Hz 4-bit Synchronous Binary Down Counter To 7-Segment Display**
+#### 1 Hz 4-bit Synchronous Binary Down Counter To 7-Segment Display
 
 It's a simple module and just use the divided clock from frequency divider to trigger the binary down counter. The counting of the down counter will be shown in 7-segment display.
 
@@ -305,7 +307,7 @@ module lab4_2(
 endmodule
 ```
 
-**I/O Pin Assignment**
+### I/O Pin Assignment
 
 | I/O | clk | rst | q[0] | q[1] | q[2] | q[3] | P[0] | P[1] | P[2] | P[3] |
 |-----|-----|-----|------|------|------|------|------|------|------|------|
@@ -315,11 +317,11 @@ endmodule
 |-----|----|----|----|----|----|----|----|----|
 | LOC | V7 | U7 | V5 | U5 | V8 | U8 | W6 | W7 |
 
-**Block Diagram**
+### Block Diagram
 
 ![Lab 4-2 Logic Diagram](img/lab4-2_diag.png)
 
-**RTL Simulation**
+### RTL Simulation
 
 ![Lab 4-2 RTL Simulation](img/lab4-2_sim.png)
 
@@ -331,7 +333,7 @@ endmodule
 
 [Source Code](./lab4_3/)
 
-**Frequency Divider**
+#### Frequency Divider
 
 Input: rst, clk
 
@@ -343,7 +345,7 @@ Input: rst, clk
 
 Output [3:0]q
 
-**0.5Hz 4-bit Synchronous Binary Down Counter**
+**0.5 Hz 4-bit Synchronous Binary Down Counter**
 
 Input: rst, clk
 
@@ -355,7 +357,7 @@ Input [3:0] i
 
 Output [3:0]P, [7:0]D
 
-**0.5Hz 4-bit Synchronous Binary Down Counter To 7-Segment Display**
+**0.5 Hz 4-bit Synchronous Binary Down Counter To 7-Segment Display**
 
 Input rst, clk
 
@@ -363,7 +365,7 @@ Output [3:0]q,  [3:0]P, [7:0]D
 
 ### Design Implementation
 
-**Frequency Divider**
+#### Frequency Divider
 
 It's similar to lab 4-2. I only modify the upper limit of the counter to 100M, which means twice divide the frequency.
 
@@ -414,21 +416,21 @@ module frequency_divider(
 endmodule
 ```
 
-**4-bit Synchronous Binary Down Counter**
+#### 4-bit Synchronous Binary Down Counter
 
-Same as lab 4-2.
+Same as [lab 4-1](####4-bit-Synchronous-Binary-Down-Counter).
 
-**1Hz 4-bit Synchronous Binary Down Counter**
+#### 1 Hz 4-bit Synchronous Binary Down Counter
 
-Same as lab 4-2.
+Same as [lab 4-1](####1-Hz-4-bit-Synchronous-Binary-Down-Counter).
 
-**Binary to 7-Segment Display**
+#### Binary to 7-Segment Display
 
-Same as lab 4-2.
+Same as [lab 4-1](####Binary-to-7-Segment-Display).
 
-**0.5Hz 4-bit Synchronous Binary Down Counter To 7-Segment Display**
+#### 0.5 Hz 4-bit Synchronous Binary Down Counter To 7-Segment Display
 
-We simply combine the previous 3 modules and we can 
+We simply combine the previous 3 modules and we can implement the 0.5 Hz binary down counter and show the counting number on the 7-segment display.
 
 ```verilog
 `define BCD_COUNTER_BITS 4
@@ -461,7 +463,7 @@ endmodule
 
 ```
 
-**I/O Pin Assignment**
+### I/O Pin Assignment
 
 | I/O | clk | rst | q[0] | q[1] | q[2] | q[3] | P[0] | P[1] | P[2] | P[3] |
 |-----|-----|-----|------|------|------|------|------|------|------|------|
@@ -471,11 +473,11 @@ endmodule
 |-----|----|----|----|----|----|----|----|----|
 | LOC | V7 | U7 | V5 | U5 | V8 | U8 | W6 | W7 |
 
-**Block Diagram**
+### Block Diagram
 
 ![Lab 4-3 Logic Diagram](img/lab4-3_diag.png)
 
-**RTL Simulation**
+### RTL Simulation
 
 ![Lab 4-3 RTL Simulation](img/lab4-3_sim.png)
 
@@ -531,19 +533,19 @@ Output [3:0]q,  [3:0]P, [7:0]D
 
 ### Design Implementation
 
-**Frequency Divider**
+#### Frequency Divider
 
-Same as lab 4-1.
+Same as [lab 4-1](####Frequency-Divider).
 
-**8-bit Synchronous Binary Up Counter**
+#### 8-bit Synchronous Binary Up Counter
 
 It's similar to the 4-bit binary down counter in lab 4-1. I only extend the bits array of the counter to 8 bits and use plus 1 instead of minus 1.
 
-**1Hz 8-bit Synchronous Binary Up Counter**
+#### 1Hz 8-bit Synchronous Binary Up Counter
 
 It's similar to the 1 Hz 4-bit binary down counter in lab 4-1. I only extend the bits array of the counter to 8 bits and use plus 1 instead of minus 1.
 
-**Extractor**
+#### Extractor
 
 I use mod of 10 to extract the first decimal digit and use divided by 10 to extract the second decimal digit.
 
@@ -564,11 +566,11 @@ module extract(
 endmodule
 ```
 
-**Binary to 7-Segment Display**
+#### Binary to 7-Segment Display
 
-Same as lab4-2.
+Same as [lab 4-1](####Binary-to-7-Segment-Display).
 
-**7-Segment Display Controller**
+#### 7-Segment Display Controller
 
 Since we can only control one digit of the 7-segment display each time, I design a module that takes the 4-digit patterns as input and shows the 1 digit on the display when the clock raises. Whenever the clock raises, the module will switch the control d_sel to different digit and shows the corresponding digit. Take an example, when the first clock raise occur, the module will set d_sel = 4'b1110 and d_out = d0. As for second clock pulse, the module will output d_sel = 4'b1101 and d_out = d1 and so on. 
 
@@ -641,7 +643,7 @@ module display_7seg(
 endmodule
 ```
 
-**1Hz 8-bit Synchronous Binary Up Counter To 7-Segment Display**
+#### 1Hz 8-bit Synchronous Binary Up Counter To 7-Segment Display
 
 I combine the all modules mentioned above. First, I generate a 1 Hz clock to trigger the 8-bit up counter and output the number of counting. Then, extract the both decimal digits of the binary number of counting. Finally, show the decimal digits on the 7-segment display.
 
@@ -692,7 +694,7 @@ module lab4_4(
 endmodule
 ```
 
-**I/O Pin Assignment**
+### I/O Pin Assignment
 
 | I/O | clk | rst | q[0] | q[1] | q[2] | q[3] | P[0] | P[1] | P[2] | P[3] |
 |-----|-----|-----|------|------|------|------|------|------|------|------|
@@ -702,23 +704,21 @@ endmodule
 |-----|----|----|----|----|----|----|----|----|
 | LOC | V7 | U7 | V5 | U5 | V8 | U8 | W6 | W7 |
 
-**Block Diagram**
+### Block Diagram
 
 ![Lab 4-4 Logic Diagram](img/lab4-4_diag.png)
 
-**RTL Simulation**
+### RTL Simulation
 
 ![Lab 4-4 RTL Simulation](img/lab4-4_sim.png)
 
 ## Discussion 
 
-In lab 3-5, first I use 100M Hz clock to trigger the 7-segment display to switch the controlling digits. However, I found it didn't work at all because the display cannot adapt such high-frequent switching. As a result, I gradually slower down the update frequency to 1000 Hz(which is divided by $50000 \times 2$) and the marquee finally worked.
+In lab 3-5, first I use 100M Hz clock to trigger the 7-segment display to switch the controlling digits and it doesn't work. As a result, I gradually slower down the update frequency to 1000 Hz(which is divided by $50000 \times 2$) and the module *"7-Segment Display Controller"* finally worked. In lab4-4, I use the same module. In addition, in lab 4-3 I divided the 100M Hz clock with 25M and I got wrong clock frequency because it would provide 2 Hz clock. Then, I divided the 1 Hz clock with 100M and got 0.5 Hz clock.
 
 ## Conclusion
 
-The lab4 seems like an extension of the lab3. 
-
-In the lab 3, we've learned how to implement a shift register and a frequency divider to demonstrate the time-depending circuit. In addition, we also review the state machine and relation between them and the sequential circuit.
+The lab4 seems like an extension of the lab3. However, we've still learned additional sequential logic circuit, including frequency divider and binary down counter etc... Thanks for lab4, I will be more familiar with the sequential logic design.
 
 ## Reference
 
