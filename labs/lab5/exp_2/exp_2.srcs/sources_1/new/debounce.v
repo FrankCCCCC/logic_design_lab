@@ -39,7 +39,7 @@ module debounce (
     // declare the shifting registers
     reg[3:0] push_window;
     
-    always @(posedge clk or posedge rst) 
+    always @(posedge clk or negedge rst) 
     begin
         if (~rst) begin
             push_window <= 4'b0;

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Mar 27 00:24:20 2022
+| Date         : Tue Mar 29 16:01:10 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exp_2_control_sets_placed.rpt
 | Design       : exp_2
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     7 |
-|    Minimum number of control sets                        |     7 |
+| Total control sets                                       |     8 |
+|    Minimum number of control sets                        |     8 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    41 |
+| Unused register locations in slices containing registers |    43 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     7 |
+| Total control sets |     8 |
 | >= 0 to < 4        |     3 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     2 |
+| >= 12 to < 14      |     3 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     2 |
 +--------------------+-------+
@@ -58,8 +58,8 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              21 |            8 |
-| No           | No                    | Yes                    |             118 |           39 |
+| No           | No                    | No                     |              33 |           13 |
+| No           | No                    | Yes                    |             112 |           38 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |              12 |            3 |
@@ -70,16 +70,17 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+-----------------+----------------------+------------------+----------------+
-|           Clock Signal          |  Enable Signal  |   Set/Reset Signal   | Slice Load Count | Bel Load Count |
-+---------------------------------+-----------------+----------------------+------------------+----------------+
-|  RestartBtn/push_onepulse_long  |                 |                      |                1 |              1 |
-|  RestartBtn/push_onepulse_reg_0 |                 |                      |                1 |              1 |
-|  PauseBtn/push_onepulse         |                 |                      |                1 |              2 |
-|  nolabel_line87/U0/CLK          |                 | RestartBtn/U0/rst    |                5 |             12 |
-|  U0/clk_out_reg_0               | U1/q[0]_i_1_n_0 | FSM/is_restart_reg_0 |                3 |             12 |
-|  clk_IBUF_BUFG                  |                 |                      |                5 |             17 |
-|  clk_IBUF_BUFG                  |                 | RestartBtn/U0/rst    |               34 |            106 |
-+---------------------------------+-----------------+----------------------+------------------+----------------+
++-------------------------------------+-----------------+----------------------+------------------+----------------+
+|             Clock Signal            |  Enable Signal  |   Set/Reset Signal   | Slice Load Count | Bel Load Count |
++-------------------------------------+-----------------+----------------------+------------------+----------------+
+|  RestartBtn/push_sig_long           |                 |                      |                1 |              1 |
+|  RestartBtn/push_sig_reg_0          |                 |                      |                1 |              1 |
+|  PauseBtn/push_sig                  |                 |                      |                1 |              2 |
+|  TIME_DISPLAY/nolabel_line57/U0/CLK |                 | RestartBtn/U0/rst    |                5 |             12 |
+|  U0/clk_out_reg_0                   | U1/q[0]_i_1_n_0 | FSM/is_restart_reg_0 |                3 |             12 |
+| ~FSM/IS_LAP                         |                 |                      |                5 |             12 |
+|  clk_IBUF_BUFG                      |                 |                      |                5 |             17 |
+|  clk_IBUF_BUFG                      |                 | RestartBtn/U0/rst    |               33 |            100 |
++-------------------------------------+-----------------+----------------------+------------------+----------------+
 
 

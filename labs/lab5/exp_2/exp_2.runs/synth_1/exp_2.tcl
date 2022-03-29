@@ -35,8 +35,10 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/binary_down_4digit_counter.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/debounce.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/display_7seg.v
+  D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/display_time_7_segment.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/frequency_divider.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/fsm.v
+  D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/lap_controller.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/led_control.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/min_sec_seperate.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/onepulse.v

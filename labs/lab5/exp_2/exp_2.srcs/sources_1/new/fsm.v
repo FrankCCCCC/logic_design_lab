@@ -51,7 +51,7 @@ module fsm(
     end
     
     always@(posedge restart) begin
-        is_restart = is_restart ^ 1;
+        is_restart <= is_restart ^ 1;
     end
     
     always@(posedge lap) begin
