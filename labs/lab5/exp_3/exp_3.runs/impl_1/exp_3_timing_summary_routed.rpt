@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Mar 30 00:49:02 2022
+| Date         : Wed Mar 30 17:01:33 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file exp_3_timing_summary_routed.rpt -pb exp_3_timing_summary_routed.pb -rpx exp_3_timing_summary_routed.rpx -warn_on_violation
 | Design       : exp_3
@@ -54,13 +54,41 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 80 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 72 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: PauseBtn/push_sig_reg/Q (HIGH)
+ There are 12 register/latch pins with no clock driven by root clock pin: FSM/is_restart_reg/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[0]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[10]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[11]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[1]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[2]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[3]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[4]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[5]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[6]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[7]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[8]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM/q_target_reg[9]/Q (HIGH)
+
+ There are 13 register/latch pins with no clock driven by root clock pin: PauseBtn/push_onepulse_reg/Q (HIGH)
+
+ There are 11 register/latch pins with no clock driven by root clock pin: RestartBtn/push_onepulse_reg/Q (HIGH)
 
  There are 12 register/latch pins with no clock driven by root clock pin: TIME_DISPLAY/nolabel_line36/U0/clk_out_reg/Q (HIGH)
 
- There are 12 register/latch pins with no clock driven by root clock pin: U0/clk_out_reg/Q (HIGH)
+ There are 24 register/latch pins with no clock driven by root clock pin: U0/clk_out_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -75,14 +103,14 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 206 pins that are not constrained for maximum delay. (HIGH)
+ There are 254 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 3 input ports with no input delay specified. (HIGH)
+ There are 4 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
@@ -108,7 +136,7 @@ Table of Contents
 
 9. checking loops
 -----------------
- There is 1 combinational loop in the design. (HIGH)
+ There are 0 combinational loops in the design.
 
 
 10. checking partial_input_delay
@@ -123,7 +151,7 @@ Table of Contents
 
 12. checking latch_loops
 ------------------------
- There is 1 combinational latch loop in the design through latch input (HIGH)
+ There are 0 combinational latch loops in the design through latch input
 
 
 

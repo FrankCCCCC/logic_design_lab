@@ -15,29 +15,18 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5012 
+INFO: Helper process launched with PID 8620 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 948.926 ; gain = 233.723
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 948.977 ; gain = 234.496
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'exp_3' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:24]
 INFO: [Synth 8-6157] synthesizing module 'frequency_divider' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/frequency_divider.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'frequency_divider' (1#1) [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/frequency_divider.v:24]
-INFO: [Synth 8-6157] synthesizing module 'onepulse' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/onepulse.v:6]
+INFO: [Synth 8-6157] synthesizing module 'onepulse' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/onepulse.v:77]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/debounce.v:27]
 INFO: [Synth 8-6155] done synthesizing module 'debounce' (2#1) [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/debounce.v:27]
-INFO: [Synth 8-6155] done synthesizing module 'onepulse' (3#1) [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/onepulse.v:6]
-WARNING: [Synth 8-7023] instance 'PauseBtn' of module 'onepulse' has 9 connections declared, but only 5 given [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:72]
-WARNING: [Synth 8-7023] instance 'RestartBtn' of module 'onepulse' has 9 connections declared, but only 5 given [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'onepulse' (3#1) [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/onepulse.v:77]
 INFO: [Synth 8-6157] synthesizing module 'fsm' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:28]
-WARNING: [Synth 8-567] referenced signal 'is_restart' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:79]
-WARNING: [Synth 8-567] referenced signal 'is_restart_temp' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:87]
-WARNING: [Synth 8-567] referenced signal 'q_target_temp' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:87]
-WARNING: [Synth 8-567] referenced signal 'mode_switch' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:92]
-WARNING: [Synth 8-567] referenced signal 'q_target' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:92]
-WARNING: [Synth 8-567] referenced signal 'state' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:102]
-WARNING: [Synth 8-567] referenced signal 'is_pause' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:102]
-WARNING: [Synth 8-567] referenced signal 'last_state' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:102]
-WARNING: [Synth 8-567] referenced signal 'last_is_pause' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:102]
 WARNING: [Synth 8-3848] Net pause_trig in module/entity fsm does not have driver. [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:46]
 WARNING: [Synth 8-3848] Net restart_trig in module/entity fsm does not have driver. [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:45]
 INFO: [Synth 8-6155] done synthesizing module 'fsm' (4#1) [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:28]
@@ -68,55 +57,11 @@ WARNING: [Synth 8-567] referenced signal 'd2' should be on the sensitivity list 
 WARNING: [Synth 8-567] referenced signal 'd3' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:41]
 INFO: [Synth 8-6155] done synthesizing module 'display_7seg' (11#1) [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'display_time_7_segment' (12#1) [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/display_time_7_segment.v:3]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 1st driver pin 'exp_3:/FSM/q_target[0]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 1st driver pin 'exp_3:/FSM/q_target[1]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 1st driver pin 'exp_3:/FSM/q_target[2]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 1st driver pin 'exp_3:/FSM/q_target[3]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 1st driver pin 'exp_3:/FSM/q_target[4]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 1st driver pin 'exp_3:/FSM/q_target[5]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 1st driver pin 'exp_3:/FSM/q_target[6]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-77.31 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:77]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 1st driver pin 'exp_3:/FSM/q_target[0]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 1st driver pin 'exp_3:/FSM/q_target[1]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 1st driver pin 'exp_3:/FSM/q_target[2]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 1st driver pin 'exp_3:/FSM/q_target[3]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 1st driver pin 'exp_3:/FSM/q_target[4]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 1st driver pin 'exp_3:/FSM/q_target[5]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 1st driver pin 'exp_3:/FSM/q_target[6]' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v-78.21 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:78]
 INFO: [Synth 8-6155] done synthesizing module 'exp_3' (13#1) [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/exp_3.v:24]
 WARNING: [Synth 8-3331] design fsm has unconnected port pause_trig
 WARNING: [Synth 8-3331] design fsm has unconnected port restart_trig
-WARNING: [Synth 8-3331] design fsm has unconnected port clk
-WARNING: [Synth 8-3331] design onepulse has unconnected port clk_long
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1022.715 ; gain = 307.512
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1022.680 ; gain = 308.199
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -129,12 +74,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.715 ; gain = 307.512
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.680 ; gain = 308.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.715 ; gain = 307.512
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.680 ; gain = 308.199
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1022.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1022.680 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -145,34 +90,31 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/exp_3_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1108.109 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1135.586 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1108.109 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1135.586 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1108.109 ; gain = 392.906
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1108.109 ; gain = 392.906
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1108.109 ; gain = 392.906
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'is_pause_reg' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:105]
-WARNING: [Synth 8-327] inferring latch for variable 'q_target_temp_reg' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-327] inferring latch for variable 'state_reg' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:104]
-WARNING: [Synth 8-327] inferring latch for variable 'last_is_pause_reg' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:105]
-WARNING: [Synth 8-327] inferring latch for variable 'last_state_reg' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:104]
+INFO: [Synth 8-4471] merging register 'is_pause_temp_reg' into 'state_temp_reg' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:94]
+INFO: [Synth 8-4471] merging register 'is_pause_reg' into 'state_reg' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:117]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1108.109 ; gain = 392.906
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -192,18 +134,17 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	               30 Bit    Registers := 2     
-	               12 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
 	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
-	                1 Bit    Registers := 8     
+	                1 Bit    Registers := 12    
 +---Muxes : 
 	   2 Input     26 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 3     
 	   2 Input     12 Bit        Muxes := 4     
 	   5 Input      8 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 8     
-	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -237,10 +178,11 @@ Detailed RTL Component Info :
 	   2 Input     12 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-	   3 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
 Module binary_down_4digit_counter 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -257,7 +199,7 @@ Detailed RTL Component Info :
 Module led_controller 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
 Module segment7_frequency_divider 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -290,61 +232,14 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\FSM/q_target_min_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\FSM/q_target_min_reg[1] )
 INFO: [Synth 8-3886] merging instance 'U0/counter_out_reg[26]' (FDC) to 'U0/counter_out_reg[27]'
 INFO: [Synth 8-3886] merging instance 'U0/counter_out_reg[27]' (FDC) to 'U0/counter_out_reg[28]'
 INFO: [Synth 8-3886] merging instance 'U0/counter_out_reg[28]' (FDC) to 'U0/counter_out_reg[29]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/counter_out_reg[29] )
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[11]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[11] with 1st driver pin 'FSM/q_target_temp_reg[11]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[11] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[11] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[10]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[10] with 1st driver pin 'FSM/q_target_temp_reg[10]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[10] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[10] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[9]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[9] with 1st driver pin 'FSM/q_target_temp_reg[9]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[9] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[9] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[8]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[8] with 1st driver pin 'FSM/q_target_temp_reg[8]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[8] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[8] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[7]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[7] with 1st driver pin 'FSM/q_target_temp_reg[7]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[7] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[7] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[6]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[6] with 1st driver pin 'FSM/q_target_temp_reg[6]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[6] with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[6] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[5]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[5] with 1st driver pin 'FSM/q_target_temp_reg[5]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[5] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[5] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[4]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[4] with 1st driver pin 'FSM/q_target_temp_reg[4]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[4] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[4] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[3]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[3] with 1st driver pin 'FSM/q_target_temp_reg[3]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[3] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[3] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[2]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[2] with 1st driver pin 'FSM/q_target_temp_reg[2]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[2] with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[2] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[1]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[1] with 1st driver pin 'FSM/q_target_temp_reg[1]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[1] with 2nd driver pin 'VCC' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[1] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/q_target_temp_reg[0]) is unused and will be removed from module exp_3.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[0] with 1st driver pin 'FSM/q_target_temp_reg[0]/Q' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin target[0] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net target[0] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.srcs/sources_1/new/fsm.v:95]
-WARNING: [Synth 8-3332] Sequential element (FSM/last_state_reg) is unused and will be removed from module exp_3.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1108.109 ; gain = 392.906
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -374,13 +269,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1108.109 ; gain = 392.906
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1108.109 ; gain = 392.906
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -391,9 +286,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (FSM/last_is_pause_reg) is unused and will be removed from module exp_3.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1111.289 ; gain = 396.086
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -417,13 +311,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1127.102 ; gain = 411.898
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1127.102 ; gain = 411.898
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -442,25 +336,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1127.102 ; gain = 411.898
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1127.102 ; gain = 411.898
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1127.102 ; gain = 411.898
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1127.102 ; gain = 411.898
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -477,18 +371,18 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    39|
-|3     |LUT1   |    23|
-|4     |LUT2   |    84|
-|5     |LUT3   |    62|
-|6     |LUT4   |    28|
-|7     |LUT5   |    20|
-|8     |LUT6   |    78|
-|9     |FDCE   |    74|
-|10    |FDPE   |    13|
-|11    |FDRE   |    17|
-|12    |LDC    |     2|
-|13    |IBUF   |     4|
+|2     |CARRY4 |    40|
+|3     |LUT1   |    15|
+|4     |LUT2   |    73|
+|5     |LUT3   |    42|
+|6     |LUT4   |    29|
+|7     |LUT5   |    69|
+|8     |LUT6   |   111|
+|9     |FDCE   |    55|
+|10    |FDPE   |    22|
+|11    |FDRE   |    55|
+|12    |LDC    |    12|
+|13    |IBUF   |     5|
 |14    |OBUF   |    28|
 +------+-------+------+
 
@@ -496,41 +390,43 @@ Report Instance Areas:
 +------+-------------------+---------------------------+------+
 |      |Instance           |Module                     |Cells |
 +------+-------------------+---------------------------+------+
-|1     |top                |                           |   473|
-|2     |  FSM              |fsm                        |     4|
-|3     |  PauseBtn         |onepulse                   |    89|
-|4     |    U0             |debounce                   |    46|
-|5     |  TIME_DISPLAY     |display_time_7_segment     |   168|
-|6     |    SEP            |min_sec_seperate           |   100|
-|7     |    nolabel_line36 |display_7seg               |    68|
-|8     |      U0           |segment7_frequency_divider |    42|
-|9     |  U0               |frequency_divider          |    66|
-|10    |  U1               |binary_down_4digit_counter |   113|
+|1     |top                |                           |   557|
+|2     |  FSM              |fsm                        |    91|
+|3     |  PauseBtn         |onepulse                   |     9|
+|4     |    U0             |debounce_1                 |     7|
+|5     |  RestartBtn       |onepulse_0                 |     9|
+|6     |    U0             |debounce                   |     7|
+|7     |  TIME_DISPLAY     |display_time_7_segment     |   181|
+|8     |    SEP            |min_sec_seperate           |   111|
+|9     |    nolabel_line36 |display_7seg               |    70|
+|10    |      U0           |segment7_frequency_divider |    44|
+|11    |  U0               |frequency_divider          |    67|
+|12    |  U1               |binary_down_4digit_counter |   166|
 +------+-------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1127.102 ; gain = 411.898
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1135.586 ; gain = 421.105
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 36 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1127.102 ; gain = 326.504
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1127.102 ; gain = 411.898
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 1135.586 ; gain = 308.199
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1135.586 ; gain = 421.105
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1136.359 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1140.367 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 52 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1142.301 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1147.504 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  LDC => LDCE: 2 instances
+  A total of 12 instances were transformed.
+  LDC => LDCE: 12 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-42 Infos, 47 Warnings, 78 Critical Warnings and 0 Errors encountered.
+46 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1142.301 ; gain = 717.906
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1142.301 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1147.504 ; gain = 722.176
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1147.504 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/labs/lab5/exp_3/exp_3.runs/synth_1/exp_3.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file exp_3_utilization_synth.rpt -pb exp_3_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 30 00:47:54 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 30 17:00:18 2022...

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Mar 30 00:48:36 2022
+| Date         : Wed Mar 30 17:01:03 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exp_3_control_sets_placed.rpt
 | Design       : exp_3
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     5 |
-|    Minimum number of control sets                        |     5 |
+| Total control sets                                       |    43 |
+|    Minimum number of control sets                        |    43 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    22 |
+| Unused register locations in slices containing registers |   288 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,12 +39,12 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     5 |
-| >= 0 to < 4        |     1 |
+| Total control sets |    43 |
+| >= 0 to < 4        |    38 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
-| >= 10 to < 12      |     0 |
+| >= 10 to < 12      |     1 |
 | >= 12 to < 14      |     2 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     2 |
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              17 |            5 |
-| No           | No                    | Yes                    |              75 |           25 |
-| No           | Yes                   | No                     |               2 |            1 |
-| Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              12 |            3 |
+| No           | No                    | No                     |              33 |           13 |
+| No           | No                    | Yes                    |              65 |           33 |
+| No           | Yes                   | No                     |              12 |           12 |
+| Yes          | No                    | No                     |              22 |            6 |
+| Yes          | No                    | Yes                    |              12 |           12 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,14 +70,52 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------+------------------+------------------+------------------+----------------+
-|             Clock Signal            |   Enable Signal  | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+-------------------------------------+------------------+------------------+------------------+----------------+
-|  PauseBtn/PAUSE_ONEPULSE            |                  | mode_switch_IBUF |                1 |              2 |
-|  TIME_DISPLAY/nolabel_line36/U0/CLK |                  | PauseBtn/U0/rst  |                5 |             12 |
-|  U0/clk_out_reg_0                   | U1/q[11]_i_1_n_0 | U1/q[11]_i_3_n_0 |                3 |             12 |
-|  clk_IBUF_BUFG                      |                  |                  |                5 |             17 |
-|  clk_IBUF_BUFG                      |                  | PauseBtn/U0/rst  |               20 |             63 |
-+-------------------------------------+------------------+------------------+------------------+----------------+
++-------------------------------------+--------------------+------------------------+------------------+----------------+
+|             Clock Signal            |    Enable Signal   |    Set/Reset Signal    | Slice Load Count | Bel Load Count |
++-------------------------------------+--------------------+------------------------+------------------+----------------+
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_9   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_1   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_11  |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_4   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_2   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_3   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_8   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_10  |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_7   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_0   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_6   |                1 |              1 |
+|  U0/clk_out_reg_0                   |                    | FSM/is_restart_reg_5   |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[6]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[8]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[3]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[1]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[2]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[11]_0 |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[5]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[7]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[9]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[10]_0 |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[4]_0  |                1 |              1 |
+|  U0/clk_out_reg_0                   | U1/q[11]_P_i_1_n_0 | FSM/q_target_reg[0]_0  |                1 |              1 |
+|  FSM/q_target_reg[6]_0              |                    | FSM/is_restart_reg_5   |                1 |              1 |
+|  FSM/q_target_reg[8]_0              |                    | FSM/is_restart_reg_3   |                1 |              1 |
+|  FSM/q_target_reg[3]_0              |                    | FSM/is_restart_reg_8   |                1 |              1 |
+|  FSM/q_target_reg[1]_0              |                    | FSM/is_restart_reg_10  |                1 |              1 |
+|  FSM/q_target_reg[2]_0              |                    | FSM/is_restart_reg_9   |                1 |              1 |
+|  FSM/q_target_reg[11]_0             |                    | FSM/is_restart_reg_0   |                1 |              1 |
+|  FSM/q_target_reg[5]_0              |                    | FSM/is_restart_reg_6   |                1 |              1 |
+|  FSM/q_target_reg[7]_0              |                    | FSM/is_restart_reg_4   |                1 |              1 |
+|  FSM/q_target_reg[9]_0              |                    | FSM/is_restart_reg_2   |                1 |              1 |
+|  FSM/q_target_reg[10]_0             |                    | FSM/is_restart_reg_1   |                1 |              1 |
+|  FSM/q_target_reg[4]_0              |                    | FSM/is_restart_reg_7   |                1 |              1 |
+|  FSM/q_target_reg[0]_0              |                    | FSM/is_restart_reg_11  |                1 |              1 |
+|  PauseBtn/push_onepulse             |                    |                        |                1 |              1 |
+|  RestartBtn/push_onepulse_reg_0     |                    |                        |                1 |              1 |
+|  RestartBtn/push_onepulse_reg_0     | mode_switch_IBUF   |                        |                3 |             10 |
+|  PauseBtn/push_onepulse             | mode_switch_IBUF   |                        |                3 |             12 |
+|  TIME_DISPLAY/nolabel_line36/U0/CLK |                    | U0/rst                 |                6 |             12 |
+|  clk_IBUF_BUFG                      |                    |                        |               11 |             31 |
+|  clk_IBUF_BUFG                      |                    | U0/rst                 |               15 |             41 |
++-------------------------------------+--------------------+------------------------+------------------+----------------+
 
 

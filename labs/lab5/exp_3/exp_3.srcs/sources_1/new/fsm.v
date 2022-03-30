@@ -50,98 +50,90 @@ module fsm(
     input mode_switch;
     
     reg is_restart, is_restart_temp;
-    reg is_pause, last_is_pause;
-    reg state, last_state;
+    reg is_pause, is_pause_temp;
+    reg state, state_temp;
     reg [`BCD_COUNTER_BITS-1:0]q_target;
-    reg [`BCD_COUNTER_BITS-1:0]q_target_temp;
-//    reg restart_trig;
-//    reg pause_trig;
-    reg last_restart;
-    reg last_pause;
+    reg [`BCD_COUNTER_BITS-1:0]q_target_min;
+    reg [`BCD_COUNTER_BITS-1:0]q_target_sec;
+//    reg last_restart;
+//    reg last_pause;
     
     assign is_setting = mode_switch;
     
     initial begin
         q_target = `BCD_COUNTER_BITS'd0;
-        q_target_temp = `BCD_COUNTER_BITS'd0;
-        last_state = `STATE_START;
+//        last_state = `STATE_START;
         state = `STATE_START;
+        state_temp = `STATE_START;
+        
         is_restart = 1'b0;
         is_restart_temp = 1'b0;
         is_pause = 1'b0;
-        last_restart = 1'b0;
-        last_is_pause = 1'b0;
-        last_pause = 1'b0;
-//        restart_trig = 1'b0;
-//        pause_trig = 1'b0;
+        is_pause_temp = 1'b0;
+//        last_restart = 1'b0;
+//        last_is_pause = 1'b0;
+//        last_pause = 1'b0;
+        
+        q_target_min = `BCD_COUNTER_BITS'd0;
+        q_target_sec = `BCD_COUNTER_BITS'd0;
     end
     
-    always@(restart or mode_switch) begin
-        if(mode_switch) begin
-            is_restart_temp <= 1'b1;
-        end else begin
+    always@(posedge restart) begin
+        if(!mode_switch) begin
             is_restart_temp <= is_restart ^ 1; 
         end
     end
     
-    always@(clk) begin
-        is_restart <= is_restart_temp;
-        q_target <= q_target_temp;
-    end
-    
-    always@(restart or pause) begin
-        if(mode_switch) begin
-            if(restart) begin
-                q_target_temp <= q_target + `BCD_COUNTER_BITS'd60;
-            end else if(pause) begin
-                q_target_temp <= q_target + `BCD_COUNTER_BITS'd1;
-            end
-        end        
-    end
-    
-    always@(mode_switch or pause) begin
-        if(mode_switch) begin
-            last_state <= state;
-            last_is_pause <= is_pause;
-            
-            state <= `STATE_SETTING;
-            is_pause <= 0;
-        end else begin 
-            if(pause) begin
-                if(state == `STATE_PAUSE) begin
-                    last_state <= state;
-                    last_is_pause <= is_pause;
-                    
-                    state <= `STATE_START;
-                    is_pause <= 0;
-                end else if(state == `STATE_START) begin
-                    last_state <= state;
-                    last_is_pause <= is_pause;
-                    
-                    state <= `STATE_PAUSE;
-                    is_pause <= 1;
-                end else begin
-                    state <= last_state;
-                    is_pause <= last_is_pause; 
-                    
-                    last_state <= `STATE_SETTING; 
-                    last_is_pause <= 0;
-                end
+    always@(posedge pause) begin
+        if(!mode_switch) begin 
+            if(state == `STATE_PAUSE) begin
+//                last_state <= state;
+//                last_is_pause <= is_pause;
+                
+                state_temp <= `STATE_START;
+                is_pause_temp <= 0;
+            end else if(state == `STATE_START) begin
+//                last_state <= state;
+//                last_is_pause <= is_pause;
+                
+                state_temp <= `STATE_PAUSE;
+                is_pause_temp <= 1;
+            end else begin
+                state_temp <= `STATE_START;
+                is_pause_temp <= 1'b0; 
+                
+//                last_state <= `STATE_SETTING; 
+//                last_is_pause <= 0;
             end
         end
     end
     
-//    always@(restart) begin
-////        if(restart) begin
-//            restart_trig <= ~restart_trig;
-////        end
-//    end
+    always@(posedge clk) begin
+//        is_restart <= is_restart_temp;
+        q_target <= q_target_min + q_target_sec;
+        
+        if(mode_switch) begin            
+            state <= `STATE_SETTING;
+            is_pause <= 0;
+            is_restart <= 1'b1;
+        end else begin
+            state <= state_temp;
+            is_pause <= is_pause_temp;
+            is_restart <= is_restart_temp;
+        end
+    end
+
+    always@(posedge restart) begin
+        if(mode_switch) begin
+            q_target_min <= q_target_min + `BCD_COUNTER_BITS'd60;
+        end        
+    end
     
-//    always@(pause) begin
-////        if(pause) begin
-//            pause_trig <= ~pause_trig;
-////        end
-//    end
+    always@(posedge pause) begin
+        if(mode_switch) begin
+            q_target_sec <= q_target_sec + `BCD_COUNTER_BITS'd1;
+        end        
+    end
     
 //    always@(posedge pause or mode_switch) begin
 //        if(mode_switch) begin

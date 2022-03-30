@@ -38,20 +38,21 @@ module led_controller(
     reg [`LEDS_NUM-1:0]leds;
     
     always@(q or is_pause or is_restart or is_setting) begin
-        if(q == `BCD_COUNTER_ZERO)begin
-            leds = {`LEDS_NUM{1'b1}};
-        end else begin
+        if(is_setting) begin
             leds[`LEDS_NUM-1:2] = {(`LEDS_NUM-2){1'b0}};
-            if((!is_pause) && (is_restart)) begin
-                leds[0] = 1'b1;
+            leds[1] = 1'b1;
+            leds[0] = 1'b0;
+        end else begin
+            if(q == `BCD_COUNTER_ZERO)begin
+                leds = {`LEDS_NUM{1'b1}};
             end else begin
-                leds[0] = 1'b0;
-            end
-            
-            if(is_setting) begin
-                leds[1] = 1'b1;
-            end else begin
-                leds[1] = 1'b0;
+                leds[`LEDS_NUM-1:1] = {(`LEDS_NUM-1){1'b0}};
+                
+                if((!is_pause) && (is_restart)) begin
+                    leds[0] = 1'b1;
+                end else begin
+                    leds[0] = 1'b0;
+                end
             end
         end
     end

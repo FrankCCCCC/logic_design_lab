@@ -64,13 +64,13 @@ module exp_3(
 //    assign IS_RESTART = 1;
 //    assign IS_PAUSE = 0;
 
-    assign Q_TARGET = `BCD_COUNTER_BITS'd70;
+//    assign Q_TARGET = `BCD_COUNTER_BITS'd70;
 
     // 1 Hz Clock
     frequency_divider U0(.clk(clk), .rst(rst), .clk_out(DIV_CLK));
     
-    onepulse PauseBtn(.rst(rst), .clk(clk), .clk_long(DIV_CLK), .push(push), .push_onepulse(PAUSE_ONEPULSE));
-    onepulse RestartBtn(.rst(rst), .clk(clk), .clk_long(DIV_CLK), .push(restart), .push_onepulse(RESTART_ONEPULSE));
+    onepulse PauseBtn(.rst(rst), .clk(clk), .push(push), .push_onepulse(PAUSE_ONEPULSE));
+    onepulse RestartBtn(.rst(rst), .clk(clk), .push(restart), .push_onepulse(RESTART_ONEPULSE));
     fsm FSM(.clk(clk), .mode_switch(mode_switch), .pause(PAUSE_ONEPULSE), .restart(RESTART_ONEPULSE), .is_pause(IS_PAUSE), .is_restart(IS_RESTART), .is_setting(IS_SETTING), .q_target(Q_TARGET));
     
     // 2-Digits Binary up counter 

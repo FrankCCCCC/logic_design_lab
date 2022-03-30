@@ -2,3 +2,6 @@ Running: xsim.dir/onepulse_test_behav/xsimk.exe -simmode gui -wdb onepulse_test_
 Design successfully loaded
 Design Loading Memory Usage: 5876 KB (Peak: 5876 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 6492 KB (Peak: 6492 KB)
+Simulation CPU Usage: 15 ms
