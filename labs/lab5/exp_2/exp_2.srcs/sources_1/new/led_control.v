@@ -17,7 +17,7 @@ module led_control(
     reg [`LEDS_NUM-1:0]leds;
     
     always@(q or is_pause or is_restart or is_lap) begin
-        if(q == `BCD_COUNTER_ZERO)begin
+        if(q == `BCD_COUNTER_LIMIT)begin
             leds = {`LEDS_NUM{1'b1}};
         end else begin
             leds[`LEDS_NUM-1:2] = {(`LEDS_NUM-2){1'b0}};

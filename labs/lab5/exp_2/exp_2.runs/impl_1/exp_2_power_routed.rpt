@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Mar 29 16:01:38 2022
+| Date             : Thu Mar 31 17:44:07 2022
 | Host             : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command          : report_power -file exp_2_power_routed.rpt -pb exp_2_power_summary_routed.pb -rpx exp_2_power_routed.rpx
 | Design           : exp_2
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 23.273 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 23.205 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 22.787                           |
+| Dynamic (W)              | 22.719                           |
 | Device Static (W)        | 0.486                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.982 |      515 |       --- |             --- |
-|   LUT as Logic |     1.798 |      265 |     20800 |            1.27 |
-|   CARRY4       |     0.122 |       47 |      8150 |            0.58 |
-|   Register     |     0.057 |      157 |     41600 |            0.38 |
+| Slice Logic    |     1.972 |      515 |       --- |             --- |
+|   LUT as Logic |     1.812 |      263 |     20800 |            1.26 |
+|   CARRY4       |     0.100 |       47 |      8150 |            0.58 |
+|   Register     |     0.054 |      157 |     41600 |            0.38 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |     1.659 |      363 |       --- |             --- |
-| I/O            |    19.145 |       32 |       106 |           30.19 |
+| Signals        |     1.731 |      364 |       --- |             --- |
+| I/O            |    19.016 |       32 |       106 |           30.19 |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    23.273 |          |           |                 |
+| Total          |    23.205 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     3.994 |       3.653 |      0.341 |
-| Vccaux    |       1.800 |     0.755 |       0.701 |      0.053 |
-| Vcco33    |       3.300 |     5.417 |       5.416 |      0.001 |
+| Vccint    |       1.000 |     4.055 |       3.715 |      0.341 |
+| Vccaux    |       1.800 |     0.750 |       0.696 |      0.053 |
+| Vcco33    |       3.300 |     5.380 |       5.379 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -138,19 +138,19 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| exp_2              |    22.787 |
-|   FSM              |     0.155 |
-|   LAP_CONTROL      |     0.375 |
-|   PauseBtn         |     0.035 |
+| exp_2              |    22.719 |
+|   FSM              |     0.321 |
+|   LAP_CONTROL      |     0.376 |
+|   PauseBtn         |     0.039 |
 |     U0             |     0.029 |
-|   RestartBtn       |     0.036 |
+|   RestartBtn       |     0.038 |
 |     U0             |     0.029 |
-|   TIME_DISPLAY     |     1.899 |
-|     SEP            |     1.495 |
+|   TIME_DISPLAY     |     1.942 |
+|     SEP            |     1.538 |
 |     nolabel_line57 |     0.404 |
-|       U0           |     0.129 |
-|   U0               |     0.617 |
-|   U1               |     0.495 |
+|       U0           |     0.124 |
+|   U0               |     0.570 |
+|   U1               |     0.390 |
 +--------------------+-----------+
 
 

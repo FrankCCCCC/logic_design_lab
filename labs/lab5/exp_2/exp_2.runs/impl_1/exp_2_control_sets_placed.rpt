@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Mar 29 16:01:10 2022
+| Date         : Thu Mar 31 17:43:39 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exp_2_control_sets_placed.rpt
 | Design       : exp_2
@@ -58,8 +58,8 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              33 |           13 |
-| No           | No                    | Yes                    |             112 |           38 |
+| No           | No                    | No                     |              33 |           11 |
+| No           | No                    | Yes                    |             112 |           40 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |              12 |            3 |
@@ -73,14 +73,14 @@ Table of Contents
 +-------------------------------------+-----------------+----------------------+------------------+----------------+
 |             Clock Signal            |  Enable Signal  |   Set/Reset Signal   | Slice Load Count | Bel Load Count |
 +-------------------------------------+-----------------+----------------------+------------------+----------------+
-|  RestartBtn/push_sig_long           |                 |                      |                1 |              1 |
 |  RestartBtn/push_sig_reg_0          |                 |                      |                1 |              1 |
+|  RestartBtn/push_sig_long           |                 |                      |                1 |              1 |
 |  PauseBtn/push_sig                  |                 |                      |                1 |              2 |
-|  TIME_DISPLAY/nolabel_line57/U0/CLK |                 | RestartBtn/U0/rst    |                5 |             12 |
 |  U0/clk_out_reg_0                   | U1/q[0]_i_1_n_0 | FSM/is_restart_reg_0 |                3 |             12 |
-| ~FSM/IS_LAP                         |                 |                      |                5 |             12 |
+| ~FSM/IS_LAP                         |                 |                      |                3 |             12 |
+|  TIME_DISPLAY/nolabel_line57/U0/CLK |                 | RestartBtn/U0/rst    |                6 |             12 |
 |  clk_IBUF_BUFG                      |                 |                      |                5 |             17 |
-|  clk_IBUF_BUFG                      |                 | RestartBtn/U0/rst    |               33 |            100 |
+|  clk_IBUF_BUFG                      |                 | RestartBtn/U0/rst    |               34 |            100 |
 +-------------------------------------+-----------------+----------------------+------------------+----------------+
 
 

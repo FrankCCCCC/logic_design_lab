@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Mar 29 16:01:38 2022
+| Date         : Thu Mar 31 17:44:07 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file exp_2_clock_utilization_routed.rpt
 | Design       : exp_2
@@ -70,12 +70,12 @@ Table of Contents
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------+------------------------------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                                   | Net                                |
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------+------------------------------------||
-| 0        | FDRE/Q          | None       | SLICE_X54Y22/AFF | X1Y0         |          12 |               2 |              |       | FSM/is_lap_reg/Q                             | FSM/IS_LAP                         - Static -
-| 1        | FDRE/Q          | None       | SLICE_X64Y17/AFF | X1Y0         |          12 |               1 |              |       | TIME_DISPLAY/nolabel_line57/U0/clk_out_reg/Q | TIME_DISPLAY/nolabel_line57/U0/CLK - Static -
-| 2        | FDCE/Q          | None       | SLICE_X60Y21/AFF | X1Y0         |          12 |               1 |              |       | U0/clk_out_reg/Q                             | U0/clk_out_reg_0                   - Static -
-| 3        | FDCE/Q          | None       | SLICE_X50Y20/AFF | X1Y0         |           2 |               0 |              |       | PauseBtn/push_sig_reg/Q                      | PauseBtn/push_sig                  - Static -
-| 4        | FDCE/Q          | None       | SLICE_X56Y21/AFF | X1Y0         |           1 |               0 |              |       | RestartBtn/push_sig_long_reg/Q               | RestartBtn/push_sig_long           - Static -
-| 5        | FDCE/Q          | None       | SLICE_X54Y19/AFF | X1Y0         |           1 |               0 |              |       | RestartBtn/push_sig_reg/Q                    | RestartBtn/push_sig_reg_0          - Static -
+| 0        | FDRE/Q          | None       | SLICE_X30Y23/AFF | X0Y0         |          12 |               2 |              |       | FSM/is_lap_reg/Q                             | FSM/IS_LAP                         - Static -
+| 1        | FDRE/Q          | None       | SLICE_X64Y18/AFF | X1Y0         |          12 |               1 |              |       | TIME_DISPLAY/nolabel_line57/U0/clk_out_reg/Q | TIME_DISPLAY/nolabel_line57/U0/CLK - Static -
+| 2        | FDCE/Q          | None       | SLICE_X59Y19/AFF | X1Y0         |          12 |               1 |              |       | U0/clk_out_reg/Q                             | U0/clk_out_reg_0                   - Static -
+| 3        | FDCE/Q          | None       | SLICE_X32Y20/AFF | X0Y0         |           2 |               0 |              |       | PauseBtn/push_sig_reg/Q                      | PauseBtn/push_sig                  - Static -
+| 4        | FDCE/Q          | None       | SLICE_X33Y21/AFF | X0Y0         |           1 |               0 |              |       | RestartBtn/push_sig_long_reg/Q               | RestartBtn/push_sig_long           - Static -
+| 5        | FDCE/Q          | None       | SLICE_X32Y21/AFF | X0Y0         |           1 |               0 |              |       | RestartBtn/push_sig_reg/Q                    | RestartBtn/push_sig_reg_0          - Static -
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------+------------------------------------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)
@@ -90,8 +90,8 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    1 |  1200 |    1 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  144 |  1500 |   19 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X0Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   77 |  1200 |   36 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   68 |  1500 |   27 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1200 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1500 |    0 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
@@ -127,13 +127,13 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+----+------+
-|    | X0 | X1   |
-+----+----+------+
-| Y2 |  0 |    0 |
-| Y1 |  0 |    0 |
-| Y0 |  1 |  116 |
-+----+----+------+
++----+-----+-----+
+|    | X0  | X1  |
++----+-----+-----+
+| Y2 |   0 |   0 |
+| Y1 |   0 |   0 |
+| Y0 |  73 |  44 |
++----+-----+-----+
 
 
 8. Clock Region Cell Placement per Global Clock: Region X0Y0
@@ -142,7 +142,7 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net           |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------+
-| g0        | n/a   | BUFG/O          | None       |           1 |               0 |  1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG |
+| g0        | n/a   | BUFG/O          | None       |          73 |               0 | 73 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -152,11 +152,11 @@ All Modules
 9. Clock Region Cell Placement per Global Clock: Region X1Y0
 ------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net           |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------+
-| g0        | n/a   | BUFG/O          | None       |         116 |               0 | 116 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net           |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------+
+| g0        | n/a   | BUFG/O          | None       |          44 |               0 | 44 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts

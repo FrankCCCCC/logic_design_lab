@@ -38,21 +38,23 @@ module binary_down_4digit_counter(
     
     initial
     begin
-        q <= `BCD_COUNTER_LIMIT;
+//        q <= `BCD_COUNTER_LIMIT;
+        q <= `BCD_COUNTER_ZERO;
     end
     
     always@(q or is_pause)
     begin
 //        if(q == (`BCD_COUNTER_LIMIT - `BCD_COUNTER_BITS'd1))
-        if(q <= `BCD_COUNTER_BITS'd1)
+        if(q >= `BCD_COUNTER_LIMIT)
         begin
-            q_in <= `BCD_COUNTER_ZERO;
+//            q_in <= `BCD_COUNTER_ZERO;
+            q_in <= `BCD_COUNTER_LIMIT;
         end
         else
         begin
             if(~is_pause)
             begin
-                q_in <= q - `BCD_COUNTER_BITS'd1;
+                q_in <= q + `BCD_COUNTER_BITS'd1;
             end
             else
             begin
@@ -65,7 +67,8 @@ module binary_down_4digit_counter(
     begin
         if(~rst)
         begin
-            q <= `BCD_COUNTER_LIMIT;
+//            q <= `BCD_COUNTER_LIMIT;
+            q <= `BCD_COUNTER_ZERO;
         end
         else
         begin
