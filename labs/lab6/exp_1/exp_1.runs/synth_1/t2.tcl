@@ -35,9 +35,11 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/alarm.v
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/clock_generator.v
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/counterx.v
+  D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/debounce.v
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/display.v
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/downcounter.v
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/fsm.v
+  D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/onepulse.v
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/scan_ctl.v
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/stopwatch.v
   D:/data/logic_design_lab/labs/lab6/exp_1/exp_1.srcs/sources_1/new/timedisplay.v

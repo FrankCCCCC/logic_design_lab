@@ -11,21 +11,21 @@ module t2(
 
 wire clk_1, clk_2k; //divided clock
 wire data_load_enable, reg_load_enable;
-wire alarm_enable;
+//wire alarm_enable;
 wire [1:0] set_min_sec;
 reg [`BCD_BIT_WIDTH-1:0] sec0, sec1,min0, min1; // Binary counter output
 wire [`BCD_BIT_WIDTH-1:0] ssd_in;
 wire [`BCD_BIT_WIDTH-1:0] time_sec0, time_sec1,time_min0, time_min1; // Binary counter output
-wire [`BCD_BIT_WIDTH-1:0] stopwatch_sec0, stopwatch_sec1, stopwatch_min0, stopwatch_min1; // Binary counter output
-wire [`BCD_BIT_WIDTH-1:0] alarm_sec0, alarm_sec1,alarm_min0, alarm_min1; // Binary counter output
+//wire [`BCD_BIT_WIDTH-1:0] stopwatch_sec0, stopwatch_sec1, stopwatch_min0, stopwatch_min1; // Binary counter output
+//wire [`BCD_BIT_WIDTH-1:0] alarm_sec0, alarm_sec1,alarm_min0, alarm_min1; // Binary counter output
 wire [`BCD_BIT_WIDTH-1:0] reg_q0, reg_q1, reg_q2, reg_q3; // Binary counter 
 reg [`BCD_BIT_WIDTH-1:0] reg_load_q0, reg_load_q1, reg_load_q2, reg_load_q3; // Binary counter 
 wire [4:0] state;
-wire [4:0] state_led;
-wire [9:0] alarm_led;
-wire [9:0] stopwatch_led;
+//wire [4:0] state_led;
+//wire [9:0] alarm_led;
+//wire [9:0] stopwatch_led;
 
-assign led = {state_led,{alarm_led|stopwatch_led},alarm_enable};
+//assign led = {state_led,{alarm_led|stopwatch_led},alarm_enable};
 
 // clock generator
 clock_generator Uclkgen(
@@ -53,42 +53,42 @@ timedisplay Utd(
 );
 
 // Stopwatch
-stopwatch Ustw(
-  .led(stopwatch_led),
-  .sec0(stopwatch_sec0), // counter value
-  .sec1(stopwatch_sec1), // counter value
-  .min0(stopwatch_min0), // counter value
-  .min1(stopwatch_min1), // counter value
-  .count_enable(stopwatch_count_enable), // counting enabled control signal
-  .load_value_enable(data_load_enable && (state[4:3] == `STW)), // load setting value control
-  .load_value_sec0(reg_q0), // value to be loaded
-  .load_value_sec1(reg_q1), // value to be loaded
-  .load_value_min0(reg_q2), // value to be loaded
-  .load_value_min1(reg_q3), // value to be loaded
-  .clk(clk_1), // clock
-  .rst_n(rst_n) // low active reset
-);
+//stopwatch Ustw(
+//  .led(stopwatch_led),
+//  .sec0(stopwatch_sec0), // counter value
+//  .sec1(stopwatch_sec1), // counter value
+//  .min0(stopwatch_min0), // counter value
+//  .min1(stopwatch_min1), // counter value
+//  .count_enable(stopwatch_count_enable), // counting enabled control signal
+//  .load_value_enable(data_load_enable && (state[4:3] == `STW)), // load setting value control
+//  .load_value_sec0(reg_q0), // value to be loaded
+//  .load_value_sec1(reg_q1), // value to be loaded
+//  .load_value_min0(reg_q2), // value to be loaded
+//  .load_value_min1(reg_q3), // value to be loaded
+//  .clk(clk_1), // clock
+//  .rst_n(rst_n) // low active reset
+//);
 
-// Alarm
-alarm(
-  .led(alarm_led),
-  .alarm_sec0(alarm_sec0),
-  .alarm_sec1(alarm_sec1),
-  .alarm_min0(alarm_min0),
-  .alarm_min1(alarm_min1),
-  .time_sec0(time_sec0),
-  .time_sec1(time_sec1),
-  .time_min0(time_min0),
-  .time_min1(time_min1),
-  .load_value_enable(data_load_enable && (state[4:3] == `ALM)),
-  .load_value_sec0(reg_q0),
-  .load_value_sec1(reg_q1),
-  .load_value_min0(reg_q2),
-  .load_value_min1(reg_q3),
-  .alarm_enable(alarm_enable),
-  .clk(clk_1),
-  .rst_n(rst_n)
-);
+//// Alarm
+//alarm(
+//  .led(alarm_led),
+//  .alarm_sec0(alarm_sec0),
+//  .alarm_sec1(alarm_sec1),
+//  .alarm_min0(alarm_min0),
+//  .alarm_min1(alarm_min1),
+//  .time_sec0(time_sec0),
+//  .time_sec1(time_sec1),
+//  .time_min0(time_min0),
+//  .time_min1(time_min1),
+//  .load_value_enable(data_load_enable && (state[4:3] == `ALM)),
+//  .load_value_sec0(reg_q0),
+//  .load_value_sec1(reg_q1),
+//  .load_value_min0(reg_q2),
+//  .load_value_min1(reg_q3),
+//  .alarm_enable(alarm_enable),
+//  .clk(clk_1),
+//  .rst_n(rst_n)
+//);
 
 // FSM
 fsm Ufsm(
@@ -115,20 +115,6 @@ always @*
       reg_load_q1 = time_sec1;
       reg_load_q2 = time_min0;
       reg_load_q3 = time_min1;
-    end
-  `STW:
-    begin
-      reg_load_q0 = stopwatch_sec0;
-      reg_load_q1 = stopwatch_sec1;
-      reg_load_q2 = stopwatch_min0;
-      reg_load_q3 = stopwatch_min1;
-    end
-  `ALM:
-    begin
-      reg_load_q0 = alarm_sec0;
-      reg_load_q1 = alarm_sec1;
-      reg_load_q2 = alarm_min0;
-      reg_load_q3 = alarm_min1;
     end
   default:
     begin
@@ -164,34 +150,6 @@ always @*
       min0 = time_min0;
       min1 = time_min1;
     end
-  `STW_DISP: 
-    begin
-      sec0 = stopwatch_sec0;
-      sec1 = stopwatch_sec1;
-      min0 = stopwatch_min0;
-      min1 = stopwatch_min1;
-    end
-  `STW_START:
-    begin
-      sec0 = stopwatch_sec0;
-      sec1 = stopwatch_sec1;
-      min0 = stopwatch_min0;
-      min1 = stopwatch_min1;
-    end
-  `STW_PAUSE:
-    begin
-      sec0 = stopwatch_sec0;
-      sec1 = stopwatch_sec1;
-      min0 = stopwatch_min0;
-      min1 = stopwatch_min1;
-    end
-  `ALM_DISP:
-    begin
-      sec0 = alarm_sec0;
-      sec1 = alarm_sec1;
-      min0 = alarm_min0;
-      min1 = alarm_min1;
-    end
   `TIME_SETMIN:
     begin
       sec0 = reg_q0;
@@ -200,34 +158,6 @@ always @*
       min1 = reg_q3;
     end
   `TIME_SETSEC:
-    begin
-      sec0 = reg_q0;
-      sec1 = reg_q1;
-      min0 = reg_q2;
-      min1 = reg_q3;
-    end
-  `STW_SETMIN:
-    begin
-      sec0 = reg_q0;
-      sec1 = reg_q1;
-      min0 = reg_q2;
-      min1 = reg_q3;
-    end
-  `STW_SETSEC:
-    begin
-      sec0 = reg_q0;
-      sec1 = reg_q1;
-      min0 = reg_q2;
-      min1 = reg_q3;
-    end
-  `ALM_SETMIN:
-    begin
-      sec0 = reg_q0;
-      sec1 = reg_q1;
-      min0 = reg_q2;
-      min1 = reg_q3;
-    end
-  `ALM_SETSEC:
     begin
       sec0 = reg_q0;
       sec1 = reg_q1;

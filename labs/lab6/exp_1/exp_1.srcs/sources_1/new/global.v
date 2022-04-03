@@ -55,3 +55,9 @@
 `define FIVE 4'd5
 `define ONE 4'd1
 `define ZERO 4'd0
+
+
+// One Pulse
+`define COUNTER_BITS_N 30
+`define PRESS_CYCLE_N `COUNTER_BITS_N'd200000000
+//`define PRESS_CYCLE_N `COUNTER_BITS_N'd2

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Mar 31 17:57:24 2022
+| Date         : Sun Apr  3 20:35:17 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_drc -file t2_drc_opted.rpt -pb t2_drc_opted.pb -rpx t2_drc_opted.rpx
 | Design       : t2
@@ -24,12 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 1
-+----------+----------+-----------------------------------------------------+------------+
-| Rule     | Severity | Description                                         | Violations |
-+----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-+----------+----------+-----------------------------------------------------+------------+
+             Violations found: 2
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
++-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -44,6 +45,12 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
  #where value2 is the voltage provided to configuration bank 0
 
 Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT Ufsm/RestartBtn/FSM_onehot_state_next[10]_i_2 is driving clock pin of 23 cells. This could lead to large hold time violations. Involved cells are:
+Ufsm/FSM_onehot_state_next_reg[0], Ufsm/FSM_onehot_state_next_reg[10], Ufsm/FSM_onehot_state_next_reg[1], Ufsm/FSM_onehot_state_next_reg[2], Ufsm/FSM_onehot_state_next_reg[3], Ufsm/FSM_onehot_state_next_reg[4], Ufsm/FSM_onehot_state_next_reg[5], Ufsm/FSM_onehot_state_next_reg[6], Ufsm/FSM_onehot_state_next_reg[7], Ufsm/FSM_onehot_state_next_reg[8], Ufsm/FSM_onehot_state_next_reg[9], Ufsm/alarm_enable_next_reg, Ufsm/data_load_enable_reg, Ufsm/reg_load_enable_reg, Ufsm/set_enable_reg (the first 15 of 23 listed)
 Related violations: <none>
 
 
