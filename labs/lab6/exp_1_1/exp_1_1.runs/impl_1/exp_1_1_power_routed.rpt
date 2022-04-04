@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sun Apr  3 23:56:12 2022
+| Date             : Tue Apr  5 00:35:18 2022
 | Host             : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command          : report_power -file exp_1_1_power_routed.rpt -pb exp_1_1_power_summary_routed.pb -rpx exp_1_1_power_routed.rpx
 | Design           : exp_1_1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 30.264 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 31.129 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 29.778                           |
+| Dynamic (W)              | 30.643                           |
 | Device Static (W)        | 0.486                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.531 |      197 |       --- |             --- |
-|   LUT as Logic |     0.470 |       69 |     20800 |            0.33 |
-|   Register     |     0.028 |       70 |     41600 |            0.17 |
-|   CARRY4       |     0.027 |       11 |      8150 |            0.13 |
+| Slice Logic    |     0.712 |      207 |       --- |             --- |
+|   LUT as Logic |     0.644 |       91 |     20800 |            0.44 |
+|   Register     |     0.032 |       64 |     41600 |            0.15 |
+|   CARRY4       |     0.031 |       11 |      8150 |            0.13 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |     0.540 |      161 |       --- |             --- |
-| I/O            |    28.707 |       30 |       106 |           28.30 |
+| Signals        |     0.790 |      178 |       --- |             --- |
+| I/O            |    29.141 |       30 |       106 |           28.30 |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    30.264 |          |           |                 |
+| Total          |    31.129 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     1.416 |       1.075 |      0.341 |
-| Vccaux    |       1.800 |     1.105 |       1.052 |      0.053 |
-| Vcco33    |       3.300 |     8.125 |       8.124 |      0.001 |
+| Vccint    |       1.000 |     1.847 |       1.506 |      0.341 |
+| Vccaux    |       1.800 |     1.121 |       1.068 |      0.053 |
+| Vcco33    |       3.300 |     8.248 |       8.247 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -135,17 +135,15 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------+-----------+
-| Name       | Power (W) |
-+------------+-----------+
-| exp_1_1    |    29.778 |
-|   U_SC     |     0.184 |
-|   Uclkgen  |     0.421 |
-|   Utd      |     0.454 |
-|     Uhour0 |     0.002 |
-|     Umin0  |     0.352 |
-|     Usec0  |     0.095 |
-|     Usec1  |     0.005 |
-+------------+-----------+
++-----------+-----------+
+| Name      | Power (W) |
++-----------+-----------+
+| exp_1_1   |    30.643 |
+|   U_SC    |     0.246 |
+|   Uclkgen |     0.491 |
+|   Utd     |     0.751 |
+|     Umin  |     0.129 |
+|     Usec  |     0.622 |
++-----------+-----------+
 
 

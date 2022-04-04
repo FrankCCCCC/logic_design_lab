@@ -25,22 +25,27 @@ module fsm(
   output reg set_enable,
   output reg data_load_enable,
   output reg reg_load_enable,
+  output reg [`DISPLAY_SLIDE_BITS_N-1:0] display_slide,
   output reg [1:0] set_min_sec,
   output reg [4:0] state,
-  input mode,
-  input switch,
+  input btn_l,
+  input btn_m,
+  input btn_r,
+  input switch_0,
+  input switch_1,
   input clk,
   input rst_n
 );
 
+reg [`DISPLAY_SLIDE_BITS_N-1:0] display_slide_next;
 reg [4:0] state_next;
-wire long_press, short_press;
+wire btn_m_short, btn_m_long;
 
 // Determine short press or long press
-//onepulse RestartBtn(.rst(rst_n), .clk(clk), .push(mode), .push_onepulse(short_press), .push_onepulse_long(long_press));
+onepulse RestartBtn(.rst(rst_n), .clk(clk), .push(btn_m), .push_onepulse(btn_m_short), .push_onepulse_long(btn_m_long));
 
-wire Press_Merge;
-assign Press_Merge = short_press | long_press;
+//wire Press_Merge;
+//assign Press_Merge = short_press | long_press;
 
 initial begin
     set_enable = `DISABLED;
@@ -51,18 +56,32 @@ initial begin
     state_led = state;
 end
 
+always@(posedge btn_m_short) begin
+    case (state)
+        `TIME_DISP: begin
+            if(display_slide < `DISPLAY_SLIDE_BITS_N'd3) begin
+                display_slide_next <= display_slide + 2'd1;
+            end else begin
+                display_slide_next <= `DISPLAY_SLIDE_BITS_N'd1;
+            end
+         end
+//         `TIME_DISP: begin
+//            display_slide_next <= display_slide + `DISPLAY_SLIDE_BITS_N'd1;
+//         end
+    endcase
+end
 // state transition
-always @(posedge Press_Merge)
-begin
-  set_enable = `DISABLED;
-  data_load_enable = `DISABLED;
-  set_min_sec = {2{`DISABLED}};
-  reg_load_enable = `DISABLED;
-  state_next = `TIME_DISP;
-  state_led = state;
-//  case (state)
-//  `TIME_DISP:
-//    begin
+always @(switch_0 or switch_1) begin
+//  set_enable = `DISABLED;
+//  data_load_enable = `DISABLED;
+//  set_min_sec = {2{`DISABLED}};
+//  reg_load_enable = `DISABLED;
+//  state_next = `TIME_DISP;
+//  state_led = state;
+
+  case ({switch_0, switch_1})
+    2'b00: begin
+        state_next <= `TIME_DISP;
 //      state_led = `TIME_DISP;
 //      if (long_press)
 //      begin
@@ -73,9 +92,9 @@ begin
 //        state_next = `STW_DISP;
 //      else 
 //        state_next = `TIME_DISP;
-//    end
-//  `TIME_SETMIN:
-//    begin
+    end
+    2'b01: begin
+        state_next <= `TIME_DISP;
 //      state_led = `TIME_SETMIN;
 //      set_enable = switch;
 //      set_min_sec = `SETMIN;
@@ -88,7 +107,7 @@ begin
 //      end
 //      else
 //        state_next = `TIME_SETMIN;
-//    end
+    end
 //  `TIME_SETSEC:
 //    begin
 //      state_led = `TIME_SETSEC;
@@ -104,15 +123,18 @@ begin
 //      else
 //        state_next = `TIME_SETSEC;
 //    end
-//  endcase
+  endcase
 end
 
 // state register
 always @(posedge clk or negedge rst_n)
-  if (~rst_n)
-    state <= `TIME_DISP;
-  else
-    state <= state_next;    
-
+    if (~rst_n) begin
+        state <= `TIME_DISP;
+        display_slide <= `DISPLAY_SLIDE_BITS_N'd1;
+    end else begin
+        state <= state_next;
+        display_slide <= display_slide_next;
+    end    
+  
 endmodule
 

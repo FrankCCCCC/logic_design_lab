@@ -73,13 +73,23 @@
 `define ENABLED 1'b1
 `define DISABLED 1'b0
 
-`define NINE 4'd9
-`define FIVE 4'd5
-`define FOUR 4'd4
-`define THREE 4'd3
-`define TWO 4'd2
-`define ONE 4'd1
-`define ZERO 4'd0
+
+//`define NINETY_NINE `BCD_BIT_WIDTH'd99
+//`define FIFTY_NINE `BCD_BIT_WIDTH'd59
+//`define THIRTY_TWO `BCD_BIT_WIDTH'd32
+//`define THIRTY_ONE `BCD_BIT_WIDTH'd31
+//`define THIRTY `BCD_BIT_WIDTH'd30
+//`define TWENTY_NINE `BCD_BIT_WIDTH'd29
+//`define TWENTY_EIGHT `BCD_BIT_WIDTH'd28
+//`define TWENTY_THREE `BCD_BIT_WIDTH'd23
+
+`define NINE `BCD_BIT_WIDTH'd9
+`define FIVE `BCD_BIT_WIDTH'd5
+`define FOUR `BCD_BIT_WIDTH'd4
+`define THREE `BCD_BIT_WIDTH'd3
+`define TWO `BCD_BIT_WIDTH'd2
+`define ONE `BCD_BIT_WIDTH'd1
+`define ZERO `BCD_BIT_WIDTH'd0
 
 
 // One Pulse
@@ -87,5 +97,14 @@
 `define PRESS_CYCLE_N `COUNTER_BITS_N'd200000000
 //`define PRESS_CYCLE_N `COUNTER_BITS_N'd2
 
-`define SWITCH_MODE_N 3
-`define SWITCH_BITS_N 2
+//`define SWITCH_MODE_N 3
+`define DISPLAY_SLIDE_BITS_N 2
+
+// timedisplay
+`define ENABLED_COUNTING_DIGITS_N 8
+
+//unitset
+`define COUNT_ENABLE_N 2
+
+// Counterx
+`define COUNTERX_BITS_N 9

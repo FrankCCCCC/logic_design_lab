@@ -1,10 +1,10 @@
 # Clock
-set_property PACKAGE_PIN W5 [get_ports {clk}]
-set_property IOSTANDARD LVCMOS33 [get_ports {clk}]
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
 
 # active low reset
-set_property PACKAGE_PIN V17 [get_ports {rst_n}]
-set_property IOSTANDARD LVCMOS33 [get_ports {rst_n}]
+set_property PACKAGE_PIN W16 [get_ports rst_n]
+set_property IOSTANDARD LVCMOS33 [get_ports rst_n]
 
 #8 common segment controls
 set_property PACKAGE_PIN W7 [get_ports {segs[7]}]
@@ -68,7 +68,18 @@ set_property PACKAGE_PIN L1 [get_ports {led[15]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led[15]}]
 
 # push buttons
-set_property PACKAGE_PIN W19 [get_ports {mode}]
-set_property IOSTANDARD LVCMOS33 [get_ports {mode}]
-set_property PACKAGE_PIN T17 [get_ports {switch}]
-set_property IOSTANDARD LVCMOS33 [get_ports {switch}]
+#set_property PACKAGE_PIN W19 [get_ports {mode}]
+#set_property IOSTANDARD LVCMOS33 [get_ports {mode}]
+#set_property PACKAGE_PIN T17 [get_ports {switch}]
+#set_property IOSTANDARD LVCMOS33 [get_ports {switch}]
+
+set_property PACKAGE_PIN V17 [get_ports switch_0]
+set_property PACKAGE_PIN V16 [get_ports switch_1]
+set_property IOSTANDARD LVCMOS33 [get_ports switch_0]
+set_property IOSTANDARD LVCMOS33 [get_ports switch_1]
+set_property PACKAGE_PIN T17 [get_ports btn_r]
+set_property PACKAGE_PIN U18 [get_ports btn_m]
+set_property PACKAGE_PIN W19 [get_ports btn_l]
+set_property IOSTANDARD LVCMOS33 [get_ports btn_l]
+set_property IOSTANDARD LVCMOS33 [get_ports btn_m]
+set_property IOSTANDARD LVCMOS33 [get_ports btn_r]
