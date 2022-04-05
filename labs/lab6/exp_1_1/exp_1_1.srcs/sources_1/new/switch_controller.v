@@ -37,34 +37,20 @@ module switch_controller(
     // Binary counter output
     
     always@(*) begin
-//        case(display_slide)
-//            `DISPLAY_SLIDE_BITS_N'd0: begin
-//                sel_d1 <= alarm_hour;
-//                sel_d0 <= alarm_min;
-//            end 
-//            `DISPLAY_SLIDE_BITS_N'd1: begin
-//                sel_d1 <= year;
-//                sel_d0 <= month;
-//            end
-//            `DISPLAY_SLIDE_BITS_N'd2: begin
-//                sel_d1 <= day;
-//                sel_d0 <= hour;
-//            end
-//            `DISPLAY_SLIDE_BITS_N'd3: begin
-//                sel_d1 <= min;
-//                sel_d0 <= sec;
-//            end
-//        endcase        
         case(display_slide)
             `DISPLAY_SLIDE_BITS_N'd0: begin
-                sel_d1 <= hour;
-                sel_d0 <= min;
-//                sel_d1 <= min;
-//                sel_d0 <= sec;
-            end
+                sel_d1 <= alarm_hour;
+                sel_d0 <= alarm_min;
+            end 
             `DISPLAY_SLIDE_BITS_N'd1: begin
-//                sel_d1 <= min;
-//                sel_d0 <= sec;
+                sel_d1 <= year;
+                sel_d0 <= month;
+            end
+            `DISPLAY_SLIDE_BITS_N'd2: begin
+                sel_d1 <= day;
+                sel_d0 <= hour;
+            end
+            `DISPLAY_SLIDE_BITS_N'd3: begin
                 sel_d1 <= min;
                 sel_d0 <= sec;
             end
@@ -73,5 +59,23 @@ module switch_controller(
                 sel_d0 <= sec;
             end
         endcase        
+//        case(display_slide)
+//            `DISPLAY_SLIDE_BITS_N'd0: begin
+//                sel_d1 <= hour;
+//                sel_d0 <= min;
+////                sel_d1 <= min;
+////                sel_d0 <= sec;
+//            end
+//            `DISPLAY_SLIDE_BITS_N'd1: begin
+////                sel_d1 <= min;
+////                sel_d0 <= sec;
+//                sel_d1 <= min;
+//                sel_d0 <= sec;
+//            end
+//            default: begin
+//                sel_d1 <= min;
+//                sel_d0 <= sec;
+//            end
+//        endcase        
     end
 endmodule

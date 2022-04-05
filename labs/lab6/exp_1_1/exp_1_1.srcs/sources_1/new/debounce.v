@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/03/2022 05:10:13 PM
+// Create Date: 03/26/2022 03:25:42 PM
 // Design Name: 
 // Module Name: debounce
 // Project Name: 
@@ -18,7 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
 
 `include "global.v"
 
@@ -56,4 +55,3 @@ module debounce (
         end
     end 
 endmodule
-

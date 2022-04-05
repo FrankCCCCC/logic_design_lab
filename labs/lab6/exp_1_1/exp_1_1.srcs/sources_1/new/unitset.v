@@ -20,131 +20,171 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 `include "global.v"
+
 module unitset(
-  output [`BCD_BIT_WIDTH-1:0] alarm_hour1,
-  output [`BCD_BIT_WIDTH-1:0] alarm_hour0,
-  output [`BCD_BIT_WIDTH-1:0] alarm_min1,
-  output [`BCD_BIT_WIDTH-1:0] alarm_min0,
-  output [`BCD_BIT_WIDTH-1:0] year1,
-  output [`BCD_BIT_WIDTH-1:0] year0,
-  output [`BCD_BIT_WIDTH-1:0] month1,
-  output [`BCD_BIT_WIDTH-1:0] month0,
-  output [`BCD_BIT_WIDTH-1:0] day1,
-  output [`BCD_BIT_WIDTH-1:0] day0,
-  output [`BCD_BIT_WIDTH-1:0] hour1,
-  output [`BCD_BIT_WIDTH-1:0] hour0,
-  output [`BCD_BIT_WIDTH-1:0] min1,
-  output [`BCD_BIT_WIDTH-1:0] min0,
-  output [`BCD_BIT_WIDTH-1:0] sec1,
-  output [`BCD_BIT_WIDTH-1:0] sec0,
-  input [`COUNT_ENABLE_N-1:0] count_enable,
-  input load_value_enable,
-  input [`BCD_BIT_WIDTH-1:0] load_alarm_hour1,
-  input [`BCD_BIT_WIDTH-1:0] load_alarm_hour0,
-  input [`BCD_BIT_WIDTH-1:0] load_alarm_min1,
-  input [`BCD_BIT_WIDTH-1:0] load_alarm_min0,
-  input [`BCD_BIT_WIDTH-1:0] load_year1,
-  input [`BCD_BIT_WIDTH-1:0] load_year0,
-  input [`BCD_BIT_WIDTH-1:0] load_month1,
-  input [`BCD_BIT_WIDTH-1:0] load_month0,
-  input [`BCD_BIT_WIDTH-1:0] load_day1,
-  input [`BCD_BIT_WIDTH-1:0] load_day0,
-  input [`BCD_BIT_WIDTH-1:0] load_hour1,
-  input [`BCD_BIT_WIDTH-1:0] load_hour0,
-  input [`BCD_BIT_WIDTH-1:0] load_min1,
-  input [`BCD_BIT_WIDTH-1:0] load_min0,
-  input [`BCD_BIT_WIDTH-1:0] load_sec1,
-  input [`BCD_BIT_WIDTH-1:0] load_sec0,
-  input [`DISPLAY_SLIDE_BITS_N-1:0] display_slide,
-  input clk,
-  input rst_n
+    output [`COUNTERX_BITS_N-1:0] alarm_hour,
+    output [`COUNTERX_BITS_N-1:0] alarm_min,
+    output [`COUNTERX_BITS_N-1:0] year,
+    output [`COUNTERX_BITS_N-1:0] month,
+    output [`COUNTERX_BITS_N-1:0] day,
+    output [`COUNTERX_BITS_N-1:0] hour,
+    output [`COUNTERX_BITS_N-1:0] min,
+    output [`COUNTERX_BITS_N-1:0] sec,
+    input [`COUNT_ENABLE_N-1:0] count_enable,
+    input load_value_enable,
+    input [`COUNTERX_BITS_N-1:0] load_alarm_hour,
+    input [`COUNTERX_BITS_N-1:0] load_alarm_min,
+    input [`COUNTERX_BITS_N-1:0] load_year,
+    input [`COUNTERX_BITS_N-1:0] load_month,
+    input [`COUNTERX_BITS_N-1:0] load_day,
+    input [`COUNTERX_BITS_N-1:0] load_hour,
+    input [`COUNTERX_BITS_N-1:0] load_min,
+    input [`COUNTERX_BITS_N-1:0] load_sec,
+    input [`DISPLAY_SLIDE_BITS_N-1:0] display_slide,
+    input clk,
+    input rst_n
 );
 
-wire carry_sec0, carry_min0, carry_hour0;
+wire carry_sec, carry_min, carry_hour, carry_day, carry_month, carry_year, carry_alarm_min, carry_alarm_hour;
+wire [`COUNTERX_BITS_N-1:0] year_limit, month_limit, day_limit,  hour_limit, min_limit, sec_limit;
+wire [`COUNTERX_BITS_N-1:0] year_init, month_init, day_init,  hour_init, min_init, sec_init;
 
 reg [`ENABLED_COUNTING_DIGITS_N-1:0] enabled_counting_digits;
 
 always@(*) begin
     case(display_slide)
         `DISPLAY_SLIDE_BITS_N'd0: begin
+            // Alarm
             enabled_counting_digits <= {(`COUNT_ENABLE_N'b11 & count_enable), `COUNT_ENABLE_N-2'd0};
         end 
         `DISPLAY_SLIDE_BITS_N'd1: begin
+            // Year &  Month
             enabled_counting_digits <= {2'd0, (`COUNT_ENABLE_N'b11 & count_enable), `COUNT_ENABLE_N-4'd0};
         end
         `DISPLAY_SLIDE_BITS_N'd2: begin
+            // Day & Hour
             enabled_counting_digits <= {4'd0, (`COUNT_ENABLE_N'b11 & count_enable), `COUNT_ENABLE_N-6'd0};
         end
         `DISPLAY_SLIDE_BITS_N'd3: begin
+            // Minute & Second
             enabled_counting_digits <= {6'd0, (`COUNT_ENABLE_N'b11 & count_enable)};
         end
     endcase        
 end
 
-counterx Usec0(
-  .q(sec0), // counter value
-  .time_carry(carry_sec0), // counter carry
-  .count_enable(enabled_counting_digits[0]), // counting enabled control signal
-  .load_value_enable(load_value_enable), // load setting value control
-  .load_value(load_sec0), // value to be loaded
-  .count_limit(`NINE), // limit of the up counter
-  .clk(clk), // clock
-  .rst_n(rst_n) // low active reset
+datetime_limit U0(
+    .year(year),
+    .month(month),
+    .year_limit(year_limit),
+    .month_limit(month_limit),
+    .day_limit(day_limit),
+    .hour_limit(hour_limit),
+    .min_limit(min_limit),
+    .sec_limit(sec_limit),
+    .year_init(year_init),
+    .month_init(month_init),
+    .day_init(day_init),
+    .hour_init(hour_init),
+    .min_init(min_init),
+    .sec_init(sec_init)
+    );
+
+counterx USec(
+    .q(sec), // counter value
+    .time_carry(carry_sec), // counter carry
+    .count_enable(enabled_counting_digits[0]), // counting enabled control signal
+//    .count_enable(count_enable[0]), // counting enabled control signal
+    .load_value_enable(load_value_enable), // load setting value control
+    .load_value(load_sec), // value to be loaded
+    .count_limit(sec_limit), // limit of the up counter
+    .count_init(sec_init),
+    .clk(clk), // clock
+    .rst_n(rst_n) // low active reset
 );
 
-counterx Usec1(
-  .q(sec1), // counter value
-  .time_carry(), // counter carry
-  .count_enable(carry_sec0), // counting enabled control signal
-  .load_value_enable(load_value_enable), // load setting value control
-  .load_value(load_sec1), // value to be loaded
-  .count_limit(`FIVE), // limit of the up counter
-  .clk(clk), // clock
-  .rst_n(rst_n) // low active reset
+counterx UMin(
+    .q(min), // counter value
+    .time_carry(carry_min), // counter carry
+    .count_enable(enabled_counting_digits[1]), // counting enabled control signal
+//    .count_enable(count_enable[1]), // counting enabled control signal
+    .load_value_enable(load_value_enable), // load setting value control
+    .load_value(load_min), // value to be loaded
+    .count_limit(min_limit), // limit of the up counter
+    .count_init(min_init),
+    .clk(clk), // clock
+    .rst_n(rst_n) // low active reset
 );
 
-counterx Umin0(
-  .q(min0), // counter value
-  .time_carry(carry_min0), // counter carry
-  .count_enable(enabled_counting_digits[1]), // counting enabled control signal
-  .load_value_enable(load_value_enable), // load setting value control
-  .load_value(load_min0), // value to be loaded
-  .count_limit(`NINE), // limit of the up counter
-  .clk(clk), // clock
-  .rst_n(rst_n) // low active reset
+counterx UHour(
+    .q(hour), // counter value
+    .time_carry(carry_hour), // counter carry
+    .count_enable(enabled_counting_digits[2]), // counting enabled control signal
+    .load_value_enable(load_value_enable), // load setting value control
+    .load_value(load_hour), // value to be loaded
+    .count_limit(hour_limit), // limit of the up counter
+    .count_init(hour_init),
+    .clk(clk), // clock
+    .rst_n(rst_n) // low active reset
 );
 
-counterx Umin1(
-  .q(min1), // counter value
-  .time_carry(), // counter carry
-  .count_enable(carry_min0), // counting enabled control signal
-  .load_value_enable(load_value_enable), // load setting value control
-  .load_value(load_min1), // value to be loaded
-  .count_limit(`FIVE), // limit of the up counter
-  .clk(clk), // clock
-  .rst_n(rst_n) // low active reset
+counterx UDay(
+    .q(day), // counter value
+    .time_carry(carry_day), // counter carry
+    .count_enable(enabled_counting_digits[3]), // counting enabled control signal
+    .load_value_enable(load_value_enable), // load setting value control
+    .load_value(load_day), // value to be loaded
+    .count_limit(day_limit), // limit of the up counter
+    .count_init(day_init),
+    .clk(clk), // clock
+    .rst_n(rst_n) // low active reset
 );
 
-counterx Uhour0(
-  .q(hour0), // counter value
-  .time_carry(carry_hour0), // counter carry
-  .count_enable(enabled_counting_digits[2]), // counting enabled control signal
-  .load_value_enable(load_value_enable), // load setting value control
-  .load_value(load_hour0), // value to be loaded
-  .count_limit(hour1 < 2? `NINE : `THREE), // limit of the up counter
-  .clk(clk), // clock
-  .rst_n(rst_n) // low active reset
+counterx UMonth(
+    .q(month), // counter value
+    .time_carry(carry_month), // counter carry
+    .count_enable(enabled_counting_digits[4]), // counting enabled control signal
+    .load_value_enable(load_value_enable), // load setting value control
+    .load_value(load_month), // value to be loaded
+    .count_limit(month_limit), // limit of the up counter
+    .count_init(month_init),
+    .clk(clk), // clock
+    .rst_n(rst_n) // low active reset
 );
 
-counterx Uhour1(
-  .q(hour1), // counter value
-  .time_carry(), // counter carry
-  .count_enable(carry_hour0), // counting enabled control signal
-  .load_value_enable(load_value_enable), // load setting value control
-  .load_value(load_hour1), // value to be loaded
-  .count_limit(`TWO), // limit of the up counter
-  .clk(clk), // clock
-  .rst_n(rst_n) // low active reset
+counterx UYear(
+    .q(year), // counter value
+    .time_carry(carry_year), // counter carry
+    .count_enable(enabled_counting_digits[5]), // counting enabled control signal
+    .load_value_enable(load_value_enable), // load setting value control
+    .load_value(load_year), // value to be loaded
+    .count_limit(year_limit), // limit of the up counter
+    .count_init(year_init),
+    .clk(clk), // clock
+    .rst_n(rst_n) // low active reset
+);
+
+counterx UAlarmMin(
+    .q(alarm_min), // counter value
+    .time_carry(carry_alarm_min), // counter carry
+    .count_enable(enabled_counting_digits[7]), // counting enabled control signal
+    .load_value_enable(load_value_enable), // load setting value control
+    .load_value(load_alarm_min), // value to be loaded
+    .count_limit(min_limit), // limit of the up counter
+    .count_init(min_init),
+    .clk(clk), // clock
+    .rst_n(rst_n) // low active reset
+);
+
+counterx UAlarmHour(
+    .q(alarm_hour), // counter value
+    .time_carry(carry_alarm_hour), // counter carry
+    .count_enable(enabled_counting_digits[8]), // counting enabled control signal
+    .load_value_enable(load_value_enable), // load setting value control
+    .load_value(load_alarm_hour), // value to be loaded
+    .count_limit(hour_limit), // limit of the up counter
+    .count_init(hour_init),
+    .clk(clk), // clock
+    .rst_n(rst_n) // low active reset
 );
 
 endmodule

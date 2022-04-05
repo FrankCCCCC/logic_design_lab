@@ -62,12 +62,14 @@
 `define ALM_DISP 5'b10_000
 `define ALM_SETMIN 5'b10_001
 `define ALM_SETSEC 5'b10_010
+`define SET_DISP 5'b11_000
+
 `define SETMIN 2'b10
 `define SETSEC 2'b01
 `define TIME 2'b00
 `define STW 2'b01
 `define ALM 2'b10
-
+`define SET 2'b11
 
 
 `define ENABLED 1'b1
@@ -108,3 +110,26 @@
 
 // Counterx
 `define COUNTERX_BITS_N 9
+
+// Frequency Divider
+// @Frequency Divider
+`define FREQ_DIV_BITS 30
+// 1 Hz
+`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd50000000
+//`define FREQ_DIV_COUNT `FREQ_DIV_BITS'd2
+
+// Initial values of clock and alarm
+`define INIT_ALARM_HOUR `COUNTERX_BITS_N'd17
+`define INIT_ALARM_MIN `COUNTERX_BITS_N'd31
+`define INIT_YEAR `COUNTERX_BITS_N'd22
+`define INIT_MONTH `COUNTERX_BITS_N'd4
+`define INIT_DAY `COUNTERX_BITS_N'd7
+`define INIT_HOUR `COUNTERX_BITS_N'd17
+`define INIT_MIN `COUNTERX_BITS_N'd30
+`define INIT_SEC `COUNTERX_BITS_N'd30
+
+// exp_1.v
+`define LED_N 16
+
+// FSM.v
+`define STATE_LED_N 8

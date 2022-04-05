@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../exp_1_1.srcs/sources_1/new/counterx.v" \
+"../../../../exp_1_1.srcs/sources_1/new/datetime_limit.v" \
+"../../../../exp_1_1.srcs/sources_1/new/timedisplay.v" \
+"../../../../exp_1_1.srcs/sim_1/new/timedisplay_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

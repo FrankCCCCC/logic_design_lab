@@ -23,8 +23,8 @@
 
 module extract(
     input [`COUNTERX_BITS_N-1:0] x,
-    output [`BCD_BIT_WIDTH-1:0] d1,
-    output [`BCD_BIT_WIDTH-1:0] d2
+    output [`BCD_BIT_WIDTH-1:0] d0,
+    output [`BCD_BIT_WIDTH-1:0] d1
     );
     
     wire [`COUNTERX_BITS_N-1:0]mod;
@@ -32,6 +32,6 @@ module extract(
     assign mod = x % `COUNTERX_BITS_N'd10;
     assign div = x / `COUNTERX_BITS_N'd10;
     
-    assign d1 = mod[`BCD_BIT_WIDTH-1:0];
-    assign d2 = div[`BCD_BIT_WIDTH-1:0];
+    assign d0 = mod[`BCD_BIT_WIDTH-1:0];
+    assign d1 = div[`BCD_BIT_WIDTH-1:0];
 endmodule

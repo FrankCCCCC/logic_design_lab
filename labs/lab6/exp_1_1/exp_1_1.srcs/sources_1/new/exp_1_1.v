@@ -23,8 +23,8 @@
 
 module exp_1_1(
     output [15:0] led,
-    output  [`SSD_BIT_WIDTH-1:0] segs,  // 7-segment display
-    output  [`SSD_NUM-1:0] ssd_ctl, // scan control for 7-segment display
+    output [`SSD_BIT_WIDTH-1:0] segs,  // 7-segment display
+    output [`SSD_NUM-1:0] ssd_ctl, // scan control for 7-segment display
     input btn_l,
     input btn_m,
     input btn_r,
@@ -49,6 +49,8 @@ module exp_1_1(
     wire [`COUNTERX_BITS_N-1:0] sel_d0, sel_d1;
     reg [`COUNTERX_BITS_N-1:0] ssd_reg0, ssd_reg1;
     wire [`DISPLAY_SLIDE_BITS_N-1:0] display_slide;
+    
+    assign led = {state_led, 8'b0};
     
     clock_generator Uclkgen(
       .clk_1(clk_1), // generated 1 Hz clock
@@ -133,14 +135,15 @@ module exp_1_1(
     switch_controller Uswitch (
         .sel_d1(sel_d1), 
         .sel_d0(sel_d0), 
-        .alarm_hour(`COUNTERX_BITS_N'd0), 
-        .alarm_min(`COUNTERX_BITS_N'd0),
-        .year(`COUNTERX_BITS_N'd0),
-        .month(`COUNTERX_BITS_N'd0),
-        .day(`COUNTERX_BITS_N'd0),
+        .alarm_hour(`INIT_ALARM_HOUR), 
+        .alarm_min(`INIT_ALARM_MIN),
+        .year(`INIT_YEAR),
+        .month(`INIT_MONTH),
+        .day(`INIT_DAY),
         .hour(time_hour),
         .min(time_min),
-        .sec(time_sec)
+        .sec(time_sec),
+        .display_slide(display_slide)
     );
     always @(*) begin
         case (state)
@@ -161,8 +164,8 @@ module exp_1_1(
 //                min1 = reg_q3;
 //            end
             default: begin
-//                extract Ext2(.q1(sec1), .q0(sec0), .x(time_sec));
-//                extract Ext3(.q1(min1), .q0(min0), .x(time_min));
+                ssd_reg0 <= sel_d0;
+                ssd_reg1 <= sel_d1;
             end
       endcase
    end
@@ -188,3 +191,5 @@ module exp_1_1(
       .bin(ssd_in)  // BCD number input
     );
 endmodule
+
+
