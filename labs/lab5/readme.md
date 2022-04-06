@@ -7,7 +7,7 @@ CJKoptions: AutoFakeBold
 subject: "Lab 5 - Timer and Stopwatch"
 keywords: [Markdown, Pandoc]
 titlepage: true, 
-titlepage-text-color: "FFFFFF" 
+# titlepage-text-color: "FFFFFF" 
 titlepage-rule-color: "360049" 
 titlepage-rule-height: 0 
 titlepage-background: "background.pdf"
@@ -639,9 +639,13 @@ endmodule
 |-----|----|----|----|----|----|----|----|----|
 | LOC | V7 | U7 | V5 | U5 | V8 | U8 | W6 | W7 |
 
-| I/O | leds[0] | leds[1] | leds[2] | leds[3] | leds[4] | leds[5] | leds[6] | leds[7] | leds[8] | leds[9] | leds[10] | leds[11] | leds[12] | leds[13] | leds[14] | leds[15] |
-|-----|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|----------|----------|----------|----------|----------|----------|
-| LOC | U16     | E19     | U19     | V19     | W18     | U15     | U14     | V14     | V13     | V3      | W3       | U3       | P3       | N3       | P1       | L1       |
+| I/O | leds[0] | leds[1] | leds[2] | leds[3] | leds[4] | leds[5] | leds[6] | leds[7] | 
+|-----|---------|---------|---------|---------|---------|---------|---------|---------|
+| LOC | U16     | E19     | U19     | V19     | W18     | U15     | U14     | V14     |
+
+| I/O | leds[8] | leds[9] | leds[10] | leds[11] | leds[12] | leds[13] | leds[14] | leds[15] |
+|-----|---------|---------|----------|----------|----------|----------|----------|----------|
+| LOC | V13     | V3      | W3       | U3       | P3       | N3       | P1       | L1       |
 
 ### Block Diagram
 
@@ -1244,9 +1248,13 @@ endmodule
 |-----|----|----|----|----|----|----|----|----|
 | LOC | V7 | U7 | V5 | U5 | V8 | U8 | W6 | W7 |
 
-| I/O | leds[0] | leds[1] | leds[2] | leds[3] | leds[4] | leds[5] | leds[6] | leds[7] | leds[8] | leds[9] | leds[10] | leds[11] | leds[12] | leds[13] | leds[14] | leds[15] |
-|-----|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|----------|----------|----------|----------|----------|----------|
-| LOC | U16     | E19     | U19     | V19     | W18     | U15     | U14     | V14     | V13     | V3      | W3       | U3       | P3       | N3       | P1       | L1       |
+| I/O | leds[0] | leds[1] | leds[2] | leds[3] | leds[4] | leds[5] | leds[6] | leds[7] | 
+|-----|---------|---------|---------|---------|---------|---------|---------|---------|
+| LOC | U16     | E19     | U19     | V19     | W18     | U15     | U14     | V14     |
+
+| I/O | leds[8] | leds[9] | leds[10] | leds[11] | leds[12] | leds[13] | leds[14] | leds[15] |
+|-----|---------|---------|----------|----------|----------|----------|----------|----------|
+| LOC | V13     | V3      | W3       | U3       | P3       | N3       | P1       | L1       |
 
 ### Block Diagram
 
@@ -1260,7 +1268,7 @@ endmodule
 
 ### Design Specification
 
-[Source Code](./exp_2/)
+[Source Code](./exp_3/)
 
 **Debounce**
 
@@ -1388,9 +1396,145 @@ Same as [lab 5-2](####One-Pulse).
 
 #### Finite State Machine
 
-The finite state machine controls 2 signals: ``is_pause`` and ``is_restart``. The down counter will pause while the signal ``is_pause`` is at high voltage and resume to count while the signal is at low voltage. It is controlled independently, so I only need to inverse the signal whenever the button ``restart`` is pressed.
+The finite state machine controls 3 signals: ``is_pause``, is_setting and ``is_restart``. The down counter will pause while the signal ``is_pause`` is at high voltage and resume to count while the signal is at low voltage. It is controlled independently, so I only need to inverse the signal whenever the button ``restart`` is pressed.
 
 On the other hand, the down counter will reset to 0 when the signal ``is_restart`` raises. It only depends on ``restart`` button, so we only need to inverse the signal whenever the button is clicked. 
+
+Similarly, the signal ``is_setting`` indicates whether we can set the timer or not. It's controlled by the DIP switch directly. 
+
+To set up the timer limit, I use 2 always loop to detect the button. One is for minutes and the other is for seconds. They count the click of each button independently. Then, I sum them up together as the output.
+
+```verilog
+`include "global.v"
+
+`define STATE_SETTING 2
+`define STATE_PAUSE 1
+`define STATE_START 0
+
+module fsm(
+    is_pause,
+    is_restart,
+    is_setting,
+    q_target,
+    pause_trig,
+    restart_trig,    
+    clk,
+    pause,
+    restart,
+    mode_switch
+    );
+    
+    output is_pause;
+    output is_restart;
+    output is_setting;
+    output [`BCD_COUNTER_BITS-1:0]q_target;
+    output restart_trig;
+    output pause_trig;
+    input clk;
+    input pause;
+    input restart;
+    input mode_switch;
+    
+    reg is_restart, is_restart_temp;
+    reg is_pause, is_pause_temp;
+    reg state, state_temp;
+    reg [`BCD_COUNTER_BITS-1:0]q_target;
+    reg [`BCD_COUNTER_BITS-1:0]q_target_min;
+    reg [`BCD_COUNTER_BITS-1:0]q_target_sec;
+//    reg last_restart;
+//    reg last_pause;
+    
+    assign is_setting = mode_switch;
+    
+    initial begin
+        q_target = `BCD_COUNTER_BITS'd0;
+//        last_state = `STATE_START;
+        state = `STATE_START;
+        state_temp = `STATE_START;
+        
+        is_restart = 1'b0;
+        is_restart_temp = 1'b0;
+        is_pause = 1'b0;
+        is_pause_temp = 1'b0;
+//        last_restart = 1'b0;
+//        last_is_pause = 1'b0;
+//        last_pause = 1'b0;
+        
+        q_target_min = `BCD_COUNTER_BITS'd0;
+        q_target_sec = `BCD_COUNTER_BITS'd0;
+    end
+    
+    always@(posedge restart) begin
+        if(!mode_switch) begin
+            is_restart_temp <= is_restart ^ 1; 
+        end
+    end
+    
+    always@(posedge pause) begin
+        if(!mode_switch) begin 
+            if(state == `STATE_PAUSE) begin
+//                last_state <= state;
+//                last_is_pause <= is_pause;
+                
+                state_temp <= `STATE_START;
+                is_pause_temp <= 0;
+            end else if(state == `STATE_START) begin
+//                last_state <= state;
+//                last_is_pause <= is_pause;
+                
+                state_temp <= `STATE_PAUSE;
+                is_pause_temp <= 1;
+            end else begin
+                state_temp <= `STATE_START;
+                is_pause_temp <= 1'b0; 
+                
+//                last_state <= `STATE_SETTING; 
+//                last_is_pause <= 0;
+            end
+        end
+    end
+    
+    always@(posedge clk) begin
+//        is_restart <= is_restart_temp;
+        q_target <= q_target_min + q_target_sec;
+        
+        if(mode_switch) begin            
+            state <= `STATE_SETTING;
+            is_pause <= 0;
+            is_restart <= 1'b1;
+        end else begin
+            state <= state_temp;
+            is_pause <= is_pause_temp;
+            is_restart <= is_restart_temp;
+        end
+    end
+
+    always@(posedge restart) begin
+        if(mode_switch) begin
+            q_target_min <= q_target_min + `BCD_COUNTER_BITS'd60;
+        end        
+    end
+    
+    always@(posedge pause) begin
+        if(mode_switch) begin
+            q_target_sec <= q_target_sec + `BCD_COUNTER_BITS'd1;
+        end        
+    end
+    
+//    always@(posedge pause or mode_switch) begin
+//        if(mode_switch) begin
+//            state <= `STATE_SETTING;
+//            is_pause <= 0;
+//        end else if(state == `STATE_PAUSE) begin
+//            state <= `STATE_START;
+//            is_pause <= 0;
+//        end else if(state == `STATE_START) begin
+//            state <= `STATE_PAUSE;
+//            is_pause <= 1;
+//        end
+//    end
+endmodule
+```
 
 #### Frequency Divider
 
@@ -1402,7 +1546,7 @@ Same as [lab 5-2](####2-Digit-Synchronous-Binary-Down-Counter)
 
 #### LEDs Controller
 
-It's similar to the ``LEDs controller`` in [Lab5-2](####LEDs-Controller). 
+It's similar to the ``LEDs controller`` in [Lab5-2](####LEDs-Controller). While we are setting up the timer, ``leds[1]`` lights up. While the counter is counting, ``leds[0] is bright. Whenever the counter hits 0, all the LEDs light up.
 
 ```verilog
 `include "global.v"
@@ -1463,7 +1607,72 @@ Same as [lab 5-2](####7-Segment-Time-Display)
 
 #### Timer
 
+Combine all the module listed above. ``One-Pulse`` trigger the ``Finite State Machine`` and then affect the 3 signal ``IS_PAUSE``, ``IS_RESTART``, and ``IS_SETTING``. These 3 signals control the behaviors of ``Timer Controller`` and ``LED Controller`` and decide the showing of the display and the LEDs.
 
+```verilog
+`include "global.v"
+
+module exp_3(
+    leds,
+    D_SEL,
+    D_OUT,
+    restart,
+    push,
+    mode_switch,
+    rst,
+    clk
+    );
+    output [`LEDS_NUM-1:0]leds;
+    output [`SEGMENT_7_DISPALY_DIGIT_N-1:0]D_SEL;
+    output [`SEGMENT_7_SEGMENT_N-1:0]D_OUT;
+    input restart;
+    input push;
+    input mode_switch;
+    input rst;
+    input clk;
+    
+    //    reg [`BCD_COUNTER_BITS-1:0]q;
+    wire DIV_CLK;
+    wire [`SEGMENT_7_INPUT_BITS_N-1:0]D0_MIN_BINARY;
+    wire [`SEGMENT_7_INPUT_BITS_N-1:0]D1_MIN_BINARY;
+    wire [`SEGMENT_7_INPUT_BITS_N-1:0]D0_SEC_BINARY;
+    wire [`SEGMENT_7_INPUT_BITS_N-1:0]D1_SEC_BINARY;
+    wire [`SEGMENT_7_SEGMENT_N-1:0]D0_MIN_SEGMENT7;
+    wire [`SEGMENT_7_SEGMENT_N-1:0]D1_MIN_SEGMENT7;
+    wire [`SEGMENT_7_SEGMENT_N-1:0]D0_SEC_SEGMENT7;
+    wire [`SEGMENT_7_SEGMENT_N-1:0]D1_SEC_SEGMENT7;
+    
+    wire PAUSE_ONEPULSE;
+    wire RESTART_ONEPULSE;
+    wire IS_PAUSE;
+    wire IS_RESTART;
+    wire IS_SETTING;
+    
+    wire [`BCD_COUNTER_BITS-1:0]Q;
+    wire [`BCD_COUNTER_BITS-1:0]Q_SHOW;
+    wire [`BCD_COUNTER_BITS-1:0]Q_TARGET;
+
+//    assign IS_RESTART = 1;
+//    assign IS_PAUSE = 0;
+
+//    assign Q_TARGET = `BCD_COUNTER_BITS'd70;
+
+    // 1 Hz Clock
+    frequency_divider U0(.clk(clk), .rst(rst), .clk_out(DIV_CLK));
+    
+    onepulse PauseBtn(.rst(rst), .clk(clk), .push(push), .push_onepulse(PAUSE_ONEPULSE));
+    onepulse RestartBtn(.rst(rst), .clk(clk), .push(restart), .push_onepulse(RESTART_ONEPULSE));
+    fsm FSM(.clk(clk), .mode_switch(mode_switch), .pause(PAUSE_ONEPULSE), .restart(RESTART_ONEPULSE), .is_pause(IS_PAUSE), .is_restart(IS_RESTART), .is_setting(IS_SETTING), .q_target(Q_TARGET));
+    
+    // 2-Digits Binary up counter 
+    binary_down_4digit_counter U1(.clk(DIV_CLK), .rst(IS_RESTART), .counter_limit(Q_TARGET), .is_pause(IS_PAUSE), .q(Q));
+    timer_controller TIMER_CONTROL(.counting(Q), .target(Q_TARGET), .is_setting(IS_SETTING), .q_show(Q_SHOW));
+    
+    // LEDs controller
+    led_controller LED_CONTROL(.q(Q), .is_pause(IS_PAUSE), .is_restart(IS_RESTART), .is_setting(IS_SETTING), .leds(leds));
+    display_time_7_segment TIME_DISPLAY(.q_show(Q_SHOW), .clk(clk), .rst(rst), .d_sel(D_SEL), .d_out(D_OUT));
+endmodule
+```
 
 ### I/O Pin Assignment
 
@@ -1475,10 +1684,13 @@ Same as [lab 5-2](####7-Segment-Time-Display)
 |-----|----|----|----|----|----|----|----|----|
 | LOC | V7 | U7 | V5 | U5 | V8 | U8 | W6 | W7 |
 
-| I/O | leds[0] | leds[1] | leds[2] | leds[3] | leds[4] | leds[5] | leds[6] | leds[7] | leds[8] | leds[9] | leds[10] | leds[11] | leds[12] | leds[13] | leds[14] | leds[15] |
-|-----|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|----------|----------|----------|----------|----------|----------|
-| LOC | U16     | E19     | U19     | V19     | W18     | U15     | U14     | V14     | V13     | V3      | W3       | U3       | P3       | N3       | P1       | L1       |
+| I/O | leds[0] | leds[1] | leds[2] | leds[3] | leds[4] | leds[5] | leds[6] | leds[7] | 
+|-----|---------|---------|---------|---------|---------|---------|---------|---------|
+| LOC | U16     | E19     | U19     | V19     | W18     | U15     | U14     | V14     |
 
+| I/O | leds[8] | leds[9] | leds[10] | leds[11] | leds[12] | leds[13] | leds[14] | leds[15] |
+|-----|---------|---------|----------|----------|----------|----------|----------|----------|
+| LOC | V13     | V3      | W3       | U3       | P3       | N3       | P1       | L1       |
 ### Block Diagram
 
 ![Lab 5-3 Logic Diagram](img/lab5-3_diag.png)
@@ -1486,3 +1698,15 @@ Same as [lab 5-2](####7-Segment-Time-Display)
 ### RTL Simulation
 
 ![Lab 5-3 RTL Simulation](img/lab5-3_sim.png)
+
+## Discussion 
+
+In lab 5-2, it took me lots of time to design the state machine because the always block cannot be activated by 2 edge-triggered variables. Finally, I store the variables in the 2 independent variables and add them together as the clock raises. In addition, when I implement the one-pulse module, it took me much time to detect long press and click in the mean time. In the end, I use a counter to count the clock cycle during the pressed button.
+
+## Conclusion
+
+The lab5 is much more difficult than previous labs. We've learned how to design a more complex circuit with the concept of state machine. We also gradually get used to a larger project.
+
+## Reference
+
+- None
