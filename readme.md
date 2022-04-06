@@ -8,7 +8,9 @@
 
 - [Lab 3](./labs/lab3) Done
 
-- [Lab 4](./labs/lab4)
+- [Lab 4](./labs/lab4) Done
+
+- [Lab 5](./labs/lab5) Done
 
 ## Slides
 
