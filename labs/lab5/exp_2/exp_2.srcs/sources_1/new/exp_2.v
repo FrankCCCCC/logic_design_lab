@@ -71,7 +71,7 @@ module exp_2(
     fsm FSM(.clk(clk), .pause(PAUSE_ONEPULSE), .restart(RESTART_ONEPULSE), .lap(LAP_ONEPULSE), .is_pause(IS_PAUSE), .is_restart(IS_RESTART), .is_lap(IS_LAP));
     
     // 2-Digits Binary up counter 
-    binary_down_4digit_counter U1(.clk(DIV_CLK), .rst(IS_RESTART), .is_pause(IS_PAUSE), .q(Q));
+    binary_up_4digit_counter U1(.clk(DIV_CLK), .rst(IS_RESTART), .is_pause(IS_PAUSE), .q(Q));
     lap_controller LAP_CONTROL(.q(Q_LAP), .i(Q), .is_lap(IS_LAP));
     
     // LEDs controller

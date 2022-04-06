@@ -32,7 +32,7 @@ set_property ip_output_repo d:/data/logic_design_lab/labs/lab5/exp_2/exp_2.cache
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/global.v
-  D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/binary_down_4digit_counter.v
+  D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/binary_up_4digit_counter.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/debounce.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/display_7seg.v
   D:/data/logic_design_lab/labs/lab5/exp_2/exp_2.srcs/sources_1/new/display_time_7_segment.v

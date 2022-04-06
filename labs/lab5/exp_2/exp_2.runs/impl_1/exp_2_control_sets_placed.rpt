@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Mar 31 17:43:39 2022
+| Date         : Wed Apr  6 16:54:07 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exp_2_control_sets_placed.rpt
 | Design       : exp_2
@@ -76,9 +76,9 @@ Table of Contents
 |  RestartBtn/push_sig_reg_0          |                 |                      |                1 |              1 |
 |  RestartBtn/push_sig_long           |                 |                      |                1 |              1 |
 |  PauseBtn/push_sig                  |                 |                      |                1 |              2 |
-|  U0/clk_out_reg_0                   | U1/q[0]_i_1_n_0 | FSM/is_restart_reg_0 |                3 |             12 |
 | ~FSM/IS_LAP                         |                 |                      |                3 |             12 |
 |  TIME_DISPLAY/nolabel_line57/U0/CLK |                 | RestartBtn/U0/rst    |                6 |             12 |
+|  U0/clk_out_reg_0                   | U1/q[0]_i_1_n_0 | FSM/is_restart_reg_0 |                3 |             12 |
 |  clk_IBUF_BUFG                      |                 |                      |                5 |             17 |
 |  clk_IBUF_BUFG                      |                 | RestartBtn/U0/rst    |               34 |            100 |
 +-------------------------------------+-----------------+----------------------+------------------+----------------+

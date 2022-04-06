@@ -48,6 +48,9 @@ module fsm(
     
     initial begin
         state = `STATE_START;
+        is_restart = 1'b0;
+        is_pause = 1'b0;
+        is_lap = 1'b0;
     end
     
     always@(posedge restart) begin

@@ -60,6 +60,11 @@ module onepulse (
     debounce U0(.clk(clk), .rst(rst), .push(push), .push_debounced(push_debounced));
 //    debounce U1(.clk(clk_long), .rst(rst), .push(push), .push_debounced(push_debounced_long));
     
+    initial begin
+        push_onepulse = 1'b0;
+        push_onepulse_long = 1'b0;
+    end
+    
     always@(*) begin
         push_onepulse = push_sig;
         push_onepulse_long = push_sig_long;

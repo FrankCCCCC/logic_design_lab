@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sat Mar 26 17:49:18 2022
+| Date         : Wed Apr  6 16:45:21 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file prelab_utilization_synth.rpt -pb prelab_utilization_synth.pb
 | Design       : prelab

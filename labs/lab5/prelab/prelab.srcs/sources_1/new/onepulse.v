@@ -38,6 +38,11 @@ module onepulse (
     
     debounce U0(.clk(clk), .rst(rst), .push(push), .push_debounced(push_debounced));
     
+    initial begin
+        push_onepulse = 1'b0;
+        push_onepulse_next = 1'b0;
+    end
+    
     always @* begin
         push_onepulse_next = push_debounced & ~push_debounced_delay;
     end
