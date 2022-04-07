@@ -102,10 +102,10 @@
 //`define SWITCH_MODE_N 3
 `define DISPLAY_SLIDE_BITS_N 2
 
-// timedisplay
+// unitset
 `define ENABLED_COUNTING_DIGITS_N 8
 
-//unitset
+// timedisplay
 `define COUNT_ENABLE_N 2
 
 // Counterx
@@ -133,3 +133,4 @@
 
 // FSM.v
 `define STATE_LED_N 8
+`define STATE_BITS_N 5

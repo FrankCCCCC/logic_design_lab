@@ -12,6 +12,7 @@ verilog xil_defaultlib  \
 "../../../../exp_1_1.srcs/sources_1/new/scan_ctl.v" \
 "../../../../exp_1_1.srcs/sources_1/new/switch_controller.v" \
 "../../../../exp_1_1.srcs/sources_1/new/timedisplay.v" \
+"../../../../exp_1_1.srcs/sources_1/new/unitset.v" \
 "../../../../exp_1_1.srcs/sim_1/new/exp_1_tb.v" \
 
 # compile glbl module

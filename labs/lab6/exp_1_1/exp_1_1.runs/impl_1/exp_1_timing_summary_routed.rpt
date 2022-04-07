@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Apr  5 23:48:20 2022
+| Date         : Thu Apr  7 19:05:38 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file exp_1_timing_summary_routed.rpt -pb exp_1_timing_summary_routed.pb -rpx exp_1_timing_summary_routed.rpx -warn_on_violation
 | Design       : exp_1
@@ -54,13 +54,17 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 80 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 89 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 54 register/latch pins with no clock driven by root clock pin: Uclkgen/clk_1_reg/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: switch_0 (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: switch_1 (HIGH)
+
+ There are 126 register/latch pins with no clock driven by root clock pin: Uclkgen/clk_1_reg/Q (HIGH)
 
  There are 2 register/latch pins with no clock driven by root clock pin: Uclkgen/clk_2k_reg/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: Ufsm/RestartBtn/push_sig_reg/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: Ufsm/SwitchBtn/push_sig_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -75,21 +79,21 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 319 pins that are not constrained for maximum delay. (HIGH)
+ There are 564 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 2 input ports with no input delay specified. (HIGH)
+ There are 6 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
 6. checking no_output_delay
 ---------------------------
- There are 15 ports with no output delay specified. (HIGH)
+ There are 19 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 

@@ -75,11 +75,11 @@ module onepulse (
             counter <= `COUNTER_BITS_N'b0;
             push_sig_long <= 1'b0;
             push_sig <= 1'b0;
-        end else if(~push_debounced) begin
+        end else if(~push_debounced || counter > `PRESS_CYCLE_N) begin
              if(counter > `PRESS_CYCLE_N) begin
                 push_sig <= 1'b0;
                 push_sig_long <= 1'b1;
-             end else if(counter > 0) begin
+             end else if(counter > `COUNTER_BITS_N'd2) begin
                 push_sig <= 1'b1;
                 push_sig_long <= 1'b0;
              end else begin

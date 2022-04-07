@@ -32,17 +32,20 @@ set_property ip_output_repo d:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.c
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/global.v
+  D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/clock_generator.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/datetime_limit.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/debounce.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display.v
+  D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display_controller.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/extract.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/scan_ctl.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/timedisplay.v
+  D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being

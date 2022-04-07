@@ -38,20 +38,24 @@ module exp_1(
     
     wire clk_1, clk_2k; //divided clock
     wire data_load_enable, reg_load_enable;
-    wire [4:0] state;
+    wire [`STATE_BITS_N-1:0] state;
     wire [`STATE_LED_N-1:0] state_led;
-    wire [1:0] set_min_sec;
+    wire [`ALARM_LED_N-1:0] alarm_led;
+    wire [1:0] set_u1_u0;
     wire set_enable;
-    wire [`COUNTERX_BITS_N-1:0] time_sec,time_min, time_hour, time_day, time_month, time_year; // Binary counter output
-    wire [`BCD_BIT_WIDTH-1:0] ssd_in;
     
+    wire [`COUNTERX_BITS_N-1:0] time_sec, time_min, time_hour, time_day, time_month, time_year;
+    wire [`COUNTERX_BITS_N-1:0] alarm_min, alarm_hour;
+    wire [`COUNTERX_BITS_N-1:0] set_alarm_hour, set_alarm_min, set_year, set_month, set_day, set_hour, set_min, set_sec;
+    
+    wire [`BCD_BIT_WIDTH-1:0] ssd_in;
     wire [`BCD_BIT_WIDTH-1:0] ssd_d0, ssd_d1, ssd_d2, ssd_d3; // Binary counter output 
     
     wire [`COUNTERX_BITS_N-1:0] sel_d0, sel_d1;
     wire [`COUNTERX_BITS_N-1:0] ssd_reg0, ssd_reg1;
     wire [`DISPLAY_SLIDE_BITS_N-1:0] display_slide;
     
-    assign led = {state_led, 8'b0};
+    assign led = {state_led, alarm_led, 1'b0};
     
     clock_generator Uclkgen(
       .clk_1(clk_1), // generated 1 Hz clock
@@ -69,16 +73,28 @@ module exp_1(
         .hour(time_hour),
         .min(time_min),
         .sec(time_sec),
-        .count_enable(`ENABLED),
-        .load_value_enable(data_load_enable && (state[4:3] == `TIME)),
-        .load_value_year(`COUNTERX_BITS_N'd1),
-        .load_value_month(`COUNTERX_BITS_N'd1),
-        .load_value_day(`COUNTERX_BITS_N'd1),
-        .load_value_hour(`COUNTERX_BITS_N'd0),
-        .load_value_min(`COUNTERX_BITS_N'd59),
-        .load_value_sec(`COUNTERX_BITS_N'd0),
+        .count_enable(state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `TIME),
+        .load_value_enable(data_load_enable && (state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `SET)),
+        .load_value_year(set_year),
+        .load_value_month(set_month),
+        .load_value_day(set_day),
+        .load_value_hour(set_hour),
+        .load_value_min(set_min),
+        .load_value_sec(set_sec),
         .clk(clk_1),
         .rst_n(rst_n)
+    );
+    
+    alarm UAlarm(
+        .alarm_led(alarm_led),
+        .alarm_min(alarm_min),
+        .alarm_hour(alarm_hour),
+        .alarm_enable(`ENABLED),
+        .load_value_enable(`ENABLED),
+        .current_min(time_min),
+        .current_hour(time_hour),
+        .load_value_alarm_min(set_alarm_min),
+        .load_value_alarm_hour(set_alarm_hour)
     );
     
     // FSM
@@ -90,7 +106,7 @@ module exp_1(
       .data_load_enable(data_load_enable),
       .reg_load_enable(reg_load_enable),
 //      .alarm_enable(alarm_enable),
-      .set_min_sec(set_min_sec),
+      .set_u1_u0(set_u1_u0),
       .state(state),
       .btn_l(btn_l),
       .btn_m(btn_m),
@@ -101,18 +117,65 @@ module exp_1(
       .rst_n(rst_n)
     );
     
-    switch_controller Uswitch (
-        .sel_d1(ssd_reg1), 
-        .sel_d0(ssd_reg0), 
-        .alarm_hour(`INIT_ALARM_HOUR), 
-        .alarm_min(`INIT_ALARM_MIN),
-        .year(time_year),
-        .month(time_month),
-        .day(time_day),
-        .hour(time_hour),
-        .min(time_min),
-        .sec(time_sec),
-        .display_slide(display_slide)
+    unitset USet(
+        .alarm_hour(set_alarm_hour),
+        .alarm_min(set_alarm_min),
+        .year(set_year),
+        .month(set_month),
+        .day(set_day),
+        .hour(set_hour),
+        .min(set_min),
+        .sec(set_sec),
+        .count_enable(set_u1_u0),
+        .load_value_enable(reg_load_enable && (state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `TIME)),
+        .load_alarm_hour(alarm_hout),
+        .load_alarm_min(alarm_min),
+        .load_year(time_year),
+        .load_month(time_month),
+        .load_day(time_day),
+        .load_hour(time_hour),
+        .load_min(time_min),
+        .load_sec(time_sec),
+        .display_slide(display_slide),
+        .clk(clk_1),
+        .rst_n(rst_n)
+    );
+    
+//    switch_controller Uswitch (
+//        .sel_d1(ssd_reg1), 
+//        .sel_d0(ssd_reg0), 
+//        .alarm_hour(set_alarm_hour), 
+//        .alarm_min(set_alarm_min),
+//        .year(time_year),
+//        .month(time_month),
+//        .day(time_day),
+//        .hour(time_hour),
+//        .min(time_min),
+//        .sec(time_sec),
+//        .display_slide(display_slide)
+//    );
+
+    display_controller UDispCont(
+        .ssd_reg0(ssd_reg0), 
+        .ssd_reg1(ssd_reg1),
+        .state(state),
+        .display_slide(display_slide),
+        .alarm_hour(alarm_hour),
+        .alarm_min(alarm_min),
+        .time_year(time_year),
+        .time_month(time_month),
+        .time_day(time_day),
+        .time_hour(time_hour),
+        .time_min(time_min),
+        .time_sec(time_sec),
+        .set_alarm_hour(set_alarm_hour),
+        .set_alarm_min(set_alarm_min),
+        .set_year(set_year),
+        .set_month(set_month),
+        .set_day(set_day),
+        .set_hour(set_hour),
+        .set_min(set_min),
+        .set_sec(set_sec)
     );
    
     extract UExt0(.d1(ssd_d1), .d0(ssd_d0), .x(ssd_reg0));

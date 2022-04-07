@@ -26,7 +26,8 @@ module counterx(
   input count_enable, // counting enabled control signal
   input load_value_enable, // load setting value control
   input [`COUNTERX_BITS_N-1:0] load_value, // value to be loaded
-  input [`COUNTERX_BITS_N-1:0] count_limit, // limit of the up counter
+  input [`COUNTERX_BITS_N-1:0] count_limit_u, // limit of the up counter
+  input [`COUNTERX_BITS_N-1:0] count_limit_l, // limit of the up counter
   input [`COUNTERX_BITS_N-1:0] count_init, // initial value of the up counter
   input clk, // clock
   input rst_n // low active reset
@@ -53,9 +54,9 @@ always @(*) begin
     time_carry = `DISABLED;
     if (load_value_enable) begin
         q_next = load_value;
-    end else if (count_enable && q == count_limit) begin
+    end else if (count_enable && q == count_limit_u) begin
 //        q_next = `COUNTERX_BITS_N'b0;
-        q_next = count_init;
+        q_next = count_limit_l;
         time_carry = `ENABLED;
     end else if (count_enable) begin
         q_next = q + `COUNTERX_BITS_N'd1;

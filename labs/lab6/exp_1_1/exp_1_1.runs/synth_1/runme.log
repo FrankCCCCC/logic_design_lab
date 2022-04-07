@@ -15,9 +15,11 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5460 
+INFO: Helper process launched with PID 19416 
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_m_short is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:45]
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_m_long is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:45]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 949.875 ; gain = 233.832
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 953.523 ; gain = 238.848
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'exp_1' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:24]
 INFO: [Synth 8-6157] synthesizing module 'clock_generator' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/clock_generator.v:24]
@@ -26,51 +28,57 @@ INFO: [Synth 8-6157] synthesizing module 'timedisplay' [D:/data/logic_design_lab
 INFO: [Synth 8-6157] synthesizing module 'datetime_limit' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/datetime_limit.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'datetime_limit' (2#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/datetime_limit.v:24]
 INFO: [Synth 8-6157] synthesizing module 'counterx' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v:23]
-WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v:38]
 WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v:39]
-WARNING: [Synth 8-5788] Register q_reg in module counterx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v:45]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v:40]
+WARNING: [Synth 8-5788] Register q_reg in module counterx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v:46]
 INFO: [Synth 8-6155] done synthesizing module 'counterx' (3#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'timedisplay' (4#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/timedisplay.v:24]
+INFO: [Synth 8-6157] synthesizing module 'alarm' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v:26]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v:44]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'alarm' (5#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v:26]
 INFO: [Synth 8-6157] synthesizing module 'fsm' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:24]
 INFO: [Synth 8-6157] synthesizing module 'onepulse' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v:27]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/debounce.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (5#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/debounce.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'onepulse' (6#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v:27]
-WARNING: [Synth 8-7023] instance 'RestartBtn' of module 'onepulse' has 8 connections declared, but only 5 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:48]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:65]
-INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:103]
-WARNING: [Synth 8-567] referenced signal 'state_next' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:92]
-WARNING: [Synth 8-567] referenced signal 'display_slide_next' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:92]
-WARNING: [Synth 8-567] referenced signal 'state' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:92]
-WARNING: [Synth 8-567] referenced signal 'display_slide' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:92]
-INFO: [Synth 8-6155] done synthesizing module 'fsm' (7#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:24]
-WARNING: [Synth 8-7023] instance 'Ufsm' of module 'fsm' has 16 connections declared, but only 14 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (6#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/debounce.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'onepulse' (7#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v:27]
+WARNING: [Synth 8-7023] instance 'SwitchBtn' of module 'onepulse' has 8 connections declared, but only 5 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:50]
+WARNING: [Synth 8-7023] instance 'RBtn' of module 'onepulse' has 8 connections declared, but only 4 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:51]
+WARNING: [Synth 8-7023] instance 'LBtn' of module 'onepulse' has 8 connections declared, but only 4 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:52]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:81]
+INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:135]
+INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:154]
+WARNING: [Synth 8-567] referenced signal 'state_next' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:124]
+WARNING: [Synth 8-567] referenced signal 'display_slide_next' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:124]
+WARNING: [Synth 8-567] referenced signal 'state' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:124]
+WARNING: [Synth 8-567] referenced signal 'display_slide' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:124]
+INFO: [Synth 8-6155] done synthesizing module 'fsm' (8#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:24]
+WARNING: [Synth 8-7023] instance 'Ufsm' of module 'fsm' has 16 connections declared, but only 14 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:101]
+INFO: [Synth 8-6157] synthesizing module 'unitset' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v:26]
+WARNING: [Synth 8-693] zero replication count - replication ignored [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'unitset' (9#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v:26]
+WARNING: [Synth 8-7023] instance 'USet' of module 'unitset' has 22 connections declared, but only 21 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:120]
+INFO: [Synth 8-6157] synthesizing module 'display_controller' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display_controller.v:24]
 INFO: [Synth 8-6157] synthesizing module 'switch_controller' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v:24]
 INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v:40]
-INFO: [Synth 8-6155] done synthesizing module 'switch_controller' (8#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'switch_controller' (10#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'display_controller' (11#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display_controller.v:24]
 INFO: [Synth 8-6157] synthesizing module 'extract' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/extract.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'extract' (9#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/extract.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'extract' (12#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/extract.v:24]
 INFO: [Synth 8-6157] synthesizing module 'scan_ctl' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/scan_ctl.v:24]
 INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/scan_ctl.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'scan_ctl' (10#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/scan_ctl.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'scan_ctl' (13#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/scan_ctl.v:24]
 INFO: [Synth 8-6157] synthesizing module 'display' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display.v:24]
 INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display.v:35]
-INFO: [Synth 8-6155] done synthesizing module 'display' (11#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'exp_1' (12#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:24]
-WARNING: [Synth 8-3917] design exp_1 has port led[7] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[6] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[5] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[4] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[3] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[2] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[1] driven by constant 0
+INFO: [Synth 8-6155] done synthesizing module 'display' (14#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display.v:24]
+WARNING: [Synth 8-3848] Net alarm_hout in module/entity exp_1 does not have driver. [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:131]
+INFO: [Synth 8-6155] done synthesizing module 'exp_1' (15#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:24]
 WARNING: [Synth 8-3917] design exp_1 has port led[0] driven by constant 0
-WARNING: [Synth 8-3331] design fsm has unconnected port btn_l
-WARNING: [Synth 8-3331] design fsm has unconnected port btn_r
-WARNING: [Synth 8-3331] design fsm has unconnected port switch_0
-WARNING: [Synth 8-3331] design fsm has unconnected port switch_1
+WARNING: [Synth 8-3331] design display_controller has unconnected port state[2]
+WARNING: [Synth 8-3331] design display_controller has unconnected port state[1]
+WARNING: [Synth 8-3331] design display_controller has unconnected port state[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.879 ; gain = 306.836
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1001.227 ; gain = 286.551
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -83,12 +91,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.879 ; gain = 306.836
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.227 ; gain = 286.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.879 ; gain = 306.836
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.227 ; gain = 286.551
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1022.879 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1001.227 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -99,30 +107,33 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/exp_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1115.398 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1117.480 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1115.398 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1117.480 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1115.398 ; gain = 399.355
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1117.480 ; gain = 402.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1115.398 ; gain = 399.355
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1117.480 ; gain = 402.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1115.398 ; gain = 399.355
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1117.480 ; gain = 402.805
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'state_led_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:102]
+WARNING: [Synth 8-327] inferring latch for variable 'alarm_hour_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v:50]
+WARNING: [Synth 8-327] inferring latch for variable 'alarm_min_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v:51]
+WARNING: [Synth 8-327] inferring latch for variable 'data_load_enable_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:104]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_load_enable_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:105]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1115.398 ; gain = 399.355
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1117.480 ; gain = 402.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -138,26 +149,34 @@ Detailed RTL Component Info :
 	   2 Input     27 Bit       Adders := 1     
 	   2 Input     20 Bit       Adders := 1     
 	   2 Input     15 Bit       Adders := 1     
-	   2 Input      9 Bit       Adders := 6     
+	   2 Input      9 Bit       Adders := 14    
 	   2 Input      2 Bit       Adders := 2     
 +---Registers : 
 	               27 Bit    Registers := 1     
 	               20 Bit    Registers := 1     
 	               15 Bit    Registers := 1     
-	                9 Bit    Registers := 6     
-	                4 Bit    Registers := 1     
+	                9 Bit    Registers := 14    
+	                4 Bit    Registers := 3     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 12    
 +---Muxes : 
 	   2 Input     27 Bit        Muxes := 1     
 	   2 Input     20 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 24    
-	   4 Input      9 Bit        Muxes := 2     
-	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      9 Bit        Muxes := 56    
+	   4 Input      9 Bit        Muxes := 4     
+	   3 Input      9 Bit        Muxes := 2     
+	   3 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 7     
+	   4 Input      5 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 13    
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 31    
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -193,6 +212,10 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input      9 Bit        Muxes := 4     
 	   2 Input      1 Bit        Muxes := 2     
+Module alarm 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
 Module debounce 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -211,12 +234,26 @@ Detailed RTL Component Info :
 +---Registers : 
 	                2 Bit    Registers := 1     
 +---Muxes : 
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 2     
+Module unitset 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
 Module switch_controller 
 Detailed RTL Component Info : 
 +---Muxes : 
 	   4 Input      9 Bit        Muxes := 2     
+Module display_controller 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input      9 Bit        Muxes := 2     
 Module scan_ctl 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -241,32 +278,31 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design exp_1 has port led[7] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[6] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[5] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[4] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[3] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[2] driven by constant 0
-WARNING: [Synth 8-3917] design exp_1 has port led[1] driven by constant 0
 WARNING: [Synth 8-3917] design exp_1 has port led[0] driven by constant 0
-WARNING: [Synth 8-3331] design exp_1 has unconnected port btn_l
-WARNING: [Synth 8-3331] design exp_1 has unconnected port btn_r
-WARNING: [Synth 8-3331] design exp_1 has unconnected port switch_0
-WARNING: [Synth 8-3331] design exp_1 has unconnected port switch_1
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Ufsm/state_led_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Ufsm/state_led_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Ufsm/state_led_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Ufsm/state_led_reg[7] )
-WARNING: [Synth 8-3332] Sequential element (Ufsm/state_led_reg[7]) is unused and will be removed from module exp_1.
-WARNING: [Synth 8-3332] Sequential element (Ufsm/state_led_reg[6]) is unused and will be removed from module exp_1.
-WARNING: [Synth 8-3332] Sequential element (Ufsm/state_led_reg[5]) is unused and will be removed from module exp_1.
-WARNING: [Synth 8-3332] Sequential element (Ufsm/state_led_reg[4]) is unused and will be removed from module exp_1.
-WARNING: [Synth 8-3332] Sequential element (Ufsm/state_led_reg[3]) is unused and will be removed from module exp_1.
-WARNING: [Synth 8-3332] Sequential element (Ufsm/state_led_reg[2]) is unused and will be removed from module exp_1.
-WARNING: [Synth 8-3332] Sequential element (Ufsm/state_led_reg[1]) is unused and will be removed from module exp_1.
-WARNING: [Synth 8-3332] Sequential element (Ufsm/state_led_reg[0]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3331] design display_controller has unconnected port state[2]
+WARNING: [Synth 8-3331] design display_controller has unconnected port state[1]
+WARNING: [Synth 8-3331] design display_controller has unconnected port state[0]
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[8]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[7]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[6]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[5]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[4]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[3]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[2]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[1]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_hour_reg[0]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[8]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[7]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[6]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[5]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[4]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[3]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[2]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[1]) is unused and will be removed from module exp_1.
+WARNING: [Synth 8-3332] Sequential element (UAlarm/alarm_min_reg[0]) is unused and will be removed from module exp_1.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_5/\Ufsm/SwitchBtn/counter_reg[29] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1115.398 ; gain = 399.355
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1117.480 ; gain = 402.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -278,13 +314,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1115.398 ; gain = 399.355
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1117.480 ; gain = 402.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1115.398 ; gain = 399.355
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1117.480 ; gain = 402.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -296,7 +332,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1153.285 ; gain = 437.242
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1142.551 ; gain = 427.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -320,13 +356,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1159.098 ; gain = 443.055
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1148.344 ; gain = 433.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1159.098 ; gain = 443.055
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1148.344 ; gain = 433.668
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -345,25 +381,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1159.098 ; gain = 443.055
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1148.344 ; gain = 433.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1159.098 ; gain = 443.055
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1148.344 ; gain = 433.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1159.098 ; gain = 443.055
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1148.344 ; gain = 433.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1159.098 ; gain = 443.055
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1148.344 ; gain = 433.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -380,62 +416,78 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |    25|
-|3     |LUT1   |     5|
-|4     |LUT2   |    98|
-|5     |LUT3   |    28|
-|6     |LUT4   |    41|
-|7     |LUT5   |    28|
-|8     |LUT6   |    74|
-|9     |FDCE   |   134|
-|10    |FDPE   |     2|
+|2     |CARRY4 |    31|
+|3     |LUT1   |     6|
+|4     |LUT2   |    88|
+|5     |LUT3   |    53|
+|6     |LUT4   |    58|
+|7     |LUT5   |   113|
+|8     |LUT6   |   185|
+|9     |FDCE   |   176|
+|10    |FDPE   |    41|
 |11    |FDRE   |     2|
-|12    |IBUF   |     3|
-|13    |OBUF   |    28|
+|12    |LD     |     2|
+|13    |IBUF   |     7|
+|14    |OBUF   |    28|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+---------------+----------------+------+
-|      |Instance       |Module          |Cells |
-+------+---------------+----------------+------+
-|1     |top            |                |   470|
-|2     |  U_SC         |scan_ctl        |     8|
-|3     |  Uclkgen      |clock_generator |   110|
-|4     |  Ufsm         |fsm             |   101|
-|5     |    RestartBtn |onepulse        |    89|
-|6     |      U0       |debounce        |    45|
-|7     |  Utd          |timedisplay     |   218|
-|8     |    U0         |datetime_limit  |     9|
-|9     |    UDay       |counterx        |    27|
-|10    |    UHour      |counterx_0      |    30|
-|11    |    UMin       |counterx_1      |    23|
-|12    |    UMonth     |counterx_2      |    40|
-|13    |    USec       |counterx_3      |    24|
-|14    |    UYear      |counterx_4      |    65|
-+------+---------------+----------------+------+
++------+---------------+-----------------+------+
+|      |Instance       |Module           |Cells |
++------+---------------+-----------------+------+
+|1     |top            |                 |   792|
+|2     |  USet         |unitset          |   249|
+|3     |    U0         |datetime_limit_9 |     8|
+|4     |    UAlarmHour |counterx_10      |    29|
+|5     |    UAlarmMin  |counterx_11      |    46|
+|6     |    UDay       |counterx_12      |    21|
+|7     |    UHour      |counterx_13      |    22|
+|8     |    UMin       |counterx_14      |    24|
+|9     |    UMonth     |counterx_15      |    30|
+|10    |    USec       |counterx_16      |    29|
+|11    |    UYear      |counterx_17      |    40|
+|12    |  U_SC         |scan_ctl         |    11|
+|13    |  Uclkgen      |clock_generator  |   110|
+|14    |  Ufsm         |fsm              |   209|
+|15    |    LBtn       |onepulse         |    18|
+|16    |      U0       |debounce_8       |    18|
+|17    |    RBtn       |onepulse_5       |    14|
+|18    |      U0       |debounce_7       |    14|
+|19    |    SwitchBtn  |onepulse_6       |    86|
+|20    |      U0       |debounce         |    44|
+|21    |  Utd          |timedisplay      |   176|
+|22    |    U0         |datetime_limit   |     8|
+|23    |    UDay       |counterx         |    26|
+|24    |    UHour      |counterx_0       |    23|
+|25    |    UMin       |counterx_1       |    25|
+|26    |    UMonth     |counterx_2       |    31|
+|27    |    USec       |counterx_3       |    25|
+|28    |    UYear      |counterx_4       |    38|
++------+---------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1159.098 ; gain = 443.055
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1148.344 ; gain = 433.668
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 1159.098 ; gain = 350.535
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1159.098 ; gain = 443.055
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1148.344 ; gain = 317.414
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1148.344 ; gain = 433.668
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1171.176 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1160.426 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 33 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1171.176 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1160.426 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 2 instances were transformed.
+  LD => LDCE: 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-45 Infos, 42 Warnings, 0 Critical Warnings and 0 Errors encountered.
+49 Infos, 48 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 1171.176 ; gain = 744.227
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1171.176 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 1160.426 ; gain = 736.004
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1160.426 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.runs/synth_1/exp_1.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file exp_1_utilization_synth.rpt -pb exp_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr  5 23:47:10 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  7 19:04:31 2022...

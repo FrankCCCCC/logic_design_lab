@@ -23,6 +23,7 @@
 `define DISPLAY_SLIDE_BITS_N 2
 
 `define COUNTERX_BITS_N 9
+`define ENABLED_COUNTING_DIGITS_N 8
 //`define INIT_ALARM_HOUR `COUNTERX_BITS_N'd17
 //`define INIT_ALARM_MIN `COUNTERX_BITS_N'd31
 //`define INIT_YEAR `COUNTERX_BITS_N'd22
@@ -36,6 +37,7 @@ module unitset_tb();
     // Output
     wire [`COUNTERX_BITS_N-1:0] ALARM_HOUR, ALARM_MIN;
     wire [`COUNTERX_BITS_N-1:0] YEAR, MONTH, DAY, HOUR, MIN, SEC;
+    wire [`ENABLED_COUNTING_DIGITS_N-1:0] enabled_counting_digits;
     
     //Input
     reg CLK;
@@ -47,6 +49,7 @@ module unitset_tb();
     reg [`COUNTERX_BITS_N-1:0] LOAD_ALARM_HOUR, LOAD_ALARM_MIN, LOAD_YEAR, LOAD_MONTH, LOAD_DAY, LOAD_HOUR, LOAD_MIN, LOAD_SEC;
     
     unitset U0(
+        .enabled_counting_digits(enabled_counting_digits),
         .alarm_hour(ALARM_HOUR),
         .alarm_min(ALARM_MIN),
         .year(YEAR),
@@ -94,10 +97,30 @@ module unitset_tb();
         #40 COUNT_ENABLE = 2'b01;
         #40 COUNT_ENABLE = 2'b00;
         #40 COUNT_ENABLE = 2'b01;
+        
+        DISPLAY_SLIDE = `DISPLAY_SLIDE_BITS_N'd0;
+        #40 COUNT_ENABLE = 2'b00;
+        #40 COUNT_ENABLE = 2'b10;
+        #40 COUNT_ENABLE = 2'b00;
+        #40 COUNT_ENABLE = 2'b10;
+        #40 COUNT_ENABLE = 2'b00;
+        #40 COUNT_ENABLE = 2'b01;
+        #40 COUNT_ENABLE = 2'b00;
+        #40 COUNT_ENABLE = 2'b01;
+        
+        DISPLAY_SLIDE = `DISPLAY_SLIDE_BITS_N'd1;
+        #40 COUNT_ENABLE = 2'b00;
+        #40 COUNT_ENABLE = 2'b10;
+        #40 COUNT_ENABLE = 2'b00;
+        #40 COUNT_ENABLE = 2'b10;
+        #40 COUNT_ENABLE = 2'b00;
+        #40 COUNT_ENABLE = 2'b01;
+        #40 COUNT_ENABLE = 2'b00;
+        #40 COUNT_ENABLE = 2'b01;
     end
     
     always begin
-        #10; CLK = ~CLK;
+        #5; CLK = ~CLK;
     end
 endmodule
 
