@@ -32,17 +32,19 @@ module exp_1(
     input btn_r,
     input switch_0,
     input switch_1,
+    input switch_alarm,
     input  clk,  // clock from oscillator
     input  rst_n  // active low reset
     );
     
-    wire clk_1, clk_2k; //divided clock
-    wire data_load_enable, reg_load_enable;
+    wire clk_1hz, clk_100hz; //divided clock
+    wire load_to_disp_alarm, load_to_unitset;
+    wire time_enable, alarm_enable;
     wire [`STATE_BITS_N-1:0] state;
     wire [`STATE_LED_N-1:0] state_led;
     wire [`ALARM_LED_N-1:0] alarm_led;
     wire [1:0] set_u1_u0;
-    wire set_enable;
+//    wire set_enable;
     
     wire [`COUNTERX_BITS_N-1:0] time_sec, time_min, time_hour, time_day, time_month, time_year;
     wire [`COUNTERX_BITS_N-1:0] alarm_min, alarm_hour;
@@ -58,9 +60,9 @@ module exp_1(
     assign led = {state_led, alarm_led, 1'b0};
     
     clock_generator Uclkgen(
-      .clk_1(clk_1), // generated 1 Hz clock
+      .clk_1(clk_1hz), // generated 1 Hz clock
       .clk_100(), // generated 100 Hz clock
-      .clk_2k(clk_2k), // generated 100 Hz clock
+      .clk_2k(clk_100hz), // generated 100 Hz clock
       .clk(clk), // clock from crystal
       .rst_n(rst_n) // active low reset
     );
@@ -73,15 +75,18 @@ module exp_1(
         .hour(time_hour),
         .min(time_min),
         .sec(time_sec),
-        .count_enable(state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `TIME),
-        .load_value_enable(data_load_enable && (state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `SET)),
+//        .count_enable(state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `TIME),
+        .count_enable(time_enable),
+//        .load_value_enable(load_to_disp_alarm && (state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `SET)),
+        .load_value_enable(load_to_disp_alarm),
         .load_value_year(set_year),
         .load_value_month(set_month),
         .load_value_day(set_day),
         .load_value_hour(set_hour),
         .load_value_min(set_min),
         .load_value_sec(set_sec),
-        .clk(clk_1),
+        .clk(clk_1hz),
+//        .clk(clk),
         .rst_n(rst_n)
     );
     
@@ -89,8 +94,10 @@ module exp_1(
         .alarm_led(alarm_led),
         .alarm_min(alarm_min),
         .alarm_hour(alarm_hour),
-        .alarm_enable(`ENABLED),
-        .load_value_enable(`ENABLED),
+//        .alarm_enable(switch_alarm && (state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `TIME)),
+        .alarm_enable(alarm_enable),
+//        .load_value_enable(`ENABLED),
+        .load_value_enable(load_to_disp_alarm),
         .current_min(time_min),
         .current_hour(time_hour),
         .load_value_alarm_min(set_alarm_min),
@@ -99,22 +106,24 @@ module exp_1(
     
     // FSM
     fsm Ufsm(
-      .state_led(state_led),
-      .display_slide(display_slide),
-      .set_enable(set_enable),
-//      .stopwatch_count_enable(stopwatch_count_enable),
-      .data_load_enable(data_load_enable),
-      .reg_load_enable(reg_load_enable),
-//      .alarm_enable(alarm_enable),
-      .set_u1_u0(set_u1_u0),
-      .state(state),
-      .btn_l(btn_l),
-      .btn_m(btn_m),
-      .btn_r(btn_r),
-      .switch_0(switch_0),
-      .switch_1(switch_1),
-      .clk(clk),
-      .rst_n(rst_n)
+        .state_led(state_led),
+        .display_slide(display_slide),
+        .set_enable(set_enable),
+//        .stopwatch_count_enable(stopwatch_count_enable),
+        .load_to_disp_alarm(load_to_disp_alarm),
+        .load_to_unitset(load_to_unitset),
+        .time_enable(time_enable),
+        .alarm_enable(alarm_enable),
+        .set_u1_u0(set_u1_u0),
+        .state(state),
+        .btn_l(btn_l),
+        .btn_m(btn_m),
+        .btn_r(btn_r),
+        .switch_0(switch_0),
+        .switch_1(switch_1),
+        .switch_alarm(switch_alarm),
+        .clk(clk),
+        .rst_n(rst_n)
     );
     
     unitset USet(
@@ -127,8 +136,9 @@ module exp_1(
         .min(set_min),
         .sec(set_sec),
         .count_enable(set_u1_u0),
-        .load_value_enable(reg_load_enable && (state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `TIME)),
-        .load_alarm_hour(alarm_hout),
+//        .load_value_enable(load_to_unitset && (state[`STATE_BITS_N-1:`STATE_BITS_N-2] == `TIME)),
+        .load_value_enable(load_to_unitset),
+        .load_alarm_hour(alarm_hour),
         .load_alarm_min(alarm_min),
         .load_year(time_year),
         .load_month(time_month),
@@ -137,7 +147,8 @@ module exp_1(
         .load_min(time_min),
         .load_sec(time_sec),
         .display_slide(display_slide),
-        .clk(clk_1),
+        .clk(clk_1hz),
+//        .clk(clk),
         .rst_n(rst_n)
     );
     
@@ -189,7 +200,7 @@ module exp_1(
         .in1(ssd_d1), // 2nd input
         .in2(ssd_d2), // 3rd input
         .in3(ssd_d3),  // 4th input
-        .ssd_ctl_en(clk_2k), // divided clock for scan control
+        .ssd_ctl_en(clk_100hz), // divided clock for scan control
         .rst_n(rst_n)
     );
     

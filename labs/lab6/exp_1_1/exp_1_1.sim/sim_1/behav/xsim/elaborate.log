@@ -4,6 +4,7 @@ Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 52226dde42
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'switch_alarm' is not connected on this instance [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sim_1/new/exp_1_tb.v:39]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -12,11 +13,13 @@ Compiling module xil_defaultlib.clock_generator
 Compiling module xil_defaultlib.datetime_limit
 Compiling module xil_defaultlib.counterx
 Compiling module xil_defaultlib.timedisplay
+Compiling module xil_defaultlib.alarm
 Compiling module xil_defaultlib.debounce
 Compiling module xil_defaultlib.onepulse
 Compiling module xil_defaultlib.fsm
 Compiling module xil_defaultlib.unitset
 Compiling module xil_defaultlib.switch_controller
+Compiling module xil_defaultlib.display_controller
 Compiling module xil_defaultlib.extract
 Compiling module xil_defaultlib.scan_ctl
 Compiling module xil_defaultlib.display

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Apr  7 19:05:37 2022
+| Date         : Fri Apr  8 00:42:06 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file exp_1_methodology_drc_routed.rpt -pb exp_1_methodology_drc_routed.pb -rpx exp_1_methodology_drc_routed.rpx
 | Design       : exp_1
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 221
+             Violations found: 239
 +-----------+------------------+-----------------------------+------------+
 | Rule      | Severity         | Description                 | Violations |
 +-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 219        |
-| TIMING-20 | Warning          | Non-clocked latch           | 2          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 221        |
+| TIMING-20 | Warning          | Non-clocked latch           | 18         |
 +-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -805,337 +805,427 @@ Related violations: <none>
 
 TIMING-17#155 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/counter_reg[2]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#156 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/counter_reg[3]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#157 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/counter_reg[4]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#158 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/counter_reg[5]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#159 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/counter_reg[6]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#160 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/counter_reg[7]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#161 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/counter_reg[8]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#162 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/counter_reg[9]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#163 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/SwitchBtn/push_sig_reg/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/counter_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#164 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/display_slide_next_reg[0]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/push_debounced_long_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#165 Critical Warning
 Non-clocked sequential cell  
-The clock pin Ufsm/display_slide_next_reg[1]/C is not reached by a timing clock
+The clock pin Ufsm/SwitchBtn/push_sig_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#166 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[0]/C is not reached by a timing clock
+The clock pin Ufsm/display_slide_next_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#167 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[1]/C is not reached by a timing clock
+The clock pin Ufsm/display_slide_next_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#168 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[2]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#169 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[3]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#170 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[4]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#171 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[5]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#172 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[6]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#173 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[7]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#174 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UDay/q_reg[8]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#175 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[0]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#176 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[1]/C is not reached by a timing clock
+The clock pin Utd/UDay/q_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#177 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[2]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#178 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[3]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#179 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[4]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#180 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[5]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#181 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[6]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#182 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[7]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#183 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UHour/q_reg[8]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#184 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[0]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#185 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[1]/C is not reached by a timing clock
+The clock pin Utd/UHour/q_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#186 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[2]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#187 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[3]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#188 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[4]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#189 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[5]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#190 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[6]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#191 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[7]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#192 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMin/q_reg[8]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#193 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[0]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#194 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[1]/C is not reached by a timing clock
+The clock pin Utd/UMin/q_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#195 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[2]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#196 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[3]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#197 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[4]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#198 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[5]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#199 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[6]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#200 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[7]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#201 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UMonth/q_reg[8]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#202 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[0]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#203 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[1]/C is not reached by a timing clock
+The clock pin Utd/UMonth/q_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#204 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[2]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#205 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[3]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#206 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[4]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#207 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[5]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#208 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[6]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#209 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[7]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#210 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/USec/q_reg[8]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#211 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UYear/q_reg[0]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#212 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UYear/q_reg[1]/C is not reached by a timing clock
+The clock pin Utd/USec/q_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#213 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UYear/q_reg[2]/C is not reached by a timing clock
+The clock pin Utd/UYear/q_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#214 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UYear/q_reg[3]/C is not reached by a timing clock
+The clock pin Utd/UYear/q_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#215 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UYear/q_reg[4]/C is not reached by a timing clock
+The clock pin Utd/UYear/q_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#216 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UYear/q_reg[5]/C is not reached by a timing clock
+The clock pin Utd/UYear/q_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#217 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UYear/q_reg[6]/C is not reached by a timing clock
+The clock pin Utd/UYear/q_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#218 Critical Warning
 Non-clocked sequential cell  
-The clock pin Utd/UYear/q_reg[7]/C is not reached by a timing clock
+The clock pin Utd/UYear/q_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#219 Critical Warning
+Non-clocked sequential cell  
+The clock pin Utd/UYear/q_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#220 Critical Warning
+Non-clocked sequential cell  
+The clock pin Utd/UYear/q_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#221 Critical Warning
 Non-clocked sequential cell  
 The clock pin Utd/UYear/q_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#1 Warning
 Non-clocked latch  
-The latch Ufsm/data_load_enable_reg cannot be properly analyzed as its control pin Ufsm/data_load_enable_reg/G is not reached by a timing clock
+The latch UAlarm/alarm_hour_reg[0] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#2 Warning
 Non-clocked latch  
-The latch Ufsm/reg_load_enable_reg cannot be properly analyzed as its control pin Ufsm/reg_load_enable_reg/G is not reached by a timing clock
+The latch UAlarm/alarm_hour_reg[1] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_hour_reg[2] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_hour_reg[3] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_hour_reg[4] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_hour_reg[5] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_hour_reg[6] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_hour_reg[7] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_hour_reg[8] cannot be properly analyzed as its control pin UAlarm/alarm_hour_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[0] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[1] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[2] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[3] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[4] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[5] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[6] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[7] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch UAlarm/alarm_min_reg[8] cannot be properly analyzed as its control pin UAlarm/alarm_min_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
 

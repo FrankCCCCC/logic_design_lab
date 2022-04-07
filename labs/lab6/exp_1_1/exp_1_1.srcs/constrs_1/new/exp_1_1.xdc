@@ -84,3 +84,6 @@ set_property PACKAGE_PIN W19 [get_ports btn_l]
 set_property IOSTANDARD LVCMOS33 [get_ports btn_l]
 set_property IOSTANDARD LVCMOS33 [get_ports btn_m]
 set_property IOSTANDARD LVCMOS33 [get_ports btn_r]
+
+set_property IOSTANDARD LVCMOS33 [get_ports switch_alarm]
+set_property PACKAGE_PIN R2 [get_ports switch_alarm]

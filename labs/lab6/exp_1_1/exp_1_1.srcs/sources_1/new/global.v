@@ -134,3 +134,6 @@
 // FSM.v
 `define STATE_LED_N 8
 `define STATE_BITS_N 5
+
+// Alarm
+`define ALARM_LED_N 7

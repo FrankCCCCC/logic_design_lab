@@ -61,15 +61,20 @@ module exp_1_tb();
         #10 RST = 0;
     //    #10 RST = 0;
         #10 RST = 1;
-        #20 BTN_L = 0; BTN_M = 1; BTN_R = 0; SWITCH_0 = 0; SWITCH_1 = 0;
-        #80 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_0 = 0; SWITCH_1 = 0;
-        #20 BTN_L = 0; BTN_M = 1; BTN_R = 0; SWITCH_0 = 0; SWITCH_1 = 0;
-        #80 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_0 = 0; SWITCH_1 = 0;
+        #10 BTN_L = 0; BTN_M = 1; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
+        #160 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
+        #20 BTN_L = 0; BTN_M = 1; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
+        #60 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
+        #20 BTN_L = 0; BTN_M = 1; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
+        #160 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
+        #20 BTN_L = 0; BTN_M = 1; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
+        #80 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
+        #160 BTN_L = 0; BTN_M = 1; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 0;
         
-        #20 BTN_L = 0; BTN_M = 0; BTN_R = 1; SWITCH_0 = 0; SWITCH_1 = 1;
-        #80 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_0 = 0; SWITCH_1 = 1;
-        #20 BTN_L = 1; BTN_M = 0; BTN_R = 0; SWITCH_0 = 0; SWITCH_1 = 1;
-        #80 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_0 = 0; SWITCH_1 = 1;
+        #20 BTN_L = 0; BTN_M = 0; BTN_R = 1; SWITCH_1 = 0; SWITCH_0 = 1;
+        #80 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 1;
+        #20 BTN_L = 1; BTN_M = 0; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 1;
+        #80 BTN_L = 0; BTN_M = 0; BTN_R = 0; SWITCH_1 = 0; SWITCH_0 = 1;
     end
     
     always begin
