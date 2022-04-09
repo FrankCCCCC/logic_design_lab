@@ -43,6 +43,7 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/scan_ctl.v
+  D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/stopwatch.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/timedisplay.v
   D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v

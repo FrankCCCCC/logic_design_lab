@@ -34,6 +34,8 @@ module display_controller(
     input [`COUNTERX_BITS_N-1:0] time_hour,
     input [`COUNTERX_BITS_N-1:0] time_min,
     input [`COUNTERX_BITS_N-1:0] time_sec,
+    input [`COUNTERX_BITS_N-1:0] stopwatch_min,
+    input [`COUNTERX_BITS_N-1:0] stopwatch_sec,
     input [`COUNTERX_BITS_N-1:0] set_alarm_hour,
     input [`COUNTERX_BITS_N-1:0] set_alarm_min,
     input [`COUNTERX_BITS_N-1:0] set_year,
@@ -75,6 +77,22 @@ module display_controller(
         .display_slide(display_slide)
     );
     
+    // Stopwatch State
+    wire [`COUNTERX_BITS_N-1:0] ssd_reg1_stopwatch_state, ssd_reg0_stopwatch_state;
+    switch_controller UswitchStopwatch (
+        .sel_d1(ssd_reg1_stopwatch_state), 
+        .sel_d0(ssd_reg0_stopwatch_state), 
+        .alarm_hour(`COUNTERX_BITS_N'd0), 
+        .alarm_min(`COUNTERX_BITS_N'd0),
+        .year(`COUNTERX_BITS_N'd0),
+        .month(`COUNTERX_BITS_N'd0),
+        .day(`COUNTERX_BITS_N'd0),
+        .hour(`COUNTERX_BITS_N'd0),
+        .min(stopwatch_min),
+        .sec(stopwatch_sec),
+        .display_slide(`DISPLAY_SLIDE_BITS_N'd3)
+    );
+    
     always@(*) begin
         case (state[`STATE_BITS_N-1:`STATE_BITS_N-2])
             `TIME: begin
@@ -84,6 +102,10 @@ module display_controller(
             `SET: begin
                 ssd_reg0 <= ssd_reg0_set_state;
                 ssd_reg1 <= ssd_reg1_set_state;
+            end
+            `STW: begin
+                ssd_reg0 <= ssd_reg0_stopwatch_state;
+                ssd_reg1 <= ssd_reg1_stopwatch_state;
             end
             default: begin
                 ssd_reg0 <= ssd_reg0_time_state;

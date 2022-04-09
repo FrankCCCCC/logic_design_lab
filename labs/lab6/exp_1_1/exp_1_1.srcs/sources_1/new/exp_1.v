@@ -39,15 +39,17 @@ module exp_1(
     
     wire clk_1hz, clk_100hz; //divided clock
     wire load_to_disp_alarm, load_to_unitset;
-    wire time_enable, alarm_enable;
+    wire time_enable, alarm_enable, stopwatch_restart, stopwatch_enable, stopwatch_lap;
     wire [`STATE_BITS_N-1:0] state;
     wire [`STATE_LED_N-1:0] state_led;
     wire [`ALARM_LED_N-1:0] alarm_led;
+    wire stopwatch_led;
     wire [1:0] set_u1_u0;
 //    wire set_enable;
     
     wire [`COUNTERX_BITS_N-1:0] time_sec, time_min, time_hour, time_day, time_month, time_year;
     wire [`COUNTERX_BITS_N-1:0] alarm_min, alarm_hour;
+    wire [`COUNTERX_BITS_N-1:0] stopwatch_min, stopwatch_sec;
     wire [`COUNTERX_BITS_N-1:0] set_alarm_hour, set_alarm_min, set_year, set_month, set_day, set_hour, set_min, set_sec;
     
     wire [`BCD_BIT_WIDTH-1:0] ssd_in;
@@ -57,7 +59,7 @@ module exp_1(
     wire [`COUNTERX_BITS_N-1:0] ssd_reg0, ssd_reg1;
     wire [`DISPLAY_SLIDE_BITS_N-1:0] display_slide;
     
-    assign led = {state_led, alarm_led, 1'b0};
+    assign led = {state_led, alarm_led, stopwatch_led};
     
     clock_generator Uclkgen(
       .clk_1(clk_1hz), // generated 1 Hz clock
@@ -104,6 +106,16 @@ module exp_1(
         .load_value_alarm_hour(set_alarm_hour)
     );
     
+    stopwatch UStopwatch(
+        .stopwatch_led(stopwatch_led),
+        .sec(stopwatch_sec),
+        .min(stopwatch_min),
+        .count_enable(stopwatch_enable),
+        .lap_enable(stopwatch_lap),
+        .clk(clk_1hz),
+        .rst_n(stopwatch_restart)
+    );
+    
     // FSM
     fsm Ufsm(
         .state_led(state_led),
@@ -114,6 +126,9 @@ module exp_1(
         .load_to_unitset(load_to_unitset),
         .time_enable(time_enable),
         .alarm_enable(alarm_enable),
+        .stopwatch_enable(stopwatch_enable),
+        .stopwatch_restart(stopwatch_restart),
+        .stopwatch_lap(stopwatch_lap),
         .set_u1_u0(set_u1_u0),
         .state(state),
         .btn_l(btn_l),
@@ -179,6 +194,8 @@ module exp_1(
         .time_hour(time_hour),
         .time_min(time_min),
         .time_sec(time_sec),
+        .stopwatch_min(stopwatch_min),
+        .stopwatch_sec(stopwatch_sec),
         .set_alarm_hour(set_alarm_hour),
         .set_alarm_min(set_alarm_min),
         .set_year(set_year),

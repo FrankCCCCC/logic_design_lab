@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Fri Apr  8 00:41:40 2022
+| Date         : Sat Apr  9 11:49:12 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exp_1_control_sets_placed.rpt
 | Design       : exp_1
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    19 |
-|    Minimum number of control sets                        |    19 |
+| Total control sets                                       |    25 |
+|    Minimum number of control sets                        |    25 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   129 |
+| Unused register locations in slices containing registers |   171 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    19 |
-| >= 0 to < 4        |     3 |
+| Total control sets |    25 |
+| >= 0 to < 4        |     6 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
-| >= 8 to < 10       |    14 |
+| >= 8 to < 10       |    16 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     2 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              21 |           12 |
-| No           | No                    | Yes                    |             101 |           30 |
+| No           | No                    | No                     |              42 |           22 |
+| No           | No                    | Yes                    |             164 |           46 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             117 |           59 |
+| Yes          | No                    | Yes                    |             135 |           63 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,28 +70,34 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------------+----------------------------------------+-----------------------+------------------+----------------+
-|       Clock Signal       |              Enable Signal             |    Set/Reset Signal   | Slice Load Count | Bel Load Count |
-+--------------------------+----------------------------------------+-----------------------+------------------+----------------+
-|  clk_IBUF_BUFG           |                                        |                       |                1 |              1 |
-|  Ufsm/SwitchBtn/push_sig |                                        |                       |                1 |              2 |
-|  Uclkgen/CLK             |                                        | USet/UAlarmHour/rst_n |                1 |              2 |
-|  clk_1hz_BUFG            |                                        | USet/UAlarmHour/rst_n |                5 |              9 |
-|  clk_1hz_BUFG            | Utd/USec/E[0]                          | USet/UAlarmHour/rst_n |                4 |              9 |
-|  clk_1hz_BUFG            | Utd/UHour/E[0]                         | USet/UAlarmHour/rst_n |                5 |              9 |
-|  clk_1hz_BUFG            | Utd/UHour/switch_1[0]                  | USet/UAlarmHour/rst_n |                6 |              9 |
-|  clk_1hz_BUFG            | Utd/UMin/switch_1[0]                   | USet/UAlarmHour/rst_n |                4 |              9 |
-|  clk_1hz_BUFG            | Utd/UMonth/E[0]                        | USet/UAlarmHour/rst_n |                4 |              9 |
-|  clk_1hz_BUFG            | Ufsm/LBtn/U0/push_debounced_reg_0[0]   | USet/UAlarmHour/rst_n |                4 |              9 |
-|  clk_1hz_BUFG            | Ufsm/RBtn/U0/push_debounced_reg_2[0]   | USet/UAlarmHour/rst_n |                4 |              9 |
-|  clk_1hz_BUFG            | Ufsm/SwitchBtn/push_debounced_reg_6[0] | USet/UAlarmHour/rst_n |                5 |              9 |
-|  clk_1hz_BUFG            | Ufsm/SwitchBtn/push_debounced_reg_7[0] | USet/UAlarmHour/rst_n |                4 |              9 |
-|  clk_1hz_BUFG            | Ufsm/SwitchBtn/push_debounced_reg_0[0] | USet/UAlarmHour/rst_n |                4 |              9 |
-|  clk_1hz_BUFG            | Ufsm/SwitchBtn/push_debounced_reg_8[0] | USet/UAlarmHour/rst_n |                4 |              9 |
-|  clk_1hz_BUFG            | Ufsm/SwitchBtn/push_debounced_reg_5[0] | USet/UAlarmHour/rst_n |                5 |              9 |
-|  clk_1hz_BUFG            | Ufsm/SwitchBtn/E[0]                    | USet/UAlarmHour/rst_n |                6 |              9 |
-|  load_to_disp_alarm_BUFG |                                        |                       |               10 |             18 |
-|  clk_IBUF_BUFG           |                                        | USet/UAlarmHour/rst_n |               24 |             90 |
-+--------------------------+----------------------------------------+-----------------------+------------------+----------------+
++---------------------------+----------------------------------------+------------------------------+------------------+----------------+
+|        Clock Signal       |              Enable Signal             |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
++---------------------------+----------------------------------------+------------------------------+------------------+----------------+
+|  Ufsm/RBtn/push_sig_reg_0 |                                        |                              |                1 |              1 |
+|  Ufsm/LBtn/push_sig_reg_0 |                                        |                              |                1 |              1 |
+|  Ufsm/LBtn/push_sig_long  |                                        |                              |                1 |              1 |
+|  clk_IBUF_BUFG            |                                        |                              |                1 |              1 |
+|  Uclkgen/CLK              |                                        | Ufsm/LBtn/U0/rst_n           |                1 |              2 |
+|  Ufsm/SwitchBtn/push_sig  |                                        |                              |                1 |              2 |
+|  clk_1hz_BUFG             |                                        | Ufsm/LBtn/U0/rst_n           |                3 |              9 |
+|  clk_1hz_BUFG             | Ufsm/RBtn/U0/push_debounced_reg_8[0]   | Ufsm/LBtn/U0/rst_n           |                4 |              9 |
+|  clk_1hz_BUFG             | Ufsm/LBtn/U0/push_debounced_reg_9[0]   | Ufsm/LBtn/U0/rst_n           |                4 |              9 |
+|  clk_1hz_BUFG             | Utd/USec/q[5]_i_3__2_0[0]              | Ufsm/LBtn/U0/rst_n           |                4 |              9 |
+|  clk_1hz_BUFG             | Ufsm/SwitchBtn/push_debounced_reg_7[0] | Ufsm/LBtn/U0/rst_n           |                4 |              9 |
+|  clk_1hz_BUFG             | Ufsm/SwitchBtn/push_debounced_reg_0[0] | Ufsm/LBtn/U0/rst_n           |                5 |              9 |
+|  clk_1hz_BUFG             | Ufsm/SwitchBtn/push_debounced_reg_9[0] | Ufsm/LBtn/U0/rst_n           |                5 |              9 |
+|  clk_1hz_BUFG             | Ufsm/SwitchBtn/push_debounced_reg_5[0] | Ufsm/LBtn/U0/rst_n           |                4 |              9 |
+|  clk_1hz_BUFG             | Ufsm/SwitchBtn/push_debounced_reg_6[0] | Ufsm/LBtn/U0/rst_n           |                6 |              9 |
+|  clk_1hz_BUFG             | Ufsm/SwitchBtn/push_debounced_reg_8[0] | Ufsm/LBtn/U0/rst_n           |                4 |              9 |
+|  clk_1hz_BUFG             | Ufsm/stopwatch_enable_reg_0[0]         | Ufsm/stopwatch_restart_reg_0 |                3 |              9 |
+|  clk_1hz_BUFG             | UStopwatch/USec/E[0]                   | Ufsm/stopwatch_restart_reg_0 |                4 |              9 |
+|  clk_1hz_BUFG             | Utd/UDay/E[0]                          | Ufsm/LBtn/U0/rst_n           |                4 |              9 |
+|  clk_1hz_BUFG             | Utd/UHour/q[4]_i_2__3_0[0]             | Ufsm/LBtn/U0/rst_n           |                5 |              9 |
+|  clk_1hz_BUFG             | Utd/UMin/E[0]                          | Ufsm/LBtn/U0/rst_n           |                4 |              9 |
+|  clk_1hz_BUFG             | Utd/UMonth/E[0]                        | Ufsm/LBtn/U0/rst_n           |                3 |              9 |
+| ~Ufsm/stopwatch_lap       |                                        |                              |                8 |             18 |
+|  load_to_disp_alarm_BUFG  |                                        |                              |                9 |             18 |
+|  clk_IBUF_BUFG            |                                        | Ufsm/LBtn/U0/rst_n           |               42 |            153 |
++---------------------------+----------------------------------------+------------------------------+------------------+----------------+
 
 

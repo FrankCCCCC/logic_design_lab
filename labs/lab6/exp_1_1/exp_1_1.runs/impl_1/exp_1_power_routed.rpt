@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Fri Apr  8 00:42:07 2022
+| Date             : Sat Apr  9 11:49:40 2022
 | Host             : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command          : report_power -file exp_1_power_routed.rpt -pb exp_1_power_summary_routed.pb -rpx exp_1_power_routed.rpx
 | Design           : exp_1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 43.401 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 42.912 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 42.915                           |
+| Dynamic (W)              | 42.426                           |
 | Device Static (W)        | 0.486                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,17 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     3.271 |      823 |       --- |             --- |
-|   LUT as Logic |     3.127 |      461 |     20800 |            2.22 |
-|   Register     |     0.076 |      239 |     41600 |            0.57 |
-|   CARRY4       |     0.050 |       33 |      8150 |            0.40 |
+| Slice Logic    |     3.195 |     1043 |       --- |             --- |
+|   LUT as Logic |     3.058 |      553 |     20800 |            2.66 |
+|   Register     |     0.076 |      341 |     41600 |            0.82 |
+|   CARRY4       |     0.049 |       49 |      8150 |            0.60 |
 |   BUFG         |     0.011 |        3 |        32 |            9.38 |
-|   F7/F8 Muxes  |     0.007 |        4 |     32600 |            0.01 |
-|   Others       |     0.000 |       26 |       --- |             --- |
-| Signals        |     3.369 |      606 |       --- |             --- |
-| I/O            |    36.275 |       36 |       106 |           33.96 |
+|   Others       |     0.000 |       32 |       --- |             --- |
+| Signals        |     3.235 |      744 |       --- |             --- |
+| I/O            |    35.997 |       36 |       106 |           33.96 |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    43.401 |          |           |                 |
+| Total          |    42.912 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     7.009 |       6.668 |      0.341 |
-| Vccaux    |       1.800 |     1.382 |       1.328 |      0.053 |
-| Vcco33    |       3.300 |    10.260 |      10.259 |      0.001 |
+| Vccint    |       1.000 |     6.799 |       6.458 |      0.341 |
+| Vccaux    |       1.800 |     1.371 |       1.318 |      0.053 |
+| Vcco33    |       3.300 |    10.182 |      10.181 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -139,35 +138,38 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| exp_1          |    42.915 |
-|   UAlarm       |     0.093 |
-|   USet         |     1.170 |
-|     U0         |     0.082 |
-|     UAlarmHour |     0.081 |
-|     UAlarmMin  |     0.071 |
-|     UDay       |     0.132 |
-|     UHour      |     0.114 |
-|     UMin       |     0.108 |
-|     UMonth     |     0.192 |
-|     USec       |     0.116 |
-|     UYear      |     0.274 |
-|   U_SC         |     0.153 |
-|   Uclkgen      |     0.440 |
-|   Ufsm         |     3.793 |
-|     LBtn       |     0.030 |
-|       U0       |     0.030 |
-|     RBtn       |     0.037 |
-|       U0       |     0.037 |
-|     SwitchBtn  |     3.519 |
+| exp_1          |    42.426 |
+|   UAlarm       |     0.064 |
+|   USet         |     2.016 |
+|     U0         |     0.080 |
+|     UAlarmHour |     0.142 |
+|     UAlarmMin  |     0.616 |
+|     UDay       |     0.201 |
+|     UHour      |     0.169 |
+|     UMin       |     0.138 |
+|     UMonth     |     0.214 |
+|     USec       |     0.189 |
+|     UYear      |     0.267 |
+|   UStopwatch   |     0.036 |
+|     UMin       |     0.001 |
+|     USec       |     0.031 |
+|   U_SC         |     0.290 |
+|   Uclkgen      |     0.423 |
+|   Ufsm         |     2.610 |
+|     LBtn       |     0.052 |
+|       U0       |     0.047 |
+|     RBtn       |     0.050 |
+|       U0       |     0.045 |
+|     SwitchBtn  |     2.291 |
 |       U0       |     0.029 |
-|   Utd          |     0.818 |
-|     U0         |     0.051 |
-|     UDay       |     0.077 |
-|     UHour      |     0.100 |
-|     UMin       |     0.096 |
-|     UMonth     |     0.118 |
-|     USec       |     0.269 |
-|     UYear      |     0.106 |
+|   Utd          |     0.797 |
+|     U0         |     0.046 |
+|     UDay       |     0.104 |
+|     UHour      |     0.090 |
+|     UMin       |     0.093 |
+|     UMonth     |     0.100 |
+|     USec       |     0.252 |
+|     UYear      |     0.111 |
 +----------------+-----------+
 
 

@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Fri Apr  8 00:40:03 2022
-# Process ID: 16820
+# Start of session at: Sat Apr  9 11:47:25 2022
+# Process ID: 8996
 # Current directory: D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.runs/synth_1
 # Command line: vivado.exe -log exp_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source exp_1.tcl
 # Log file: D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.runs/synth_1/exp_1.vds
