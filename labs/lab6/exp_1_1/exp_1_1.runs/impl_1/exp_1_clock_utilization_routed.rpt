@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sat Apr  9 11:49:40 2022
+| Date         : Sat Apr  9 15:04:58 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file exp_1_clock_utilization_routed.rpt
 | Design       : exp_1
@@ -58,13 +58,13 @@ Table of Contents
 3. Global Clock Source Details
 ------------------------------
 
-+-----------+-----------+-----------------+------------+--------------+--------------+-------------+-----------------+---------------------+--------------+---------------------------------------------+-------------------+
-| Source Id | Global Id | Driver Type/Pin | Constraint | Site         | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock | Driver Pin                                  | Net               |
-+-----------+-----------+-----------------+------------+--------------+--------------+-------------+-----------------+---------------------+--------------+---------------------------------------------+-------------------+
-| src0      | g0        | IBUF/O          | IOB_X1Y26  | IOB_X1Y26    | X1Y0         |           1 |               0 |                     |              | clk_IBUF_inst/O                             | clk_IBUF          |
-| src1      | g1        | FDCE/Q          | None       | SLICE_X39Y31 | X1Y0         |           1 |               1 |                     |              | Uclkgen/clk_1_reg/Q                         | Uclkgen/clk_1hz   |
-| src2      | g2        | LUT2/O          | None       | SLICE_X59Y25 | X1Y0         |           1 |              23 |                     |              | Utd/UDay/load_to_disp_alarm_BUFG_inst_i_1/O | Utd/UDay/switch_0 |
-+-----------+-----------+-----------------+------------+--------------+--------------+-------------+-----------------+---------------------+--------------+---------------------------------------------+-------------------+
++-----------+-----------+-----------------+------------+--------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------------------------+--------------------+
+| Source Id | Global Id | Driver Type/Pin | Constraint | Site         | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock | Driver Pin                                   | Net                |
++-----------+-----------+-----------------+------------+--------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------------------------+--------------------+
+| src0      | g0        | IBUF/O          | IOB_X1Y26  | IOB_X1Y26    | X1Y0         |           1 |               0 |                     |              | clk_IBUF_inst/O                              | clk_IBUF           |
+| src1      | g1        | FDCE/Q          | None       | SLICE_X38Y30 | X1Y0         |           1 |               1 |                     |              | Uclkgen/clk_1_reg/Q                          | Uclkgen/clk_1hz    |
+| src2      | g2        | LUT2/O          | None       | SLICE_X54Y18 | X1Y0         |           1 |              23 |                     |              | Utd/UYear/load_to_disp_alarm_BUFG_inst_i_1/O | Utd/UYear/switch_0 |
++-----------+-----------+-----------------+------------+--------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------------------------+--------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 
@@ -72,16 +72,16 @@ Table of Contents
 4. Local Clock Details
 ----------------------
 
-+----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+-------------------------------+--------------------------+
-| Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                    | Net                      |
-+----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+-------------------------------+--------------------------||
-| 0        | FDRE/Q          | None       | SLICE_X56Y14/AFF | X1Y0         |          18 |               1 |              |       | Ufsm/stopwatch_lap_reg/Q      | Ufsm/stopwatch_lap       - Static -
-| 1        | FDCE/Q          | None       | SLICE_X63Y29/AFF | X1Y0         |           2 |               1 |              |       | Uclkgen/clk_2k_reg/Q          | Uclkgen/CLK              - Static -
-| 2        | FDCE/Q          | None       | SLICE_X50Y21/AFF | X1Y0         |           2 |               0 |              |       | Ufsm/SwitchBtn/push_sig_reg/Q | Ufsm/SwitchBtn/push_sig  - Static -
-| 3        | FDCE/Q          | None       | SLICE_X54Y16/AFF | X1Y0         |           1 |               0 |              |       | Ufsm/LBtn/push_sig_long_reg/Q | Ufsm/LBtn/push_sig_long  - Static -
-| 4        | FDCE/Q          | None       | SLICE_X52Y14/AFF | X1Y0         |           1 |               0 |              |       | Ufsm/LBtn/push_sig_reg/Q      | Ufsm/LBtn/push_sig_reg_0 - Static -
-| 5        | FDCE/Q          | None       | SLICE_X54Y15/AFF | X1Y0         |           1 |               0 |              |       | Ufsm/RBtn/push_sig_reg/Q      | Ufsm/RBtn/push_sig_reg_0 - Static -
-+----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+-------------------------------+--------------------------||
++----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+-------------------------------+-------------------------------+
+| Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                    | Net                           |
++----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+-------------------------------+-------------------------------||
+| 0        | FDRE/Q          | None       | SLICE_X56Y12/AFF | X1Y0         |          18 |               1 |              |       | Ufsm/stopwatch_lap_reg/Q      | Ufsm/stopwatch_lap            - Static -
+| 1        | FDCE/Q          | None       | SLICE_X63Y25/AFF | X1Y0         |           2 |               1 |              |       | Uclkgen/clk_2k_reg/Q          | Uclkgen/CLK                   - Static -
+| 2        | FDCE/Q          | None       | SLICE_X52Y21/AFF | X1Y0         |           2 |               0 |              |       | Ufsm/SwitchBtn/push_sig_reg/Q | Ufsm/SwitchBtn/push_sig_reg_0 - Static -
+| 3        | FDCE/Q          | None       | SLICE_X57Y12/AFF | X1Y0         |           1 |               0 |              |       | Ufsm/LBtn/push_sig_long_reg/Q | Ufsm/LBtn/push_sig_long_reg_0 - Static -
+| 4        | FDCE/Q          | None       | SLICE_X56Y10/AFF | X1Y0         |           1 |               0 |              |       | Ufsm/LBtn/push_sig_reg/Q      | Ufsm/LBtn/push_sig_reg_0      - Static -
+| 5        | FDCE/Q          | None       | SLICE_X50Y17/AFF | X1Y0         |           1 |               0 |              |       | Ufsm/RBtn/push_sig_reg/Q      | Ufsm/RBtn/push_sig_reg_0      - Static -
++----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+-------------------------------+-------------------------------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)
 *** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -96,7 +96,7 @@ Table of Contents
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1200 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y0              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  305 |  1500 |   53 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X1Y0              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  305 |  1500 |  103 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1200 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1500 |    0 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |

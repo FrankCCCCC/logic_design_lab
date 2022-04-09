@@ -15,9 +15,16 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12780 
+INFO: Helper process launched with PID 9516 
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_m_short is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:55]
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_m_debounce_long is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:55]
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_r_short is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:56]
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_r_debounced is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:56]
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_l_short is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:57]
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_l_long is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:57]
+WARNING: [Synth 8-2611] redeclaration of ansi port btn_l_debounced is not allowed [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:57]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 948.641 ; gain = 233.355
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 952.879 ; gain = 237.859
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'exp_1' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:24]
 INFO: [Synth 8-6157] synthesizing module 'clock_generator' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/clock_generator.v:24]
@@ -39,22 +46,23 @@ INFO: [Synth 8-6157] synthesizing module 'fsm' [D:/data/logic_design_lab/labs/la
 INFO: [Synth 8-6157] synthesizing module 'onepulse' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v:27]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/debounce.v:26]
 INFO: [Synth 8-6155] done synthesizing module 'debounce' (7#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/debounce.v:26]
-WARNING: [Synth 8-5788] Register push_debounced_long_reg in module onepulse is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v:82]
+WARNING: [Synth 8-5788] Register push_debounced_long_reg in module onepulse is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v:86]
 INFO: [Synth 8-6155] done synthesizing module 'onepulse' (8#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v:27]
-WARNING: [Synth 8-7023] instance 'SwitchBtn' of module 'onepulse' has 9 connections declared, but only 5 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:55]
-WARNING: [Synth 8-7023] instance 'RBtn' of module 'onepulse' has 9 connections declared, but only 5 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:56]
-WARNING: [Synth 8-7023] instance 'LBtn' of module 'onepulse' has 9 connections declared, but only 6 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:57]
-WARNING: [Synth 8-567] referenced signal 'switch_alarm' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:123]
-INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:171]
-INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:190]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:214]
-WARNING: [Synth 8-567] referenced signal 'btn_m_debounce_long' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:232]
-WARNING: [Synth 8-567] referenced signal 'display_slide_next' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:232]
+WARNING: [Synth 8-7023] instance 'SwitchBtn' of module 'onepulse' has 9 connections declared, but only 5 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:60]
+WARNING: [Synth 8-7023] instance 'RBtn' of module 'onepulse' has 9 connections declared, but only 5 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:61]
+WARNING: [Synth 8-7023] instance 'LBtn' of module 'onepulse' has 9 connections declared, but only 6 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:62]
+WARNING: [Synth 8-567] referenced signal 'switch_alarm' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:128]
+INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:176]
+INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:195]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:219]
+WARNING: [Synth 8-567] referenced signal 'btn_m_debounce_long' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:237]
+WARNING: [Synth 8-567] referenced signal 'display_slide_next' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:237]
 INFO: [Synth 8-6155] done synthesizing module 'fsm' (9#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v:24]
+WARNING: [Synth 8-7023] instance 'Ufsm' of module 'fsm' has 27 connections declared, but only 20 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:120]
 INFO: [Synth 8-6157] synthesizing module 'unitset' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v:26]
 WARNING: [Synth 8-693] zero replication count - replication ignored [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v:85]
 INFO: [Synth 8-6155] done synthesizing module 'unitset' (10#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v:26]
-WARNING: [Synth 8-7023] instance 'USet' of module 'unitset' has 22 connections declared, but only 21 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:142]
+WARNING: [Synth 8-7023] instance 'USet' of module 'unitset' has 22 connections declared, but only 21 given [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:144]
 INFO: [Synth 8-6157] synthesizing module 'display_controller' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display_controller.v:24]
 INFO: [Synth 8-6157] synthesizing module 'switch_controller' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v:24]
 INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v:40]
@@ -69,12 +77,11 @@ INFO: [Synth 8-6157] synthesizing module 'display' [D:/data/logic_design_lab/lab
 INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display.v:35]
 INFO: [Synth 8-6155] done synthesizing module 'display' (15#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/display.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'exp_1' (16#1) [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/exp_1.v:24]
-WARNING: [Synth 8-3917] design exp_1 has port led[0] driven by constant 0
 WARNING: [Synth 8-3331] design display_controller has unconnected port state[2]
 WARNING: [Synth 8-3331] design display_controller has unconnected port state[1]
 WARNING: [Synth 8-3331] design display_controller has unconnected port state[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.113 ; gain = 306.828
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1001.832 ; gain = 286.813
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -87,12 +94,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.113 ; gain = 306.828
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.832 ; gain = 286.813
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.113 ; gain = 306.828
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.832 ; gain = 286.813
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1022.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1001.832 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -103,33 +110,33 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/exp_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1122.598 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1117.664 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1122.598 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1117.664 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1122.598 ; gain = 407.313
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1117.664 ; gain = 402.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1122.598 ; gain = 407.313
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1117.664 ; gain = 402.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1122.598 ; gain = 407.313
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1117.664 ; gain = 402.645
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'alarm_hour_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v:49]
 WARNING: [Synth 8-327] inferring latch for variable 'alarm_min_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v:50]
-WARNING: [Synth 8-327] inferring latch for variable 'sec_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/stopwatch.v:49]
-WARNING: [Synth 8-327] inferring latch for variable 'min_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/stopwatch.v:50]
+WARNING: [Synth 8-327] inferring latch for variable 'sec_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/stopwatch.v:52]
+WARNING: [Synth 8-327] inferring latch for variable 'min_reg' [D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/new/stopwatch.v:53]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1122.598 ; gain = 407.313
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1117.664 ; gain = 402.645
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -271,12 +278,11 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design exp_1 has port led[0] driven by constant 0
 WARNING: [Synth 8-3331] design display_controller has unconnected port state[2]
 WARNING: [Synth 8-3331] design display_controller has unconnected port state[1]
 WARNING: [Synth 8-3331] design display_controller has unconnected port state[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1122.598 ; gain = 407.313
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1117.664 ; gain = 402.645
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -288,13 +294,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1122.598 ; gain = 407.313
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1117.664 ; gain = 402.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1122.598 ; gain = 407.313
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1117.664 ; gain = 402.645
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -306,7 +312,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1146.563 ; gain = 431.277
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1150.043 ; gain = 435.023
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -330,13 +336,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1151.277 ; gain = 435.992
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1155.844 ; gain = 440.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1151.277 ; gain = 435.992
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1155.844 ; gain = 440.824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -355,25 +361,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1151.277 ; gain = 435.992
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1155.844 ; gain = 440.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1151.277 ; gain = 435.992
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1155.844 ; gain = 440.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1151.277 ; gain = 435.992
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1155.844 ; gain = 440.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1151.277 ; gain = 435.992
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1155.844 ; gain = 440.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -395,7 +401,7 @@ Report Cell Usage:
 |4     |LUT2   |   171|
 |5     |LUT3   |    28|
 |6     |LUT4   |    70|
-|7     |LUT5   |    81|
+|7     |LUT5   |    82|
 |8     |LUT6   |   259|
 |9     |FDCE   |   258|
 |10    |FDPE   |    41|
@@ -409,64 +415,64 @@ Report Instance Areas:
 +------+---------------+------------------+------+
 |      |Instance       |Module            |Cells |
 +------+---------------+------------------+------+
-|1     |top            |                  |  1054|
+|1     |top            |                  |  1055|
 |2     |  UAlarm       |alarm             |    26|
-|3     |  USet         |unitset           |   252|
+|3     |  USet         |unitset           |   264|
 |4     |    U0         |datetime_limit_11 |     8|
-|5     |    UAlarmHour |counterx_12       |    26|
-|6     |    UAlarmMin  |counterx_13       |    37|
-|7     |    UDay       |counterx_14       |    33|
-|8     |    UHour      |counterx_15       |    25|
-|9     |    UMin       |counterx_16       |    24|
-|10    |    UMonth     |counterx_17       |    32|
-|11    |    USec       |counterx_18       |    27|
-|12    |    UYear      |counterx_19       |    40|
+|5     |    UAlarmHour |counterx_12       |    25|
+|6     |    UAlarmMin  |counterx_13       |    49|
+|7     |    UDay       |counterx_14       |    31|
+|8     |    UHour      |counterx_15       |    26|
+|9     |    UMin       |counterx_16       |    26|
+|10    |    UMonth     |counterx_17       |    30|
+|11    |    USec       |counterx_18       |    26|
+|12    |    UYear      |counterx_19       |    43|
 |13    |  UStopwatch   |stopwatch         |    63|
 |14    |    UMin       |counterx_9        |    22|
 |15    |    USec       |counterx_10       |    23|
 |16    |  U_SC         |scan_ctl          |    10|
 |17    |  Uclkgen      |clock_generator   |   110|
-|18    |  Ufsm         |fsm               |   370|
+|18    |  Ufsm         |fsm               |   359|
 |19    |    LBtn       |onepulse          |    93|
 |20    |      U0       |debounce_8        |    49|
-|21    |    RBtn       |onepulse_5        |    90|
+|21    |    RBtn       |onepulse_5        |    91|
 |22    |      U0       |debounce_7        |    48|
-|23    |    SwitchBtn  |onepulse_6        |   173|
+|23    |    SwitchBtn  |onepulse_6        |   161|
 |24    |      U0       |debounce          |    46|
 |25    |  Utd          |timedisplay       |   184|
-|26    |    U0         |datetime_limit    |     8|
-|27    |    UDay       |counterx          |    30|
+|26    |    U0         |datetime_limit    |     9|
+|27    |    UDay       |counterx          |    29|
 |28    |    UHour      |counterx_0        |    26|
 |29    |    UMin       |counterx_1        |    27|
-|30    |    UMonth     |counterx_2        |    29|
+|30    |    UMonth     |counterx_2        |    30|
 |31    |    USec       |counterx_3        |    27|
-|32    |    UYear      |counterx_4        |    37|
+|32    |    UYear      |counterx_4        |    36|
 +------+---------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1151.277 ; gain = 435.992
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1155.844 ; gain = 440.824
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:43 . Memory (MB): peak = 1151.277 ; gain = 335.508
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1151.277 ; gain = 435.992
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1155.844 ; gain = 324.992
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1155.844 ; gain = 440.824
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1163.363 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1167.910 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 85 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 18 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1163.363 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1167.910 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 36 instances were transformed.
   LD => LDCE: 18 instances
   LD => LDCE (inverted pins: G): 18 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-50 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
+50 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 1163.363 ; gain = 738.668
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1163.363 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1167.910 ; gain = 743.891
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1167.910 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.runs/synth_1/exp_1.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file exp_1_utilization_synth.rpt -pb exp_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  9 11:48:27 2022...
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  9 15:03:50 2022...

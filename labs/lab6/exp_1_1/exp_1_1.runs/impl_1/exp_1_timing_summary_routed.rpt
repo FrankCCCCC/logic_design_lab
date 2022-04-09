@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sat Apr  9 11:49:40 2022
+| Date         : Sat Apr  9 15:04:58 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file exp_1_timing_summary_routed.rpt -pb exp_1_timing_summary_routed.pb -rpx exp_1_timing_summary_routed.rpx -warn_on_violation
 | Design       : exp_1
@@ -101,7 +101,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 26 ports with no output delay specified. (HIGH)
+ There are 27 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
