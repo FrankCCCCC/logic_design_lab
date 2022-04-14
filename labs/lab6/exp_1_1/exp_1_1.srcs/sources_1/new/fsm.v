@@ -73,7 +73,7 @@ initial begin
     
     // Stopwatch
     stopwatch_enable <= `ENABLED;
-    stopwatch_restart <= `ENABLED;
+    stopwatch_restart <= `DISABLED;
     stopwatch_lap <= `DISABLED;
 end
 
@@ -95,9 +95,9 @@ always@(posedge btn_l_long) begin
         2'b10: begin
             stopwatch_restart <= ~stopwatch_restart;
         end
-        default: begin
-            stopwatch_restart <= `ENABLED;
-        end
+//        default: begin
+//            stopwatch_restart <= `DISABLED;
+//        end
     endcase
 end
 // Stopwatch Lap
@@ -106,9 +106,9 @@ always@(posedge btn_l_short) begin
         2'b10: begin
             stopwatch_lap <= ~stopwatch_lap;
         end
-        default: begin
-            stopwatch_lap <= `DISABLED;
-        end
+//        default: begin
+//            stopwatch_lap <= `DISABLED;
+//        end
     endcase
 end
 
@@ -118,9 +118,9 @@ always@(posedge btn_r_short) begin
         2'b10: begin
             stopwatch_enable <= ~stopwatch_enable;
         end
-        default: begin
-            stopwatch_enable <= `ENABLED;
-        end
+//        default: begin
+//            stopwatch_enable <= `ENABLED;
+//        end
     endcase
 end
 
