@@ -19,43 +19,33 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "global.v"
 
 module frequency_divider(
-    clk_out,
-    clk,
-    rst
-    );
+    clk_out, // divided clock output
+    clk, // global clock input
+    rst_n // active low reset
+);
+
+    output clk_out; // divided output
+    input clk; // global clock input
+    input rst_n; // active low reset
+    reg [`FREQ_DIV_BIT-1:0] clk_out; // clk output (in always block)
+//    reg [`FREQ_DIV_BIT-2:0] cnt; // remainder of the counter
+    reg [`FREQ_DIV_BIT-1:0] cnt_tmp; // input to dff (in always block)
     
-    input clk;
-    input rst;
-    output clk_out;
+    initial begin
+        cnt_tmp = `FREQ_DIV_BIT'd0;
+        clk_out = `FREQ_DIV_BIT'd0;
+    end
+    // Combinational logics: increment, neglecting overflow 
+    always @(clk_out)
+        cnt_tmp = clk_out + 1'b1;
     
-    reg clk_in;
-    reg clk_out;
-    reg [`FREQ_DIV_BITS-1:0] counter_in;
-    reg [`FREQ_DIV_BITS-1:0] counter_out;
-    
-    always@(counter_out or clk_out)
-        if(counter_out < (`FREQ_DIV_COUNT - 1))
-        begin
-            counter_in <= counter_out + `FREQ_DIV_BITS'd1;
-            clk_in <= clk_out;
-        end
-        else
-        begin
-            counter_in <= `FREQ_DIV_BITS'd0;
-            clk_in <= ~clk_out;
-        end
-        
-    always@(posedge clk or negedge rst)
-        if(~rst)
-        begin
-            counter_out <= `FREQ_DIV_BITS'd0;
-            clk_out <= 1'd0;
-        end
-        else
-        begin
-            counter_out <= counter_in;
-            clk_out <= clk_in;
-        end
+    // Sequential logics: Flip flops
+    always @(posedge clk or negedge rst_n)
+        if (~rst_n) clk_out <= `FREQ_DIV_BIT'd0;
+        else clk_out <= cnt_tmp;
+
 endmodule
+
