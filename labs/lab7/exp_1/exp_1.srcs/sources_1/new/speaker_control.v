@@ -29,13 +29,13 @@ module speaker_control(
     output audio_mclk, // master clock 
     output audio_lrck, // left-right clock 
     output audio_sck, // serial clock 
-    output audio_sdin, // serial audio data input
+    output reg audio_sdin, // serial audio data input
     output [`FREQ_DIV_BIT-1:0] clk_out,
     output [`AUDIO_IN_BITS_N-1:0] buff_idx
 );
     
-    reg [`AUDIO_IN_BITS_N-1:0] buff, buff_idx;
-    wire [`AUDIO_IN_BITS_N-1:0] audio_sdin_buff;
+    reg [`AUDIO_IN_BITS_N-1:0] buff, buff_idx, buff_idx_next;
+    reg [`AUDIO_IN_BITS_N-1:0] audio_sdin_buff;
     
     frequency_divider UFreq(
         .clk_out(clk_out),
@@ -51,12 +51,17 @@ module speaker_control(
     assign audio_sck = (clk_out & (`FREQ_DIV_BIT'b1 << 4))? 1 : 0;
 //    assign audio_sck = (clk_out & (`FREQ_DIV_BIT'b1 << 2))? 1 : 0;
     
-    assign audio_sdin_buff = buff & buff_idx;
-    assign audio_sdin = audio_sdin_buff? 1:0;
+//    assign audio_sdin_buff = buff & buff_idx;
+//    assign audio_sdin = (buff & buff_idx)? 1:0;
     
     initial begin
         buff = audio_in_right;
         buff_idx = `AUDIO_IN_BITS_N'd32768;
+        buff_idx_next = `AUDIO_IN_BITS_N'd32768;
+    end
+    
+    always@(clk) begin
+        audio_sdin <= (buff & buff_idx)? 1:0;
     end
     
     always@(audio_lrck) begin
@@ -67,13 +72,23 @@ module speaker_control(
         end
     end
     
-    always@(audio_sck) begin
+    always@(buff_idx) begin
         if(buff_idx >> 1 > `AUDIO_IN_BITS_N'd0) begin
-            buff_idx <= buff_idx >> 1; 
+            buff_idx_next <= buff_idx >> 1; 
         end else begin
-            buff_idx <= `AUDIO_IN_BITS_N'd32768;
+            buff_idx_next <= `AUDIO_IN_BITS_N'd32768;
         end
-//        buff_idx <= (buff_idx >> 1 < `AUDIO_IN_BITS_N'd0)? {buff_idx[0], buff_idx[`AUDIO_IN_BITS_N-1:1]}:buff_idx >> 1;
+    end
+    
+    always@(posedge audio_sck) begin
+         buff_idx <= buff_idx_next;
+//        if(buff_idx >> 1 > `AUDIO_IN_BITS_N'd0) begin
+//            buff_idx <= buff_idx >> 1; 
+//        end else begin
+//            buff_idx <= `AUDIO_IN_BITS_N'd32768;
+//        end
+        
+//        buff_idx <= ((buff_idx >> 1) < `AUDIO_IN_BITS_N'd0)? {buff_idx[0], buff_idx[`AUDIO_IN_BITS_N-1:1]}:buff_idx >> 1;
     end
     
 endmodule
