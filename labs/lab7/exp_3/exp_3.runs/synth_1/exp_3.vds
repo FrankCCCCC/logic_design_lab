@@ -1,0 +1,431 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Apr 19 23:36:48 2022
+# Process ID: 8432
+# Current directory: D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.runs/synth_1
+# Command line: vivado.exe -log exp_3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source exp_3.tcl
+# Log file: D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.runs/synth_1/exp_3.vds
+# Journal file: D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source exp_3.tcl -notrace
+Command: synth_design -top exp_3 -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15568 
+WARNING: [Synth 8-2611] redeclaration of ansi port buff_idx is not allowed [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:37]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 953.574 ; gain = 238.117
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'exp_3' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/exp_3.v:24]
+INFO: [Synth 8-6157] synthesizing module 'controller' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/controller.v:35]
+INFO: [Synth 8-6157] synthesizing module 'onepulse' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/onepulse.v:29]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/debounce.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/debounce.v:24]
+WARNING: [Synth 8-5788] Register push_debounced_long_reg in module onepulse is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/onepulse.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/onepulse.v:29]
+WARNING: [Synth 8-7023] instance 'RBtn' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/controller.v:52]
+WARNING: [Synth 8-7023] instance 'MBtn' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/controller.v:53]
+WARNING: [Synth 8-7023] instance 'LBtn' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/controller.v:54]
+WARNING: [Synth 8-7023] instance 'UBtn' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/controller.v:56]
+WARNING: [Synth 8-7023] instance 'DBtn' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/controller.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (3#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/controller.v:35]
+INFO: [Synth 8-6157] synthesizing module 'note_gen' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/note_gen.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'note_gen' (4#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/note_gen.v:24]
+INFO: [Synth 8-6157] synthesizing module 'speaker_control' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:24]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:58]
+INFO: [Synth 8-6157] synthesizing module 'frequency_divider' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/frequency_divider.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'frequency_divider' (5#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/frequency_divider.v:24]
+WARNING: [Synth 8-567] referenced signal 'buff' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:63]
+WARNING: [Synth 8-567] referenced signal 'buff_idx' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:63]
+WARNING: [Synth 8-567] referenced signal 'audio_in_left' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:67]
+WARNING: [Synth 8-567] referenced signal 'audio_in_right' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'speaker_control' (6#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:24]
+WARNING: [Synth 8-7023] instance 'Usc' of module 'speaker_control' has 10 connections declared, but only 8 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/exp_3.v:79]
+INFO: [Synth 8-6157] synthesizing module 'segment7' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/segment7.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'segment7' (7#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/segment7.v:24]
+WARNING: [Synth 8-7023] instance 'D0_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/exp_3.v:94]
+WARNING: [Synth 8-7023] instance 'D1_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/exp_3.v:95]
+WARNING: [Synth 8-7023] instance 'D2_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/exp_3.v:96]
+WARNING: [Synth 8-7023] instance 'D3_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/exp_3.v:97]
+INFO: [Synth 8-6157] synthesizing module 'display_7seg' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:28]
+INFO: [Synth 8-6157] synthesizing module 'segment7_frequency_divider' [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'segment7_frequency_divider' (8#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v:31]
+WARNING: [Synth 8-567] referenced signal 'd0' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:62]
+WARNING: [Synth 8-567] referenced signal 'd1' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:62]
+WARNING: [Synth 8-567] referenced signal 'd2' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:62]
+WARNING: [Synth 8-567] referenced signal 'd3' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'display_7seg' (9#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'exp_3' (10#1) [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/exp_3.v:24]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.023 ; gain = 284.566
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1000.023 ; gain = 284.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1000.023 ; gain = 284.566
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1000.023 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/constrs_1/new/exp_3.xdc]
+Finished Parsing XDC File [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/constrs_1/new/exp_3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/constrs_1/new/exp_3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/exp_3_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/exp_3_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1116.434 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1116.434 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1116.434 ; gain = 400.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1116.434 ; gain = 400.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1116.434 ; gain = 400.977
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5587] ROM size for "note_div_left" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "note_div_right" is below threshold of ROM address width. It will be mapped to LUTs
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1116.434 ; gain = 400.977
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     22 Bit       Adders := 2     
+	   2 Input     16 Bit       Adders := 3     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               30 Bit    Registers := 1     
+	               22 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   2 Input     22 Bit        Muxes := 3     
+	   6 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 4     
+	   6 Input     13 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module onepulse 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module controller 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     22 Bit        Muxes := 1     
+	   6 Input     18 Bit        Muxes := 1     
+	   6 Input     13 Bit        Muxes := 1     
+Module note_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     22 Bit       Adders := 2     
+	   2 Input     16 Bit       Adders := 2     
++---Registers : 
+	               22 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     22 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 2     
+Module frequency_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+Module speaker_control 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module segment7_frequency_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               30 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module display_7seg 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5587] ROM size for "Ucon/note_div_left" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "Ucon/note_div_right" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-3886] merging instance 'UDisp/d_out_reg[2]' (FDP) to 'UDisp/d_out_reg[3]'
+INFO: [Synth 8-3886] merging instance 'UDisp/d_out_reg[3]' (FDP) to 'UDisp/d_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'UDisp/d_out_reg[4]' (FDP) to 'UDisp/d_out_reg[5]'
+INFO: [Synth 8-3886] merging instance 'UDisp/d_out_reg[6]' (FDP) to 'UDisp/d_out_reg[7]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1116.434 ; gain = 400.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|segment7    | D          | 32x8          | LUT            | 
+|exp_3       | D0_CONV/D  | 32x8          | LUT            | 
+|exp_3       | D1_CONV/D  | 32x8          | LUT            | 
+|exp_3       | D2_CONV/D  | 32x8          | LUT            | 
+|exp_3       | D3_CONV/D  | 32x8          | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1116.434 ; gain = 400.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1116.434 ; gain = 400.977
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1116.434 ; gain = 400.977
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1129.840 ; gain = 414.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1129.840 ; gain = 414.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1129.840 ; gain = 414.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1129.840 ; gain = 414.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1129.840 ; gain = 414.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1129.840 ; gain = 414.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    20|
+|3     |LUT1   |     2|
+|4     |LUT2   |    68|
+|5     |LUT3   |     4|
+|6     |LUT4   |    14|
+|7     |LUT5   |    23|
+|8     |LUT6   |    37|
+|9     |FDCE   |    83|
+|10    |FDPE   |     6|
+|11    |FDRE   |    31|
+|12    |FDSE   |     1|
+|13    |IBUF   |     8|
+|14    |OBUF   |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------+---------------------------+------+
+|      |Instance  |Module                     |Cells |
++------+----------+---------------------------+------+
+|1     |top       |                           |   314|
+|2     |  UDisp   |display_7seg               |    55|
+|3     |    U0    |segment7_frequency_divider |    44|
+|4     |  Ucon    |controller                 |    75|
+|5     |    DBtn  |onepulse                   |    21|
+|6     |      U0  |debounce_7                 |    21|
+|7     |    LBtn  |onepulse_0                 |    13|
+|8     |      U0  |debounce_6                 |    13|
+|9     |    MBtn  |onepulse_1                 |    10|
+|10    |      U0  |debounce_5                 |    10|
+|11    |    RBtn  |onepulse_2                 |    16|
+|12    |      U0  |debounce_4                 |    16|
+|13    |    UBtn  |onepulse_3                 |    15|
+|14    |      U0  |debounce                   |    15|
+|15    |  Ung     |note_gen                   |   118|
+|16    |  Usc     |speaker_control            |    41|
+|17    |    UFreq |frequency_divider          |    22|
++------+----------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1129.840 ; gain = 414.383
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:28 . Memory (MB): peak = 1129.840 ; gain = 297.973
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1129.840 ; gain = 414.383
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1141.891 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1142.895 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1142.895 ; gain = 718.867
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1142.895 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.runs/synth_1/exp_3.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file exp_3_utilization_synth.rpt -pb exp_3_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 19 23:37:32 2022...

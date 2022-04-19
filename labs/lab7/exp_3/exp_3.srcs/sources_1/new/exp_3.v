@@ -24,6 +24,7 @@
 module exp_3( 
     input clk, // clock from the crystal
     input rst_n, // active low reset 
+    input switch,
     input btn_l,
     input btn_m,
     input btn_r,
@@ -40,11 +41,12 @@ module exp_3(
     // Declare internal nodes
     wire [`AUDIO_IN_BITS_N-1:0] audio_in_left, audio_in_right, audio_level_magnitude; // Note generation
     wire [`AUDIO_LEVEL_BITS_N-1:0] audio_level_left, audio_level_right;
-    wire [`NOTE_GEN_FREQ_BITS_N-1:0] note_div;
+    wire [`NOTE_GEN_FREQ_BITS_N-1:0] note_div, note_div_right, note_div_left;
     
     controller Ucon(
         .clk(clk),
         .rst_n(rst_n),
+        .switch(switch),
         .btn_l(btn_l),
         .btn_m(btn_m),
         .btn_r(btn_r),
@@ -52,7 +54,9 @@ module exp_3(
         .btn_d(btn_d),
         .audio_level_left(audio_level_left),
         .audio_level_right(audio_level_right),
-        .note_div(note_div)
+//        .note_div(note_div),
+        .note_div_left(note_div_left),
+        .note_div_right(note_div_right)
     );
     
     note_gen Ung (
@@ -63,7 +67,9 @@ module exp_3(
 //        .audio_level_right(`AUDIO_LEVEL_BITS_N'd14),
         .audio_level_right(audio_level_right),
 //        .note_div(`NOTE_GEN_FREQ_BITS_N'd191571), // div for note generation
-        .note_div(note_div), 
+//        .note_div(note_div),
+        .note_div_left(note_div_left),
+        .note_div_right(note_div_right),  
         .audio_left(audio_in_left), // left sound audio 
         .audio_right(audio_in_right), // right sound audio
         .audio_level_magnitude(audio_level_magnitude)

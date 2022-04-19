@@ -53,8 +53,8 @@ module controller(
     onepulse MBtn(.rst(rst_n), .clk(clk), .push(btn_m), .push_debounced(btn_m_debounced));
     onepulse LBtn(.rst(rst_n), .clk(clk), .push(btn_l), .push_debounced(btn_l_debounced));
     
-    onepulse UBtn(.rst(rst_n), .clk(clk), .push(btn_m), .push_debounced(btn_u_debounced));
-    onepulse DBtn(.rst(rst_n), .clk(clk), .push(btn_l), .push_debounced(btn_d_debounced));
+    onepulse UBtn(.rst(rst_n), .clk(clk), .push(btn_u), .push_debounced(btn_u_debounced));
+    onepulse DBtn(.rst(rst_n), .clk(clk), .push(btn_d), .push_debounced(btn_d_debounced));
     
     assign audio_level_left = `AUDIO_LEVEL_BITS_N'd15;
     assign audio_level_right = `AUDIO_LEVEL_BITS_N'd15; 

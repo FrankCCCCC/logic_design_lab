@@ -48,3 +48,6 @@ set_property PACKAGE_PIN W19 [get_ports btn_l]
 set_property PACKAGE_PIN U18 [get_ports btn_m]
 set_property PACKAGE_PIN T17 [get_ports btn_r]
 set_property PACKAGE_PIN T18 [get_ports btn_u]
+
+set_property IOSTANDARD LVCMOS33 [get_ports switch]
+set_property PACKAGE_PIN V16 [get_ports switch]

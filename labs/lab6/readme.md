@@ -172,7 +172,7 @@ Input: [8:0] x
 
 ### Design Implementation
 
-The ``extract`` module will separate the tens digit ``d1`` and unit digits ``d0`` from the input number ``x``. 
+The ``extract`` module will separate the tens digit ``d1`` and unit digits ``d0`` from the input number ``x``. I use mod of 10 to extract the first decimal digit and use divided by 10 to extract the second decimal digit.
 
 ## Scan Controller Module
 
