@@ -31,10 +31,10 @@ footer-left: false
 
 [fsm.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/fsm.v)
 
-Output [15:0] state_led, [1:0] display_slide, load_to_disp_alarm, load_to_unitset, time_enable, alarm_enable, stopwatch_enable, stopwatch_restart, stopwatch_lap, [1:0] set_u1_u0,
+Output: [15:0] state_led, [1:0] display_slide, load_to_disp_alarm, load_to_unitset, time_enable, alarm_enable, stopwatch_enable, stopwatch_restart, stopwatch_lap, [1:0] set_u1_u0,
 [4:0] state
 
-Input btn_l, btn_m, btn_r, switch_0, switch_1, switch_alarm, clk, rst_n
+Input: btn_l, btn_m, btn_r, switch_0, switch_1, switch_alarm, clk, rst_n
 
 ### Design Implementation
 
@@ -48,7 +48,7 @@ The variables ``time_enable`` and ``alarm_enable`` control whether to enable cou
 
 **Stopwatch**
 
-The variables ``stopwatch_enable``, ``stopwatch_restart``, and ``stopwatch_lap`` control the behavior of the stopwatch module. The implementation is totally the same as the Lab 5-2. The finite state machine controls 2 signals: ``stopwatch_enable`` and ``stopwatch_restart``. The down counter will pause while the signal ``stopwatch_enable`` is at low voltage and resume to count while the signal is at low voltage. It is controlled independently, so I only need to inverse the signal whenever the button right button ``btn_r`` is pressed.
+The variables ``stopwatch_enable``, ``stopwatch_restart``, and ``stopwatch_lap`` control the behavior of the stopwatch module. The implementation is totally the same as the Lab 5-2. The finite state machine controls 2 signals: ``stopwatch_enable`` and ``stopwatch_restart``. The down counter will pause while the signal ``stopwatch_enable`` is at low voltage and resume to count while the signal is at low voltage. It is controlled independently, so I only need to inverse the signal whenever the right button ``btn_r`` is pressed.
 
 On the other hand, the down counter will reset to 0 when the signal ``stopwatch_restart`` raises. It only depends on ``btn_l`` button, so we only need to inverse the signal whenever the button is clicked. 
 
@@ -64,9 +64,9 @@ The variable ``state_led`` controls the LED display of the board and it can simp
 
 [timedisplay.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/timedisplay.v)
 
-Output year, month, day, hour, min, sec
+Output: year, month, day, hour, min, sec
 
-Input count_enable, load_value_enable, load_value_year, load_value_month, load_value_day, load_value_hour, load_value_min, load_value_sec, clk, rst_n
+Input: count_enable, load_value_enable, load_value_year, load_value_month, load_value_day, load_value_hour, load_value_min, load_value_sec, clk, rst_n
 
 ### Design Implementation
 
@@ -80,9 +80,9 @@ For leap year, I design a module called ``datetime_limit`` to count the length o
 
 [unitset.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/unitset.v)
 
-Output [8:0] alarm_hour, [8:0] alarm_min, [8:0] year, [8:0] month, [8:0] day, [8:0] hour, [8:0] min, [8:0] sec
+Output: [8:0] alarm_hour, [8:0] alarm_min, [8:0] year, [8:0] month, [8:0] day, [8:0] hour, [8:0] min, [8:0] sec
 
-Input count_enable, load_value_enable, [8:0] load_alarm_hour, [8:0] load_alarm_min, [8:0] load_year, [8:0] load_month, [8:0] load_day, [8:0] load_hour, [8:0] load_min, [8:0] load_sec, display_slide, clk, rst_n
+Input: count_enable, load_value_enable, [8:0] load_alarm_hour, [8:0] load_alarm_min, [8:0] load_year, [8:0] load_month, [8:0] load_day, [8:0] load_hour, [8:0] load_min, [8:0] load_sec, display_slide, clk, rst_n
 
 ### Design Implementation
 
@@ -96,9 +96,9 @@ The module is implemented by a series of cascaded counters ``counterx``. The cou
 
 [alarm.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/alarm.v)
 
-Output [6:0] alarm_led, [8:0] alarm_min, [8:0] alarm_hour
+Output: [6:0] alarm_led, [8:0] alarm_min, [8:0] alarm_hour
 
-Input alarm_enable, load_value_enable, [8:0] current_min,[8:0] current_hour, [8:0] load_value_alarm_min, [8:0] load_value_alarm_hour
+Input: alarm_enable, load_value_enable, [8:0] current_min,[8:0] current_hour, [8:0] load_value_alarm_min, [8:0] load_value_alarm_hour
 
 ### Design Implementation
 
@@ -110,9 +110,9 @@ If ``load_value_enable`` is enabled, the module will load the argument ``load_va
 
 [stopwatch.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/stopwatch.v)
 
-Output stopwatch_led, [8:0] sec, [8:0] min, 
+Output: stopwatch_led, [8:0] sec, [8:0] min, 
 
-Input count_enable, lap_enable, clk, rst_n
+Input: count_enable, lap_enable, clk, rst_n
 
 ### Design Implementation
 
@@ -124,9 +124,9 @@ The ``stopwatch`` module is implemented by 2 ``counterx`` modules. The counter w
 
 [switch_controller.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/switch_controller.v)
 
-Output [8:0] sel_d1, [8:0] sel_d0
+Output: [8:0] sel_d1, [8:0] sel_d0
 
-Input [8:0] alarm_hour, [8:0] alarm_min, [8:0] year, [8:0] month, [8:0] day, [8:0] hour, [8:0] min, [8:0] sec, [1:0] display_slide
+Input: [8:0] alarm_hour, [8:0] alarm_min, [8:0] year, [8:0] month, [8:0] day, [8:0] hour, [8:0] min, [8:0] sec, [1:0] display_slide
 
 ### Design Implementation
 
@@ -138,9 +138,9 @@ The module will select the corresponding unit as output according to the ``displ
 
 [display_controller.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/display_controller.v)
 
-Output [8:0] ssd_reg0, [8:0] ssd_reg1
+Output: [8:0] ssd_reg0, [8:0] ssd_reg1
 
-Input [4:0]state, [1:0]display_slide, [8:0] alarm_hour, [8:0] alarm_min, [8:0] time_year, [8:0] time_month, [8:0] time_day, [8:0] time_hour, [8:0] time_min, [8:0] time_sec, [8:0] stopwatch_min, [8:0] stopwatch_sec, [8:0] set_alarm_hour, [8:0] set_alarm_min, [8:0] set_year, [8:0] set_month, [8:0] set_day, [8:0] set_hour, [8:0] set_min, [8:0] set_sec
+Input: [4:0]state, [1:0]display_slide, [8:0] alarm_hour, [8:0] alarm_min, [8:0] time_year, [8:0] time_month, [8:0] time_day, [8:0] time_hour, [8:0] time_min, [8:0] time_sec, [8:0] stopwatch_min, [8:0] stopwatch_sec, [8:0] set_alarm_hour, [8:0] set_alarm_min, [8:0] set_year, [8:0] set_month, [8:0] set_day, [8:0] set_hour, [8:0] set_min, [8:0] set_sec
 
 ### Design Implementation
 
@@ -152,9 +152,9 @@ The module will select corresponding inputs as the output according to the argum
 
 [clock_generator.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/clock_generator.v)
 
-Output reg clk_1, reg clk_100, reg clk_2k,
+Output: reg clk_1, reg clk_100, reg clk_2k,
 
-Input clk, rst_n
+Input: clk, rst_n
 
 ### Design Implementation
 
@@ -166,9 +166,9 @@ The clock generator provides 1 Hz clock and 100 Hz clock. The module is implemen
 
 [extract.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/extract.v)
 
-Output [3:0] d0, [3:0] d1
+Output: [3:0] d0, [3:0] d1
 
-Input [8:0] x
+Input: [8:0] x
 
 ### Design Implementation
 
@@ -180,9 +180,9 @@ The ``extract`` module will separate the tens digit ``d1`` and unit digits ``d0`
 
 [scan_ctl.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/scan_ctl.v)
 
-Output [3:0] ssd_in, [3:0] ssd_ctl
+Output: [3:0] ssd_in, [3:0] ssd_ctl
 
-Input [3:0] in0, [3:0] in1, [3:0] in2, [3:0] in3, ssd_ctl_en, rst_n
+Input: [3:0] in0, [3:0] in1, [3:0] in2, [3:0] in3, ssd_ctl_en, rst_n
 
 ### Design Implementation
 
@@ -194,9 +194,9 @@ Since we can only control one digit of the 7‑segment display each time, I desi
 
 [display.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/display.v)
 
-Output [7:0] segs
+Output: [7:0] segs
 
-Input [3:0] bin
+Input: [3:0] bin
 
 ### Design Implementation
 
@@ -208,9 +208,9 @@ The module will convert the 4-bits binary number to 7-segment display patters fr
 
 [debounce.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/debounce.v)
 
-Output push_debounced
+Output: push_debounced
 
-Input rst, clk, push
+Input: rst, clk, push
 
 ### Design Implementation
 
@@ -222,9 +222,9 @@ For each click, the module will delay 4 clock cycle and then raise the debounce 
 
 [onepulse.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/onepulse.v)
 
-Output push_onepulse, push_onepulse_long, push_debounced, push_debounced_long
+Output: push_onepulse, push_onepulse_long, push_debounced, push_debounced_long
 
-Input clk, rst, push
+Input: clk, rst, push
 
 ### Design Implementation
 
@@ -236,9 +236,9 @@ The one‑pulse module raise a pulse while the debounce module raises a pulse. A
 
 [counterx.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/counterx.v)
 
-Output [8:0] q, time_carry, count_enable, load_value_enable, [8:0] load_value, [8:0] count_limit_u, [8:0] count_limit_l, [8:0] count_init
+Output: [8:0] q, time_carry, count_enable, load_value_enable, [8:0] load_value, [8:0] count_limit_u, [8:0] count_limit_l, [8:0] count_init
 
-Input clk, rst_n
+Input: clk, rst_n
 
 ### Design Implementation
 
@@ -250,9 +250,9 @@ The ``counterx`` module is a binary-up counter that counts from ``count_limit_l`
 
 [datetime_limit.v Source Code](exp_1_1/exp_1_1.srcs/sources_1/new/datetime_limit.v)
 
-Output [8:0] year_limit, [8:0] month_limit, [8:0] day_limit, [8:0] hour_limit, [8:0] min_limit, [8:0] sec_limit, [8:0] year_init, [8:0] month_init, [8:0] day_init, [8:0] hour_init, [8:0] min_init, [8:0] sec_init
+Output: [8:0] year_limit, [8:0] month_limit, [8:0] day_limit, [8:0] hour_limit, [8:0] min_limit, [8:0] sec_limit, [8:0] year_init, [8:0] month_init, [8:0] day_init, [8:0] hour_init, [8:0] min_init, [8:0] sec_init
 
-Input [8:0] year, [8:0] month
+Input: [8:0] year, [8:0] month
 
 ### Design Implementation
 
@@ -284,4 +284,4 @@ The module provide the upper limit of each date/time unit and support leap year.
 
 ## Conclusion
 
-In lab6, I firstly implement a large project, which is more than 1000 lines of codes. I spent lots of time on the 
+In lab6, I firstly implement a large project, which is more than 1000 lines of codes. I spent lots of time on the ``unitset`` module and how to design a data flow between the ``timedisplay``, ``alarm``, and ``unitset``. I've learned a lot while doing this homework.

@@ -9,3 +9,387 @@
 # Log file: D:/data/logic_design_lab/labs/lab6/exp_1_1/vivado.log
 # Journal file: D:/data/logic_design_lab/labs/lab6/exp_1_1\vivado.jou
 #-----------------------------------------------------------
+start_gui
+open_project D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:12 . Memory (MB): peak = 885.664 ; gain = 230.828
+update_compile_order -fileset sources_1
+create_bd_design "design_1"
+Wrote  : <D:\data\logic_design_lab\labs\lab6\exp_1_1\exp_1_1.srcs\sources_1\bd\design_1\design_1.bd> 
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference exp_1 exp_1_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {New Clocking Wizard} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins exp_1_0/clk]
+create_bd_cell -type module -reference timedisplay timedisplay_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {New External Port} Manual_Source {Auto}}  [get_bd_pins clk_wiz/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz/reset]
+INFO: [board_rule 100-100] create_bd_port -dir I reset_rtl_0 -type rst
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0
+INFO: [board_rule 100-100] connect_bd_net /reset_rtl_0 /clk_wiz/reset
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/clk_wiz/clk_out1 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins timedisplay_0/clk]
+endgroup
+delete_bd_objs [get_bd_cells exp_1_0]
+create_bd_cell -type module -reference stopwatch stopwatch_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/clk_wiz/clk_out1 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins stopwatch_0/clk]
+create_bd_cell -type module -reference unitset unitset_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/clk_wiz/clk_out1 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins unitset_0/clk]
+create_bd_cell -type module -reference fsm fsm_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/clk_wiz/clk_out1 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins fsm_0/clk]
+startgroup
+connect_bd_net [get_bd_pins unitset_0/min] [get_bd_pins timedisplay_0/load_value_day]
+endgroup
+delete_bd_objs [get_bd_nets unitset_0_min]
+export_ip_user_files -of_objects  [get_files D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -reset -force -quiet
+remove_files  D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/bd/design_1/design_1.bd
+Wrote  : <D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+file delete -force D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/bd/design_1
+create_bd_design "design_1"
+Wrote  : <D:\data\logic_design_lab\labs\lab6\exp_1_1\exp_1_1.srcs\sources_1\bd\design_1\design_1.bd> 
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference fsm fsm_0
+create_bd_cell -type module -reference unitset unitset_0
+create_bd_cell -type module -reference stopwatch stopwatch_0
+create_bd_cell -type module -reference timedisplay timedisplay_0
+create_bd_cell -type module -reference alarm alarm_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {New Clocking Wizard} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins fsm_0/clk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {New Clocking Wizard} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins stopwatch_0/clk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {New Clocking Wizard} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins timedisplay_0/clk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {New Clocking Wizard} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins unitset_0/clk]
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {New External Port} Manual_Source {Auto}}  [get_bd_pins clk_wiz/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz/reset]
+INFO: [board_rule 100-100] create_bd_port -dir I reset_rtl_0 -type rst
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0
+INFO: [board_rule 100-100] connect_bd_net /reset_rtl_0 /clk_wiz/reset
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {New External Port} Manual_Source {Auto}}  [get_bd_pins clk_wiz_1/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz_1/reset]
+INFO: [board_rule 100-100] create_bd_port -dir I reset_rtl_0_0 -type rst
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0_0
+INFO: [board_rule 100-100] connect_bd_net /reset_rtl_0_0 /clk_wiz_1/reset
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0_0
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {New External Port} Manual_Source {Auto}}  [get_bd_pins clk_wiz_2/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz_2/reset]
+INFO: [board_rule 100-100] create_bd_port -dir I reset_rtl_0_0_1 -type rst
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0_0_1
+INFO: [board_rule 100-100] connect_bd_net /reset_rtl_0_0_1 /clk_wiz_2/reset
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0_0_1
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {New External Port} Manual_Source {Auto}}  [get_bd_pins clk_wiz_3/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz_3/reset]
+INFO: [board_rule 100-100] create_bd_port -dir I reset_rtl_0_0_1_2 -type rst
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0_0_1_2
+INFO: [board_rule 100-100] connect_bd_net /reset_rtl_0_0_1_2 /clk_wiz_3/reset
+INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0_0_1_2
+endgroup
+connect_bd_net [get_bd_pins unitset_0/alarm_hour] [get_bd_pins alarm_0/load_value_alarm_hour]
+connect_bd_net [get_bd_pins unitset_0/alarm_min] [get_bd_pins alarm_0/load_value_alarm_min]
+set_property location {2 538 458} [get_bd_cells unitset_0]
+connect_bd_net [get_bd_pins unitset_0/year] [get_bd_pins timedisplay_0/load_value_year]
+connect_bd_net [get_bd_pins unitset_0/month] [get_bd_pins timedisplay_0/load_value_month]
+connect_bd_net [get_bd_pins unitset_0/day] [get_bd_pins timedisplay_0/load_value_day]
+connect_bd_net [get_bd_pins unitset_0/hour] [get_bd_pins timedisplay_0/load_value_hour]
+connect_bd_net [get_bd_pins unitset_0/min] [get_bd_pins timedisplay_0/load_value_min]
+startgroup
+connect_bd_net [get_bd_pins unitset_0/sec] [get_bd_pins timedisplay_0/load_value_sec]
+endgroup
+set_property location {2 642 779} [get_bd_cells timedisplay_0]
+set_property location {2 580 -182} [get_bd_cells timedisplay_0]
+set_property location {3 1011 453} [get_bd_cells timedisplay_0]
+set_property location {3 1085 475} [get_bd_cells timedisplay_0]
+set_property location {3.5 1144 449} [get_bd_cells timedisplay_0]
+regenerate_bd_layout -routing
+regenerate_bd_layout -routing
+regenerate_bd_layout -routing
+regenerate_bd_layout
+validate_bd_design
+WARNING: [BD 41-927] Following properties on pin /fsm_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	PHASE=0.0 
+WARNING: [BD 41-927] Following properties on pin /unitset_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	PHASE=0.0 
+WARNING: [BD 41-927] Following properties on pin /stopwatch_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	PHASE=0.0 
+WARNING: [BD 41-927] Following properties on pin /timedisplay_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	PHASE=0.0 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/fsm_0/btn_l
+/fsm_0/btn_m
+/fsm_0/btn_r
+/fsm_0/switch_0
+/fsm_0/switch_1
+/fsm_0/switch_alarm
+/fsm_0/rst_n
+/unitset_0/count_enable
+/unitset_0/load_value_enable
+/unitset_0/load_alarm_hour
+/unitset_0/load_alarm_min
+/unitset_0/load_year
+/unitset_0/load_month
+/unitset_0/load_day
+/unitset_0/load_hour
+/unitset_0/load_min
+/unitset_0/load_sec
+/unitset_0/display_slide
+/unitset_0/rst_n
+/stopwatch_0/count_enable
+/stopwatch_0/lap_enable
+/stopwatch_0/rst_n
+/timedisplay_0/count_enable
+/timedisplay_0/load_value_enable
+/timedisplay_0/rst_n
+/alarm_0/alarm_enable
+/alarm_0/load_value_enable
+/alarm_0/current_min
+/alarm_0/current_hour
+
+set_property location {3 937 372} [get_bd_cells timedisplay_0]
+connect_bd_net [get_bd_pins alarm_0/alarm_min] [get_bd_pins unitset_0/load_alarm_min]
+connect_bd_net [get_bd_pins alarm_0/alarm_hour] [get_bd_pins unitset_0/load_alarm_hour]
+connect_bd_net [get_bd_pins timedisplay_0/sec] [get_bd_pins unitset_0/load_sec]
+connect_bd_net [get_bd_pins timedisplay_0/min] [get_bd_pins unitset_0/load_min]
+connect_bd_net [get_bd_pins timedisplay_0/hour] [get_bd_pins unitset_0/load_hour]
+connect_bd_net [get_bd_pins timedisplay_0/day] [get_bd_pins unitset_0/load_day]
+connect_bd_net [get_bd_pins timedisplay_0/month] [get_bd_pins unitset_0/load_month]
+connect_bd_net [get_bd_pins timedisplay_0/year] [get_bd_pins unitset_0/load_year]
+connect_bd_net [get_bd_pins fsm_0/stopwatch_restart] [get_bd_pins stopwatch_0/rst_n]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /fsm_0/stopwatch_restart(undef) and /stopwatch_0/rst_n(rst)
+connect_bd_net [get_bd_pins fsm_0/stopwatch_lap] [get_bd_pins stopwatch_0/count_enable]
+delete_bd_objs [get_bd_nets fsm_0_stopwatch_lap]
+connect_bd_net [get_bd_pins fsm_0/stopwatch_lap] [get_bd_pins stopwatch_0/count_enable]
+delete_bd_objs [get_bd_nets fsm_0_stopwatch_lap]
+connect_bd_net [get_bd_pins fsm_0/stopwatch_lap] [get_bd_pins stopwatch_0/lap_enable]
+connect_bd_net [get_bd_pins fsm_0/time_enable] [get_bd_pins stopwatch_0/count_enable]
+connect_bd_net [get_bd_pins fsm_0/load_to_unitset] [get_bd_pins alarm_0/alarm_enable]
+delete_bd_objs [get_bd_nets fsm_0_load_to_unitset]
+connect_bd_net [get_bd_pins fsm_0/alarm_enable] [get_bd_pins alarm_0/alarm_enable]
+delete_bd_objs [get_bd_nets fsm_0_time_enable]
+connect_bd_net [get_bd_pins fsm_0/time_enable] [get_bd_pins timedisplay_0/count_enable]
+connect_bd_net [get_bd_pins fsm_0/stopwatch_enable] [get_bd_pins stopwatch_0/count_enable]
+connect_bd_net [get_bd_pins fsm_0/load_to_disp_alarm] [get_bd_pins alarm_0/load_value_enable]
+connect_bd_net [get_bd_pins fsm_0/load_to_disp_alarm] [get_bd_pins timedisplay_0/load_value_enable]
+connect_bd_net [get_bd_pins timedisplay_0/min] [get_bd_pins alarm_0/current_min]
+connect_bd_net [get_bd_pins timedisplay_0/hour] [get_bd_pins alarm_0/current_hour]
+connect_bd_net [get_bd_pins fsm_0/load_to_unitset] [get_bd_pins unitset_0/load_value_enable]
+connect_bd_net [get_bd_pins fsm_0/display_slide] [get_bd_pins unitset_0/display_slide]
+create_bd_cell -type module -reference display_controller display_controller_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+set_property location {3.5 1585 624} [get_bd_cells display_controller_0]
+set_property location {4.5 1738 656} [get_bd_cells display_controller_0]
+regenerate_bd_layout
+regenerate_bd_layout -routing
+set_property location {5.5 2278 1058} [get_bd_cells display_controller_0]
+startgroup
+connect_bd_net [get_bd_pins stopwatch_0/sec] [get_bd_pins display_controller_0/stopwatch_sec]
+endgroup
+connect_bd_net [get_bd_pins stopwatch_0/min] [get_bd_pins display_controller_0/stopwatch_min]
+connect_bd_net [get_bd_pins alarm_0/alarm_min] [get_bd_pins display_controller_0/alarm_min]
+connect_bd_net [get_bd_pins alarm_0/alarm_hour] [get_bd_pins display_controller_0/alarm_hour]
+connect_bd_net [get_bd_pins fsm_0/state] [get_bd_pins display_controller_0/state]
+connect_bd_net [get_bd_pins fsm_0/display_slide] [get_bd_pins display_controller_0/display_slide]
+connect_bd_net [get_bd_pins timedisplay_0/year] [get_bd_pins display_controller_0/time_year]
+startgroup
+connect_bd_net [get_bd_pins display_controller_0/time_month] [get_bd_pins timedisplay_0/month]
+endgroup
+connect_bd_net [get_bd_pins display_controller_0/time_day] [get_bd_pins timedisplay_0/day]
+connect_bd_net [get_bd_pins display_controller_0/time_hour] [get_bd_pins timedisplay_0/hour]
+connect_bd_net [get_bd_pins display_controller_0/time_min] [get_bd_pins timedisplay_0/min]
+connect_bd_net [get_bd_pins display_controller_0/time_sec] [get_bd_pins timedisplay_0/sec]
+connect_bd_net [get_bd_pins unitset_0/alarm_hour] [get_bd_pins display_controller_0/set_alarm_hour]
+connect_bd_net [get_bd_pins display_controller_0/set_alarm_min] [get_bd_pins unitset_0/alarm_min]
+connect_bd_net [get_bd_pins unitset_0/year] [get_bd_pins display_controller_0/set_year]
+connect_bd_net [get_bd_pins display_controller_0/set_month] [get_bd_pins unitset_0/month]
+connect_bd_net [get_bd_pins display_controller_0/set_day] [get_bd_pins timedisplay_0/min]
+delete_bd_objs [get_bd_nets timedisplay_0_min]
+connect_bd_net [get_bd_pins timedisplay_0/min] [get_bd_pins alarm_0/current_min]
+connect_bd_net [get_bd_pins timedisplay_0/min] [get_bd_pins unitset_0/load_min]
+connect_bd_net [get_bd_pins display_controller_0/time_min] [get_bd_pins timedisplay_0/hour]
+delete_bd_objs [get_bd_nets timedisplay_0_hour]
+connect_bd_net [get_bd_pins display_controller_0/time_hour] [get_bd_pins alarm_0/current_hour]
+connect_bd_net [get_bd_pins timedisplay_0/hour] [get_bd_pins alarm_0/current_hour]
+connect_bd_net [get_bd_pins timedisplay_0/hour] [get_bd_pins unitset_0/load_hour]
+connect_bd_net [get_bd_pins display_controller_0/time_min] [get_bd_pins timedisplay_0/min]
+connect_bd_net [get_bd_pins display_controller_0/set_day] [get_bd_pins unitset_0/day]
+connect_bd_net [get_bd_pins display_controller_0/set_hour] [get_bd_pins unitset_0/hour]
+connect_bd_net [get_bd_pins display_controller_0/set_min] [get_bd_pins unitset_0/min]
+connect_bd_net [get_bd_pins display_controller_0/set_sec] [get_bd_pins unitset_0/sec]
+create_bd_port -dir I -type rst rst_n
+set_property CONFIG.POLARITY ACTIVE_HIGH [get_bd_ports rst_n]
+connect_bd_net [get_bd_ports rst_n] [get_bd_pins fsm_0/rst_n]
+connect_bd_net [get_bd_ports rst_n] [get_bd_pins timedisplay_0/rst_n]
+connect_bd_net [get_bd_ports rst_n] [get_bd_pins unitset_0/rst_n]
+create_bd_cell -type module -reference scan_ctl scan_ctl_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+set_property location {7.5 2893 729} [get_bd_cells scan_ctl_0]
+regenerate_bd_layout
+set_property location {5.5 2201 308} [get_bd_cells scan_ctl_0]
+regenerate_bd_layout
+create_bd_cell -type module -reference clock_generator clock_generator_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+startgroup
+delete_bd_objs [get_bd_nets reset_rtl_0_0_1_2_1] [get_bd_nets clk_100MHz_1_1] [get_bd_nets clk_100MHz_1] [get_bd_nets reset_rtl_0_0_1] [get_bd_nets clk_100MHz_3_1] [get_bd_nets clk_100MHz_2_1]
+delete_bd_objs [get_bd_nets clk_wiz_clk_out1] [get_bd_nets clk_wiz_2_clk_out1] [get_bd_nets clk_wiz_3_clk_out1] [get_bd_nets reset_rtl_0_0_1_1] [get_bd_nets reset_rtl_0_1] [get_bd_nets clk_wiz_1_clk_out1] [get_bd_cells clk_wiz_1] [get_bd_cells clk_wiz_2] [get_bd_cells clk_wiz_3] [get_bd_cells clk_wiz]
+delete_bd_objs [get_bd_ports reset_rtl_0_0_1] [get_bd_ports reset_rtl_0]
+endgroup
+delete_bd_objs [get_bd_ports reset_rtl_0_0_1_2] [get_bd_ports clk_100MHz_3] [get_bd_ports clk_100MHz_1] [get_bd_ports clk_100MHz] [get_bd_ports reset_rtl_0_0] [get_bd_ports clk_100MHz_2]
+set_property location {1.5 303 531} [get_bd_cells clock_generator_0]
+connect_bd_net [get_bd_pins clock_generator_0/clk_1] [get_bd_pins unitset_0/clk]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clock_generator_0/clk_1(undef) and /unitset_0/clk(clk)
+connect_bd_net [get_bd_pins clock_generator_0/clk_1] [get_bd_pins stopwatch_0/clk]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clock_generator_0/clk_1(undef) and /stopwatch_0/clk(clk)
+connect_bd_net [get_bd_pins clock_generator_0/clk_1] [get_bd_pins timedisplay_0/clk]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clock_generator_0/clk_1(undef) and /timedisplay_0/clk(clk)
+connect_bd_net [get_bd_pins clock_generator_0/clk_2k] [get_bd_pins scan_ctl_0/ssd_ctl_en]
+create_bd_port -dir I clk
+connect_bd_net [get_bd_ports clk] [get_bd_pins clock_generator_0/clk]
+connect_bd_net [get_bd_ports clk] [get_bd_pins fsm_0/clk]
+connect_bd_net [get_bd_ports rst_n] [get_bd_pins clock_generator_0/rst_n]
+connect_bd_net [get_bd_ports rst_n] [get_bd_pins scan_ctl_0/rst_n]
+create_bd_port -dir I btn_l
+set_property location {316 870} [get_bd_ports btn_l]
+undo
+INFO: [Common 17-17] undo 'set_property location {316 870} [get_bd_ports btn_l]'
+connect_bd_net [get_bd_ports btn_l] [get_bd_pins fsm_0/btn_l]
+copy_bd_objs /  [get_bd_ports {btn_l}]
+delete_bd_objs [get_bd_ports btn_l1]
+create_bd_port -dir I btn_m
+connect_bd_net [get_bd_ports btn_m] [get_bd_pins fsm_0/btn_m]
+create_bd_port -dir I btn_r
+connect_bd_net [get_bd_ports btn_r] [get_bd_pins fsm_0/btn_r]
+create_bd_port -dir I btn_u
+delete_bd_objs [get_bd_ports btn_u]
+create_bd_port -dir I switch_0
+connect_bd_net [get_bd_ports switch_0] [get_bd_pins fsm_0/switch_0]
+create_bd_port -dir I switch_1
+connect_bd_net [get_bd_ports switch_1] [get_bd_pins fsm_0/switch_1]
+create_bd_port -dir I switch_alarm
+connect_bd_net [get_bd_ports switch_alarm] [get_bd_pins fsm_0/switch_alarm]
+set_property USER_COMMENTS.comment_0 {Enter Comments here}  [current_bd_design]
+set_property USER_COMMENTS.comment_0 {}  [current_bd_design]
+create_bd_cell -type module -reference extract extract_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+connect_bd_net [get_bd_pins display_controller_0/ssd_reg0] [get_bd_pins extract_0/x]
+regenerate_bd_layout
+create_bd_cell -type module -reference exp_1 exp_1_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+delete_bd_objs [get_bd_cells exp_1_0]
+connect_bd_net [get_bd_pins extract_0/d0] [get_bd_pins scan_ctl_0/in0]
+connect_bd_net [get_bd_pins extract_0/d0] [get_bd_pins scan_ctl_0/in1]
+delete_bd_objs [get_bd_nets extract_0_d0]
+connect_bd_net [get_bd_pins extract_0/d1] [get_bd_pins scan_ctl_0/in1]
+connect_bd_net [get_bd_pins extract_0/d0] [get_bd_pins scan_ctl_0/in0]
+create_bd_cell -type module -reference exp_1 exp_1_0
+delete_bd_objs [get_bd_cells exp_1_0]
+create_bd_cell -type module -reference extract extract_1
+connect_bd_net [get_bd_pins display_controller_0/ssd_reg1] [get_bd_pins extract_1/x]
+connect_bd_net [get_bd_pins extract_1/d0] [get_bd_pins scan_ctl_0/in2]
+connect_bd_net [get_bd_pins extract_1/d1] [get_bd_pins scan_ctl_0/in3]
+regenerate_bd_layout
+create_bd_cell -type module -reference display display_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+connect_bd_net [get_bd_pins scan_ctl_0/ssd_in] [get_bd_pins display_0/bin]
+create_bd_port -dir O -from 7 -to 0 segs
+create_bd_port -dir O -from 3 -to 0 ssd_ctl
+startgroup
+connect_bd_net [get_bd_ports segs] [get_bd_pins display_0/segs]
+connect_bd_net [get_bd_ports ssd_ctl] [get_bd_pins display_0/segs]
+endgroup
+delete_bd_objs [get_bd_nets display_0_segs]
+connect_bd_net [get_bd_ports segs] [get_bd_pins display_0/segs]
+connect_bd_net [get_bd_ports ssd_ctl] [get_bd_pins scan_ctl_0/ssd_ctl]
+regenerate_bd_layout
+connect_bd_net [get_bd_pins unitset_0/count_enable] [get_bd_pins fsm_0/set_u1_u0]
+create_bd_port -dir O -from 15 -to 0 led
+connect_bd_net [get_bd_ports led] [get_bd_pins alarm_0/alarm_led]
+delete_bd_objs [get_bd_nets alarm_0_alarm_led] [get_bd_ports led]
+create_bd_port -dir O led_0
+startgroup
+connect_bd_net [get_bd_ports led_0] [get_bd_pins stopwatch_0/stopwatch_led]
+endgroup
+create_bd_port -dir I -from 7 -to 1 led_1_7
+delete_bd_objs [get_bd_ports led_1_7]
+create_bd_port -dir O -from 7 -to 1 led_1_7
+delete_bd_objs [get_bd_ports led_1_7]
+create_bd_port -dir O -from 7 -to 1 led_7_1
+startgroup
+connect_bd_net [get_bd_ports led_7_1] [get_bd_pins alarm_0/alarm_led]
+endgroup
+create_bd_port -dir O -from 15 -to 8 led_15_8
+startgroup
+connect_bd_net [get_bd_ports led_15_8] [get_bd_pins fsm_0/state_led]
+endgroup
+regenerate_bd_layout
+save_bd_design
+Wrote  : <D:\data\logic_design_lab\labs\lab6\exp_1_1\exp_1_1.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/data/logic_design_lab/labs/lab6/exp_1_1/exp_1_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+regenerate_bd_layout
+write_bd_layout -format pdf -orientation portrait D:/data/logic_design_lab/labs/lab7/design_1.pdf
+D:/data/logic_design_lab/labs/lab7/design_1.pdf
+write_bd_layout -format pdf -orientation portrait D:/data/logic_design_lab/labs/lab6/design_1.pdf
+D:/data/logic_design_lab/labs/lab6/design_1.pdf
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 19 17:09:14 2022...
