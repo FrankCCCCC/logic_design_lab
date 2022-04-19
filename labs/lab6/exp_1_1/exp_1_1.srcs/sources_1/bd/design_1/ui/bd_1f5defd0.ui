@@ -1,0 +1,97 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_Layers":"/reset_rtl_0_0_1:true|/clk_wiz_1_clk_out1:true|/clk_100MHz_2_1:true|/clk_wiz_2_clk_out1:true|/clk_wiz_3_clk_out1:true|/reset_rtl_0_0_1_1:true|/reset_rtl_0_1:true|/clk_100MHz_1_1:true|/reset_rtl_0_0_1_2_1:true|/clk_wiz_clk_out1:true|/clk_100MHz_1:true|/clk_100MHz_3_1:true|",
+   "Default View_ScaleFactor":"0.996131",
+   "Default View_TopLeft":"1908,457",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Interfaces View_Layers":"/reset_rtl_0_0_1:false|/clk_wiz_1_clk_out1:false|/clk_100MHz_2_1:false|/clk_wiz_2_clk_out1:false|/clk_wiz_3_clk_out1:false|/reset_rtl_0_0_1_1:false|/reset_rtl_0_1:false|/clk_100MHz_1_1:false|/reset_rtl_0_0_1_2_1:false|/clk_wiz_clk_out1:false|/clk_100MHz_1:false|/clk_100MHz_3_1:false|",
+   "Interfaces View_ScaleFactor":"1.5",
+   "Interfaces View_TopLeft":"-329,-219",
+   "commentid":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port rst_n -pg 1 -lvl 0 -x 0 -y 420 -defaultsOSRD
+preplace port clk -pg 1 -lvl 0 -x 0 -y 390 -defaultsOSRD
+preplace port btn_l -pg 1 -lvl 0 -x 0 -y 850 -defaultsOSRD
+preplace port btn_m -pg 1 -lvl 0 -x 0 -y 880 -defaultsOSRD
+preplace port btn_r -pg 1 -lvl 0 -x 0 -y 910 -defaultsOSRD
+preplace port switch_0 -pg 1 -lvl 0 -x 0 -y 940 -defaultsOSRD
+preplace port switch_1 -pg 1 -lvl 0 -x 0 -y 970 -defaultsOSRD
+preplace port switch_alarm -pg 1 -lvl 0 -x 0 -y 1000 -defaultsOSRD
+preplace port led_0 -pg 1 -lvl 9 -x 2980 -y 800 -defaultsOSRD
+preplace portBus segs -pg 1 -lvl 9 -x 2980 -y 740 -defaultsOSRD
+preplace portBus ssd_ctl -pg 1 -lvl 9 -x 2980 -y 680 -defaultsOSRD
+preplace portBus led_7_1 -pg 1 -lvl 9 -x 2980 -y 280 -defaultsOSRD
+preplace portBus led_15_8 -pg 1 -lvl 9 -x 2980 -y 950 -defaultsOSRD
+preplace inst fsm_0 -pg 1 -lvl 1 -x 210 -y 950 -defaultsOSRD
+preplace inst unitset_0 -pg 1 -lvl 2 -x 700 -y 180 -defaultsOSRD
+preplace inst stopwatch_0 -pg 1 -lvl 4 -x 1630 -y 820 -defaultsOSRD
+preplace inst timedisplay_0 -pg 1 -lvl 3 -x 1180 -y 580 -defaultsOSRD
+preplace inst alarm_0 -pg 1 -lvl 4 -x 1630 -y 560 -defaultsOSRD
+preplace inst display_controller_0 -pg 1 -lvl 5 -x 2110 -y 530 -defaultsOSRD
+preplace inst scan_ctl_0 -pg 1 -lvl 7 -x 2620 -y 690 -defaultsOSRD
+preplace inst clock_generator_0 -pg 1 -lvl 1 -x 210 -y 400 -defaultsOSRD
+preplace inst extract_0 -pg 1 -lvl 6 -x 2380 -y 600 -defaultsOSRD
+preplace inst extract_1 -pg 1 -lvl 6 -x 2380 -y 720 -defaultsOSRD
+preplace inst display_0 -pg 1 -lvl 8 -x 2850 -y 740 -defaultsOSRD
+preplace netloc unitset_0_alarm_hour 1 2 3 NJ 120 1450 450 1880
+preplace netloc unitset_0_alarm_min 1 2 3 NJ 140 1440 670 1880
+preplace netloc unitset_0_year 1 2 3 1020 760 1430J 710 1910
+preplace netloc unitset_0_month 1 2 3 970 870 1370J 940 1940
+preplace netloc unitset_0_day 1 2 3 980 840 1410J 910 1930
+preplace netloc unitset_0_hour 1 2 3 960 850 1390J 920 1950
+preplace netloc unitset_0_min 1 2 3 940 860 1380J 930 1960
+preplace netloc unitset_0_sec 1 2 3 1010 740 1410J 700 1820
+preplace netloc alarm_0_alarm_min 1 1 4 460 390 NJ 390 NJ 390 1830
+preplace netloc alarm_0_alarm_hour 1 1 4 450 380 NJ 380 NJ 380 1850
+preplace netloc timedisplay_0_sec 1 1 4 480 430 930J 420 1360 440 1820
+preplace netloc timedisplay_0_day 1 1 4 490 360 NJ 360 1370 410 1940
+preplace netloc timedisplay_0_month 1 1 4 440 750 NJ 750 1340 690 1860
+preplace netloc timedisplay_0_year 1 1 4 430 440 950J 430 1380 400 1820
+preplace netloc fsm_0_stopwatch_restart 1 1 3 NJ 910 NJ 910 1400
+preplace netloc fsm_0_stopwatch_lap 1 1 3 NJ 930 NJ 930 1360
+preplace netloc fsm_0_alarm_enable 1 1 3 370J 860 910J 890 1420
+preplace netloc fsm_0_time_enable 1 1 2 NJ 870 930
+preplace netloc fsm_0_stopwatch_enable 1 1 3 NJ 890 900J 900 1450
+preplace netloc fsm_0_load_to_disp_alarm 1 1 3 410 730 1000 730 1390
+preplace netloc fsm_0_load_to_unitset 1 1 1 370 80n
+preplace netloc fsm_0_display_slide 1 1 4 400 780 NJ 780 1450J 730 1870
+preplace netloc stopwatch_0_sec 1 4 1 1900 560n
+preplace netloc stopwatch_0_min 1 4 1 1890 540n
+preplace netloc fsm_0_state 1 1 4 NJ 1130 NJ 1130 NJ 1130 1920
+preplace netloc timedisplay_0_min 1 1 4 470 400 NJ 400 1340 430 1890
+preplace netloc Net 1 1 4 500 370 NJ 370 1410 420 1810
+preplace netloc rst_n_1 1 0 7 40 480 420 740 990 770 1440J 720 1810J 790 NJ 790 2490J
+preplace netloc clock_generator_0_clk_1 1 1 3 410 410 910 830 NJ
+preplace netloc clock_generator_0_clk_2k 1 1 6 NJ 420 920J 410 1350J 680 1840J 780 2270J 530 2490
+preplace netloc clk_1 1 0 1 30 390n
+preplace netloc btn_l_1 1 0 1 50J 850n
+preplace netloc btn_m_1 1 0 1 20J 880n
+preplace netloc btn_r_1 1 0 1 20J 910n
+preplace netloc switch_0_1 1 0 1 NJ 940
+preplace netloc switch_1_1 1 0 1 20J 960n
+preplace netloc switch_alarm_1 1 0 1 20J 980n
+preplace netloc display_controller_0_ssd_reg0 1 5 1 2280 520n
+preplace netloc extract_0_d1 1 6 1 2480 610n
+preplace netloc extract_0_d0 1 6 1 2500 590n
+preplace netloc display_controller_0_ssd_reg1 1 5 1 2260 540n
+preplace netloc extract_1_d0 1 6 1 2480 680n
+preplace netloc extract_1_d1 1 6 1 2500 700n
+preplace netloc scan_ctl_0_ssd_in 1 7 1 2740J 700n
+preplace netloc display_0_segs 1 8 1 NJ 740
+preplace netloc scan_ctl_0_ssd_ctl 1 7 2 NJ 680 NJ
+preplace netloc fsm_0_set_u1_u0 1 1 1 380 60n
+preplace netloc stopwatch_0_stopwatch_led 1 4 5 NJ 800 NJ 800 NJ 800 NJ 800 NJ
+preplace netloc alarm_0_alarm_led 1 4 5 1840J 280 NJ 280 NJ 280 NJ 280 NJ
+preplace netloc fsm_0_state_led 1 1 8 390J 850 920J 880 1350J 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ
+levelinfo -pg 1 0 210 700 1180 1630 2110 2380 2620 2850 2980
+pagesize -pg 1 -db -bbox -sgen -130 0 3120 1190
+"
+}
+{
+   "da_board_cnt":"8",
+   "da_clkrst_cnt":"4"
+}

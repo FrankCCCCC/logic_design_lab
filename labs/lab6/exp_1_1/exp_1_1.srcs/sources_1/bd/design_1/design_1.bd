@@ -1,0 +1,1074 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x8C4AF1AA44B7F7B9",
+      "device": "xc7a35tcpg236-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2"
+    },
+    "design_tree": {
+      "fsm_0": "",
+      "unitset_0": "",
+      "stopwatch_0": "",
+      "timedisplay_0": "",
+      "alarm_0": "",
+      "display_controller_0": "",
+      "scan_ctl_0": "",
+      "clock_generator_0": "",
+      "extract_0": "",
+      "extract_1": "",
+      "display_0": ""
+    },
+    "ports": {
+      "rst_n": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "clk": {
+        "direction": "I"
+      },
+      "btn_l": {
+        "direction": "I"
+      },
+      "btn_m": {
+        "direction": "I"
+      },
+      "btn_r": {
+        "direction": "I"
+      },
+      "switch_0": {
+        "direction": "I"
+      },
+      "switch_1": {
+        "direction": "I"
+      },
+      "switch_alarm": {
+        "direction": "I"
+      },
+      "segs": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "ssd_ctl": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "led_0": {
+        "direction": "O"
+      },
+      "led_7_1": {
+        "direction": "O",
+        "left": "7",
+        "right": "1"
+      },
+      "led_15_8": {
+        "direction": "O",
+        "left": "15",
+        "right": "8"
+      }
+    },
+    "components": {
+      "fsm_0": {
+        "vlnv": "xilinx.com:module_ref:fsm:1.0",
+        "xci_name": "design_1_fsm_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fsm",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "state_led": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "set_enable": {
+            "direction": "O"
+          },
+          "load_to_disp_alarm": {
+            "direction": "O"
+          },
+          "load_to_unitset": {
+            "direction": "O"
+          },
+          "alarm_enable": {
+            "direction": "O"
+          },
+          "time_enable": {
+            "direction": "O"
+          },
+          "stopwatch_enable": {
+            "direction": "O"
+          },
+          "stopwatch_restart": {
+            "direction": "O"
+          },
+          "stopwatch_lap": {
+            "direction": "O"
+          },
+          "btn_m_short": {
+            "direction": "O"
+          },
+          "btn_m_debounce_long": {
+            "direction": "O"
+          },
+          "btn_r_short": {
+            "direction": "O"
+          },
+          "btn_r_debounced": {
+            "direction": "O"
+          },
+          "btn_l_short": {
+            "direction": "O"
+          },
+          "btn_l_long": {
+            "direction": "O"
+          },
+          "btn_l_debounced": {
+            "direction": "O"
+          },
+          "display_slide": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "set_u1_u0": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "state": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "btn_l": {
+            "direction": "I"
+          },
+          "btn_m": {
+            "direction": "I"
+          },
+          "btn_r": {
+            "direction": "I"
+          },
+          "switch_0": {
+            "direction": "I"
+          },
+          "switch_1": {
+            "direction": "I"
+          },
+          "switch_alarm": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          }
+        }
+      },
+      "unitset_0": {
+        "vlnv": "xilinx.com:module_ref:unitset:1.0",
+        "xci_name": "design_1_unitset_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "unitset",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "enabled_counting_digits": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "alarm_hour": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "alarm_min": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "year": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "month": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "day": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "hour": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "min": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "sec": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "count_enable": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "load_value_enable": {
+            "direction": "I"
+          },
+          "load_alarm_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_alarm_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_year": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_month": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_day": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_sec": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "display_slide": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          }
+        }
+      },
+      "stopwatch_0": {
+        "vlnv": "xilinx.com:module_ref:stopwatch:1.0",
+        "xci_name": "design_1_stopwatch_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "stopwatch",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "stopwatch_led": {
+            "direction": "O"
+          },
+          "sec": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "min": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "count_enable": {
+            "direction": "I"
+          },
+          "lap_enable": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          }
+        }
+      },
+      "timedisplay_0": {
+        "vlnv": "xilinx.com:module_ref:timedisplay:1.0",
+        "xci_name": "design_1_timedisplay_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "timedisplay",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sec": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "min": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "hour": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "day": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "month": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "year": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "count_enable": {
+            "direction": "I"
+          },
+          "load_value_enable": {
+            "direction": "I"
+          },
+          "load_value_sec": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_value_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_value_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_value_day": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_value_month": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_value_year": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          }
+        }
+      },
+      "alarm_0": {
+        "vlnv": "xilinx.com:module_ref:alarm:1.0",
+        "xci_name": "design_1_alarm_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "alarm",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "alarm_led": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "alarm_min": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "alarm_hour": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "alarm_enable": {
+            "direction": "I"
+          },
+          "load_value_enable": {
+            "direction": "I"
+          },
+          "current_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "current_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_value_alarm_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "load_value_alarm_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          }
+        }
+      },
+      "display_controller_0": {
+        "vlnv": "xilinx.com:module_ref:display_controller:1.0",
+        "xci_name": "design_1_display_controller_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "display_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ssd_reg0": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "ssd_reg1": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "state": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "display_slide": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "alarm_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "alarm_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "time_year": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "time_month": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "time_day": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "time_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "time_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "time_sec": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "stopwatch_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "stopwatch_sec": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "set_alarm_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "set_alarm_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "set_year": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "set_month": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "set_day": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "set_hour": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "set_min": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "set_sec": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          }
+        }
+      },
+      "scan_ctl_0": {
+        "vlnv": "xilinx.com:module_ref:scan_ctl:1.0",
+        "xci_name": "design_1_scan_ctl_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "scan_ctl",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ssd_ctl": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ssd_in": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "in0": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "in1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "in2": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "in3": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "ssd_ctl_en": {
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          }
+        }
+      },
+      "clock_generator_0": {
+        "vlnv": "xilinx.com:module_ref:clock_generator:1.0",
+        "xci_name": "design_1_clock_generator_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clock_generator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_1": {
+            "direction": "O"
+          },
+          "clk_100": {
+            "direction": "O"
+          },
+          "clk_2k": {
+            "direction": "O"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          }
+        }
+      },
+      "extract_0": {
+        "vlnv": "xilinx.com:module_ref:extract:1.0",
+        "xci_name": "design_1_extract_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "extract",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "x": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "d0": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "d1": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "extract_1": {
+        "vlnv": "xilinx.com:module_ref:extract:1.0",
+        "xci_name": "design_1_extract_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "extract",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "x": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "d0": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "d1": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "display_0": {
+        "vlnv": "xilinx.com:module_ref:display:1.0",
+        "xci_name": "design_1_display_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "display",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "segs": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "bin": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "unitset_0_alarm_hour": {
+        "ports": [
+          "unitset_0/alarm_hour",
+          "alarm_0/load_value_alarm_hour",
+          "display_controller_0/set_alarm_hour"
+        ]
+      },
+      "unitset_0_alarm_min": {
+        "ports": [
+          "unitset_0/alarm_min",
+          "alarm_0/load_value_alarm_min",
+          "display_controller_0/set_alarm_min"
+        ]
+      },
+      "unitset_0_year": {
+        "ports": [
+          "unitset_0/year",
+          "timedisplay_0/load_value_year",
+          "display_controller_0/set_year"
+        ]
+      },
+      "unitset_0_month": {
+        "ports": [
+          "unitset_0/month",
+          "timedisplay_0/load_value_month",
+          "display_controller_0/set_month"
+        ]
+      },
+      "unitset_0_day": {
+        "ports": [
+          "unitset_0/day",
+          "timedisplay_0/load_value_day",
+          "display_controller_0/set_day"
+        ]
+      },
+      "unitset_0_hour": {
+        "ports": [
+          "unitset_0/hour",
+          "timedisplay_0/load_value_hour",
+          "display_controller_0/set_hour"
+        ]
+      },
+      "unitset_0_min": {
+        "ports": [
+          "unitset_0/min",
+          "timedisplay_0/load_value_min",
+          "display_controller_0/set_min"
+        ]
+      },
+      "unitset_0_sec": {
+        "ports": [
+          "unitset_0/sec",
+          "timedisplay_0/load_value_sec",
+          "display_controller_0/set_sec"
+        ]
+      },
+      "alarm_0_alarm_min": {
+        "ports": [
+          "alarm_0/alarm_min",
+          "unitset_0/load_alarm_min",
+          "display_controller_0/alarm_min"
+        ]
+      },
+      "alarm_0_alarm_hour": {
+        "ports": [
+          "alarm_0/alarm_hour",
+          "unitset_0/load_alarm_hour",
+          "display_controller_0/alarm_hour"
+        ]
+      },
+      "timedisplay_0_sec": {
+        "ports": [
+          "timedisplay_0/sec",
+          "unitset_0/load_sec",
+          "display_controller_0/time_sec"
+        ]
+      },
+      "timedisplay_0_day": {
+        "ports": [
+          "timedisplay_0/day",
+          "unitset_0/load_day",
+          "display_controller_0/time_day"
+        ]
+      },
+      "timedisplay_0_month": {
+        "ports": [
+          "timedisplay_0/month",
+          "unitset_0/load_month",
+          "display_controller_0/time_month"
+        ]
+      },
+      "timedisplay_0_year": {
+        "ports": [
+          "timedisplay_0/year",
+          "unitset_0/load_year",
+          "display_controller_0/time_year"
+        ]
+      },
+      "fsm_0_stopwatch_restart": {
+        "ports": [
+          "fsm_0/stopwatch_restart",
+          "stopwatch_0/rst_n"
+        ]
+      },
+      "fsm_0_stopwatch_lap": {
+        "ports": [
+          "fsm_0/stopwatch_lap",
+          "stopwatch_0/lap_enable"
+        ]
+      },
+      "fsm_0_alarm_enable": {
+        "ports": [
+          "fsm_0/alarm_enable",
+          "alarm_0/alarm_enable"
+        ]
+      },
+      "fsm_0_time_enable": {
+        "ports": [
+          "fsm_0/time_enable",
+          "timedisplay_0/count_enable"
+        ]
+      },
+      "fsm_0_stopwatch_enable": {
+        "ports": [
+          "fsm_0/stopwatch_enable",
+          "stopwatch_0/count_enable"
+        ]
+      },
+      "fsm_0_load_to_disp_alarm": {
+        "ports": [
+          "fsm_0/load_to_disp_alarm",
+          "alarm_0/load_value_enable",
+          "timedisplay_0/load_value_enable"
+        ]
+      },
+      "fsm_0_load_to_unitset": {
+        "ports": [
+          "fsm_0/load_to_unitset",
+          "unitset_0/load_value_enable"
+        ]
+      },
+      "fsm_0_display_slide": {
+        "ports": [
+          "fsm_0/display_slide",
+          "unitset_0/display_slide",
+          "display_controller_0/display_slide"
+        ]
+      },
+      "stopwatch_0_sec": {
+        "ports": [
+          "stopwatch_0/sec",
+          "display_controller_0/stopwatch_sec"
+        ]
+      },
+      "stopwatch_0_min": {
+        "ports": [
+          "stopwatch_0/min",
+          "display_controller_0/stopwatch_min"
+        ]
+      },
+      "fsm_0_state": {
+        "ports": [
+          "fsm_0/state",
+          "display_controller_0/state"
+        ]
+      },
+      "timedisplay_0_min": {
+        "ports": [
+          "timedisplay_0/min",
+          "alarm_0/current_min",
+          "unitset_0/load_min",
+          "display_controller_0/time_min"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "timedisplay_0/hour",
+          "display_controller_0/time_hour",
+          "alarm_0/current_hour",
+          "unitset_0/load_hour"
+        ]
+      },
+      "rst_n_1": {
+        "ports": [
+          "rst_n",
+          "fsm_0/rst_n",
+          "timedisplay_0/rst_n",
+          "unitset_0/rst_n",
+          "clock_generator_0/rst_n",
+          "scan_ctl_0/rst_n"
+        ]
+      },
+      "clock_generator_0_clk_1": {
+        "ports": [
+          "clock_generator_0/clk_1",
+          "unitset_0/clk",
+          "stopwatch_0/clk",
+          "timedisplay_0/clk"
+        ]
+      },
+      "clock_generator_0_clk_2k": {
+        "ports": [
+          "clock_generator_0/clk_2k",
+          "scan_ctl_0/ssd_ctl_en"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "clock_generator_0/clk",
+          "fsm_0/clk"
+        ]
+      },
+      "btn_l_1": {
+        "ports": [
+          "btn_l",
+          "fsm_0/btn_l"
+        ]
+      },
+      "btn_m_1": {
+        "ports": [
+          "btn_m",
+          "fsm_0/btn_m"
+        ]
+      },
+      "btn_r_1": {
+        "ports": [
+          "btn_r",
+          "fsm_0/btn_r"
+        ]
+      },
+      "switch_0_1": {
+        "ports": [
+          "switch_0",
+          "fsm_0/switch_0"
+        ]
+      },
+      "switch_1_1": {
+        "ports": [
+          "switch_1",
+          "fsm_0/switch_1"
+        ]
+      },
+      "switch_alarm_1": {
+        "ports": [
+          "switch_alarm",
+          "fsm_0/switch_alarm"
+        ]
+      },
+      "display_controller_0_ssd_reg0": {
+        "ports": [
+          "display_controller_0/ssd_reg0",
+          "extract_0/x"
+        ]
+      },
+      "extract_0_d1": {
+        "ports": [
+          "extract_0/d1",
+          "scan_ctl_0/in1"
+        ]
+      },
+      "extract_0_d0": {
+        "ports": [
+          "extract_0/d0",
+          "scan_ctl_0/in0"
+        ]
+      },
+      "display_controller_0_ssd_reg1": {
+        "ports": [
+          "display_controller_0/ssd_reg1",
+          "extract_1/x"
+        ]
+      },
+      "extract_1_d0": {
+        "ports": [
+          "extract_1/d0",
+          "scan_ctl_0/in2"
+        ]
+      },
+      "extract_1_d1": {
+        "ports": [
+          "extract_1/d1",
+          "scan_ctl_0/in3"
+        ]
+      },
+      "scan_ctl_0_ssd_in": {
+        "ports": [
+          "scan_ctl_0/ssd_in",
+          "display_0/bin"
+        ]
+      },
+      "display_0_segs": {
+        "ports": [
+          "display_0/segs",
+          "segs"
+        ]
+      },
+      "scan_ctl_0_ssd_ctl": {
+        "ports": [
+          "scan_ctl_0/ssd_ctl",
+          "ssd_ctl"
+        ]
+      },
+      "fsm_0_set_u1_u0": {
+        "ports": [
+          "fsm_0/set_u1_u0",
+          "unitset_0/count_enable"
+        ]
+      },
+      "stopwatch_0_stopwatch_led": {
+        "ports": [
+          "stopwatch_0/stopwatch_led",
+          "led_0"
+        ]
+      },
+      "alarm_0_alarm_led": {
+        "ports": [
+          "alarm_0/alarm_led",
+          "led_7_1"
+        ]
+      },
+      "fsm_0_state_led": {
+        "ports": [
+          "fsm_0/state_led",
+          "led_15_8"
+        ]
+      }
+    }
+  }
+}
