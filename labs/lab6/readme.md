@@ -58,6 +58,10 @@ The variable ``state_led`` controls the LED display of the board and it can simp
 
 ``display_slide`` controls the digits that would be displayed in the 7-segment display. 
 
+**Block Diagram**
+
+![](./img/lab6-fsm_diag.png)
+
 ## Time Display Module
 
 ### Design Specification
@@ -73,6 +77,10 @@ Input: count_enable, load_value_enable, load_value_year, load_value_month, load_
 The module is implemented with a series of ``counterx`` module. We can simply cascade the ``counterx`` from the second to the year. Use the carry bit to trigger the next counter. 
 
 For leap year, I design a module called ``datetime_limit`` to count the length of a month. The module will set the length of February in the leap year as 29, otherwise, as 28.
+
+**Block Diagram**
+
+![](./img/lab6-timedisplay_diag.png)
 
 ## Unit Setting Module
 
@@ -90,6 +98,10 @@ The ``display_slide`` will control the variable ``enabled_counting_digits`` to d
 
 The module is implemented by a series of cascaded counters ``counterx``. The counting of a digit would be enabled while the digit is selected by the ``enabled_counting_digits``.
 
+**Block Diagram**
+
+![](./img/lab6-unitset_diag.png)
+
 ## Alarm Module
 
 ### Design Specification
@@ -104,6 +116,10 @@ Input: alarm_enable, load_value_enable, [8:0] current_min,[8:0] current_hour, [8
 
 If ``load_value_enable`` is enabled, the module will load the argument ``load_value_alarm_hour`` to the register ``alarm_hour`` and load the argument ``load_value_alarm_min`` to the register ``alarm_min``. In addition, while ``alarm_enable`` is enabled, the alarm will be active. If the current hour and minute is the same as the hours and the minute, ``alarm_led`` will be lighted up.
 
+**Block Diagram**
+
+![](./img/lab6-alarm_diag.png)
+
 ## Stopwatch Module
 
 ### Design Specification
@@ -117,6 +133,10 @@ Input: count_enable, lap_enable, clk, rst_n
 ### Design Implementation
 
 The ``stopwatch`` module is implemented by 2 ``counterx`` modules. The counter will be activated while the argument ``count_enable`` is true. It will be reset while the argument ``rst_n`` is raised. In addition, while the argument ``lap_enable`` is true, the variable ``sec`` and ``min`` will be freezed and stopped to synchronize with the argument ``counting_sec`` and ``counting_min``.
+
+**Block Diagram**
+
+![](./img/lab6-stopwatch_diag.png)
 
 ## Switch Controller Module
 
@@ -160,6 +180,10 @@ Input: clk, rst_n
 
 The clock generator provides 1 Hz clock and 100 Hz clock. The module is implemented by a counter. Whenever the counter hit the limit, the module would invert the output signal. 
 
+**Block Diagram**
+
+![](./img/lab6-clock_gen_diag.png)
+
 ## Extract Module
 
 ### Design Specification
@@ -187,6 +211,10 @@ Input: [3:0] in0, [3:0] in1, [3:0] in2, [3:0] in3, ssd_ctl_en, rst_n
 ### Design Implementation
 
 Since we can only control one digit of the 7‑segment display each time, I design a module that takes the 4‑digit patterns as input and shows the 1 digit on the display when the clock raises. Whenever the clock raises, the module will switch the control ``ssd_ctl`` to different digit and shows the corresponding digit. Take an example, when the first clock raise occur, the module will set ``ssd_ctl = 4’b1110`` and ``ssd_in = in0``. As for second clock pulse, the module will output ``ssd_ctl = 4’b1101`` and ``ssd_in = in1`` and so on.
+
+**Block Diagram**
+
+![](./img/lab6-scan_ctl_diag.png)
 
 ## Display Module
 
@@ -244,6 +272,10 @@ Input: clk, rst_n
 
 The ``counterx`` module is a binary-up counter that counts from ``count_limit_l`` to ``count_limit_u``. The argument ``count_init`` set the initial value of the counter.
 
+**Block Diagram**
+
+![](./img/lab6-counterx_diag.png)
+
 ## Datetime Limit Module
 
 ### Design Specification
@@ -257,8 +289,6 @@ Input: [8:0] year, [8:0] month
 ### Design Implementation
 
 The module provide the upper limit of each date/time unit and support leap year. During the leap year, the length of February is 29, otherwise is 28. 
-
-### Design Implementatio
 
 ## I/O Pin Assignment
 
