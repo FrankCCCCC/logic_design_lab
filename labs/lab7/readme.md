@@ -243,7 +243,7 @@ Finally, ``segment7`` and ``display_7seg`` module convert the binary number to 7
 
 ![Lab 7-2 RTL Simulation](img/lab7-2_sim.png)
 
-## Lab 7-3: Speaker Control
+## Lab 7-3: Double-Tones Speaker
 
 ### Design Specification
 
