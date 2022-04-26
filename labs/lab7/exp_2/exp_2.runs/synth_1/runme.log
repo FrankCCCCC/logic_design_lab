@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log speaker.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source speaker.tcl
+    with args -log exp_2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source exp_2.tcl
 
 
 ****** Vivado v2019.2 (64-bit)
@@ -8,19 +8,19 @@
   **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source speaker.tcl -notrace
-Command: synth_design -top speaker -part xc7a35tcpg236-1
+source exp_2.tcl -notrace
+Command: synth_design -top exp_2 -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8776 
+INFO: Helper process launched with PID 15124 
 WARNING: [Synth 8-2611] redeclaration of ansi port buff_idx is not allowed [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:37]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 953.676 ; gain = 238.277
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 955.574 ; gain = 239.301
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'speaker' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker.v:24]
+INFO: [Synth 8-6157] synthesizing module 'exp_2' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/exp_2.v:25]
 INFO: [Synth 8-6157] synthesizing module 'controller' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/controller.v:26]
 INFO: [Synth 8-6157] synthesizing module 'onepulse' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/onepulse.v:29]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/debounce.v:24]
@@ -36,21 +36,21 @@ INFO: [Synth 8-6155] done synthesizing module 'controller' (3#1) [D:/data/logic_
 INFO: [Synth 8-6157] synthesizing module 'note_gen' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/note_gen.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'note_gen' (4#1) [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/note_gen.v:24]
 INFO: [Synth 8-6157] synthesizing module 'speaker_control' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:24]
-WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:58]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:59]
 INFO: [Synth 8-6157] synthesizing module 'frequency_divider' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/frequency_divider.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'frequency_divider' (5#1) [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/frequency_divider.v:24]
-WARNING: [Synth 8-567] referenced signal 'buff' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:63]
-WARNING: [Synth 8-567] referenced signal 'buff_idx' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:63]
-WARNING: [Synth 8-567] referenced signal 'audio_in_left' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:67]
-WARNING: [Synth 8-567] referenced signal 'audio_in_right' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:67]
+WARNING: [Synth 8-567] referenced signal 'buff' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:64]
+WARNING: [Synth 8-567] referenced signal 'buff_idx' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:64]
+WARNING: [Synth 8-567] referenced signal 'audio_in_left' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:68]
+WARNING: [Synth 8-567] referenced signal 'audio_in_right' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:68]
 INFO: [Synth 8-6155] done synthesizing module 'speaker_control' (6#1) [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker_control.v:24]
-WARNING: [Synth 8-7023] instance 'Usc' of module 'speaker_control' has 10 connections declared, but only 8 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker.v:73]
+WARNING: [Synth 8-7023] instance 'Usc' of module 'speaker_control' has 10 connections declared, but only 8 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/exp_2.v:74]
 INFO: [Synth 8-6157] synthesizing module 'segment7' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/segment7.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'segment7' (7#1) [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/segment7.v:24]
-WARNING: [Synth 8-7023] instance 'D0_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker.v:88]
-WARNING: [Synth 8-7023] instance 'D1_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker.v:89]
-WARNING: [Synth 8-7023] instance 'D2_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker.v:90]
-WARNING: [Synth 8-7023] instance 'D3_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker.v:91]
+WARNING: [Synth 8-7023] instance 'D0_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/exp_2.v:89]
+WARNING: [Synth 8-7023] instance 'D1_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/exp_2.v:90]
+WARNING: [Synth 8-7023] instance 'D2_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/exp_2.v:91]
+WARNING: [Synth 8-7023] instance 'D3_CONV' of module 'segment7' has 3 connections declared, but only 2 given [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/exp_2.v:92]
 INFO: [Synth 8-6157] synthesizing module 'display_7seg' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/display_7seg.v:28]
 INFO: [Synth 8-6157] synthesizing module 'segment7_frequency_divider' [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/segment7_frequency_divider.v:31]
 INFO: [Synth 8-6155] done synthesizing module 'segment7_frequency_divider' (8#1) [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/segment7_frequency_divider.v:31]
@@ -59,9 +59,9 @@ WARNING: [Synth 8-567] referenced signal 'd1' should be on the sensitivity list 
 WARNING: [Synth 8-567] referenced signal 'd2' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/display_7seg.v:62]
 WARNING: [Synth 8-567] referenced signal 'd3' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/display_7seg.v:62]
 INFO: [Synth 8-6155] done synthesizing module 'display_7seg' (9#1) [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/display_7seg.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'speaker' (10#1) [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/speaker.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'exp_2' (10#1) [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/sources_1/new/exp_2.v:25]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.121 ; gain = 284.723
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.293 ; gain = 286.020
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -74,46 +74,46 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1000.121 ; gain = 284.723
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1002.293 ; gain = 286.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1000.121 ; gain = 284.723
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1002.293 ; gain = 286.020
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1000.121 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1002.293 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/constrs_1/new/exp_2.xdc]
 Finished Parsing XDC File [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/constrs_1/new/exp_2.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/constrs_1/new/exp_2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/speaker_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/speaker_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.srcs/constrs_1/new/exp_2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/exp_2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/exp_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1113.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1114.715 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1113.738 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1114.715 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1113.738 ; gain = 398.340
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1114.715 ; gain = 398.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1113.738 ; gain = 398.340
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1114.715 ; gain = 398.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1113.738 ; gain = 398.340
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1114.715 ; gain = 398.441
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "note_div" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1113.738 ; gain = 398.340
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1114.715 ; gain = 398.441
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -231,7 +231,7 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5544] ROM "Ucon/note_div" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1113.738 ; gain = 398.340
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1114.715 ; gain = 398.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -242,9 +242,10 @@ ROM:
 |Module Name | RTL Object | Depth x Width | Implemented As | 
 +------------+------------+---------------+----------------+
 |segment7    | D          | 32x8          | LUT            | 
-|speaker     | D0_CONV/D  | 32x8          | LUT            | 
-|speaker     | D1_CONV/D  | 32x8          | LUT            | 
-|speaker     | D2_CONV/D  | 32x8          | LUT            | 
+|exp_2       | D0_CONV/D  | 32x8          | LUT            | 
+|exp_2       | D1_CONV/D  | 32x8          | LUT            | 
+|exp_2       | D2_CONV/D  | 32x8          | LUT            | 
+|exp_2       | D3_CONV/D  | 32x8          | LUT            | 
 +------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -260,13 +261,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1113.738 ; gain = 398.340
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1114.715 ; gain = 398.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1113.738 ; gain = 398.340
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1114.715 ; gain = 398.441
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -278,7 +279,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1119.813 ; gain = 404.414
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1120.398 ; gain = 404.125
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -302,13 +303,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1134.594 ; gain = 419.195
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1135.203 ; gain = 418.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1134.594 ; gain = 419.195
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1135.203 ; gain = 418.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -327,25 +328,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1134.594 ; gain = 419.195
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1135.203 ; gain = 418.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1134.594 ; gain = 419.195
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1135.203 ; gain = 418.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1134.594 ; gain = 419.195
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 1135.203 ; gain = 418.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1134.594 ; gain = 419.195
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 1135.203 ; gain = 418.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -400,28 +401,28 @@ Report Instance Areas:
 |17    |    UFreq |frequency_divider          |    21|
 +------+----------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1134.594 ; gain = 419.195
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 1135.203 ; gain = 418.930
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 1134.594 ; gain = 305.578
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1134.594 ; gain = 419.195
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:39 . Memory (MB): peak = 1135.203 ; gain = 306.508
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 1135.203 ; gain = 418.930
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1146.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1147.227 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 39 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1146.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1147.227 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 34 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 1146.684 ; gain = 721.184
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1146.684 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1147.227 ; gain = 724.203
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1147.227 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.runs/synth_1/speaker.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file speaker_utilization_synth.rpt -pb speaker_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 22:42:50 2022...
+INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/labs/lab7/exp_2/exp_2.runs/synth_1/exp_2.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file exp_2_utilization_synth.rpt -pb exp_2_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 26 23:56:17 2022...

@@ -1,79 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1650261017">
-  <File Type="BITSTR-BMM" Name="speaker_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="speaker_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="speaker_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="speaker_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="speaker.tcl"/>
-  <File Type="OPT-TIMING" Name="speaker_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="speaker_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="speaker_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="speaker_reports.tcl"/>
-  <File Type="OPT-DRC" Name="speaker_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="speaker.hwdef"/>
-  <File Type="PWROPT-DCP" Name="speaker_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="speaker_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="speaker_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="speaker_placed.dcp"/>
-  <File Type="PLACE-IO" Name="speaker_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="speaker_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="speaker_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="speaker_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="speaker_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="speaker_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="speaker_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="speaker_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="speaker_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="speaker.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="speaker_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="speaker_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="speaker_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="speaker.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="speaker_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="speaker_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="speaker_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="speaker_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="speaker_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="speaker_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="speaker_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="speaker.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="speaker_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="speaker_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="speaker_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="speaker_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="speaker_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="speaker_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="speaker_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="speaker_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="speaker_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="speaker_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="speaker_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="speaker_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="speaker_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="speaker_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="speaker_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="speaker_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="speaker_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="speaker_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="speaker_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="speaker_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="speaker_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="speaker.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="speaker_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="speaker.rbt"/>
-  <File Type="BITSTR-NKY" Name="speaker.nky"/>
-  <File Type="PDI-FILE" Name="speaker.pdi"/>
-  <File Type="RCFI_FILE" Name="speaker.rcfi"/>
-  <File Type="CFI_FILE" Name="speaker.cfi"/>
-  <File Type="RNPI_FILE" Name="speaker.rnpi"/>
-  <File Type="NPI_FILE" Name="speaker.npi"/>
-  <File Type="RBD_FILE" Name="speaker.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="speaker.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="speaker.sysdef"/>
-  <File Type="BG-BGN" Name="speaker.bgn"/>
-  <File Type="BG-DRC" Name="speaker.drc"/>
-  <File Type="RDI-RDI" Name="speaker.vdi"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1650987112">
+  <File Type="ROUTE-PWR" Name="exp_1_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="exp_1.tcl"/>
+  <File Type="BITSTR-BMM" Name="exp_1_bd.bmm"/>
+  <File Type="ROUTE-PWR-SUM" Name="exp_1_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="exp_1_reports.tcl"/>
+  <File Type="OPT-DCP" Name="exp_1_opt.dcp"/>
+  <File Type="OPT-DRC" Name="exp_1_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="exp_1.hwdef"/>
+  <File Type="PWROPT-DCP" Name="exp_1_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="exp_1_placed.dcp"/>
+  <File Type="PLACE-IO" Name="exp_1_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="exp_1_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="exp_1_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="exp_1_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="exp_1_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="exp_1_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="exp_1.bin"/>
+  <File Type="PHYSOPT-DCP" Name="exp_1_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="exp_1.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="exp_1_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="exp_1_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="exp_1_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="exp_1_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="exp_1_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="exp_1_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="exp_1_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="exp_1.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="exp_1_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="exp_1_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="exp_1_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="exp_1_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="exp_1_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="exp_1_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="exp_1_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="exp_1_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-CLK" Name="exp_1_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="exp_1_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="exp_1_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="exp_1_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="exp_1_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="exp_1_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="exp_1.bit"/>
+  <File Type="BITSTR-RBT" Name="exp_1.rbt"/>
+  <File Type="BITSTR-NKY" Name="exp_1.nky"/>
+  <File Type="PDI-FILE" Name="exp_1.pdi"/>
+  <File Type="RCFI_FILE" Name="exp_1.rcfi"/>
+  <File Type="CFI_FILE" Name="exp_1.cfi"/>
+  <File Type="RNPI_FILE" Name="exp_1.rnpi"/>
+  <File Type="NPI_FILE" Name="exp_1.npi"/>
+  <File Type="RBD_FILE" Name="exp_1.rbd"/>
+  <File Type="BITSTR-LTX" Name="exp_1.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="exp_1.sysdef"/>
+  <File Type="BG-BGN" Name="exp_1.bgn"/>
+  <File Type="BG-DRC" Name="exp_1.drc"/>
+  <File Type="RDI-RDI" Name="exp_1.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -105,7 +86,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/speaker.v">
+    <File Path="$PSRCDIR/sources_1/new/exp_1.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -114,8 +95,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="speaker"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="exp_1"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

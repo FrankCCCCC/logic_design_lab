@@ -48,8 +48,9 @@ module speaker_control(
     // 25M/128 Hz
     assign audio_lrck = (clk_out & (`FREQ_DIV_BIT'b1 << 9))? 1 : 0;
     // 25M/4 Hz
-    assign audio_sck = (clk_out & (`FREQ_DIV_BIT'b1 << 4))? 1 : 0;
-//    assign audio_sck = (clk_out & (`FREQ_DIV_BIT'b1 << 2))? 1 : 0;
+//    assign audio_sck = (clk_out & (`FREQ_DIV_BIT'b1 << 4))? 1 : 0;
+    // For test bench
+    assign audio_sck = (clk_out & (`FREQ_DIV_BIT'b1 << 2))? 1 : 0;
     
 //    assign audio_sdin_buff = buff & buff_idx;
 //    assign audio_sdin = (buff & buff_idx)? 1:0;

@@ -1,0 +1,27 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/debounce.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debounce
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/display_7seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display_7seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/exp_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exp_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/frequency_divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module frequency_divider
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/note_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module note_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/onepulse.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onepulse
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/segment7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module segment7
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module segment7_frequency_divider
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module speaker_control
+WARNING: [VRFC 10-3676] redeclaration of ansi port 'buff_idx' is not allowed [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sources_1/new/speaker_control.v:37]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sim_1/new/exp_3_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exp_3_tb
+INFO: [VRFC 10-2458] undeclared symbol audio_mclk, assumed default net type wire [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sim_1/new/exp_3_tb.v:37]
+INFO: [VRFC 10-2458] undeclared symbol audio_lrck, assumed default net type wire [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sim_1/new/exp_3_tb.v:38]
+INFO: [VRFC 10-2458] undeclared symbol audio_sck, assumed default net type wire [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sim_1/new/exp_3_tb.v:39]
+INFO: [VRFC 10-2458] undeclared symbol audio_sdin, assumed default net type wire [D:/data/logic_design_lab/labs/lab7/exp_3/exp_3.srcs/sim_1/new/exp_3_tb.v:40]
