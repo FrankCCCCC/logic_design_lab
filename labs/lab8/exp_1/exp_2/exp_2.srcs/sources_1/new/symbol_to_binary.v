@@ -26,7 +26,11 @@ module symbol_to_binary(
     input [`KB_ENCODE_BITS_N-1:0] kb_code
     );
     
-    always@(kb_code)
+//    initial begin
+//        binary = `SEGMENT_7_INPUT_BITS_N'd0;
+//    end
+    
+    always@(*) begin
         case(kb_code)
             `CODE_0_L: binary = `SEGMENT_7_INPUT_BITS_N'd0;
             `CODE_1_L: binary = `SEGMENT_7_INPUT_BITS_N'd1;
@@ -50,4 +54,5 @@ module symbol_to_binary(
             `CODE_9_R: binary = `SEGMENT_7_INPUT_BITS_N'd9;
             default: binary = `SEGMENT_7_INPUT_BITS_N'd0;
         endcase
+    end
 endmodule

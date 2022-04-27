@@ -77,7 +77,7 @@ set rc [catch {
   set_property ip_output_repo D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.runs/synth_1/exp_2.dcp
-  read_ip -quiet d:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+  read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
   read_xdc D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/constrs_1/new/exp_2.xdc
   link_design -top exp_2 -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb

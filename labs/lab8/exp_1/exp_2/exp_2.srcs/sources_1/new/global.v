@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//`define FREQ_DIV_BIT 10
+`define FREQ_DIV_BIT 30
 
 // Note Generation
 //`define AUDIO_IN_BITS_N 16
@@ -75,3 +75,7 @@
 `define CODE_MUL_R `KB_ENCODE_BITS_N'b0_0111_1100
 
 `define CODE_ENTER_L `KB_ENCODE_BITS_N'b0_0101_1010
+`define CODE_F1_L `KB_ENCODE_BITS_N'b0_0000_0101
+`define CODE_F2_L `KB_ENCODE_BITS_N'b0_0000_0110
+`define CODE_F3_L `KB_ENCODE_BITS_N'b0_0000_0100
+`define CODE_F4_L `KB_ENCODE_BITS_N'b0_0000_1100

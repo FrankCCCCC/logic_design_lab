@@ -35,16 +35,17 @@ set_property ip_output_repo d:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/KeyboardDecoder.v
-  D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/OnePulse.v
   D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/global.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/OnePulse.v
   D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/controller.v
   D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/display_7seg.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/frequency_divider.v
   D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/segment7.v
   D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/segment7_frequency_divider.v
   D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/symbol_to_binary.v
   D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/new/exp_2.v
 }
-read_ip -quiet d:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_1/exp_2/exp_2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

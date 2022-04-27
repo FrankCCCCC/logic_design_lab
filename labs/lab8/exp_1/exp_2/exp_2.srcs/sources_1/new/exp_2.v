@@ -34,6 +34,7 @@ module exp_2(
     );
     
     wire [`KB_ENCODE_OH_BITS_N-1:0] key_down;
+    wire [`KB_ENCODE_BITS_N-1:0] key_validated;
     
     KeyboardDecoder UKD(
         .key_down(key_down),
@@ -45,6 +46,12 @@ module exp_2(
         .clk(clk)
     );
     
+//    validator UVAL(
+//        .kb_out(key_validated),
+//        .kb_in(last_change),
+//        .key_valid(key_valid)
+//    );
+    
     wire [`SEGMENT_7_SEGMENT_N-1:0] seg7_d0, seg7_d1, seg7_d2, seg7_d3;
     wire [`SEGMENT_7_INPUT_BITS_N-1:0] a, b, sum;
     
@@ -52,7 +59,9 @@ module exp_2(
         .a(a),
         .b(b),
         .sum(sum),
-        .kb_in(last_change)
+        .kb_in(last_change),
+        .clk(clk),
+        .rst(rst)
     );
     
     segment7 USEG_A(
