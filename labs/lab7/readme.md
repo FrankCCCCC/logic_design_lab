@@ -1,7 +1,7 @@
 ---
 title: "Lab 7 - Speaker"
 author: 106033233 資工大四 周聖諺(Sheng-Yen Chou)
-date: "2022-03-28"
+date: "2022-04-25"
 CJKmainfont: "Microsoft JhengHei"
 CJKoptions: AutoFakeBold
 subject: "Lab 7 - Speaker"
@@ -199,7 +199,7 @@ In the other hand, whenever the left/right button is pressed, the module will ad
 
 It's similar to the ``note_gen`` module in the [lab 6-1](####Note-Generation) but the ``note_gen`` in the lab 6-1 will produce the same magnitude in left and right channel. In lab 6-2, ``note_gen`` can produces different magnitude in the left and right channel. The arguments ``audio_level_left`` and ``audio_level_right`` set the audio volume of the left and right channel. 
 
-The audio is divided into 16 levels between 16'hB000 and 16'h7DFF. The module will control the amplitude with the formula ``audio_level * (`AUDIO_IN_BITS_N'hB000 - `AUDIO_IN_BITS_N'h7DFF) / 15 + `AUDIO_IN_BITS_N'h7DFF``. 
+The audio is divided into 16 levels between 16'hB000 and 16'h7DFF. The module will control the amplitude with the formula ``audio_level * (16'hB000 - 16'h7DFF) / 15 + 16'h7DFF``. 
 
 #### Speaker Control
 
@@ -215,11 +215,11 @@ To generate the 1000 Hz clock, I use variables ``counter_in`` and ``counter_out`
 
 #### 7-Segment Display
 
-Since we can only control one digit of the 7-segment display each time, I design a module that takes the 4-digit patterns as input and shows the 1 digit on the display when the clock raises. Whenever the clock raises, the module will switch the control d_sel to different digit and shows the corresponding digit. Take an example, when the first clock raise occur, the module will set d_sel = 4'b1110 and d_out = d0. As for second clock pulse, the module will output d_sel = 4'b1101 and d_out = d1 and so on. 
+Since we can only control one digit of the 7-segment display each time, I design a module that takes the 4-digit patterns as input and shows the 1 digit on the display when the clock raises. Whenever the clock raises, the module will switch the control d_sel to different digit and shows the corresponding digit. Take an example, when the first clock raise occur, the module will set ``d_sel = 4'b1110`` and ``d_out = d0``. As for second clock pulse, the module will output ``d_sel = 4'b1101`` and ``d_out = d1`` and so on. 
 
 #### Speaker
 
-The module ``speaker`` combines all modules listed above. The ``controller`` module detects the press of the buttons and give the ``note_div``,  ``audio_level_left`` and ``audio_level_right`` parameter. The ``note_gen`` module generate the left and right channel sound according the ``note_div`, ``audio_level_left`` and ``audio_level_right``. The ``speaker_control`` serializes the ``audio_in_left`` and ``audio_in_right`` signal as the output of the left and right channel. 
+The module ``speaker`` combines all modules listed above. The ``controller`` module detects the press of the buttons and give the ``note_div``,  ``audio_level_left`` and ``audio_level_right`` parameter. The ``note_gen`` module generate the left and right channel sound according the ``note_div``, ``audio_level_left`` and ``audio_level_right``. The ``speaker_control`` serializes the ``audio_in_left`` and ``audio_in_right`` signal as the output of the left and right channel. 
 
 Finally, ``segment7`` and ``display_7seg`` module convert the binary number to 7-segment display pattern and shown them on the 7-segment display.
 
@@ -327,7 +327,7 @@ Same as [lab 7-1](####Frequency-Divider)
 
 #### Controller
 
-Similar to [lab 7-2](####Controller). The ``controller`` module produces the corresponding ``note_div`` for the ``note_gen`` module according to the pressed buttons. I concatenate the ``debounce`` signal for every button and assign different numbers to ``note_div`` to generate sound with different tones. The only difference is that lab 7-2 generates 3 different kinds of tone, while  lab 7-3 generate 5 different kinds of tones.
+Similar to [lab 7-2](####Controller). The ``controller`` module produces the corresponding ``note_div`` for the ``note_gen`` module according to the pressed buttons. I concatenate the ``debounce`` signal for every button and assign different numbers to ``note_div`` to generate sound with different tones. The only difference is that lab 7-2 generates 3 different kinds of tones, while  lab 7-3 generate 5 different kinds of tones.
 
 #### Note Generation
 
@@ -377,9 +377,9 @@ Similar to [lab 7-1](####Speaker). It is the top module of this lab. The ``Note 
 
 ![Lab 7-3 RTL Simulation](img/lab7-3_sim.png)
 
-## Discussion 
+## Discussion
 
-In lab 5-2, it took me lots of time to design the state machine because the always block cannot be activated by 2 edge-triggered variables. Finally, I store the variables in the 2 independent variables and add them together as the clock raises. In addition, when I implement the one-pulse module, it took me much time to detect long press and click in the mean time. In the end, I use a counter to count the clock cycle during the pressed button.
+In Lab 7-1, I spent lots of time to design the ``speaker_control`` module, which serialize the parallel data. It takes time to understand that the ``sck`` controls the pulse frequency and the ``lrck`` determines where the output signal ``audio_sdin`` goes to, left or right channel. In addition, I occurred the "multi-driven" error when I design the shift register in the parallel-to-serial module. Finally, I spilt the combinatorial logic and sequential logic to solve it.
 
 ## Conclusion
 
