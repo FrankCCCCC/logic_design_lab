@@ -19,9 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "global.v"
 
 module exp_1(
-    output [8:0] last_change,
+    output [`SEGMENT_7_DISPALY_DIGIT_N-1:0] d_sel,
+    output [`SEGMENT_7_SEGMENT_N-1:0] d_out,
+    output [`KB_ENCODE_BITS_N-1:0] last_change,
     output key_valid,
     inout PS2_DATA,
     inout PS2_CLK,
@@ -29,7 +32,7 @@ module exp_1(
     input clk
     );
     
-    wire [511:0] key_down;
+    wire [`KB_ENCODE_OH_BITS_N-1:0] key_down;
     
     KeyboardDecoder UKD(
         .key_down(key_down),
@@ -37,7 +40,7 @@ module exp_1(
         .key_valid(key_valid),
         .PS2_DATA(PS2_DATA),
         .PS2_CLK(PS2_CLK),
-        .rst(rst),
+        .rst(~rst),
         .clk(clk)
     );
     
@@ -52,10 +55,29 @@ module exp_1(
 //        .rst(rst),
 //        .clk(clk)
 //    );
+
+    wire [`SEGMENT_7_SEGMENT_N-1:0] seg7_d0, seg7_d1, seg7_d2, seg7_d3;
     
-    initial begin
-//        $monitor("key_in: %h. | is_extend: %b. | is_break: %b. | valid: %b. | err: %b. at the time %t.", key_in, is_extend, is_break, valid, err, $time);
-        $monitor("key_down: %h | valid: %b | at the time %t.", last_change, key_valid, $time);
-    end
-//    $display("This is a test number: %b.", num);
+    symbol_to_7segment US27_D0(
+        .seg7_code(seg7_d0),
+        .kb_code(last_change)
+    );
+    
+    symbol_to_7segment US27_d1(
+        .seg7_code(seg7_d1),
+        .kb_code(`KB_ENCODE_BITS_N'd0)
+    );
+    
+    symbol_to_7segment US27_d2(
+        .seg7_code(seg7_d2),
+        .kb_code(`KB_ENCODE_BITS_N'd0)
+    );
+    
+    symbol_to_7segment US27_d3(
+        .seg7_code(seg7_d3),
+        .kb_code(`KB_ENCODE_BITS_N'd0)
+    );
+    
+    // Show
+    display_7seg UDisp(.clk(clk), .rst(rst), .d0(seg7_d0), .d1(seg7_d1), .d2(seg7_d2), .d3(seg7_d3), .d_sel(d_sel), .d_out(d_out));
 endmodule

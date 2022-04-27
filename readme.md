@@ -12,6 +12,10 @@
 
 - [Lab 5](./labs/lab5) Done
 
+- [Lab 6](./labs/lab6) Done
+
+- [Lab 7](./labs/lab7) Done
+
 ## Slides
 
 [Slides](./slides)

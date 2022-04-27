@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1650540081">
-  <File Type="OPT-HWDEF" Name="exp_1.hwdef"/>
-  <File Type="ROUTE-BUS-SKEW" Name="exp_1_bus_skew_routed.rpt"/>
-  <File Type="PA-DCP" Name="exp_1.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1651045530">
   <File Type="BITSTR-BMM" Name="exp_1_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="exp_1_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="exp_1_timing_summary_init.rpt"/>
@@ -13,6 +10,7 @@
   <File Type="ROUTE-PWR-SUM" Name="exp_1_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="exp_1_reports.tcl"/>
   <File Type="OPT-DRC" Name="exp_1_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="exp_1.hwdef"/>
   <File Type="PWROPT-DCP" Name="exp_1_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="exp_1_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="exp_1_timing_summary_pwropted.rpt"/>
@@ -50,6 +48,7 @@
   <File Type="ROUTE-TIMING-RPX" Name="exp_1_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="exp_1_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="exp_1_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="exp_1_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="exp_1_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="exp_1_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="exp_1_postroute_physopt.dcp"/>
@@ -92,8 +91,44 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/global.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/display_7seg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/segment7_frequency_divider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/symbol_to_7segment.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/exp_1.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/segment7.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -125,9 +160,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

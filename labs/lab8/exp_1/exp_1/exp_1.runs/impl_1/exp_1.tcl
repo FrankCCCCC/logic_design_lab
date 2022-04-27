@@ -67,14 +67,19 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
   set_param xicom.use_bs_reader 1
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.runs/impl_1/exp_1.dcp
+  create_project -in_memory -part xc7a35tcpg236-1
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.cache/wt [current_project]
   set_property parent.project_path D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.xpr [current_project]
   set_property ip_repo_paths D:/data/logic_design_lab/labs/lab8/lab08_keyboard_source/lab08_keyboard_source [current_project]
   update_ip_catalog
   set_property ip_output_repo D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  add_files -quiet D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.runs/synth_1/exp_1.dcp
+  read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+  read_xdc D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/constrs_1/new/exp_1.xdc
+  link_design -top exp_1 -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
