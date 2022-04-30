@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../exp_3.srcs/sources_1/new/OnePulse.v" \
+"../../../../exp_3.srcs/sources_1/new/controller.v" \
+"../../../../exp_3.srcs/sources_1/new/is_num.v" \
+"../../../../exp_3.srcs/sources_1/new/symbol_to_binary.v" \
+"../../../../exp_3.srcs/sources_1/new/validator.v" \
+"../../../../exp_3.srcs/sim_1/new/controller_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

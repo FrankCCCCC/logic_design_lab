@@ -50,6 +50,9 @@ module segment7(
             `SEGMENT_7_INPUT_BITS_N'd13: D=`SEGMENT_7_SEGMENT_N'b1000010_1;
             `SEGMENT_7_INPUT_BITS_N'd14: D=`SEGMENT_7_SEGMENT_N'b0110000_1;
             `SEGMENT_7_INPUT_BITS_N'd15: D=`SEGMENT_7_SEGMENT_N'b0111000_1;
+            `SEG_7_ADD: D=`SEGMENT_7_SEGMENT_N'b1001110_1; // ADD
+            `SEG_7_SUB: D=`SEGMENT_7_SEGMENT_N'b1111110_1; // SUB
+            `SEG_7_MUL: D=`SEGMENT_7_SEGMENT_N'b1001000_1; // MUL
             default: D=`SEGMENT_7_SEGMENT_N'b1111111_0;
         endcase
         

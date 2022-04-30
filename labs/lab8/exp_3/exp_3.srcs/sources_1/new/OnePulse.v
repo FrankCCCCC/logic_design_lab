@@ -57,6 +57,9 @@ module OnePulse (
 	);
 	
 	reg signal_delay;
+	initial begin
+	   signal_single_pulse = 1'b0;
+	end
 
 	always @(posedge clock) begin
 		if (signal == 1'b1 & signal_delay == 1'b0)

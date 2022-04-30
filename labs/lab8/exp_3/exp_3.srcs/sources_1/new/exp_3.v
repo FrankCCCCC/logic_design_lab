@@ -33,49 +33,50 @@ module exp_3(
     input clk
     );
     
-    wire [`KB_ENCODE_OH_BITS_N-1:0] key_down;
-    wire [`KB_ENCODE_BITS_N-1:0] key_validated;
-    wire [`FREQ_DIV_BIT-1:0] clk_out;
-    
-    frequency_divider UFD(
-        .clk_out(clk_out),
-        .clk(clk),
-        .rst_n(rst)
-    );
-    
-    KeyboardDecoder UKD(
-        .key_down(key_down),
-        .last_change(last_change),
-        .key_valid(key_valid),
-        .PS2_DATA(PS2_DATA),
-        .PS2_CLK(PS2_CLK),
-        .rst(~rst),
-        .clk(clk)
-    );
-    
     wire onepulse;
     wire [`KB_ENCODE_BITS_N-1:0] kb_in_debouce;
-    wire [`KB_ENCODE_OH_BITS_N-1:0] key_down_debouce;
-    validator UVAL(
+    keyboard UKB(
+        .last_change(last_change),
         .kb_in_debouce(kb_in_debouce),
-        .key_down_debouce(key_down_debouce),
         .onepulse(onepulse),
-        .kb_in(last_change),
-        .key_down(key_down),
-        .key_valid(key_valid),
-        .clk(clk),
-        .rst(rst)
+        .PS2_DATA(PS2_DATA),
+        .PS2_CLK(PS2_CLK),
+        .rst(rst),
+        .clk(clk)
     );
     
     wire [`SEGMENT_7_SEGMENT_N-1:0] seg7_d0, seg7_d1, seg7_d2, seg7_d3;
     wire [`SEGMENT_7_INPUT_BITS_N-1:0] a, b, sum;
+    wire [`SEGMENT_7_INPUT_BITS_N-1:0] a0, a1, b0, b1, res0, res1, res2, res3, d0, d1, d2, d3;
     
+// For testing    
+//    controller_2 UCONT(
+//        .a(a),
+//        .b(b),
+//        .sum(sum),
+//        .kb_in(kb_in_debouce),
+//        .key_valid(onepulse),
+//        .clk(clk),
+//        .rst(rst)
+//    );
+//    assign d3 = a;
+//    assign d2 = b;
+//    assign d1 = sum / 10;
+//    assign d0 = sum % 10;
+
     controller UCONT(
-        .a(a),
-        .b(b),
-        .sum(sum),
-//        .kb_in(last_change),
-//        .key_valid(key_valid),
+        .a0(a0),
+        .a1(a1),
+        .b0(b0),
+        .b1(b1),
+        .res0(res0),
+        .res1(res1),
+        .res2(res2),
+        .res3(res3),
+        .d0(d0),
+        .d1(d1),
+        .d2(d2),
+        .d3(d3),
         .kb_in(kb_in_debouce),
         .key_valid(onepulse),
         .clk(clk),
@@ -83,22 +84,22 @@ module exp_3(
     );
     
     segment7 USEG_A(
-        .i(a),
+        .i(d3),
         .D(seg7_d3)
     );
     
     segment7 USEG_B(
-        .i(b),
+        .i(d2),
         .D(seg7_d2)
     );
     
     segment7 USEG_SUM1(
-        .i(sum / 10),
+        .i(d1),
         .D(seg7_d1)
     );
     
     segment7 USEG_SUM0(
-        .i(sum % 10),
+        .i(d0),
         .D(seg7_d0)
     );
     

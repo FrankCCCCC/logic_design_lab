@@ -2,3 +2,6 @@ Running: xsim.dir/validator_tb_behav/xsimk.exe -simmode gui -wdb validator_tb_be
 Design successfully loaded
 Design Loading Memory Usage: 5772 KB (Peak: 5772 KB)
 Design Loading CPU Usage: 30 ms
+Simulation completed
+Simulation Memory Usage: 6428 KB (Peak: 6428 KB)
+Simulation CPU Usage: 46 ms

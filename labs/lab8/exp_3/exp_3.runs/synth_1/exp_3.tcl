@@ -39,7 +39,8 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/OnePulse.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v
-  D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/frequency_divider.v
+  D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/is_num.v
+  D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/keyboard.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/symbol_to_binary.v

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sat Apr 30 11:57:24 2022
+| Date             : Sun May  1 00:08:59 2022
 | Host             : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command          : report_power -file exp_3_power_routed.rpt -pb exp_3_power_summary_routed.pb -rpx exp_3_power_routed.rpx
 | Design           : exp_3
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 9.738        |
+| Total On-Chip Power (W)  | 8.820        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 9.602        |
-| Device Static (W)        | 0.136        |
+| Dynamic (W)              | 8.697        |
+| Device Static (W)        | 0.124        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 36.3         |
-| Junction Temperature (C) | 73.7         |
+| Max Ambient (C)          | 40.9         |
+| Junction Temperature (C) | 69.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.395 |     3560 |       --- |             --- |
-|   LUT as Logic |     0.328 |     1579 |     20800 |            7.59 |
-|   CARRY4       |     0.032 |      147 |      8150 |            1.80 |
-|   Register     |     0.026 |     1737 |     41600 |            4.18 |
+| Slice Logic    |     0.381 |     4235 |       --- |             --- |
+|   LUT as Logic |     0.317 |     2013 |     20800 |            9.68 |
+|   CARRY4       |     0.032 |      223 |      8150 |            2.74 |
+|   Register     |     0.026 |     1787 |     41600 |            4.30 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   F7/F8 Muxes  |     0.003 |        7 |     32600 |            0.02 |
-|   Others       |     0.000 |       17 |       --- |             --- |
-| Signals        |     0.364 |     2419 |       --- |             --- |
-| I/O            |     8.844 |       26 |       106 |           24.53 |
-| Static Power   |     0.136 |          |           |                 |
-| Total          |     9.738 |          |           |                 |
+|   Others       |     0.000 |       23 |       --- |             --- |
+| Signals        |     0.388 |     2986 |       --- |             --- |
+| DSPs           |     0.000 |        1 |        90 |            1.11 |
+| I/O            |     7.929 |       26 |       106 |           24.53 |
+| Static Power   |     0.124 |          |           |                 |
+| Total          |     8.820 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.825 |       0.763 |      0.062 |
-| Vccaux    |       1.800 |     0.342 |       0.324 |      0.018 |
-| Vcco33    |       3.300 |     2.503 |       2.502 |      0.001 |
+| Vccint    |       1.000 |     0.825 |       0.773 |      0.052 |
+| Vccaux    |       1.800 |     0.308 |       0.290 |      0.017 |
+| Vcco33    |       3.300 |     2.244 |       2.243 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -139,14 +139,14 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| exp_3      |     9.602 |
-|   UCONT    |     0.028 |
-|   UDisp    |     0.251 |
-|     U0     |     0.124 |
-|   UKD      |     0.494 |
-|     inst   |     0.493 |
-|       inst |     0.493 |
-|   UVAL     |     0.015 |
+| exp_3      |     8.697 |
+|   UCONT    |     0.002 |
+|   UDisp    |     0.274 |
+|     U0     |     0.127 |
+|   UKB      |     0.518 |
+|     UKD    |     0.502 |
+|       inst |     0.502 |
+|     UVAL   |     0.016 |
 +------------+-----------+
 
 
