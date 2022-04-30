@@ -43,6 +43,7 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/symbol_to_binary.v
+  D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/validator.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v
 }
 read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci

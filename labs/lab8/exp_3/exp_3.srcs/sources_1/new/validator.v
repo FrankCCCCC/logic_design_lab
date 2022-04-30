@@ -22,7 +22,9 @@
 `include "global.v"
 
 `define COUNTER_BITS_N 30
-`define COUNTER_LIMIT `COUNTER_BITS_N'd10_000_000
+//`define COUNTER_LIMIT `COUNTER_BITS_N'd10_000_000
+`define COUNTER_LIMIT `COUNTER_BITS_N'd3
+
 //module validator(
 //    output reg [`KB_ENCODE_BITS_N-1:0] kb_in_debouce,
 //    output reg [`KB_ENCODE_OH_BITS_N-1:0] key_down_onepulse,
@@ -66,6 +68,7 @@
 module validator(
     output reg [`KB_ENCODE_BITS_N-1:0] kb_in_debouce,
     output reg [`KB_ENCODE_OH_BITS_N-1:0] key_down_debouce,
+    output onepulse,
     input [`KB_ENCODE_OH_BITS_N-1:0] key_down,
     input [`KB_ENCODE_BITS_N-1:0] kb_in,
     input key_valid,
@@ -73,13 +76,12 @@ module validator(
     input rst
     );
     
-//    reg count_enable, count_enable_temp;
+    reg debounce_signal;
     reg [`COUNTER_BITS_N-1:0] counter, counter_temp;
     reg [`KB_ENCODE_OH_BITS_N-1:0] key_down_last;
     
     initial begin
-//        count_enable = 1'b0;
-//        count_enable_temp = 1'b0;
+        debounce_signal = 1'd0;
         counter = `COUNTER_BITS_N'd0;
         counter_temp = `COUNTER_BITS_N'd0;
         
@@ -89,11 +91,18 @@ module validator(
         kb_in_debouce = `KB_ENCODE_BITS_N'd0;
     end
     
+    OnePulse op (
+		.signal_single_pulse(onepulse),
+		.signal(debounce_signal),
+		.clock(clk)
+	);
+    
     always@(*) begin
         counter_temp <= counter + `COUNTER_BITS_N'd1;
+        debounce_signal <= key_down_debouce > 0? 1'd1 : 1'd0;
     end
     
-    always@(posedge clk or negedge rst) begin
+    always@(posedge clk) begin
         if(key_down_last == key_down) begin
             if(counter >= `COUNTER_LIMIT) begin
                 key_down_debouce <= key_down;
@@ -108,7 +117,7 @@ module validator(
         end
     end
     
-    always@(posedge clk) begin
+    always@(*) begin
         if(key_down_debouce != `KB_ENCODE_OH_BITS_N'd1 << kb_in_debouce && key_down_debouce != `KB_ENCODE_OH_BITS_N'd0) begin
             kb_in_debouce <= kb_in;
         end        

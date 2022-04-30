@@ -53,15 +53,19 @@ module exp_3(
         .clk(clk)
     );
     
-    wire [`KB_ENCODE_BITS_N-1:0] kb_out;
-//    validator UVAL(
-//        .kb_out(kb_out),
-//        .kb_in(last_change),
-//        .key_down(key_down),
-//        .key_valid(key_valid),
-//        .clk(clk),
-//        .rst(rst)
-//    );
+    wire onepulse;
+    wire [`KB_ENCODE_BITS_N-1:0] kb_in_debouce;
+    wire [`KB_ENCODE_OH_BITS_N-1:0] key_down_debouce;
+    validator UVAL(
+        .kb_in_debouce(kb_in_debouce),
+        .key_down_debouce(key_down_debouce),
+        .onepulse(onepulse),
+        .kb_in(last_change),
+        .key_down(key_down),
+        .key_valid(key_valid),
+        .clk(clk),
+        .rst(rst)
+    );
     
     wire [`SEGMENT_7_SEGMENT_N-1:0] seg7_d0, seg7_d1, seg7_d2, seg7_d3;
     wire [`SEGMENT_7_INPUT_BITS_N-1:0] a, b, sum;
@@ -70,10 +74,10 @@ module exp_3(
         .a(a),
         .b(b),
         .sum(sum),
-        .kb_in(last_change),
-        .key_valid(key_valid),
-//        .kb_in(kb_out),
-//        .key_valid(1'b1),
+//        .kb_in(last_change),
+//        .key_valid(key_valid),
+        .kb_in(kb_in_debouce),
+        .key_valid(onepulse),
         .clk(clk),
         .rst(rst)
     );
