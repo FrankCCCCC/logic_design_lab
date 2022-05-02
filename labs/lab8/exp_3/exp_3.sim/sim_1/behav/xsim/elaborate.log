@@ -13,6 +13,7 @@ Compiling module xil_defaultlib.validator
 Compiling module xil_defaultlib.symbol_to_binary
 Compiling module xil_defaultlib.num_checker
 Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.segment7
 Compiling module xil_defaultlib.controller_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot controller_tb_behav

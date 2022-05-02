@@ -128,6 +128,7 @@ module controller(
             d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
             d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
             d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+            
             if(is_kb_in_num && key_valid) begin
                 a0 <= kb_num;
                 d0 <= kb_num;
@@ -137,6 +138,7 @@ module controller(
             // Set A1
             d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
             d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+            
             if(is_kb_in_num && key_valid) begin
                 a1 <= kb_num;
                 d1 <= kb_num;
@@ -146,6 +148,7 @@ module controller(
             // Set OP
             d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
             d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+            
             if(kb_in == `CODE_ADD_R && key_valid) begin
                 op <= `OP_ADD;
                 d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
@@ -201,9 +204,19 @@ module controller(
             d1 <= res1;
             d2 <= res2;
             d3 <= res3;
+            
+//            d0 <= `SEGMENT_7_INPUT_BITS_N'd1;
+//            d1 <= `SEGMENT_7_INPUT_BITS_N'd2;
+//            d2 <= `SEGMENT_7_INPUT_BITS_N'd3;
+//            d3 <= `SEGMENT_7_INPUT_BITS_N'd4;
 //            if(kb_in == `CODE_ENTER_L && key_valid) begin
 //               state_next <= `STATE_BITS_N'd0;
 //            end
-        end 
+        end else begin
+            d0 <= res0;
+            d1 <= res1;
+            d2 <= res2;
+            d3 <= res3;
+        end
     end
 endmodule

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun May  1 00:08:06 2022
+| Date         : Tue May  3 00:02:45 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exp_3_control_sets_placed.rpt
 | Design       : exp_3
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    22 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    69 |
+| Unused register locations in slices containing registers |    65 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -45,8 +45,8 @@ Table of Contents
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     3 |
 | >= 10 to < 12      |     1 |
-| >= 12 to < 14      |     2 |
-| >= 14 to < 16      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     1 |
 | >= 16              |     7 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
@@ -58,43 +58,43 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             535 |           91 |
-| No           | No                    | Yes                    |              73 |           29 |
-| No           | Yes                   | No                     |              13 |            4 |
-| Yes          | No                    | No                     |              45 |           14 |
-| Yes          | No                    | Yes                    |             562 |          169 |
-| Yes          | Yes                   | No                     |             559 |          132 |
+| No           | No                    | No                     |             534 |           85 |
+| No           | No                    | Yes                    |              73 |           28 |
+| No           | Yes                   | No                     |              16 |            7 |
+| Yes          | No                    | No                     |              51 |           18 |
+| Yes          | No                    | Yes                    |             562 |          158 |
+| Yes          | Yes                   | No                     |             555 |          124 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------------------------+----------------------------------------------------+---------------------------------+------------------+----------------+
-|              Clock Signal              |                    Enable Signal                   |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
-+----------------------------------------+----------------------------------------------------+---------------------------------+------------------+----------------+
-|  UKB/UVAL/O5058                        |                                                    |                                 |                1 |              1 |
-|  clk_IBUF_BUFG                         | UCONT/UN_CK/CEA2                                   |                                 |                1 |              4 |
-|  clk_IBUF_BUFG                         | UCONT/UN_CK/CEC                                    |                                 |                2 |              4 |
-|  clk_IBUF_BUFG                         | UCONT/UN_CK/state_next_reg[1]                      | UCONT/UN_CK/state_next_reg[1]_1 |                1 |              4 |
-|  clk_IBUF_BUFG                         | UCONT/UN_CK/state_next_reg[2]_0                    |                                 |                1 |              4 |
-|  clk_IBUF_BUFG                         | UCONT/UN_CK/E[0]                                   |                                 |                3 |              4 |
-|  clk_IBUF_BUFG                         | UCONT/UN_CK/state_next_reg[3]                      |                                 |                2 |              4 |
-|  clk_IBUF_BUFG                         | UKB/UKD/inst/inst/Ps2Interface_i/bits_count        | UKB/UKD/AR[0]                   |                1 |              4 |
-|  clk_IBUF_BUFG                         | UCONT/UN_CK/state_next_reg[3]_0[0]                 | UKB/UKD/AR[0]                   |                3 |              5 |
-|  clk_IBUF_BUFG                         | UCONT/d3[7]_i_2_n_0                                | UCONT/d3[7]_i_1_n_0             |                3 |              8 |
-|  clk_IBUF_BUFG                         | UKB/UKD/inst/inst/Ps2Interface_i/rx_finish         | UKB/UKD/AR[0]                   |                1 |              8 |
-|  clk_IBUF_BUFG                         | UKB/UKD/inst/inst/Ps2Interface_i/rx_valid          | UKB/UKD/AR[0]                   |                2 |              8 |
-|  clk_IBUF_BUFG                         | UKB/UKD/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | UKB/UKD/AR[0]                   |                3 |             11 |
-|  UDisp/U0/CLK                          |                                                    | UKB/UKD/AR[0]                   |                9 |             12 |
-|  UKB/UVAL/kb_in_debouce_reg[8]_i_1_n_0 |                                                    | UKB/UKD/AR[0]                   |                4 |             13 |
-|  clk_IBUF_BUFG                         | UKB/UKD/key                                        | UKB/UKD/AR[0]                   |                7 |             19 |
-|  clk_IBUF_BUFG                         | UCONT/res                                          |                                 |                5 |             25 |
-|  clk_IBUF_BUFG                         | UKB/UVAL/p_1_in                                    | UKB/UVAL/counter[0]_i_1_n_0     |                8 |             30 |
-|  clk_IBUF_BUFG                         |                                                    | UKB/UKD/AR[0]                   |               20 |             61 |
-|  clk_IBUF_BUFG                         | UKB/UVAL/key_down_debouce[511]_i_1_n_0             | UKB/UKD/AR[0]                   |              117 |            512 |
-|  clk_IBUF_BUFG                         | UKB/UKD/op/E[0]                                    | UKB/UKD/AR[0]                   |              155 |            512 |
-|  clk_IBUF_BUFG                         |                                                    |                                 |               90 |            534 |
-+----------------------------------------+----------------------------------------------------+---------------------------------+------------------+----------------+
++----------------------------------------+----------------------------------------------------+-----------------------------+------------------+----------------+
+|              Clock Signal              |                    Enable Signal                   |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
++----------------------------------------+----------------------------------------------------+-----------------------------+------------------+----------------+
+|                                        |                                                    | UKB/UVAL/O5057              |                1 |              1 |
+|  clk_IBUF_BUFG                         | UCONT/UN_CK/signal_single_pulse_reg_0[0]           |                             |                1 |              4 |
+|  clk_IBUF_BUFG                         | UCONT/UN_CK/state_next_reg[2]_1[0]                 |                             |                3 |              4 |
+|  clk_IBUF_BUFG                         | UCONT/UN_CK/state_next_reg[0]_1[0]                 |                             |                3 |              4 |
+|  clk_IBUF_BUFG                         | UCONT/UN_CK/state_next_reg[3]_1[0]                 |                             |                2 |              4 |
+|  clk_IBUF_BUFG                         | UKB/UKD/inst/inst/Ps2Interface_i/bits_count        | UKB/UKD/AR[0]               |                1 |              4 |
+|  clk_IBUF_BUFG                         | UCONT/UN_CK/signal_single_pulse_reg[0]             |                             |                2 |              5 |
+|  clk_IBUF_BUFG                         | UCONT/UN_CK/E[0]                                   |                             |                2 |              5 |
+|  clk_IBUF_BUFG                         | UCONT/UN_CK/state_next_reg[3]_0[0]                 | UKB/UKD/AR[0]               |                4 |              5 |
+|  clk_IBUF_BUFG                         | UCONT/d3[7]_i_2_n_0                                | UCONT/d3[7]_i_1_n_0         |                3 |              8 |
+|  clk_IBUF_BUFG                         | UKB/UKD/inst/inst/Ps2Interface_i/rx_finish         | UKB/UKD/AR[0]               |                1 |              8 |
+|  clk_IBUF_BUFG                         | UKB/UKD/inst/inst/Ps2Interface_i/rx_valid          | UKB/UKD/AR[0]               |                2 |              8 |
+|  clk_IBUF_BUFG                         | UKB/UKD/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | UKB/UKD/AR[0]               |                3 |             11 |
+|  UDisp/U0/CLK                          |                                                    | UKB/UKD/AR[0]               |                5 |             12 |
+|  UKB/UVAL/kb_in_debouce_reg[8]_i_1_n_0 |                                                    | UKB/UKD/AR[0]               |                6 |             15 |
+|  clk_IBUF_BUFG                         | UKB/UKD/key                                        | UKB/UKD/AR[0]               |                5 |             19 |
+|  clk_IBUF_BUFG                         | UCONT/res                                          |                             |                5 |             25 |
+|  clk_IBUF_BUFG                         | UKB/UVAL/p_1_in                                    | UKB/UVAL/counter[0]_i_1_n_0 |                8 |             30 |
+|  clk_IBUF_BUFG                         |                                                    | UKB/UKD/AR[0]               |               23 |             61 |
+|  clk_IBUF_BUFG                         | UKB/UKD/op/E[0]                                    | UKB/UKD/AR[0]               |              146 |            512 |
+|  clk_IBUF_BUFG                         | UKB/UVAL/key_down_debouce[511]_i_1_n_0             | UKB/UKD/AR[0]               |              109 |            512 |
+|  clk_IBUF_BUFG                         |                                                    |                             |               85 |            534 |
++----------------------------------------+----------------------------------------------------+-----------------------------+------------------+----------------+
 
 

@@ -58,6 +58,8 @@ module num_checker(
             `L_SIDE_NUM: is_number <= 1'd0;
             `R_SIDE_NUM: is_number <= 1'd1;
            endcase
+        end else begin
+            is_number <= 1'd0;
         end
     end
 endmodule

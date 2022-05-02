@@ -74,6 +74,8 @@ module controller_tb();
     wire [`KB_ENCODE_BITS_N-1:0] kb_in_debouce;
     wire [`KB_ENCODE_OH_BITS_N-1:0] key_down_debouce;
     
+    wire [`SEGMENT_7_SEGMENT_N-1:0] seg7_d0, seg7_d1, seg7_d2, seg7_d3;
+    
 //    reg [`KB_ENCODE_BITS_N-1:0] kb_in_debouce;
 //    reg [`KB_ENCODE_OH_BITS_N-1:0] key_down_debouce;
     
@@ -109,6 +111,26 @@ module controller_tb();
         .rst(rst)
     );
     
+    segment7 USEG_A(
+        .i(d3),
+        .D(seg7_d3)
+    );
+    
+    segment7 USEG_B(
+        .i(d2),
+        .D(seg7_d2)
+    );
+    
+    segment7 USEG_SUM1(
+        .i(d1),
+        .D(seg7_d1)
+    );
+    
+    segment7 USEG_SUM0(
+        .i(d0),
+        .D(seg7_d0)
+    );
+    
     initial begin
         clk = 0;
         rst = 1;
@@ -118,15 +140,25 @@ module controller_tb();
         key_down = `KB_ENCODE_OH_BITS_N'd0;
         #20 kb_in = `CODE_1_R; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
         #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0; 
-        #20 kb_in = `CODE_0_R; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
+        #20 kb_in = `CODE_F1_L; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
+        #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0;
+        #20 kb_in = `CODE_1_R; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
         #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0;
         
         #20 kb_in = `CODE_ADD_R; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
         #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0;
         
         #20 kb_in = `CODE_0_R; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
+        #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0;
+        #20 kb_in = `CODE_F1_L; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
         #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0; 
         #20 kb_in = `CODE_3_R; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
+        #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0;
+        
+        #20 kb_in = `CODE_F1_L; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
+        #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0;
+        
+        #20 kb_in = `CODE_ENTER_L; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);
         #20 kb_in = `KB_ENCODE_BITS_N'd0; key_down = `KB_ENCODE_OH_BITS_N'd0;
         
         #20 kb_in = `CODE_ENTER_L; key_down = `KB_ENCODE_OH_BITS_N'd1 << (kb_in - 1);

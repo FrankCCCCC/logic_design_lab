@@ -27,7 +27,7 @@ module segment7(
     D
     );
     
-    input [`SEGMENT_7_INPUT_BITS_N:0] i;
+    input [`SEGMENT_7_INPUT_BITS_N-1:0] i;
     output [`SEGMENT_7_SEGMENT_N-1:0]D;
     
     reg [`SEGMENT_7_SEGMENT_N-1:0]D;
