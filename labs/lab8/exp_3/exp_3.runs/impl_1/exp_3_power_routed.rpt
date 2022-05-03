@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue May  3 00:03:22 2022
+| Date             : Tue May  3 15:21:18 2022
 | Host             : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command          : report_power -file exp_3_power_routed.rpt -pb exp_3_power_summary_routed.pb -rpx exp_3_power_routed.rpx
 | Design           : exp_3
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 8.764        |
+| Total On-Chip Power (W)  | 9.011        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 8.641        |
-| Device Static (W)        | 0.123        |
+| Dynamic (W)              | 8.885        |
+| Device Static (W)        | 0.126        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 41.2         |
-| Junction Temperature (C) | 68.8         |
+| Max Ambient (C)          | 40.0         |
+| Junction Temperature (C) | 70.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.384 |     4271 |       --- |             --- |
-|   LUT as Logic |     0.321 |     2042 |     20800 |            9.82 |
-|   CARRY4       |     0.032 |      224 |      8150 |            2.75 |
-|   Register     |     0.026 |     1791 |     41600 |            4.31 |
+| Slice Logic    |     0.375 |     4275 |       --- |             --- |
+|   LUT as Logic |     0.312 |     2039 |     20800 |            9.80 |
+|   CARRY4       |     0.032 |      225 |      8150 |            2.76 |
+|   Register     |     0.026 |     1798 |     41600 |            4.32 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       23 |       --- |             --- |
-| Signals        |     0.338 |     2991 |       --- |             --- |
+|   Others       |     0.000 |       22 |       --- |             --- |
+| Signals        |     0.349 |     3009 |       --- |             --- |
 | DSPs           |     0.000 |        1 |        90 |            1.11 |
-| I/O            |     7.919 |       26 |       106 |           24.53 |
-| Static Power   |     0.123 |          |           |                 |
-| Total          |     8.764 |          |           |                 |
+| I/O            |     8.161 |       30 |       106 |           28.30 |
+| Static Power   |     0.126 |          |           |                 |
+| Total          |     9.011 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.778 |       0.727 |      0.052 |
-| Vccaux    |       1.800 |     0.307 |       0.290 |      0.017 |
-| Vcco33    |       3.300 |     2.241 |       2.240 |      0.001 |
+| Vccint    |       1.000 |     0.783 |       0.729 |      0.054 |
+| Vccaux    |       1.800 |     0.316 |       0.299 |      0.017 |
+| Vcco33    |       3.300 |     2.310 |       2.309 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -139,14 +139,14 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| exp_3      |     8.641 |
-|   UCONT    |     0.002 |
-|   UDisp    |     0.252 |
-|     U0     |     0.123 |
-|   UKB      |     0.496 |
-|     UKD    |     0.480 |
-|       inst |     0.480 |
-|     UVAL   |     0.015 |
+| exp_3      |     8.885 |
+|   UCONT    |     0.003 |
+|   UDisp    |     0.249 |
+|     U0     |     0.131 |
+|   UKD      |     0.482 |
+|     inst   |     0.481 |
+|       inst |     0.481 |
+|   UV       |     0.015 |
 +------------+-----------+
 
 

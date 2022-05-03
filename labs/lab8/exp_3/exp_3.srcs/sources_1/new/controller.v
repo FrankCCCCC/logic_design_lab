@@ -21,15 +21,16 @@
 
 `include "global.v"
 
-`define STATE_BITS_N 4
 `define OP_BITS_N 2
 
 `define OP_ADD `OP_BITS_N'd1
 `define OP_SUB `OP_BITS_N'd2
 `define OP_MUL `OP_BITS_N'd3
 
-`define RES_BITS_N `SEGMENT_7_INPUT_BITS_N * 4 - 1
-`define RES_EXTN_BITS_N `RES_BITS_N-`SEGMENT_7_INPUT_BITS_N
+//`define RES_BITS_N `SEGMENT_7_INPUT_BITS_N * 4 - 1
+`define RES_BITS_N 32
+//`define RES_EXTN_BITS_N `RES_BITS_N-`SEGMENT_7_INPUT_BITS_N
+`define RES_EXTN_BITS_N 24
 
 module controller(
     output reg [`SEGMENT_7_INPUT_BITS_N-1:0] a0,
@@ -83,24 +84,41 @@ module controller(
     end
     
     
-    assign sum = ({{`RES_EXTN_BITS_N{1'd0}},a1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},a0}) + ({{`RES_EXTN_BITS_N{1'd0}},b1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},b0});
-    assign diff = ({{`RES_EXTN_BITS_N{1'd0}},a1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},a0}) - ({{`RES_EXTN_BITS_N{1'd0}},b1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},b0});
-    assign prod = ({{`RES_EXTN_BITS_N{1'd0}},a1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},a0}) * ({{`RES_EXTN_BITS_N{1'd0}},b1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},b0});
+    //assign sum = ({{`RES_EXTN_BITS_N{1'd0}},a1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},a0}) + ({{`RES_EXTN_BITS_N{1'd0}},b1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},b0});
+    //assign diff = ({{`RES_EXTN_BITS_N{1'd0}},a1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},a0}) - ({{`RES_EXTN_BITS_N{1'd0}},b1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},b0});
+    //assign prod = ({{`RES_EXTN_BITS_N{1'd0}},a1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},a0}) * ({{`RES_EXTN_BITS_N{1'd0}},b1} * 10 + {{`RES_EXTN_BITS_N{1'd0}},b0});
+    assign sum = (a1 * 4'd10 + a0) + (b1 * 4'd10 + b0);
+    assign diff = (a1 * 4'd10 + a0) - (b1 * 4'd10 + b0);
+    assign prod = (a1 * 4'd10 + a0) * (b1 * 4'd10 + b0);
     
+//    wire [`RES_BITS_N-1:0] res0_temp, res1_temp, res2_temp, res3_temp;
     wire [`SEGMENT_7_INPUT_BITS_N-1:0] res0_temp, res1_temp, res2_temp, res3_temp;
-    assign res0_temp = res % 10;
-    assign res1_temp = (res / 10) - (res / 100) * 10;
-    assign res2_temp = (res / 100) - (res / 1000) * 10;
-    assign res3_temp = res / 1000;
+    assign res0_temp = res % 4'd10;
+    assign res1_temp = (res / 4'd10) - (res / 7'd100) * 4'd10;
+//    assign res1_temp = (res % 7'd100) - (res % 4'd10);
+    assign res2_temp = (res / 7'd100) - (res / 10'd1000) * 4'd10;
+//    assign res2_temp = (res % 10'd1000) - (res % 7'd100);
+    assign res3_temp = res / 10'd1000;
     
-    always@(*) begin
-        res0 <= res0_temp[`SEGMENT_7_INPUT_BITS_N-1:0];
-        res1 <= res1_temp[`SEGMENT_7_INPUT_BITS_N-1:0];
-        res2 <= res2_temp[`SEGMENT_7_INPUT_BITS_N-1:0];
+    always@(posedge clk) begin
+//        res0 <= res0_temp[`SEGMENT_7_INPUT_BITS_N-1:0];
+//        res1 <= res1_temp[`SEGMENT_7_INPUT_BITS_N-1:0];
+//        res2 <= res2_temp[`SEGMENT_7_INPUT_BITS_N-1:0];
+        res0 <= res0_temp;
+        res1 <= res1_temp;
+        res2 <= res2_temp;
+        
         if(res > 9999) begin
+//            res0 <= res % `RES_BITS_N'd10;
+//            res1 <= (res / `RES_BITS_N'd10) - (res / `RES_BITS_N'd100) * `RES_BITS_N'd10;
+//            res2 <= (res / `RES_BITS_N'd100) - (res / `RES_BITS_N'd1000) * `RES_BITS_N'd10;
             res3 <= `SEG_7_SUB;
         end else begin
-            res3 <= res3_temp[`SEGMENT_7_INPUT_BITS_N-1:0];
+//            res0 <= res % `RES_BITS_N'd10;
+//            res1 <= (res / `RES_BITS_N'd10) - (res / `RES_BITS_N'd100) * `RES_BITS_N'd10;
+//            res2 <= (res / `RES_BITS_N'd100) - (res / `RES_BITS_N'd1000) * `RES_BITS_N'd10;
+//            res3 <= res3_temp[`SEGMENT_7_INPUT_BITS_N-1:0];
+            res3 <= res3_temp;
         end
     end
 
@@ -109,6 +127,11 @@ module controller(
     end
     
     always@(posedge clk) begin
+        d0 <= res0;
+        d1 <= res1;
+        d2 <= res2;
+        d3 <= res3;
+        
         if(~rst) begin
             a0 = `SEGMENT_7_INPUT_BITS_N'd0;
             a1 = `SEGMENT_7_INPUT_BITS_N'd0;
@@ -124,66 +147,66 @@ module controller(
             state_next = `STATE_BITS_N'd0;
         end else if(state == `STATE_BITS_N'd0) begin
             // Set A0
-            d0 <= `SEGMENT_7_INPUT_BITS_N'd0;
-            d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
-            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
-            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d0 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
             
             if(is_kb_in_num && key_valid) begin
                 a0 <= kb_num;
-                d0 <= kb_num;
+//                d0 <= kb_num;
                 state_next <= `STATE_BITS_N'd1;
             end
         end else if(state == `STATE_BITS_N'd1) begin
             // Set A1
-            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
-            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
             
             if(is_kb_in_num && key_valid) begin
                 a1 <= kb_num;
-                d1 <= kb_num;
+//                d1 <= kb_num;
                 state_next <= `STATE_BITS_N'd2;
             end
         end else if(state == `STATE_BITS_N'd2) begin
             // Set OP
-            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
-            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
             
             if(kb_in == `CODE_ADD_R && key_valid) begin
                 op <= `OP_ADD;
-                d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
-                d0 <= `SEG_7_ADD;
+//                d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//                d0 <= `SEG_7_ADD;
                 state_next <= `STATE_BITS_N'd3;
             end if(kb_in == `CODE_SUB_R && key_valid) begin
                 op <= `OP_SUB;
-                d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
-                d0 <= `SEG_7_SUB;
+//                d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//                d0 <= `SEG_7_SUB;
                 state_next <= `STATE_BITS_N'd3;
             end if(kb_in == `CODE_MUL_R && key_valid) begin
                 op <= `OP_MUL;
-                d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
-                d0 <= `SEG_7_MUL;
+//                d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//                d0 <= `SEG_7_MUL;
                 state_next <= `STATE_BITS_N'd3;
             end else begin
                 op <= `OP_ADD;
             end
         end else if(state == `STATE_BITS_N'd3) begin
             // Set B0
-            d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
-            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
-            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d1 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
             if(is_kb_in_num && key_valid) begin
                 b0 <= kb_num;
-                d0 <= kb_num; 
+//                d0 <= kb_num; 
                 state_next <= `STATE_BITS_N'd4;
             end
         end else if(state == `STATE_BITS_N'd4) begin
             // Set B1
-            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
-            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d2 <= `SEGMENT_7_INPUT_BITS_N'd0;
+//            d3 <= `SEGMENT_7_INPUT_BITS_N'd0;
             if(is_kb_in_num && key_valid) begin
                b1 <= kb_num;
-               d1 <= kb_num;
+//               d1 <= kb_num;
                state_next <= `STATE_BITS_N'd5;
             end
         end else if(state == `STATE_BITS_N'd5) begin
@@ -195,15 +218,16 @@ module controller(
                 default: res <= sum;
             endcase
             
-            if(kb_in == `CODE_ENTER_L && key_valid) begin
+//            if(kb_in == `CODE_ENTER_L && key_valid) begin
+            if(kb_in == `CODE_F1_L && key_valid) begin
                state_next <= `STATE_BITS_N'd6;
             end
         end else if(state == `STATE_BITS_N'd6) begin
             // Show result
-            d0 <= res0;
-            d1 <= res1;
-            d2 <= res2;
-            d3 <= res3;
+//            d0 <= res0;
+//            d1 <= res1;
+//            d2 <= res2;
+//            d3 <= res3;
             
 //            d0 <= `SEGMENT_7_INPUT_BITS_N'd1;
 //            d1 <= `SEGMENT_7_INPUT_BITS_N'd2;
@@ -213,10 +237,10 @@ module controller(
 //               state_next <= `STATE_BITS_N'd0;
 //            end
         end else begin
-            d0 <= res0;
-            d1 <= res1;
-            d2 <= res2;
-            d3 <= res3;
+//            d0 <= res0;
+//            d1 <= res1;
+//            d2 <= res2;
+//            d3 <= res3;
         end
     end
 endmodule

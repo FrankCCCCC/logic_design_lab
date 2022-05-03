@@ -40,14 +40,16 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/is_num.v
-  D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/keyboard.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/symbol_to_binary.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/validator.v
   D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v
+  D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller_2.v
+  D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/keyboard.v
+  D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/frequency_divider.v
 }
-read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+read_ip -quiet d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -60,6 +62,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/constrs_1/new/exp_3.xdc
 set_property used_in_implementation false [get_files D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/constrs_1/new/exp_3.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

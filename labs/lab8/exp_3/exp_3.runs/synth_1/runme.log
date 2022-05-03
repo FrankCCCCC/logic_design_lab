@@ -18,12 +18,11 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14112 
+INFO: Helper process launched with PID 3612 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 957.879 ; gain = 234.469
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 958.555 ; gain = 235.922
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'exp_3' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v:25]
-INFO: [Synth 8-6157] synthesizing module 'keyboard' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/keyboard.v:24]
 INFO: [Synth 8-6157] synthesizing module 'KeyboardDecoder' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/KeyboardDecoder.v:23]
 	Parameter INIT bound to: 2'b00 
 	Parameter WAIT_FOR_SIGNAL bound to: 2'b01 
@@ -32,41 +31,37 @@ INFO: [Synth 8-6157] synthesizing module 'KeyboardDecoder' [D:/data/logic_design
 	Parameter IS_INIT bound to: 8'b10101010 
 	Parameter IS_EXTEND bound to: 8'b11100000 
 	Parameter IS_BREAK bound to: 8'b11110000 
-INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.runs/synth_1/.Xil/Vivado-19084-DESKTOP-0M9JO91/realtime/KeyboardCtrl_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (1#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.runs/synth_1/.Xil/Vivado-19084-DESKTOP-0M9JO91/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.runs/synth_1/.Xil/Vivado-5960-DESKTOP-0M9JO91/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (1#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.runs/synth_1/.Xil/Vivado-5960-DESKTOP-0M9JO91/realtime/KeyboardCtrl_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'OnePulse' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/OnePulse.v:53]
 INFO: [Synth 8-6155] done synthesizing module 'OnePulse' (2#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/OnePulse.v:53]
 INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/KeyboardDecoder.v:86]
 INFO: [Synth 8-6155] done synthesizing module 'KeyboardDecoder' (3#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/KeyboardDecoder.v:23]
 INFO: [Synth 8-6157] synthesizing module 'validator' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/validator.v:28]
 INFO: [Synth 8-6155] done synthesizing module 'validator' (4#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/validator.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'keyboard' (5#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/keyboard.v:24]
-WARNING: [Synth 8-7023] instance 'UKB' of module 'keyboard' has 12 connections declared, but only 7 given [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v:38]
-INFO: [Synth 8-6157] synthesizing module 'controller' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:34]
+INFO: [Synth 8-6157] synthesizing module 'controller' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:35]
 INFO: [Synth 8-6157] synthesizing module 'symbol_to_binary' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/symbol_to_binary.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'symbol_to_binary' (6#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/symbol_to_binary.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'symbol_to_binary' (5#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/symbol_to_binary.v:24]
 INFO: [Synth 8-6157] synthesizing module 'num_checker' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/is_num.v:24]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/is_num.v:41]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/is_num.v:56]
-INFO: [Synth 8-6155] done synthesizing module 'num_checker' (7#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/is_num.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'controller' (8#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:34]
-WARNING: [Synth 8-7023] instance 'UCONT' of module 'controller' has 18 connections declared, but only 16 given [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'num_checker' (6#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/is_num.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (7#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:35]
+WARNING: [Synth 8-7023] instance 'UCONT' of module 'controller' has 18 connections declared, but only 17 given [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v:96]
 INFO: [Synth 8-6157] synthesizing module 'segment7' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'segment7' (9#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'segment7' (8#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7.v:25]
 INFO: [Synth 8-6157] synthesizing module 'display_7seg' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:29]
 INFO: [Synth 8-6157] synthesizing module 'segment7_frequency_divider' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v:31]
-INFO: [Synth 8-6155] done synthesizing module 'segment7_frequency_divider' (10#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'segment7_frequency_divider' (9#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/segment7_frequency_divider.v:31]
 WARNING: [Synth 8-567] referenced signal 'd0' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:63]
 WARNING: [Synth 8-567] referenced signal 'd1' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:63]
 WARNING: [Synth 8-567] referenced signal 'd2' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:63]
 WARNING: [Synth 8-567] referenced signal 'd3' should be on the sensitivity list [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:63]
-INFO: [Synth 8-6155] done synthesizing module 'display_7seg' (11#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:29]
-WARNING: [Synth 8-3848] Net key_valid in module/entity exp_3 does not have driver. [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v:29]
-INFO: [Synth 8-6155] done synthesizing module 'exp_3' (12#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'display_7seg' (10#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/display_7seg.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'exp_3' (11#1) [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/exp_3.v:25]
 WARNING: [Synth 8-3331] design validator has unconnected port key_valid
-WARNING: [Synth 8-3331] design exp_3 has unconnected port key_valid
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1031.316 ; gain = 307.906
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1031.703 ; gain = 309.070
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -79,53 +74,55 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1031.316 ; gain = 307.906
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1031.703 ; gain = 309.070
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1031.316 ; gain = 307.906
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1031.703 ; gain = 309.070
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1031.316 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1031.703 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc] for cell 'UKB/UKD/inst'
-Finished Parsing XDC File [d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc] for cell 'UKB/UKD/inst'
+Parsing XDC File [d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc] for cell 'UKD/inst'
+Finished Parsing XDC File [d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc] for cell 'UKD/inst'
 Parsing XDC File [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/constrs_1/new/exp_3.xdc]
 Finished Parsing XDC File [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/constrs_1/new/exp_3.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/constrs_1/new/exp_3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/exp_3_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/exp_3_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1152.965 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1150.766 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1152.965 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1150.766 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1152.965 ; gain = 429.555
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1150.766 ; gain = 428.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1152.965 ; gain = 429.555
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1150.766 ; gain = 428.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for PS2_CLK. (constraint file  d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 1).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_CLK. (constraint file  d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 2).
-Applied set_property IO_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 4).
-Applied set_property DONT_TOUCH = true for UKB/UKD/inst. (constraint file  auto generated constraint, line ).
+Applied set_property IO_BUFFER_TYPE = NONE for PS2_CLK. (constraint file  d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_CLK. (constraint file  d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  d:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for UKD/inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1152.965 ; gain = 429.555
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1150.766 ; gain = 428.133
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'KeyboardDecoder'
 INFO: [Synth 8-5546] ROM "binary" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:191]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:199]
 INFO: [Synth 8-5587] ROM size for "D" is below threshold of ROM address width. It will be mapped to LUTs
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -139,7 +136,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 WARNING: [Synth 8-327] inferring latch for variable 'kb_in_debouce_reg' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/validator.v:87]
 WARNING: [Synth 8-327] inferring latch for variable 'is_number_reg' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/is_num.v:42]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1152.965 ; gain = 429.555
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1150.766 ; gain = 428.133
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -152,12 +149,12 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     32 Bit       Adders := 1     
+	   3 Input     33 Bit       Adders := 1     
 	   2 Input     30 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 1     
 +---Registers : 
 	              512 Bit    Registers := 3     
-	               32 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
 	               30 Bit    Registers := 2     
 	               10 Bit    Registers := 1     
 	                8 Bit    Registers := 14    
@@ -165,12 +162,11 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 9     
 +---Muxes : 
-	   2 Input    512 Bit        Muxes := 2     
-	   4 Input     32 Bit        Muxes := 3     
+	   2 Input    512 Bit        Muxes := 1     
+	   4 Input     33 Bit        Muxes := 3     
 	   2 Input     16 Bit        Muxes := 1     
 	   4 Input     10 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 19    
+	   2 Input      8 Bit        Muxes := 18    
 	   4 Input      8 Bit        Muxes := 2     
 	   6 Input      8 Bit        Muxes := 2     
 	   5 Input      8 Bit        Muxes := 1     
@@ -219,11 +215,6 @@ Detailed RTL Component Info :
 	               30 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
-Module keyboard 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input    512 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
 Module symbol_to_binary 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -237,15 +228,15 @@ Detailed RTL Component Info :
 Module controller 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     32 Bit       Adders := 1     
+	   3 Input     33 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
 	                8 Bit    Registers := 13    
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
 +---Muxes : 
-	   4 Input     32 Bit        Muxes := 3     
-	   2 Input      8 Bit        Muxes := 15    
+	   4 Input     33 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 14    
 	   4 Input      8 Bit        Muxes := 2     
 	   6 Input      8 Bit        Muxes := 2     
 	   3 Input      5 Bit        Muxes := 1     
@@ -294,27 +285,26 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'a1_reg[7:0]' into 'a1_reg[7:0]' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:86]
-INFO: [Synth 8-4471] merging register 'b1_reg[7:0]' into 'b1_reg[7:0]' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:86]
-INFO: [Synth 8-4471] merging register 'a0_reg[7:0]' into 'a0_reg[7:0]' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:86]
-INFO: [Synth 8-4471] merging register 'b0_reg[7:0]' into 'b0_reg[7:0]' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:86]
+INFO: [Synth 8-4471] merging register 'a1_reg[7:0]' into 'a1_reg[7:0]' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:87]
+INFO: [Synth 8-4471] merging register 'b1_reg[7:0]' into 'b1_reg[7:0]' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:87]
+INFO: [Synth 8-4471] merging register 'a0_reg[7:0]' into 'a0_reg[7:0]' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:87]
+INFO: [Synth 8-4471] merging register 'b0_reg[7:0]' into 'b0_reg[7:0]' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:87]
 INFO: [Synth 8-5587] ROM size for "UA_BIN/binary" is below threshold of ROM address width. It will be mapped to LUTs
 DSP Report: Generating DSP prod, operation Mode is: A*B.
 DSP Report: operator prod is absorbed into DSP prod.
 WARNING: [Synth 8-3331] design validator has unconnected port key_valid
-WARNING: [Synth 8-3331] design exp_3 has unconnected port key_valid
-INFO: [Synth 8-3886] merging instance 'UCONT/b1_reg[7]' (FDE) to 'UCONT/b1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'UCONT/a1_reg[7]' (FDE) to 'UCONT/a1_reg[4]'
-INFO: [Synth 8-3886] merging instance 'UCONT/b0_reg[4]' (FDE) to 'UCONT/b0_reg[7]'
-INFO: [Synth 8-3886] merging instance 'UCONT/b0_reg[5]' (FDE) to 'UCONT/b0_reg[7]'
-INFO: [Synth 8-3886] merging instance 'UCONT/b0_reg[6]' (FDE) to 'UCONT/b0_reg[7]'
-INFO: [Synth 8-3886] merging instance 'UCONT/b1_reg[5]' (FDE) to 'UCONT/b1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'UCONT/b1_reg[6]' (FDE) to 'UCONT/b1_reg[4]'
 INFO: [Synth 8-3886] merging instance 'UCONT/a0_reg[4]' (FDE) to 'UCONT/a0_reg[5]'
 INFO: [Synth 8-3886] merging instance 'UCONT/a0_reg[5]' (FDE) to 'UCONT/a0_reg[6]'
 INFO: [Synth 8-3886] merging instance 'UCONT/a0_reg[6]' (FDE) to 'UCONT/a0_reg[7]'
-INFO: [Synth 8-3886] merging instance 'UCONT/a1_reg[5]' (FDE) to 'UCONT/a1_reg[4]'
-INFO: [Synth 8-3886] merging instance 'UCONT/a1_reg[6]' (FDE) to 'UCONT/a1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'UCONT/a1_reg[4]' (FDE) to 'UCONT/a1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'UCONT/a1_reg[5]' (FDE) to 'UCONT/a1_reg[6]'
+INFO: [Synth 8-3886] merging instance 'UCONT/a1_reg[6]' (FDE) to 'UCONT/a1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'UCONT/b0_reg[4]' (FDE) to 'UCONT/b0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'UCONT/b0_reg[5]' (FDE) to 'UCONT/b0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'UCONT/b0_reg[6]' (FDE) to 'UCONT/b0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'UCONT/b1_reg[4]' (FDE) to 'UCONT/b1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'UCONT/b1_reg[5]' (FDE) to 'UCONT/b1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'UCONT/b1_reg[6]' (FDE) to 'UCONT/b1_reg[7]'
 INFO: [Synth 8-3886] merging instance 'UCONT/res_reg[24]' (FDE) to 'UCONT/res_reg[25]'
 INFO: [Synth 8-3886] merging instance 'UCONT/res_reg[25]' (FDE) to 'UCONT/res_reg[26]'
 INFO: [Synth 8-3886] merging instance 'UCONT/res_reg[26]' (FDE) to 'UCONT/res_reg[27]'
@@ -322,87 +312,85 @@ INFO: [Synth 8-3886] merging instance 'UCONT/res_reg[27]' (FDE) to 'UCONT/res_re
 INFO: [Synth 8-3886] merging instance 'UCONT/res_reg[28]' (FDE) to 'UCONT/res_reg[29]'
 INFO: [Synth 8-3886] merging instance 'UCONT/res_reg[29]' (FDE) to 'UCONT/res_reg[30]'
 INFO: [Synth 8-3886] merging instance 'UCONT/res_reg[30]' (FDE) to 'UCONT/res_reg[31]'
-INFO: [Synth 8-3886] merging instance 'UCONT/d0_reg[7]' (FDRE) to 'UCONT/d0_reg[6]'
-INFO: [Synth 8-3886] merging instance 'UCONT/d0_reg[6]' (FDRE) to 'UCONT/d0_reg[5]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (UCONT/\d0_reg[5] )
+INFO: [Synth 8-3886] merging instance 'UCONT/res_reg[31]' (FDE) to 'UCONT/res_reg[32]'
 INFO: [Synth 8-3886] merging instance 'UCONT/d1_reg[4]' (FDE) to 'UCONT/d1_reg[7]'
 INFO: [Synth 8-3886] merging instance 'UCONT/d1_reg[7]' (FDE) to 'UCONT/d1_reg[6]'
 INFO: [Synth 8-3886] merging instance 'UCONT/d1_reg[6]' (FDE) to 'UCONT/d1_reg[5]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (UCONT/\d1_reg[5] )
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin res0_reg[7] with 1st driver pin 'UCONT/res0_reg[7]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin res0_reg[7] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net res0_reg[7] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin res0_reg[6] with 1st driver pin 'UCONT/res0_reg[6]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin res0_reg[6] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net res0_reg[6] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin res0_reg[5] with 1st driver pin 'UCONT/res0_reg[5]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin res0_reg[5] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net res0_reg[5] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin res0_reg[4] with 1st driver pin 'UCONT/res0_reg[4]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin res0_reg[4] with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net res0_reg[4] is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[3]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[2]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[1]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[0]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:117]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[7]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[6]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[5]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[4]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[3]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[2]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[1]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[0]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:118]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[7]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[6]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[5]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[4]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[3]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[2]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[1]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[0]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:119]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[7]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[6]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[5]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[4]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[3]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[2]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[1]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res0_reg[0]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:125]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[7]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[6]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[5]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[4]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[3]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[2]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[1]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res1_reg[0]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[7]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[6]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[5]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[4]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[3]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[2]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[1]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'UCONT/res2_reg[0]/Q' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.srcs/sources_1/new/controller.v:127]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 1152.965 ; gain = 429.555
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1150.766 ; gain = 428.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -440,13 +428,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:34 ; elapsed = 00:01:40 . Memory (MB): peak = 1169.664 ; gain = 446.254
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 1166.012 ; gain = 443.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:35 ; elapsed = 00:01:41 . Memory (MB): peak = 1173.664 ; gain = 450.254
+Finished Timing Optimization : Time (s): cpu = 00:01:29 ; elapsed = 00:01:32 . Memory (MB): peak = 1170.059 ; gain = 447.426
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -457,10 +445,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UCONT/a0_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UCONT/b1_reg[4] )
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:37 ; elapsed = 00:01:44 . Memory (MB): peak = 1242.945 ; gain = 519.535
+Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 1242.207 ; gain = 519.574
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -484,13 +470,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:44 ; elapsed = 00:01:51 . Memory (MB): peak = 1247.512 ; gain = 524.102
+Finished IO Insertion : Time (s): cpu = 00:01:37 ; elapsed = 00:01:40 . Memory (MB): peak = 1247.773 ; gain = 525.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:44 ; elapsed = 00:01:51 . Memory (MB): peak = 1247.512 ; gain = 524.102
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:37 ; elapsed = 00:01:40 . Memory (MB): peak = 1247.773 ; gain = 525.141
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -509,25 +495,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:44 ; elapsed = 00:01:51 . Memory (MB): peak = 1247.512 ; gain = 524.102
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:37 ; elapsed = 00:01:40 . Memory (MB): peak = 1247.773 ; gain = 525.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:44 ; elapsed = 00:01:51 . Memory (MB): peak = 1247.512 ; gain = 524.102
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:37 ; elapsed = 00:01:40 . Memory (MB): peak = 1247.773 ; gain = 525.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 1247.512 ; gain = 524.102
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:38 ; elapsed = 00:01:41 . Memory (MB): peak = 1247.773 ; gain = 525.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 1247.512 ; gain = 524.102
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:38 ; elapsed = 00:01:41 . Memory (MB): peak = 1247.773 ; gain = 525.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -549,60 +535,58 @@ Report Cell Usage:
 |3     |CARRY4         |   221|
 |4     |DSP48E1        |     1|
 |5     |LUT1           |    18|
-|6     |LUT2           |   144|
-|7     |LUT3           |   346|
-|8     |LUT4           |   702|
-|9     |LUT5           |   156|
-|10    |LUT6           |   762|
-|11    |FDCE           |   529|
+|6     |LUT2           |   151|
+|7     |LUT3           |   352|
+|8     |LUT4           |   712|
+|9     |LUT5           |   155|
+|10    |LUT6           |   737|
+|11    |FDCE           |   530|
 |12    |FDPE           |    10|
-|13    |FDRE           |  1130|
-|14    |FDSE           |    10|
-|15    |LDC            |    16|
+|13    |FDRE           |  1138|
+|14    |FDSE           |    12|
+|15    |LDC            |    12|
 |16    |IBUF           |     2|
-|17    |OBUF           |    21|
-|18    |OBUFT          |     1|
+|17    |OBUF           |    26|
 +------+---------------+------+
 
 Report Instance Areas: 
 +------+----------+---------------------------+------+
 |      |Instance  |Module                     |Cells |
 +------+----------+---------------------------+------+
-|1     |top       |                           |  4082|
-|2     |  UCONT   |controller                 |   669|
-|3     |    UN_CK |num_checker                |    39|
+|1     |top       |                           |  4090|
+|2     |  UCONT   |controller                 |   574|
+|3     |    UN_CK |num_checker                |    28|
 |4     |  UDisp   |display_7seg               |    71|
 |5     |    U0    |segment7_frequency_divider |    44|
-|6     |  UKB     |keyboard                   |  3261|
-|7     |    UKD   |KeyboardDecoder            |  1118|
-|8     |      op  |OnePulse_0                 |     2|
-|9     |    UVAL  |validator                  |  2140|
-|10    |      op  |OnePulse                   |   148|
+|6     |  UKD     |KeyboardDecoder            |  1122|
+|7     |    op    |OnePulse_0                 |     3|
+|8     |  UV      |validator                  |  2136|
+|9     |    op    |OnePulse                   |   146|
 +------+----------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 1247.512 ; gain = 524.102
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:38 ; elapsed = 00:01:41 . Memory (MB): peak = 1247.773 ; gain = 525.141
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 72 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:36 ; elapsed = 00:01:49 . Memory (MB): peak = 1247.512 ; gain = 402.453
-Synthesis Optimization Complete : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 1247.512 ; gain = 524.102
+Synthesis finished with 0 errors, 72 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:27 ; elapsed = 00:01:38 . Memory (MB): peak = 1247.773 ; gain = 406.078
+Synthesis Optimization Complete : Time (s): cpu = 00:01:38 ; elapsed = 00:01:41 . Memory (MB): peak = 1247.773 ; gain = 525.141
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.173 . Memory (MB): peak = 1259.555 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 238 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1259.816 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 234 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1259.555 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1259.816 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 16 instances were transformed.
-  LDC => LDCE: 16 instances
+  A total of 12 instances were transformed.
+  LDC => LDCE: 12 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-80 Infos, 13 Warnings, 72 Critical Warnings and 0 Errors encountered.
+74 Infos, 9 Warnings, 72 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:53 ; elapsed = 00:02:01 . Memory (MB): peak = 1259.555 ; gain = 804.691
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1259.555 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:47 ; elapsed = 00:01:51 . Memory (MB): peak = 1259.816 ; gain = 805.340
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1259.816 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/labs/lab8/exp_3/exp_3.runs/synth_1/exp_3.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file exp_3_utilization_synth.rpt -pb exp_3_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May  3 00:01:54 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue May  3 15:19:37 2022...
