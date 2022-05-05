@@ -22,3 +22,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports led_state]
 set_property IOSTANDARD LVCMOS33 [get_ports PS2_CLK]
 set_property IOSTANDARD LVCMOS33 [get_ports PS2_DATA]
 set_property IOSTANDARD LVCMOS33 [get_ports rst]
+
+set_property IOSTANDARD LVCMOS33 [get_ports is_pressed]
+set_property PACKAGE_PIN P1 [get_ports is_pressed]

@@ -28,8 +28,13 @@ module key(
     input [`KB_ENCODE_BITS_N-1:0] last_change,
     output reg [`CHAR_BITS_N-1:0] char
     );
+    
+    reg [10:0] counter = 0, counter_t = 0;
+    
     always@(posedge clk) begin
-        if(key_down[last_change] == 1'b1 && key_valid) begin
+//        if(key_down[last_change] == 1'b1 && key_valid) begin
+        if(key_down[last_change] == 1'b1) begin
+            counter_t <= counter + 1;
             case(last_change)
                 `KB_ENCODE_BITS_N'b0_0001_1100: char <= `CHAR_BITS_N'd1;
                 `KB_ENCODE_BITS_N'b0_0001_1100: char <= `CHAR_BITS_N'd1; 
@@ -58,9 +63,11 @@ module key(
                 `KB_ENCODE_BITS_N'b0_0010_0010: char <= `CHAR_BITS_N'd24;
                 `KB_ENCODE_BITS_N'b0_0011_0101: char <= `CHAR_BITS_N'd25;
                 `KB_ENCODE_BITS_N'b0_0001_1010: char <= `CHAR_BITS_N'd26;
+                default: char <= `CHAR_BITS_N'd0;
             endcase
         end else begin
-            char <= char;
+            char <= `CHAR_BITS_N'd0;
+//            char <= char;
         end
     end
 endmodule

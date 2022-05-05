@@ -27,7 +27,8 @@ module exp_4(
     inout PS2_DATA,
     inout PS2_CLK,
     output led_state,
-    output [`ASCII_LED_N-1:0]led
+    output reg [`ASCII_LED_N-1:0]led,
+    output reg is_pressed
     );
     wire [`KB_ENCODE_OH_BITS_N-1:0]key_down;
     wire [`KB_ENCODE_BITS_N-1:0]last_change;
@@ -58,7 +59,22 @@ module exp_4(
         .rst(rst),
         .clk(clk)
         );
-        
+    
+    wire [`ASCII_LED_N-1:0] led_out;
+    reg [`KB_ENCODE_BITS_N-1:0] debounce_last_change;
+    always@(posedge clk) begin
+        if(key_down > `KB_ENCODE_OH_BITS_N'd0 && last_change != `CODE_SHIFT_L && last_change != `CODE_CAP_L) begin
+//        if(key_down > `KB_ENCODE_OH_BITS_N'd0) begin
+            is_pressed <= 1'b1;
+            debounce_last_change <= last_change;
+            led <= led_out;
+        end else begin
+            is_pressed <= 1'b0;
+            debounce_last_change <= `KB_ENCODE_BITS_N'd0;
+            led <= `ASCII_LED_N'd0;
+        end  
+    end
+    
     fsm U1(
         .clk(clk),
         .key_valid(key_valid),
@@ -87,7 +103,8 @@ module exp_4(
         .rst(rst),
         .state(led_state),
         .shift_state(shift_state),
-        .led(led),
+//        .led(led),
+        .led(led_out),
         .clk(clk)
         );
     
