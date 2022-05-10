@@ -40,6 +40,16 @@ module count(
     reg [`OP_BITS_N-1:0] op;
     reg [`STATE_BITS_N-1:0] next_state;
     
+    initial begin
+        in0 <= `SEGMENT_7_INPUT_BITS_N'd0;
+        in1 <= `SEGMENT_7_INPUT_BITS_N'd0;
+        in2 <= `SEGMENT_7_INPUT_BITS_N'd0;
+        in3 <= `SEGMENT_7_INPUT_BITS_N'd0;
+        value <= `VALUE_BITS_N'd0;
+        next_state = `STATE_BITS_N'd0;
+        op <= `OP_BITS_N'd0;
+    end
+    
     always@(*) begin
         state <= next_state;
     end

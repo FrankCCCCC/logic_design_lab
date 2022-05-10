@@ -36,6 +36,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/global.v
   D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/KeyboardDecoder.v
+  D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/OnePulse.v
   D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/count.v
   D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/dec_disp.v
   D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/display_7seg.v
@@ -46,7 +47,7 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/value.v
   D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/exp_3.v
 }
-read_ip -quiet d:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

@@ -1,0 +1,532 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue May 10 15:17:40 2022
+# Process ID: 4160
+# Current directory: D:/data/logic_design_lab/labs/lab8/exp_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent516 D:\data\logic_design_lab\labs\lab8\exp_1\exp_1.xpr
+# Log file: D:/data/logic_design_lab/labs/lab8/exp_1/vivado.log
+# Journal file: D:/data/logic_design_lab/labs/lab8/exp_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.xpr
+INFO: [Project 1-313] Project file moved from 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [filemgmt 56-1] IP Repository Path: Directory not found as 'D:/data/logic_design_lab/labs/lab08_keyboard_source/lab08_keyboard_source'; using path 'D:/data/logic_design_lab/labs/lab8/lab08_keyboard_source/lab08_keyboard_source' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/data/logic_design_lab/labs/lab8/lab08_keyboard_source/lab08_keyboard_source'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:28 ; elapsed = 00:00:19 . Memory (MB): peak = 881.012 ; gain = 241.406
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/segment7.v] -no_script -reset -force -quiet
+remove_files  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/segment7.v
+file delete -force D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/segment7.v
+close [ open D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment_tb.v w ]
+add_files D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment_tb.v
+update_compile_order -fileset sources_1
+set_property top symbol_to_7segment_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'symbol_to_7segment_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj symbol_to_7segment_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module symbol_to_7segment
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment_tb.v" into library xil_defaultlib
+WARNING: [VRFC 10-3507] macro 'SEGMENT_7_INPUT_BITS_N' redefined [D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment_tb.v:27]
+INFO: [VRFC 10-311] analyzing module symbol_to_7segment_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+"xelab -wto be6110d506d94b3a91fee18fe04ffd85 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot symbol_to_7segment_tb_behav xil_defaultlib.symbol_to_7segment_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto be6110d506d94b3a91fee18fe04ffd85 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot symbol_to_7segment_tb_behav xil_defaultlib.symbol_to_7segment_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.symbol_to_7segment
+Compiling module xil_defaultlib.symbol_to_7segment_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot symbol_to_7segment_tb_behav
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim/xsim.dir/symbol_to_7segment_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim/xsim.dir/symbol_to_7segment_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue May 10 15:47:46 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue May 10 15:47:46 2022...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 961.973 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "symbol_to_7segment_tb_behav -key {Behavioral:sim_1:Functional:symbol_to_7segment_tb} -tclbatch {symbol_to_7segment_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source symbol_to_7segment_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'symbol_to_7segment_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 977.633 ; gain = 27.441
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 985.195 ; gain = 6.570
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'symbol_to_7segment_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj symbol_to_7segment_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module symbol_to_7segment
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment_tb.v" into library xil_defaultlib
+WARNING: [VRFC 10-3507] macro 'SEGMENT_7_INPUT_BITS_N' redefined [D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment_tb.v:27]
+INFO: [VRFC 10-311] analyzing module symbol_to_7segment_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+"xelab -wto be6110d506d94b3a91fee18fe04ffd85 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot symbol_to_7segment_tb_behav xil_defaultlib.symbol_to_7segment_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto be6110d506d94b3a91fee18fe04ffd85 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot symbol_to_7segment_tb_behav xil_defaultlib.symbol_to_7segment_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.symbol_to_7segment
+Compiling module xil_defaultlib.symbol_to_7segment_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot symbol_to_7segment_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "symbol_to_7segment_tb_behav -key {Behavioral:sim_1:Functional:symbol_to_7segment_tb} -tclbatch {symbol_to_7segment_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source symbol_to_7segment_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'symbol_to_7segment_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 985.195 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'symbol_to_7segment_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj symbol_to_7segment_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module symbol_to_7segment
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment_tb.v" into library xil_defaultlib
+WARNING: [VRFC 10-3507] macro 'SEGMENT_7_INPUT_BITS_N' redefined [D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment_tb.v:27]
+INFO: [VRFC 10-311] analyzing module symbol_to_7segment_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+"xelab -wto be6110d506d94b3a91fee18fe04ffd85 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot symbol_to_7segment_tb_behav xil_defaultlib.symbol_to_7segment_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto be6110d506d94b3a91fee18fe04ffd85 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot symbol_to_7segment_tb_behav xil_defaultlib.symbol_to_7segment_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.symbol_to_7segment
+Compiling module xil_defaultlib.symbol_to_7segment_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot symbol_to_7segment_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "symbol_to_7segment_tb_behav -key {Behavioral:sim_1:Functional:symbol_to_7segment_tb} -tclbatch {symbol_to_7segment_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source symbol_to_7segment_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'symbol_to_7segment_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 985.195 ; gain = 0.000
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue May 10 15:52:15 2022] Launched synth_1...
+Run output will be captured here: D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.runs/synth_1/runme.log
+[Tue May 10 15:52:15 2022] Launched impl_1...
+Run output will be captured here: D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.2
+  **** Build date : Nov  6 2019 at 22:12:23
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2019.2.0
+  **** Build date : Nov 07 2019-13:28:22
+    ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1005.539 ; gain = 14.531
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A27F68A
+open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2244.961 ; gain = 1239.422
+set_property PROGRAM.FILE {D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.runs/impl_1/exp_1.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.runs/impl_1/exp_1.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_project
+open_project D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/data/logic_design_lab/labs/lab8/lab08_keyboard_source/lab08_keyboard_source'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue May 10 20:48:01 2022] Launched synth_1...
+Run output will be captured here: D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.runs/synth_1/runme.log
+[Tue May 10 20:48:01 2022] Launched impl_1...
+Run output will be captured here: D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A27F68A
+set_property PROGRAM.FILE {D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.runs/impl_1/exp_4.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.runs/impl_1/exp_4.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+export_ip_user_files -of_objects  [get_files D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/keyboard_decoder_tb.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/keyboard_decoder_tb.v
+file delete -force D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/keyboard_decoder_tb.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v w ]
+add_files -fileset sim_1 D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v
+update_compile_order -fileset sim_1
+set_property top fsm_shift_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'fsm_shift_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj fsm_shift_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sources_1/new/fsm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fsm
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sources_1/new/shift.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shift
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v" into library xil_defaultlib
+WARNING: [VRFC 10-3507] macro 'SEGMENT_7_INPUT_BITS_N' redefined [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:64]
+INFO: [VRFC 10-311] analyzing module fsm_shift_tb
+WARNING: [VRFC 10-3248] data object 'kb_in' is already declared [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:82]
+WARNING: [VRFC 10-3703] second declaration of 'kb_in' ignored [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:82]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+"xelab -wto cdafb916cff14ba785a06b4d421a5487 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fsm_shift_tb_behav xil_defaultlib.fsm_shift_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cdafb916cff14ba785a06b4d421a5487 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fsm_shift_tb_behav xil_defaultlib.fsm_shift_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2538] module instantiation should have an instance name [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:94]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'fsm_shift_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj fsm_shift_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+"xelab -wto cdafb916cff14ba785a06b4d421a5487 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fsm_shift_tb_behav xil_defaultlib.fsm_shift_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cdafb916cff14ba785a06b4d421a5487 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fsm_shift_tb_behav xil_defaultlib.fsm_shift_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2538] module instantiation should have an instance name [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:94]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'fsm_shift_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj fsm_shift_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sources_1/new/fsm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fsm
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sources_1/new/shift.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shift
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v" into library xil_defaultlib
+WARNING: [VRFC 10-3507] macro 'SEGMENT_7_INPUT_BITS_N' redefined [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:64]
+INFO: [VRFC 10-311] analyzing module fsm_shift_tb
+WARNING: [VRFC 10-3248] data object 'kb_in' is already declared [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:82]
+WARNING: [VRFC 10-3703] second declaration of 'kb_in' ignored [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:82]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+"xelab -wto cdafb916cff14ba785a06b4d421a5487 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fsm_shift_tb_behav xil_defaultlib.fsm_shift_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cdafb916cff14ba785a06b4d421a5487 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fsm_shift_tb_behav xil_defaultlib.fsm_shift_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fsm
+Compiling module xil_defaultlib.shift
+Compiling module xil_defaultlib.fsm_shift_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fsm_shift_tb_behav
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim/xsim.dir/fsm_shift_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim/xsim.dir/fsm_shift_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue May 10 23:11:22 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue May 10 23:11:22 2022...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2359.840 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fsm_shift_tb_behav -key {Behavioral:sim_1:Functional:fsm_shift_tb} -tclbatch {fsm_shift_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source fsm_shift_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fsm_shift_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 2359.840 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2359.840 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'fsm_shift_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj fsm_shift_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sources_1/new/fsm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fsm
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sources_1/new/shift.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shift
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v" into library xil_defaultlib
+WARNING: [VRFC 10-3507] macro 'SEGMENT_7_INPUT_BITS_N' redefined [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:64]
+INFO: [VRFC 10-311] analyzing module fsm_shift_tb
+WARNING: [VRFC 10-3248] data object 'kb_in' is already declared [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:82]
+WARNING: [VRFC 10-3703] second declaration of 'kb_in' ignored [D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.srcs/sim_1/new/fsm_shift_tb.v:82]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+"xelab -wto cdafb916cff14ba785a06b4d421a5487 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fsm_shift_tb_behav xil_defaultlib.fsm_shift_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cdafb916cff14ba785a06b4d421a5487 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fsm_shift_tb_behav xil_defaultlib.fsm_shift_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fsm
+Compiling module xil_defaultlib.shift
+Compiling module xil_defaultlib.fsm_shift_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fsm_shift_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/data/logic_design_lab/labs/lab8/exp_4/exp_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fsm_shift_tb_behav -key {Behavioral:sim_1:Functional:fsm_shift_tb} -tclbatch {fsm_shift_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source fsm_shift_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fsm_shift_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 2359.840 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue May 10 23:17:41 2022...

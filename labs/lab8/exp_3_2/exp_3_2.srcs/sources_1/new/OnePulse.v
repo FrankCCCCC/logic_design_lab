@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 05/05/2022 05:20:06 PM
+// Create Date: 04/27/2022 04:00:30 PM
 // Design Name: 
-// Module Name: keyboard_decoder_tb
+// Module Name: OnePulse
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,8 +19,22 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "global.v"
 
-module keyboard_decoder_tb(
+module OnePulse (
+	output reg signal_single_pulse,
+	input wire signal,
+	input wire clock
+	);
+	
+	reg signal_delay;
 
-    );
+	always @(posedge clock) begin
+		if (signal == 1'b1 & signal_delay == 1'b0)
+		  signal_single_pulse <= 1'b1;
+		else
+		  signal_single_pulse <= 1'b0;
+
+		signal_delay <= signal;
+	end
 endmodule

@@ -17,31 +17,30 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.cache/wt [current_project]
-set_property parent.project_path D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.xpr [current_project]
+set_property webtalk.parent_dir D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.cache/wt [current_project]
+set_property parent.project_path D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_repo_paths d:/data/logic_design_lab/labs/lab8/lab08_keyboard_source/lab08_keyboard_source [current_project]
 update_ip_catalog
-set_property ip_output_repo d:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.cache/ip [current_project]
+set_property ip_output_repo d:/data/logic_design_lab/labs/lab8/exp_1/exp_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/new/KeyboardDecoder.v
-  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/new/OnePulse.v
-  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/new/global.v
-  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/new/display_7seg.v
-  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/new/segment7_frequency_divider.v
-  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment.v
-  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/new/exp_1.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/KeyboardDecoder.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/OnePulse.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/global.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/display_7seg.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/segment7_frequency_divider.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/symbol_to_7segment.v
+  D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/new/exp_1.v
 }
-read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -51,8 +50,8 @@ read_ip -quiet D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/sources
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/constrs_1/new/exp_1.xdc
-set_property used_in_implementation false [get_files D:/data/logic_design_lab/labs/lab8/exp_1/exp_1/exp_1.srcs/constrs_1/new/exp_1.xdc]
+read_xdc D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/constrs_1/new/exp_1.xdc
+set_property used_in_implementation false [get_files D:/data/logic_design_lab/labs/lab8/exp_1/exp_1.srcs/constrs_1/new/exp_1.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

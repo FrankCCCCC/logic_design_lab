@@ -1,3 +1,25 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 04/21/2022 07:07:31 PM
+// Design Name: 
+// Module Name: KeyboardDecoder
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
 module KeyboardDecoder(
 	output reg [511:0] key_down,
 	output wire [8:0] last_change,
@@ -26,9 +48,6 @@ module KeyboardDecoder(
     wire is_break;
     wire valid;
     wire err;
-	
-	reg  pulse_been_ready;
-	reg  signal_delay;
     
     wire [511:0] key_decode = 1 << last_change;
     assign last_change = {key[9], key[7:0]};
@@ -44,17 +63,13 @@ module KeyboardDecoder(
 		.rst(rst),
 		.clk(clk)
 	);
-
-    //OnePulse
-	always @(posedge clk) begin
-		if (been_ready == 1'b1 && signal_delay == 1'b0)
-		  pulse_been_ready <= 1'b1;
-		else
-		  pulse_been_ready <= 1'b0;
-
-		signal_delay <= been_ready;
-	end
 	
+	OnePulse op (
+		.signal_single_pulse(pulse_been_ready),
+		.signal(been_ready),
+		.clock(clk)
+	);
+    
     always @ (posedge clk, posedge rst) begin
     	if (rst) begin
     		state <= INIT;
@@ -131,3 +146,4 @@ module KeyboardDecoder(
     end
 
 endmodule
+

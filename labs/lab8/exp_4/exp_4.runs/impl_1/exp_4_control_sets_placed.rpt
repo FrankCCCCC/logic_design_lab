@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu May  5 18:02:51 2022
+| Date         : Tue May 10 20:50:16 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exp_4_control_sets_placed.rpt
 | Design       : exp_4
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    10 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    24 |
+| Unused register locations in slices containing registers |    25 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -45,8 +45,8 @@ Table of Contents
 | >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     2 |
 | >= 10 to < 12      |     2 |
-| >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
 | >= 16              |     2 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              14 |            4 |
-| No           | No                    | Yes                    |              69 |           27 |
-| No           | Yes                   | No                     |              12 |            6 |
+| No           | No                    | No                     |              13 |            4 |
+| No           | No                    | Yes                    |              69 |           23 |
+| No           | Yes                   | No                     |              12 |            5 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             553 |          190 |
+| Yes          | No                    | Yes                    |             553 |          199 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,19 +70,19 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-----------------------------------------------+------------------+------------------+----------------+
-|  Clock Signal  |                 Enable Signal                 | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+----------------+-----------------------------------------------+------------------+------------------+----------------+
-|  clk_IBUF_BUFG | U0/inst/inst/Ps2Interface_i/bits_count        | rst_IBUF         |                1 |              4 |
-|  clk_IBUF_BUFG |                                               | U0/SR[0]         |                4 |              5 |
-|  clk_IBUF_BUFG |                                               | U0/key_reg[6]_0  |                2 |              7 |
-|  clk_IBUF_BUFG | U0/inst/inst/Ps2Interface_i/rx_finish         | rst_IBUF         |                1 |              8 |
-|  clk_IBUF_BUFG | U0/inst/inst/Ps2Interface_i/rx_valid          | rst_IBUF         |                2 |              8 |
-|  clk_IBUF_BUFG | U0/key                                        | rst_IBUF         |                3 |             10 |
-|  clk_IBUF_BUFG | U0/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | rst_IBUF         |                3 |             11 |
-|  clk_IBUF_BUFG |                                               |                  |                4 |             14 |
-|  clk_IBUF_BUFG |                                               | rst_IBUF         |               27 |             69 |
-|  clk_IBUF_BUFG | U0/op/E[0]                                    | rst_IBUF         |              180 |            512 |
-+----------------+-----------------------------------------------+------------------+------------------+----------------+
++----------------+-----------------------------------------------+----------------------+------------------+----------------+
+|  Clock Signal  |                 Enable Signal                 |   Set/Reset Signal   | Slice Load Count | Bel Load Count |
++----------------+-----------------------------------------------+----------------------+------------------+----------------+
+|  clk_IBUF_BUFG | U0/inst/inst/Ps2Interface_i/bits_count        | rst_IBUF             |                2 |              4 |
+|  clk_IBUF_BUFG |                                               | U0/SR[0]             |                4 |              5 |
+|  clk_IBUF_BUFG |                                               | U0/key_down_reg[0]_0 |                1 |              7 |
+|  clk_IBUF_BUFG | U0/inst/inst/Ps2Interface_i/rx_finish         | rst_IBUF             |                2 |              8 |
+|  clk_IBUF_BUFG | U0/inst/inst/Ps2Interface_i/rx_valid          | rst_IBUF             |                3 |              8 |
+|  clk_IBUF_BUFG | U0/key                                        | rst_IBUF             |                3 |             10 |
+|  clk_IBUF_BUFG | U0/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | rst_IBUF             |                2 |             11 |
+|  clk_IBUF_BUFG |                                               |                      |                4 |             13 |
+|  clk_IBUF_BUFG |                                               | rst_IBUF             |               23 |             69 |
+|  clk_IBUF_BUFG | U0/op/E[0]                                    | rst_IBUF             |              187 |            512 |
++----------------+-----------------------------------------------+----------------------+------------------+----------------+
 
 

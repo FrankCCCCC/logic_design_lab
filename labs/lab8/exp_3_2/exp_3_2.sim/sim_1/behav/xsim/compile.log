@@ -1,0 +1,11 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/global.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/count.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/num_checker.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module num_checker
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sources_1/new/symbol_to_binary.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module symbol_to_binary
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sim_1/new/count_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_tb
+WARNING: [VRFC 10-3248] data object 'kb_in' is already declared [D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sim_1/new/count_tb.v:78]
+WARNING: [VRFC 10-3703] second declaration of 'kb_in' ignored [D:/data/logic_design_lab/labs/lab8/exp_3_2/exp_3_2.srcs/sim_1/new/count_tb.v:78]

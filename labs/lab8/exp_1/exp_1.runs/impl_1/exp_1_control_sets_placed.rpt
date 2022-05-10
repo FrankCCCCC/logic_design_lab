@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Apr 28 17:04:38 2022
+| Date         : Tue May 10 15:53:57 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exp_1_control_sets_placed.rpt
 | Design       : exp_1
@@ -74,8 +74,8 @@ Table of Contents
 |  Clock Signal  |                  Enable Signal                 | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +----------------+------------------------------------------------+------------------+------------------+----------------+
 |  clk_IBUF_BUFG | UKD/inst/inst/Ps2Interface_i/bits_count        | UKD/AR[0]        |                1 |              4 |
-|  clk_IBUF_BUFG | UKD/inst/inst/Ps2Interface_i/rx_finish         | UKD/AR[0]        |                3 |              8 |
 |  clk_IBUF_BUFG | UKD/inst/inst/Ps2Interface_i/rx_valid          | UKD/AR[0]        |                3 |              8 |
+|  clk_IBUF_BUFG | UKD/inst/inst/Ps2Interface_i/rx_finish         | UKD/AR[0]        |                3 |              8 |
 |  clk_IBUF_BUFG | UKD/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | UKD/AR[0]        |                2 |             11 |
 |  UDisp/U0/CLK  |                                                | UKD/AR[0]        |                7 |             12 |
 |  clk_IBUF_BUFG | UKD/key                                        | UKD/AR[0]        |                8 |             18 |

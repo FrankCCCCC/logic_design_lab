@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue May  3 23:03:42 2022
+| Date         : Tue May 10 23:16:38 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file exp_3_methodology_drc_routed.rpt -pb exp_3_methodology_drc_routed.pb -rpx exp_3_methodology_drc_routed.rpx
 | Design       : exp_3
@@ -3145,12 +3145,12 @@ Related violations: <none>
 
 TIMING-17#623 Critical Warning
 Non-clocked sequential cell  
-The clock pin U0/pulse_been_ready_reg/C is not reached by a timing clock
+The clock pin U0/op__0/signal_delay_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#624 Critical Warning
 Non-clocked sequential cell  
-The clock pin U0/signal_delay_reg/C is not reached by a timing clock
+The clock pin U0/op__0/signal_single_pulse_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#625 Critical Warning

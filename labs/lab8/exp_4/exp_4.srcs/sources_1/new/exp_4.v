@@ -65,12 +65,12 @@ module exp_4(
     always@(posedge clk) begin
         if(key_down > `KB_ENCODE_OH_BITS_N'd0 && last_change != `CODE_SHIFT_L && last_change != `CODE_CAP_L) begin
 //        if(key_down > `KB_ENCODE_OH_BITS_N'd0) begin
-            is_pressed <= 1'b1;
-            debounce_last_change <= last_change;
+//            is_pressed <= 1'b1;
+//            debounce_last_change <= last_change;
             led <= led_out;
         end else begin
-            is_pressed <= 1'b0;
-            debounce_last_change <= `KB_ENCODE_BITS_N'd0;
+//            is_pressed <= 1'b0;
+//            debounce_last_change <= `KB_ENCODE_BITS_N'd0;
             led <= `ASCII_LED_N'd0;
         end  
     end
