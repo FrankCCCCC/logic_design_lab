@@ -19,46 +19,55 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "global.v"
 
 module key(
     input clk,
-    input [511:0]key_down,
+    input [`KB_ENCODE_OH_BITS_N-1:0]key_down,
     input key_valid,
-    input [8:0] last_change,
-    output reg [4:0] char
+    input [`KB_ENCODE_BITS_N-1:0] last_change,
+    output reg [`CHAR_BITS_N-1:0] char
     );
     
-    always@(posedge clk)
-        if((key_down[last_change]==1'b1) && (key_valid==1'b1))
-            casex(last_change)
-                9'bx00011100:char <= 5'd1; 
-                9'bx00110010:char <= 5'd2;
-                9'bx00100001:char <= 5'd3;
-                9'bx00100011:char <= 5'd4;
-                9'bx00100100:char <= 5'd5;
-                9'bx00101011:char <= 5'd6;
-                9'bx00110100:char <= 5'd7;
-                9'bx00110011:char <= 5'd8;
-                9'bx01000011:char <= 5'd9;
-                9'bx00111011:char <= 5'd10;
-                9'bx01000010:char <= 5'd11;
-                9'bx01001011:char <= 5'd12;
-                9'bx00111010:char <= 5'd13;
-                9'bx00110001:char <= 5'd14;
-                9'bx01000100:char <= 5'd15;
-                9'bx01001101:char <= 5'd16;
-                9'bx00010101:char <= 5'd17;
-                9'bx00101101:char <= 5'd18;
-                9'bx00011011:char <= 5'd19;
-                9'bx00101100:char <= 5'd20;
-                9'bx00111100:char <= 5'd21;
-                9'bx00101010:char <= 5'd22;
-                9'bx00011101:char <= 5'd23;
-                9'bx00100010:char <= 5'd24;
-                9'bx00110101:char <= 5'd25;
-                9'bx00011010:char <= 5'd26;
-                default:char <= 5'd0;
+    reg [10:0] counter = 0, counter_t = 0;
+    
+    always@(posedge clk) begin
+//        if(key_down[last_change] == 1'b1 && key_valid) begin
+        if(key_down[last_change] == 1'b1) begin
+            counter_t <= counter + 1;
+            case(last_change)
+                `KB_ENCODE_BITS_N'b0_0001_1100: char <= `CHAR_BITS_N'd1;
+                `KB_ENCODE_BITS_N'b0_0001_1100: char <= `CHAR_BITS_N'd1; 
+                `KB_ENCODE_BITS_N'b0_0011_0010: char <= `CHAR_BITS_N'd2;
+                `KB_ENCODE_BITS_N'b0_0010_0001: char <= `CHAR_BITS_N'd3;
+                `KB_ENCODE_BITS_N'b0_0010_0011: char <= `CHAR_BITS_N'd4;
+                `KB_ENCODE_BITS_N'b0_0010_0100: char <= `CHAR_BITS_N'd5;
+                `KB_ENCODE_BITS_N'b0_0010_1011: char <= `CHAR_BITS_N'd6;
+                `KB_ENCODE_BITS_N'b0_0011_0100: char <= `CHAR_BITS_N'd7;
+                `KB_ENCODE_BITS_N'b0_0011_0011: char <= `CHAR_BITS_N'd8;
+                `KB_ENCODE_BITS_N'b0_0100_0011: char <= `CHAR_BITS_N'd9;
+                `KB_ENCODE_BITS_N'b0_0011_1011: char <= `CHAR_BITS_N'd10;
+                `KB_ENCODE_BITS_N'b0_0100_0010: char <= `CHAR_BITS_N'd11;
+                `KB_ENCODE_BITS_N'b0_0100_1011: char <= `CHAR_BITS_N'd12;
+                `KB_ENCODE_BITS_N'b0_0011_1010: char <= `CHAR_BITS_N'd13;
+                `KB_ENCODE_BITS_N'b0_0011_0001: char <= `CHAR_BITS_N'd14;
+                `KB_ENCODE_BITS_N'b0_0100_0100: char <= `CHAR_BITS_N'd15;
+                `KB_ENCODE_BITS_N'b0_0100_1101: char <= `CHAR_BITS_N'd16;
+                `KB_ENCODE_BITS_N'b0_0001_0101: char <= `CHAR_BITS_N'd17;
+                `KB_ENCODE_BITS_N'b0_0010_1101: char <= `CHAR_BITS_N'd18;
+                `KB_ENCODE_BITS_N'b0_0001_1011: char <= `CHAR_BITS_N'd19;
+                `KB_ENCODE_BITS_N'b0_0010_1100: char <= `CHAR_BITS_N'd20;
+                `KB_ENCODE_BITS_N'b0_0011_1100: char <= `CHAR_BITS_N'd21;
+                `KB_ENCODE_BITS_N'b0_0010_1010: char <= `CHAR_BITS_N'd22;
+                `KB_ENCODE_BITS_N'b0_0001_1101: char <= `CHAR_BITS_N'd23;
+                `KB_ENCODE_BITS_N'b0_0010_0010: char <= `CHAR_BITS_N'd24;
+                `KB_ENCODE_BITS_N'b0_0011_0101: char <= `CHAR_BITS_N'd25;
+                `KB_ENCODE_BITS_N'b0_0001_1010: char <= `CHAR_BITS_N'd26;
+                default: char <= `CHAR_BITS_N'd0;
             endcase
-        else
-            char <= char;
+        end else begin
+            char <= `CHAR_BITS_N'd0;
+//            char <= char;
+        end
+    end
 endmodule

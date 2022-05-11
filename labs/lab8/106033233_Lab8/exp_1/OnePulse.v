@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/30/2022 10:57:16 PM
+// Create Date: 04/21/2022 07:14:57 PM
 // Design Name: 
-// Module Name: validator
+// Module Name: OnePulse
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module validator(
+module OnePulse (
+	output reg signal_single_pulse,
+	input wire signal,
+	input wire clock
+	);
+	
+	reg signal_delay;
 
-    );
+	always @(posedge clock) begin
+		if (signal == 1'b1 & signal_delay == 1'b0)
+		  signal_single_pulse <= 1'b1;
+		else
+		  signal_single_pulse <= 1'b0;
+
+		signal_delay <= signal;
+	end
 endmodule
+

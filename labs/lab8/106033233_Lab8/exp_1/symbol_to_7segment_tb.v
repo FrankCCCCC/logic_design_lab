@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/27/2022 03:51:20 PM
+// Create Date: 05/10/2022 03:44:49 PM
 // Design Name: 
-// Module Name: global
+// Module Name: symbol_to_7segment_tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,33 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-`define FREQ_DIV_BIT 30
-
-// Note Generation
-//`define AUDIO_IN_BITS_N 16
-//`define NOTE_GEN_FREQ_BITS_N 22
-//`define AUDIO_LEVEL_BITS_N 4
-
 // Keyboard
 `define KB_ENCODE_BITS_N 9
 `define KB_ENCODE_OH_BITS_N 512
 
 // Segment-7 Displayer
 `define SEGMENT_7_INPUT_BITS_N 8
-`define SEGMENT_7_DISPALY_DIGIT_N 4
-`define SEGMENT_7_SEGMENT_N 8
-`define SEGMENT_7_NONE `SEGMENT_7_SEGMENT_N'b1111111_1
-`define SEGMENT_7_EMPTY `SEGMENT_7_SEGMENT_N'b1111111_0
-
-// @Segment-7 Displayer Frequency Divider
-`define SEGMENT_7_FREQ_DIV_BITS 30
-// 1000 Hz
-`define SEGMENT_7_FREQ_DIV_COUNT `SEGMENT_7_FREQ_DIV_BITS'd50000
-//`define SEGMENT_7_FREQ_DIV_COUNT `SEGMENT_7_FREQ_DIV_BITS'd2
-// 1 Hz
-//`define SEGMENT_7_FREQ_DIV_COUNT `SEGMENT_7_FREQ_DIV_BITS'd5000000
-`define RST_OFF 1'b1
 
 // Keyboard Symbol
 `define CODE_0_L `KB_ENCODE_BITS_N'b0_0100_0101
@@ -70,34 +49,50 @@
 `define CODE_8_R `KB_ENCODE_BITS_N'b0_0111_0101
 `define CODE_9_R `KB_ENCODE_BITS_N'b0_0111_1101
 
-
-`define CODE_A_L `KB_ENCODE_BITS_N'b0_0001_1100
-`define CODE_S_L `KB_ENCODE_BITS_N'b0_0001_1011
-`define CODE_M_L `KB_ENCODE_BITS_N'b0_0011_1010
-
 `define CODE_ADD_R `KB_ENCODE_BITS_N'b0_0111_1001
 `define CODE_SUB_R `KB_ENCODE_BITS_N'b0_0111_1011
 `define CODE_MUL_R `KB_ENCODE_BITS_N'b0_0111_1100
 
+`define CODE_A_R `KB_ENCODE_BITS_N'b0_0001_1100
+`define CODE_S_R `KB_ENCODE_BITS_N'b0_0001_1011
+`define CODE_M_R `KB_ENCODE_BITS_N'b0_0011_1010
+
 `define CODE_ENTER_L `KB_ENCODE_BITS_N'b0_0101_1010
-`define CODE_SHIFT_L `KB_ENCODE_BITS_N'b0_0001_0010
-`define CODE_CAP_L `KB_ENCODE_BITS_N'b0_0101_1000
 `define CODE_F1_L `KB_ENCODE_BITS_N'b0_0000_0101
 `define CODE_F2_L `KB_ENCODE_BITS_N'b0_0000_0110
-`define CODE_F3_L `KB_ENCODE_BITS_N'b0_0000_0100
-`define CODE_F4_L `KB_ENCODE_BITS_N'b0_0000_1100
 
-// num_checker
-`define LR_BITS_N 2 
-`define BOTH_SIDE_NUM `LR_BITS_N'd0
-`define L_SIDE_NUM `LR_BITS_N'd1
-`define R_SIDE_NUM `LR_BITS_N'd2
-
-//
-`define SEG_7_ADD `SEGMENT_7_INPUT_BITS_N'd16
-`define SEG_7_SUB `SEGMENT_7_INPUT_BITS_N'd17
-`define SEG_7_MUL `SEGMENT_7_INPUT_BITS_N'd18
-
-// Key
-`define CHAR_BITS_N 5
-`define ASCII_LED_N 7
+module symbol_to_7segment_tb();
+    reg clk, rst;
+    reg [`KB_ENCODE_BITS_N-1:0] kb_in;
+    wire [`SEGMENT_7_SEGMENT_N-1:0] seg7_d;
+    
+    symbol_to_7segment USYM27SEG(
+        .seg7_code(seg7_d),
+        .kb_code(kb_in)
+    );
+    
+    initial begin
+        clk = 0;
+        rst = 1;
+        kb_in = `CODE_0_L;
+        
+        #30 kb_in = `CODE_F1_L;
+        #30 kb_in = `CODE_0_L;
+        #30 kb_in = `CODE_1_L;
+        #30 kb_in = `CODE_2_L;
+        #30 kb_in = `CODE_F2_L;
+        #30 kb_in = `CODE_2_L;
+        #30 kb_in = `CODE_F1_L;
+        #30 kb_in = `CODE_3_L;
+        #30 kb_in = `CODE_4_L;
+        #30 kb_in = `CODE_1_L;
+        #30 kb_in = `CODE_2_L;
+        #30 kb_in = `CODE_A_R;
+        #30 kb_in = `CODE_S_R;
+        #30 kb_in = `CODE_M_R;
+    end
+    
+    always begin
+        #2; clk = ~clk;
+    end
+endmodule

@@ -1,25 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 04/27/2022 03:51:20 PM
-// Design Name: 
-// Module Name: global
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 `define FREQ_DIV_BIT 30
 
 // Note Generation
@@ -32,7 +10,7 @@
 `define KB_ENCODE_OH_BITS_N 512
 
 // Segment-7 Displayer
-`define SEGMENT_7_INPUT_BITS_N 8
+`define SEGMENT_7_INPUT_BITS_N 4
 `define SEGMENT_7_DISPALY_DIGIT_N 4
 `define SEGMENT_7_SEGMENT_N 8
 `define SEGMENT_7_NONE `SEGMENT_7_SEGMENT_N'b1111111_1
@@ -97,4 +75,7 @@
 `define SEG_7_MUL `SEGMENT_7_INPUT_BITS_N'd18
 
 // Controller
-`define STATE_BITS_N 4
+`define STATE_BITS_N 3
+
+`define OP_BITS_N 4
+`define VALUE_BITS_N 14

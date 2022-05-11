@@ -19,142 +19,84 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "global.v"
 
 module out(
-    input [4:0] char,
+    input [`CHAR_BITS_N-1:0] char,
     input rst,
     input state,
-    input [8:0]last_change,
-    input [511:0] key_down,
-    output reg [6:0] led,
-    input key_valid,
+    output reg [`ASCII_LED_N-1:0] led,
     input clk,
     input shift_state
     );
     
-    always@(posedge clk or posedge rst)
-        if(rst)
-            led <= 7'd0;
-        else
-            if((state == 1'b0) && (shift_state == 1'b0))
-                case(char)
-                    5'd1:led <= 7'd97;
-                    5'd2:led <= 7'd98;
-                    5'd3:led <= 7'd99;
-                    5'd4:led <= 7'd100;
-                    5'd5:led <= 7'd101;
-                    5'd6:led <= 7'd102;
-                    5'd7:led <= 7'd103;
-                    5'd8:led <= 7'd104;
-                    5'd9:led <= 7'd105;
-                    5'd10:led <= 7'd106;
-                    5'd11:led <= 7'd107;
-                    5'd12:led <= 7'd108;
-                    5'd13:led <= 7'd109;
-                    5'd14:led <= 7'd110;      
-                    5'd15:led <= 7'd111;
-                    5'd16:led <= 7'd112;
-                    5'd17:led <= 7'd113;
-                    5'd18:led <= 7'd114;
-                    5'd19:led <= 7'd115;
-                    5'd20:led <= 7'd116;
-                    5'd21:led <= 7'd117;
-                    5'd22:led <= 7'd118;
-                    5'd23:led <= 7'd119;
-                    5'd24:led <= 7'd120;
-                    5'd25:led <= 7'd121;
-                    5'd26:led <= 7'd122;
-                    default : led <= 7'd0;
-                endcase
-            else if ((state == 1'b1) && (shift_state == 1'b0))
-                case(char)
-                    5'd1:led <= 7'd65;
-                    5'd2:led <= 7'd66;
-                    5'd3:led <= 7'd67;
-                    5'd4:led <= 7'd68;
-                    5'd5:led <= 7'd69;
-                    5'd6:led <= 7'd70;
-                    5'd7:led <= 7'd71;
-                    5'd8:led <= 7'd72;
-                    5'd9:led <= 7'd73;
-                    5'd10:led <= 7'd74;
-                    5'd11:led <= 7'd75;
-                    5'd12:led <= 7'd76;
-                    5'd13:led <= 7'd77;
-                    5'd14:led <= 7'd78;      
-                    5'd15:led <= 7'd79;
-                    5'd16:led <= 7'd80;
-                    5'd17:led <= 7'd81;
-                    5'd18:led <= 7'd82;
-                    5'd19:led <= 7'd83;
-                    5'd20:led <= 7'd84;
-                    5'd21:led <= 7'd85;
-                    5'd22:led <= 7'd86;
-                    5'd23:led <= 7'd87;
-                    5'd24:led <= 7'd88;
-                    5'd25:led <= 7'd89;
-                    5'd26:led <= 7'd90;
-                    default : led <= 7'd0;
-                endcase
-            else if((state == 1'b1) && (shift_state== 1'b1))
-                case(char)
-                    5'd1:led <= 7'd97;
-                    5'd2:led <= 7'd98;
-                    5'd3:led <= 7'd99;
-                    5'd4:led <= 7'd100;
-                    5'd5:led <= 7'd101;
-                    5'd6:led <= 7'd102;
-                    5'd7:led <= 7'd103;
-                    5'd8:led <= 7'd104;
-                    5'd9:led <= 7'd105;
-                    5'd10:led <= 7'd106;
-                    5'd11:led <= 7'd107;
-                    5'd12:led <= 7'd108;
-                    5'd13:led <= 7'd109;
-                    5'd14:led <= 7'd110;      
-                    5'd15:led <= 7'd111;
-                    5'd16:led <= 7'd112;
-                    5'd17:led <= 7'd113;
-                    5'd18:led <= 7'd114;
-                    5'd19:led <= 7'd115;
-                    5'd20:led <= 7'd116;
-                    5'd21:led <= 7'd117;
-                    5'd22:led <= 7'd118;
-                    5'd23:led <= 7'd119;
-                    5'd24:led <= 7'd120;
-                    5'd25:led <= 7'd121;
-                    5'd26:led <= 7'd122;
-                    default : led <= 7'd0;
-                endcase
-            else if ((state == 1'b0) && (shift_state == 1'b1))
-                case(char)
-                    5'd1:led <= 7'd65;
-                    5'd2:led <= 7'd66;
-                    5'd3:led <= 7'd67;
-                    5'd4:led <= 7'd68;
-                    5'd5:led <= 7'd69;
-                    5'd6:led <= 7'd70;
-                    5'd7:led <= 7'd71;
-                    5'd8:led <= 7'd72;
-                    5'd9:led <= 7'd73;
-                    5'd10:led <= 7'd74;
-                    5'd11:led <= 7'd75;
-                    5'd12:led <= 7'd76;
-                    5'd13:led <= 7'd77;
-                    5'd14:led <= 7'd78;      
-                    5'd15:led <= 7'd79;
-                    5'd16:led <= 7'd80;
-                    5'd17:led <= 7'd81;
-                    5'd18:led <= 7'd82;
-                    5'd19:led <= 7'd83;
-                    5'd20:led <= 7'd84;
-                    5'd21:led <= 7'd85;
-                    5'd22:led <= 7'd86;
-                    5'd23:led <= 7'd87;
-                    5'd24:led <= 7'd88;
-                    5'd25:led <= 7'd89;
-                    5'd26:led <= 7'd90;
-                    default : led <= 7'd0;
-                endcase
-
+    wire cap;
+    
+    assign cap = state ^ shift_state;
+    
+    always@(posedge clk or negedge rst) begin
+        if(rst) begin
+            led <= `ASCII_LED_N'd0;
+        end else if(~cap) begin
+            case(char)
+                `CHAR_BITS_N'd1: led <= `ASCII_LED_N'd97;
+                `CHAR_BITS_N'd2: led <= `ASCII_LED_N'd98;
+                `CHAR_BITS_N'd3: led <= `ASCII_LED_N'd99;
+                `CHAR_BITS_N'd4: led <= `ASCII_LED_N'd100;
+                `CHAR_BITS_N'd5: led <= `ASCII_LED_N'd101;
+                `CHAR_BITS_N'd6: led <= `ASCII_LED_N'd102;
+                `CHAR_BITS_N'd7: led <= `ASCII_LED_N'd103;
+                `CHAR_BITS_N'd8: led <= `ASCII_LED_N'd104;
+                `CHAR_BITS_N'd9: led <= `ASCII_LED_N'd105;
+                `CHAR_BITS_N'd10: led <= `ASCII_LED_N'd106;
+                `CHAR_BITS_N'd11: led <= `ASCII_LED_N'd107;
+                `CHAR_BITS_N'd12: led <= `ASCII_LED_N'd108;
+                `CHAR_BITS_N'd13: led <= `ASCII_LED_N'd109;
+                `CHAR_BITS_N'd14: led <= `ASCII_LED_N'd110;
+                `CHAR_BITS_N'd15: led <= `ASCII_LED_N'd111;
+                `CHAR_BITS_N'd16: led <= `ASCII_LED_N'd112;
+                `CHAR_BITS_N'd17: led <= `ASCII_LED_N'd113;
+                `CHAR_BITS_N'd18: led <= `ASCII_LED_N'd114;
+                `CHAR_BITS_N'd19: led <= `ASCII_LED_N'd115;
+                `CHAR_BITS_N'd20: led <= `ASCII_LED_N'd116;
+                `CHAR_BITS_N'd21: led <= `ASCII_LED_N'd117;
+                `CHAR_BITS_N'd22: led <= `ASCII_LED_N'd118;
+                `CHAR_BITS_N'd23: led <= `ASCII_LED_N'd119;
+                `CHAR_BITS_N'd24: led <= `ASCII_LED_N'd120;
+                `CHAR_BITS_N'd25: led <= `ASCII_LED_N'd121;
+                `CHAR_BITS_N'd26: led <= `ASCII_LED_N'd122;
+                default: led <= `ASCII_LED_N'd0;
+            endcase
+        end else begin
+            case(char)
+                `CHAR_BITS_N'd1: led <= `ASCII_LED_N'd65;
+                `CHAR_BITS_N'd2: led <= `ASCII_LED_N'd66;
+                `CHAR_BITS_N'd3: led <= `ASCII_LED_N'd67;
+                `CHAR_BITS_N'd4: led <= `ASCII_LED_N'd68;
+                `CHAR_BITS_N'd5: led <= `ASCII_LED_N'd69;
+                `CHAR_BITS_N'd6: led <= `ASCII_LED_N'd70;
+                `CHAR_BITS_N'd7: led <= `ASCII_LED_N'd71;
+                `CHAR_BITS_N'd8: led <= `ASCII_LED_N'd72;
+                `CHAR_BITS_N'd9: led <= `ASCII_LED_N'd73;
+                `CHAR_BITS_N'd10: led <= `ASCII_LED_N'd74;
+                `CHAR_BITS_N'd11: led <= `ASCII_LED_N'd75;
+                `CHAR_BITS_N'd12: led <= `ASCII_LED_N'd76;
+                `CHAR_BITS_N'd13: led <= `ASCII_LED_N'd77;
+                `CHAR_BITS_N'd14: led <= `ASCII_LED_N'd78;
+                `CHAR_BITS_N'd15: led <= `ASCII_LED_N'd79;
+                `CHAR_BITS_N'd16: led <= `ASCII_LED_N'd80;
+                `CHAR_BITS_N'd17: led <= `ASCII_LED_N'd81;
+                `CHAR_BITS_N'd18: led <= `ASCII_LED_N'd82;
+                `CHAR_BITS_N'd19: led <= `ASCII_LED_N'd83;
+                `CHAR_BITS_N'd20: led <= `ASCII_LED_N'd84;
+                `CHAR_BITS_N'd21: led <= `ASCII_LED_N'd85;
+                `CHAR_BITS_N'd22: led <= `ASCII_LED_N'd86;
+                `CHAR_BITS_N'd23: led <= `ASCII_LED_N'd87;
+                `CHAR_BITS_N'd24: led <= `ASCII_LED_N'd88;
+                `CHAR_BITS_N'd25: led <= `ASCII_LED_N'd89;
+                `CHAR_BITS_N'd26: led <= `ASCII_LED_N'd90;
+                default: led <= `ASCII_LED_N'd0;
+            endcase
+        end
+    end
 endmodule

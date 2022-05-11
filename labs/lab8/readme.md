@@ -7,10 +7,14 @@ CJKoptions: AutoFakeBold
 subject: "Lab 8: Keyboard (Calculator and Caps Lock Control)"
 keywords: [Markdown, Pandoc]
 titlepage: true, 
-# titlepage-text-color: "FFFFFF" 
-titlepage-rule-color: "360049" 
-titlepage-rule-height: 0 
-titlepage-background: "background.pdf"
+# # titlepage-text-color: "FFFFFF" 
+# titlepage-rule-color: "360049" 
+# titlepage-rule-height: 0 
+# titlepage-background: "background.pdf"
+titlepage-color: "3C9F53"
+titlepage-text-color: "FFFFFF"
+titlepage-rule-color: "FFFFFF"
+titlepage-rule-height: 2
 toc-own-page: true
 footer-left: false
 ---
@@ -111,9 +115,13 @@ Combine all the modules listed above. The keyboard decoder decodes the keyboard 
 |-----|----------|----------|----------|----------|
 | LOC | U2       | U4       | V4       | W4       |
 
-| I/O | last_change[0] | last_change[1] | last_change[2] | last_change[3] | last_change[4] | last_change[5] | last_change[6] | last_change[7] | last_change[8] |
-|-----|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
-| LOC | U16            | E19            | U19            | V19            | W18            | U15            | U14            | V14            | V13            |
+| I/O | last_change[0] | last_change[1] | last_change[2] | last_change[3] |
+|-----|----------------|----------------|----------------|----------------|
+| LOC | U16            | E19            | U19            | V19            |
+
+| I/O | last_change[4] | last_change[5] | last_change[6] | last_change[7] | last_change[8] |
+|-----|----------------|----------------|----------------|----------------|----------------|
+| LOC | W18            | U15            | U14            | V14            | V13            |
 
 | I/O | d_out[0] | d_out[1] | d_out[2] | d_out[3] | d_out[4] | d_out[5] | d_out[6] | d_out[7] |
 |-----|----|----|----|----|----|----|----|----|
@@ -223,7 +231,7 @@ The frequency divider module output a vector which represents the clock divided 
 
 #### Controller
 
-In lab 8-2, I use F1 and F2 to indicate the augend ``a`` and the addend ``b``. Whenever the key F1 is pressed, the the user can only modify the value of the augend  ``a`` in the following until the key F2 is pressed. It can be implemented by a finite state machine and it always detect the latest pressed key ``kb_in`` and ``key_valid`` signal. When the module captures the latest key is F1 and the ``key_valid`` signal is 1, it will set the internal variable ``digit`` to 0. When the module captures the F2 in the same way, it will set the internal variable ``digit`` to 1. 
+In lab 8-2, I use F1 and F2 to indicate the augend ``a`` and the addend ``b``. Whenever the key F1 is pressed, the user can only modify the value of the augend  ``a`` in the following until the key F2 is pressed. It can be implemented by a finite state machine and it always detect the latest pressed key ``kb_in`` and ``key_valid`` signal. When the module captures the latest key is F1 and the ``key_valid`` signal is 1, it will set the internal variable ``digit`` to 0. When the module captures the F2 in the same way, it will set the internal variable ``digit`` to 1. 
 
 In the mean time, the module also captures numbers 0 ~ 9 and key "enter". When the module captures numbers 0 ~ 9, it will convert the keyboard code ``kb_in`` into binary number ``kb_num`` and set augend ``a`` or addend ``b`` according to the variable ``digit``. Whenever the enter key is pressed or the ``rst`` signal is low, the module will reset the augend  ``a`` and addend  ``b`` to 0.
 
@@ -247,7 +255,7 @@ Same as [lab 8-1](####7-Segment-Display)
 
 #### Exp 2
 
-The module combine all modules listed above. Firstly, the module gets the latest pressed key ``last_change`` and signal ``key_valid`` from ``KeyboardDecoder``. Then pass the signal into ``controller`` and output the augend ``a``, addend ``b``, and sum ``sum``. Finally, the augend ``a``, addend ``b``, and the sum ``sum`` will be converted into 7-segment pattern by the module ``segment7``, which will be shown in the 7-segment display by the module ``display_7seg``
+The module combines all modules listed above. Firstly, the module gets the latest pressed key ``last_change`` and signal ``key_valid`` from ``KeyboardDecoder``. Then pass the signal into ``controller`` and output the augend ``a``, addend ``b``, and sum ``sum``. Finally, the augend ``a``, addend ``b``, and the sum ``sum`` will be converted into 7-segment pattern by the module ``segment7``, which will be shown in the 7-segment display by the module ``display_7seg``
 
 ### I/O Pin Assignment
 
@@ -259,9 +267,13 @@ The module combine all modules listed above. Firstly, the module gets the latest
 |-----|----------|----------|----------|----------|
 | LOC | U2       | U4       | V4       | W4       |
 
-| I/O | last_change[0] | last_change[1] | last_change[2] | last_change[3] | last_change[4] | last_change[5] | last_change[6] | last_change[7] | last_change[8] |
-|-----|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
-| LOC | U16            | E19            | U19            | V19            | W18            | U15            | U14            | V14            | V13            |
+| I/O | last_change[0] | last_change[1] | last_change[2] | last_change[3] |
+|-----|----------------|----------------|----------------|----------------|
+| LOC | U16            | E19            | U19            | V19            |
+
+| I/O | last_change[4] | last_change[5] | last_change[6] | last_change[7] | last_change[8] |
+|-----|----------------|----------------|----------------|----------------|----------------|
+| LOC | W18            | U15            | U14            | V14            | V13            |
 
 | I/O | d_out[0] | d_out[1] | d_out[2] | d_out[3] | d_out[4] | d_out[5] | d_out[6] | d_out[7] |
 |-----|----|----|----|----|----|----|----|----|
@@ -541,11 +553,11 @@ It's the top module of lab 8-4 and it combines all modules mentioned above. Firs
 
 ## Discussion
 
-In Lab 7-1, I spent lots of time to design the ``speaker_control`` module, which serialize the parallel data. It takes time to understand that the ``sck`` controls the pulse frequency and the ``lrck`` determines where the output signal ``audio_sdin`` goes to, left or right channel. In addition, I occurred the "multi-driven" error when I design the shift register in the parallel-to-serial module. Finally, I spilt the combinatorial logic and sequential logic to solve it.
+In Lab 8-3, I spend lots of time in detecting the click of a key. I've tried implement a one-pulse module ``keyboard`` for the ``key_down`` signal and it works. However, it sometimes occurred race condition error when the module ``keyboard`` works with other module. It's a weird exception, so I finally give up using ``keyboard`` module to make one-pulse signal. I also found that ``key_down[last_change] && key_valid && last_change == target_key`` is a great alternative way to detect the ``target_key``. As a result, I use this way to detect the click of the keyboard and handle state transition.
 
 ## Conclusion
 
-The lab 7 is easier than lab 6 and it's my first time to deal with I/O. Producing audio with FPGA is a interesting thing. We also learn how to serialize the audio data and control the audio signal.
+The lab 8 is much harder than lab 7 and it combines the keyboard controlling. It's a interesting that controlling the keyboard with FPGA. I also learn how to capture the keyboard signal and make it become one-pulse signal.
 
 ## Reference
 

@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/30/2022 10:08:54 PM
+// Create Date: 04/27/2022 04:13:32 PM
 // Design Name: 
-// Module Name: controller_2
+// Module Name: controller
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,10 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 `include "global.v"
 
-module controller_2(
+module controller(
     output reg [`SEGMENT_7_INPUT_BITS_N-1:0] a,
     output reg [`SEGMENT_7_INPUT_BITS_N-1:0] b,
     output reg [`SEGMENT_7_INPUT_BITS_N-1:0] sum,
@@ -49,23 +48,27 @@ module controller_2(
         sum <= a + b;
     end
 
-    always@(*) begin
-        digit <= digit_next;
-    end
-    
 //    always@(*) begin
-//        if((kb_in == `CODE_F1_L && key_valid) || ~rst) begin
-//            digit <= 2'd0;
-//        end else if(kb_in == `CODE_F2_L && key_valid) begin
-//            digit <= 2'd1;
-//        end
+//        digit <= digit_next;
 //    end
+    
+    always@(*) begin
+        if((kb_in == `CODE_F1_L && key_valid) || ~rst) begin
+            digit <= 2'd0;
+        end else if(kb_in == `CODE_F2_L && key_valid) begin
+            digit <= 2'd1;
+        end
+    end
     
     always@(posedge clk) begin
         if(kb_in == `CODE_ENTER_L || ~rst) begin
             a <= `SEGMENT_7_INPUT_BITS_N'd0;
             b <= `SEGMENT_7_INPUT_BITS_N'd0;
             digit_next <= 2'd0;
+//        end else if(kb_in == `CODE_F3_L) begin
+//            digit_next <= 2'd0;
+//        end else if(kb_in == `CODE_F2_L) begin
+//            digit_next <= 2'd1;
         end else begin
             if(digit == 2'd0) begin
                 if((kb_in == `CODE_0_L ||
@@ -79,7 +82,7 @@ module controller_2(
                    kb_in == `CODE_8_L ||
                    kb_in == `CODE_9_L) && key_valid) begin
                    a <= kb_num;
-                   digit_next <= 2'd1;
+//                   digit_next <= 2'd1;
                 end else begin
                     a <= a;
                 end
@@ -95,7 +98,7 @@ module controller_2(
                    kb_in == `CODE_8_L ||
                    kb_in == `CODE_9_L) && key_valid) begin
                    b <= kb_num;
-                   digit_next <= 2'd0;
+//                   digit_next <= 2'd0;
                 end else begin
                     b <= b;
                 end

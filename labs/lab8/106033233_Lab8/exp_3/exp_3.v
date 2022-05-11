@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/27/2022 03:54:42 PM
+// Create Date: 2019/05/19 23:55:24
 // Design Name: 
-// Module Name: exp_2
+// Module Name: lab903
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,120 +19,80 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 `include "global.v"
 
 module exp_3(
-    output [`SEGMENT_7_DISPALY_DIGIT_N-1:0] d_sel,
-    output [`SEGMENT_7_SEGMENT_N-1:0] d_out,
-    output [`KB_ENCODE_BITS_N-1:0] last_change,
-    output [`STATE_BITS_N-1:0] state,
-    output key_valid,
+    input clk,
+    input rst_n,
     inout PS2_DATA,
     inout PS2_CLK,
-    input rst,
-    input clk
+    output [`SEGMENT_7_DISPALY_DIGIT_N-1:0]d,
+    output [`SEGMENT_7_SEGMENT_N-1:0]D_ssd
     );
+    wire [`KB_ENCODE_OH_BITS_N-1:0]key_down;
+    wire [`KB_ENCODE_BITS_N-1:0]last_change;
+    wire key_valid;
+    wire [`STATE_BITS_N-1:0]state;
+    wire [`SEGMENT_7_INPUT_BITS_N-1:0]in0, in1, in2, in3;
+    wire [`SEGMENT_7_INPUT_BITS_N-1:0]out0, out1, out2, out3;
+    reg [`SEGMENT_7_INPUT_BITS_N-1:0]d0, d1, d2, d3;
+    wire [`VALUE_BITS_N-1:0]value;
     
-    wire onepulse;
-//    wire [`KB_ENCODE_BITS_N-1:0] kb_in_debouce;
     
-    wire [`SEGMENT_7_SEGMENT_N-1:0] seg7_d0, seg7_d1, seg7_d2, seg7_d3;
-    wire [`SEGMENT_7_INPUT_BITS_N-1:0] a, b, sum;
-    wire [`SEGMENT_7_INPUT_BITS_N-1:0] a0, a1, b0, b1, res0, res1, res2, res3, d0, d1, d2, d3, kb_num;
-    
-    reg [`KB_ENCODE_BITS_N-1:0] kb_in;
-    wire [`KB_ENCODE_OH_BITS_N-1:0] key_down;
-    wire [`KB_ENCODE_BITS_N-1:0] kb_in_debouce;
-    wire [`KB_ENCODE_OH_BITS_N-1:0] key_down_debouce;
-    
-//    wire [`SEGMENT_7_SEGMENT_N-1:0] seg7_d0, seg7_d1, seg7_d2, seg7_d3;
-//    keyboard UKB(
-//        .last_change(last_change),
-//        .kb_in_debouce(kb_in_debouce),
-//        .onepulse(onepulse),
-//        .PS2_DATA(PS2_DATA),
-//        .PS2_CLK(PS2_CLK),
-//        .rst(rst),
-//        .clk(clk)
-//    );
-    
-// For testing
-    KeyboardDecoder UKD(
+    KeyboardDecoder U0(
         .key_down(key_down),
         .last_change(last_change),
         .key_valid(key_valid),
         .PS2_DATA(PS2_DATA),
         .PS2_CLK(PS2_CLK),
-        .rst(~rst),
+        .rst(~rst_n),
         .clk(clk)
     );
-    
-    validator UV(
-        .kb_in_debouce(kb_in_debouce),
-        .key_down_debouce(key_down_debouce),
-        .onepulse(onepulse),
-        .key_down(key_down),
-        .kb_in(last_change),
-        .key_valid(key_valid),
-        .clk(clk),
-        .rst(rst)
-    );
         
-//    controller_2 UCONT(
-//        .a(a),
-//        .b(b),
-//        .sum(sum),
-//        .kb_in(kb_in_debouce),
-//        .key_valid(onepulse),
-//        .clk(clk),
-//        .rst(rst)
-//    );
-//    assign d3 = a;
-//    assign d2 = b;
-//    assign d1 = sum / 10;
-//    assign d0 = sum % 10;
-
-    controller UCONT(
-        .a0(a0),
-        .a1(a1),
-        .b0(b0),
-        .b1(b1),
-        .res0(res0),
-        .res1(res1),
-        .res2(res2),
-        .res3(res3),
-        .d0(d0),
-        .d1(d1),
-        .d2(d2),
-        .d3(d3),
-        .state(state),
-        .kb_in(kb_in_debouce),
-        .key_valid(onepulse),
+    count U1(
         .clk(clk),
-        .rst(rst)
+        .key_valid(key_valid),
+        .key_down(key_down),
+        .last_change(last_change),
+        .rst_n(rst_n),
+        .in0(in0),
+        .in1(in1),
+        .in2(in2),
+        .in3(in3),
+        .value(value),
+        .state(state)
     );
     
-    segment7 USEG_A(
-        .i(d3),
-        .D(seg7_d3)
+    value U2(
+        .in(value),
+        .out0(out0),
+        .out1(out1),
+        .out2(out2),
+        .out3(out3)
     );
     
-    segment7 USEG_B(
-        .i(d2),
-        .D(seg7_d2)
-    );
+    always@(*) begin
+        if(state == `STATE_BITS_N'd0) begin
+            d0 <= out0;
+            d1 <= out1;
+            d2 <= out2;
+            d3 <= out3;
+        end else begin
+            d0 <= in0;
+            d1 <= in1;
+            d2 <= in2;
+            d3 <= in3;
+        end
+    end
     
-    segment7 USEG_SUM1(
-        .i(d1),
-        .D(seg7_d1)
+    dec_disp U3(
+        .d_sel(d),
+        .d_out(D_ssd),
+        .d0(d3),
+        .d1(d2), 
+        .d2(d1), 
+        .d3(d0),
+        .clk(clk),
+        .rst(rst_n)
     );
-    
-    segment7 USEG_SUM0(
-        .i(d0),
-        .D(seg7_d0)
-    );
-    
-    // Show
-    display_7seg UDisp(.clk(clk), .rst(rst), .d0(seg7_d0), .d1(seg7_d1), .d2(seg7_d2), .d3(seg7_d3), .d_sel(d_sel), .d_out(d_out));
 endmodule
