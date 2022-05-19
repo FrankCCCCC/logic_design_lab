@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1652785302">
+  <File Type="BITSTR-BMM" Name="flapga_mario_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="flapga_mario_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="flapga_mario_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="flapga_mario_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="flapga_mario.tcl"/>
+  <File Type="OPT-TIMING" Name="flapga_mario_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="flapga_mario_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="flapga_mario_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="flapga_mario_reports.tcl"/>
+  <File Type="OPT-DRC" Name="flapga_mario_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="flapga_mario.hwdef"/>
+  <File Type="PWROPT-DCP" Name="flapga_mario_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="flapga_mario_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="flapga_mario_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="flapga_mario_placed.dcp"/>
+  <File Type="PLACE-IO" Name="flapga_mario_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="flapga_mario_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="flapga_mario_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="flapga_mario_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="flapga_mario_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="flapga_mario_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="flapga_mario_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="flapga_mario_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="flapga_mario_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="flapga_mario.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="flapga_mario_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="flapga_mario_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="flapga_mario_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="flapga_mario.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="flapga_mario_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="flapga_mario_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="flapga_mario_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="flapga_mario_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="flapga_mario_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="flapga_mario_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="flapga_mario_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="flapga_mario.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="flapga_mario_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="flapga_mario_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="flapga_mario_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="flapga_mario_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="flapga_mario_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="flapga_mario_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="flapga_mario_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="flapga_mario_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="flapga_mario_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="flapga_mario_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="flapga_mario_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="flapga_mario_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="flapga_mario_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="flapga_mario_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="flapga_mario_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="flapga_mario_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="flapga_mario_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="flapga_mario_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="flapga_mario_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="flapga_mario_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="flapga_mario_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="flapga_mario.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="flapga_mario_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="flapga_mario.rbt"/>
+  <File Type="BITSTR-NKY" Name="flapga_mario.nky"/>
+  <File Type="PDI-FILE" Name="flapga_mario.pdi"/>
+  <File Type="RCFI_FILE" Name="flapga_mario.rcfi"/>
+  <File Type="CFI_FILE" Name="flapga_mario.cfi"/>
+  <File Type="RNPI_FILE" Name="flapga_mario.rnpi"/>
+  <File Type="NPI_FILE" Name="flapga_mario.npi"/>
+  <File Type="RBD_FILE" Name="flapga_mario.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="flapga_mario.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="flapga_mario.sysdef"/>
+  <File Type="BG-BGN" Name="flapga_mario.bgn"/>
+  <File Type="BG-DRC" Name="flapga_mario.drc"/>
+  <File Type="RDI-RDI" Name="flapga_mario.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/audio_unit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/background_engine.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bcd_7seg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bg_rom.hex.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clock_div.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/cloud_bg.hex.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/display.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/game_engine.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/game_over_text.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mario.hex.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mario.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/object_engine.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ram.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/seg_mux.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/vga_num.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/vga_sync.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/flapga_mario.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/text.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="flapga_mario"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/sources_1/new/vga_cons.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

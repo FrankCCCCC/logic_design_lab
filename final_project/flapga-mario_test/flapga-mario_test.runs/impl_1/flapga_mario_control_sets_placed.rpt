@@ -1,0 +1,149 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Tue May 17 19:10:13 2022
+| Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file flapga_mario_control_sets_placed.rpt
+| Design       : flapga_mario
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    71 |
+|    Minimum number of control sets                        |    71 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   165 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    71 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |    13 |
+| >= 6 to < 8        |     7 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     6 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     2 |
+| >= 16              |    37 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             163 |           64 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              62 |           16 |
+| Yes          | No                    | No                     |             555 |          254 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             375 |          131 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------------------+-------------------------------------------+------------------+----------------+
+|  Clock Signal  |                   Enable Signal                   |              Set/Reset Signal             | Slice Load Count | Bel Load Count |
++----------------+---------------------------------------------------+-------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | audio/ch0/i[5]_i_2__1_n_0                         |                                           |                1 |              1 |
+|  clk_IBUF_BUFG | audio/ch1/i[5]_i_2__0_n_0                         |                                           |                1 |              1 |
+|  clk_IBUF_BUFG | audio/ch2/i[5]_i_2_n_0                            |                                           |                1 |              1 |
+|  clk_IBUF_BUFG | game_eng/vga_num/num[3]_i_1_n_0                   |                                           |                4 |              4 |
+|  clk_IBUF_BUFG | game_eng/pipe_gap_end[2][4]_i_1_n_0               | game_eng/pipe_gap_end[2][1]_i_1_n_0       |                2 |              4 |
+|  clk_IBUF_BUFG | game_eng/real_bg_x_offset                         |                                           |                1 |              4 |
+|  clk_IBUF_BUFG | game_eng/pipe_gap_end[0][4]_i_1_n_0               | game_eng/pipe_gap_end[0][2]_i_1_n_0       |                2 |              4 |
+|  clk_IBUF_BUFG | clock_normal/clock[3]_i_1_n_0                     |                                           |                2 |              4 |
+|  clk_IBUF_BUFG | clock_normal/clock[11]_i_1_n_0                    |                                           |                1 |              4 |
+|  clk_IBUF_BUFG | game_begin_reg_n_0                                | vga_sync_unit/SR[0]                       |                2 |              4 |
+|  clk_IBUF_BUFG | game_eng/pipe_pos_x[1][15]_i_1_n_0                | game_eng/pipe_pos_x[1][5]_i_1_n_0         |                2 |              5 |
+|  clk_IBUF_BUFG | game_eng/pipe_gap_end[2][4]_i_1_n_0               |                                           |                3 |              5 |
+|  clk_IBUF_BUFG | audio/ch0/i[5]_i_2__1_n_0                         | audio/ch0/i[5]_i_1__0_n_0                 |                1 |              5 |
+|  clk_IBUF_BUFG | game_eng/pipe_gap_end[0][4]_i_1_n_0               |                                           |                3 |              5 |
+|  clk_IBUF_BUFG | audio/ch1/i[5]_i_2__0_n_0                         | audio/ch1/i[5]_i_1_n_0                    |                1 |              5 |
+|  clk_IBUF_BUFG | audio/ch2/i[5]_i_2_n_0                            | audio/ch2/i[5]_i_1__1_n_0                 |                1 |              5 |
+|  clk_IBUF_BUFG | game_eng/coin_y                                   |                                           |                2 |              6 |
+|  clk_IBUF_BUFG | audio/note_data2[11]_i_1_n_0                      | audio/note_data2[29]_i_1_n_0              |                3 |              6 |
+|  clk_IBUF_BUFG | audio/note_data[5]                                | audio/note_data[0][15]_i_1_n_0            |                2 |              6 |
+|  clk_IBUF_BUFG | game_eng/scroll_delay[31]_i_2_n_0                 | game_eng/scroll_delay[19]_i_1_n_0         |                4 |              7 |
+|  clk_IBUF_BUFG | audio/ch0/wave_out0_carry__0_n_2                  | audio/ch0/wave_out                        |                3 |              7 |
+|  clk_IBUF_BUFG | audio/ch1/wave_out0_carry__0_n_2                  | audio/ch1/wave_out                        |                3 |              7 |
+|  clk_IBUF_BUFG | audio/ch2/wave_out0_carry__0_n_2                  | audio/ch2/wave_out                        |                2 |              7 |
+|  clk_IBUF_BUFG | game_eng/pipe_gap_end[1][2]_i_2_n_0               | game_eng/pipe_gap_end[1][2]_i_1_n_0       |                7 |              9 |
+|  clk_IBUF_BUFG | game_eng/game_over_reg_n_0                        |                                           |                3 |              9 |
+|  clk_IBUF_BUFG | vga_sync_unit/h_count_reg[9]_i_1_n_0              |                                           |                5 |             10 |
+|  clk_IBUF_BUFG | vga_sync_unit/v_count_reg0                        |                                           |                3 |             10 |
+|  clk_IBUF_BUFG | audio/note_data[5]                                |                                           |                7 |             10 |
+|  clk_IBUF_BUFG | audio/note_data2[11]_i_1_n_0                      |                                           |                3 |             10 |
+|  clk0          | game_eng/mario/pos_y_next                         | clr_IBUF                                  |                4 |             10 |
+|  game_eng/Q[0] |                                                   |                                           |                3 |             10 |
+|  clk_IBUF_BUFG | vga_sync_unit/E[0]                                |                                           |                8 |             12 |
+|  clk_IBUF_BUFG | audio/note_data2[29]_i_1_n_0                      |                                           |               14 |             14 |
+|  clk_IBUF_BUFG | game_begin_reg_n_0                                |                                           |                6 |             15 |
+|  clk_IBUF_BUFG | game_eng/pipe_y[1][15]_i_1_n_0                    | game_eng/coin_x                           |                8 |             16 |
+|  clk_IBUF_BUFG | audio/note_data2[29]_i_1_n_0                      | audio/note_counter1[0]_i_1_n_0            |                4 |             16 |
+|  clk_IBUF_BUFG | game_eng/pipe_y[2][15]_i_1_n_0                    | game_eng/coin_x                           |                9 |             16 |
+|  clk_IBUF_BUFG | game_eng/mario/E[0]                               |                                           |                6 |             16 |
+|  clk_IBUF_BUFG | audio/ch0/counter                                 | audio/ch0/i[5]_i_2__1_n_0                 |                4 |             16 |
+|  clk_IBUF_BUFG | audio/ch1/counter[0]_i_1__2_n_0                   | audio/ch1/i[5]_i_2__0_n_0                 |                4 |             16 |
+|  clk_IBUF_BUFG | audio/ch2/counter                                 | audio/ch2/i[5]_i_2_n_0                    |                4 |             16 |
+|  clk_IBUF_BUFG | game_eng/pipe_y[0][15]_i_2_n_0                    | game_eng/coin_x                           |                9 |             16 |
+|  clk_IBUF_BUFG | game_eng/pipe_x[2][15]_i_1_n_0                    |                                           |                9 |             16 |
+|  clk_IBUF_BUFG | game_eng/pipe_x[0][15]_i_1_n_0                    |                                           |                9 |             16 |
+|  clk_IBUF_BUFG | game_eng/bam_addr                                 | game_eng/bam_counter                      |                4 |             16 |
+|  clk_IBUF_BUFG | game_eng/bam_addr[2][0]_i_1_n_0                   | game_eng/coin_x                           |                4 |             16 |
+|  clk_IBUF_BUFG | game_eng/pipe_x[1][15]_i_1_n_0                    |                                           |                6 |             16 |
+|  clk_IBUF_BUFG | game_eng/coin_x                                   |                                           |                4 |             16 |
+|  clk_IBUF_BUFG | audio/note_counter[6]_i_1_n_0                     |                                           |               12 |             16 |
+|  clk0          | game_eng/mario/jump_t_reg                         |                                           |               10 |             20 |
+|  clk_IBUF_BUFG | game_eng/scroll_delay[31]_i_2_n_0                 | game_eng/scroll_delay[31]_i_1_n_0         |                6 |             21 |
+|  clk_IBUF_BUFG | obj_eng/oam_cache[1][31]_i_1_n_0                  |                                           |               11 |             24 |
+|  clk_IBUF_BUFG | obj_eng/oam_cache[4][31]_i_1_n_0                  |                                           |               13 |             24 |
+|  clk_IBUF_BUFG | obj_eng/oam_cache[2][31]_i_1_n_0                  |                                           |               10 |             24 |
+|  clk_IBUF_BUFG | obj_eng/color_reg                                 |                                           |               12 |             24 |
+|  clk_IBUF_BUFG | obj_eng/CEB2                                      |                                           |               12 |             24 |
+|  clk_IBUF_BUFG | obj_eng/oam_cache[3][31]_i_1_n_0                  |                                           |               10 |             24 |
+|  clk_IBUF_BUFG | obj_eng/oam_cache[7][31]_i_1_n_0                  |                                           |               11 |             24 |
+|  clk_IBUF_BUFG | audio/note_counter[6]_i_1_n_0                     | audio/note_counter[5]_i_1_n_0             |               12 |             24 |
+|  clk_IBUF_BUFG | obj_eng/oam_cache[5][31]_i_1_n_0                  |                                           |               10 |             24 |
+|  clk_IBUF_BUFG | obj_eng/oam_cache[6][31]_i_1_n_0                  |                                           |                9 |             24 |
+|  clk0          | game_eng/mario/FSM_sequential_state_reg_y_i_1_n_0 |                                           |               10 |             26 |
+|  clk_IBUF_BUFG | game_eng/bam_addr                                 |                                           |                9 |             29 |
+|  clk_IBUF_BUFG |                                                   | display/clock_div/counter[31]_i_1__0_n_0  |                8 |             31 |
+|  clk_IBUF_BUFG |                                                   | audio/play_counter[31]_i_1_n_0            |                8 |             31 |
+|  clk_IBUF_BUFG | game_begin_reg_n_0                                | game_eng/coin_animate_counter[31]_i_1_n_0 |                8 |             31 |
+|  clk_IBUF_BUFG | game_begin1                                       | clr_IBUF                                  |                8 |             32 |
+|  clk_IBUF_BUFG | game_begin_reg_n_0                                | game_eng/real_bg_x_offset                 |                8 |             32 |
+|  clk_IBUF_BUFG | game_eng/pipe_pos_x[1][15]_i_1_n_0                |                                           |               13 |             43 |
+|  clk_IBUF_BUFG | game_eng/bg_wea                                   |                                           |                6 |             48 |
+|  clk_IBUF_BUFG |                                                   |                                           |               61 |            153 |
++----------------+---------------------------------------------------+-------------------------------------------+------------------+----------------+
+
+

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue May 17 19:06:38 2022
+# Process ID: 6436
+# Current directory: D:/flapga-mario_test/flapga-mario_test.runs/impl_1
+# Command line: vivado.exe -log flapga_mario.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source flapga_mario.tcl -notrace
+# Log file: D:/flapga-mario_test/flapga-mario_test.runs/impl_1/flapga_mario.vdi
+# Journal file: D:/flapga-mario_test/flapga-mario_test.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source flapga_mario.tcl -notrace
