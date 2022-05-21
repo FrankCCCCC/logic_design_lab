@@ -35,7 +35,7 @@ If there are no folders called `templates` or `pandoc` you need to create them a
 
 Pandoc will follow the metadata to process the document and some fields will depends on the templates. Here we take report of lab3 as an example
 
-```markdown
+```yaml
 ---
 title: Lab 3 - Counters and Shifters I Report
 author: Sheng-Yen Chou
