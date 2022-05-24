@@ -34,7 +34,7 @@ module pipe_crtl(
     wire [`PX_ADDR_BITS_N-1:0] pixel_addr;
     wire px_valid_0, px_valid_1;
     
-    assign px_valid_1 = (dout == `MEM_DATA_BIT_N'h534)? 1'b0 : 1'b1;
+    assign px_valid_1 = (dout == `DEFAULT_COLOR_PIPE)? 1'b0 : 1'b1;
     assign px_valid = px_valid_0 & px_valid_1;
     
     pipe_mem_addr_gen UMEMGEN(

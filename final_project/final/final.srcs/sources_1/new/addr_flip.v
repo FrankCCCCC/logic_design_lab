@@ -22,11 +22,12 @@
 
 module addr_flip
 #(
-    parameter ADDR_BIT_N = 17
+    parameter ADDR_BIT_N = 17,
+    parameter OBJ_AREA = 2**ADDR_BIT_N
 )
 (
     input [ADDR_BIT_N-1:0] addr,
     output [ADDR_BIT_N-1:0]addr_out
 );
-    assign addr_out = (2**ADDR_BIT_N-1) - addr;
+    assign addr_out = (OBJ_AREA - 1) - addr;
 endmodule

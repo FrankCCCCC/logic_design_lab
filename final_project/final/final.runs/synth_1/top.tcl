@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,24 +33,31 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/data/logic_design_lab/final_project/final/final.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files d:/data/logic_design_lab/final_project/final/out.coe
-add_files d:/data/logic_design_lab/final_project/final/pipe.coe
-add_files d:/data/logic_design_lab/final_project/final/bg.coe
+add_files D:/data/logic_design_lab/final_project/final/out.coe
+add_files D:/data/logic_design_lab/final_project/final/pipe.coe
+add_files D:/data/logic_design_lab/final_project/final/bg.coe
+add_files d:/data/logic_design_lab/final_project/final/bird.coe
+add_files d:/data/logic_design_lab/final_project/final/bg_big.coe
 read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/global.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_crtl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_mem_addr_gen.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_ctrl.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_mem_addr_gen.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/clock_divisor.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_crtl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/vga_controller.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v
 }
-read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe.xci
+read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe.xci
 set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe_ooc.xdc]
 
-read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg.xci
-set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_ooc.xdc]
+read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bird/blk_mem_gen_bird.xci
+set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bird/blk_mem_gen_bird_ooc.xdc]
+
+read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big.xci
+set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

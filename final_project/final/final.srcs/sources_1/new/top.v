@@ -1,22 +1,28 @@
+`include "global.v"
+
 module top(
    input clk,
    input rst,
-   output [3:0] vgaRed,
-   output [3:0] vgaGreen,
-   output [3:0] vgaBlue,
+   input btn_u,
+   input btn_m,
+   input btn_d,
+   input btn_r,
+   input btn_l,
+   output [`COLOR_BIT_N-1:0] vgaRed,
+   output [`COLOR_BIT_N-1:0] vgaGreen,
+   output [`COLOR_BIT_N-1:0] vgaBlue,
    output hsync,
    output vsync
    );
    
    wire [11:0] data;
-   wire clk_25MHz;
-   wire clk_22;
-   wire [16:0] pixel_addr;
-   wire [11:0] bg_pixel, pipe_pixel;
+   wire clk_25MHz, clk_21, clk_22;
+   wire [`PX_ADDR_BITS_N-1:0] pixel_addr;
+   wire [11:0] bg_pixel, pipe_pixel, bird_pixel;
    wire valid;
-   wire [9:0] h_cnt; //640
-   wire [9:0] v_cnt;  //480
-   wire bg_px_valid, pipe_px_valid, valid;
+   wire [`CNT_BITS_N-1:0] h_cnt; //640
+   wire [`CNT_BITS_N-1:0] v_cnt;  //480
+   wire bg_px_valid, pipe_px_valid, bird_px_valid;
    
    reg [11:0] pixel;
    
@@ -49,8 +55,20 @@ module top(
         .px_valid(pipe_px_valid)
     );
     
+    bird_ctrl UBIRD(
+        .clk(clk_25MHz),
+        .clk_flap(clk_22),
+        .rst(rst),
+        .h_cnt(h_cnt),
+        .v_cnt(v_cnt),
+        .dout(bird_pixel),
+        .px_valid(bird_px_valid)
+    );
+    
     always@(*) begin
-        if(pipe_px_valid) begin
+        if(bird_px_valid) begin
+            pixel <= bird_pixel;
+        end else if(pipe_px_valid) begin
             pixel <= pipe_pixel;
         end else begin
             pixel <= bg_pixel;

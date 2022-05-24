@@ -42,7 +42,8 @@ module bg_crtl(
         .valid(px_valid)
     );
     
-    blk_mem_gen_bg blk_mem_gen_bg_inst(
+    blk_mem_gen_bg_big blk_mem_gen_bg_inst(    
+//    blk_mem_gen_bg blk_mem_gen_bg_inst(
         .clka(clk),
         .wea(0),
         .addra(pixel_addr),

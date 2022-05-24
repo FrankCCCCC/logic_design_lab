@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7a35tcpg236-1
@@ -34,7 +35,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/data/logic_design_lab/final_project/final/final.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg.xci
+read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg.xci
 set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -90,32 +91,32 @@ write_checkpoint -force -noxdef blk_mem_gen_bg.dcp
 create_report "blk_mem_gen_bg_synth_1_synth_report_utilization_0" "report_utilization -file blk_mem_gen_bg_utilization_synth.rpt -pb blk_mem_gen_bg_utilization_synth.pb"
 
 if { [catch {
-  file copy -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg.dcp d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg.dcp
+  file copy -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg.dcp D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.v
+  write_verilog -force -mode synth_stub D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.vhdl
+  write_vhdl -force -mode synth_stub D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_sim_netlist.v
+  write_verilog -force -mode funcsim D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -125,32 +126,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg.dcp d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg.dcp
+  file copy -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg.dcp D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg_stub.v d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.v
+  file rename -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg_stub.v D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg_stub.vhdl d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.vhdl
+  file rename -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg_stub.vhdl D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg_sim_netlist.v d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_sim_netlist.v
+  file rename -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg_sim_netlist.v D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg_sim_netlist.vhdl d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_sim_netlist.vhdl
+  file rename -force D:/data/logic_design_lab/final_project/final/final.runs/blk_mem_gen_bg_synth_1/blk_mem_gen_bg_sim_netlist.vhdl D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -159,13 +160,13 @@ if { [catch {
 
 if {[file isdir D:/data/logic_design_lab/final_project/final/final.ip_user_files/ip/blk_mem_gen_bg]} {
   catch { 
-    file copy -force d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.v D:/data/logic_design_lab/final_project/final/final.ip_user_files/ip/blk_mem_gen_bg
+    file copy -force D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.v D:/data/logic_design_lab/final_project/final/final.ip_user_files/ip/blk_mem_gen_bg
   }
 }
 
 if {[file isdir D:/data/logic_design_lab/final_project/final/final.ip_user_files/ip/blk_mem_gen_bg]} {
   catch { 
-    file copy -force d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.vhdl D:/data/logic_design_lab/final_project/final/final.ip_user_files/ip/blk_mem_gen_bg
+    file copy -force D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg/blk_mem_gen_bg_stub.vhdl D:/data/logic_design_lab/final_project/final/final.ip_user_files/ip/blk_mem_gen_bg
   }
 }
 file delete __synthesis_is_running__
