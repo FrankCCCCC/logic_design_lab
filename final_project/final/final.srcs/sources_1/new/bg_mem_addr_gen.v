@@ -18,44 +18,40 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-`include "global.v"
+//`include "global.v"
 
-`define MODE_BITS_N 2
+//`define MODE_BITS_N 2
 
-module bg_mem_addr_gen
-#(
-//    parameter CNT_BITS_N = `CNT_BITS_N,
-//    parameter PX_ADDR_BITS_N = `PX_ADDR_BITS_N,
-    parameter BG_WIDTH = 320,
-    parameter BG_HEIGHT = 240
-)
-(
+module bg_mem_addr_gen #(
+    parameter CNT_BITS_N = 0,
+    parameter PX_ADDR_BITS_N = 0,
+    parameter BG_WIDTH_CNT = 0,
+    parameter BG_HEIGHT_CNT = 0
+)(
    input clk,
    input rst,
-   input [`MODE_BITS_N-1:0] mode,
-   input [`CNT_BITS_N-1:0] h_cnt,
-   input [`CNT_BITS_N-1:0] v_cnt,
-   output [`PX_ADDR_BITS_N-1:0] pixel_addr,
+//   input [`MODE_BITS_N-1:0] mode,
+   input [CNT_BITS_N-1:0] h_cnt,
+   input [CNT_BITS_N-1:0] v_cnt,
+   output [PX_ADDR_BITS_N-1:0] pixel_addr,
    output valid
 );
     localparam SCALE = 1;
-    localparam H_WIDTH = BG_WIDTH;
-    localparam H_HEIGHT = BG_HEIGHT;
-    localparam BG_AREA = H_WIDTH * H_HEIGHT;
+    localparam BG_AREA = BG_WIDTH_CNT * BG_HEIGHT_CNT;
     
-    wire [`CNT_BITS_N-1:0] h_h_cnt = h_cnt >> SCALE;
-    wire [`CNT_BITS_N-1:0] h_v_cnt = v_cnt >> SCALE;
-    reg [`CNT_BITS_N-1:0] position;
+    wire [CNT_BITS_N-1:0] h_h_cnt = h_cnt >> SCALE;
+    wire [CNT_BITS_N-1:0] h_v_cnt = v_cnt >> SCALE;
+    reg [CNT_BITS_N-1:0] position;
   
-//   assign pixel_addr = (h_h_cnt + H_WIDTH * (h_v_cnt + position) )% 76800;  //640*480 --> 320*240 
-    assign pixel_addr = ((h_h_cnt + position) % H_WIDTH + H_WIDTH * h_v_cnt) % BG_AREA;  //640*480 --> 320*240
+//   assign pixel_addr = (h_h_cnt + BG_WIDTH_CNT * (h_v_cnt + position) )% 76800;  //640*480 --> 320*240 
+    assign pixel_addr = ((h_h_cnt + position) % BG_WIDTH_CNT + BG_WIDTH_CNT * h_v_cnt) % BG_AREA;  //640*480 --> 320*240
     assign valid = 1'b1;
 
    always @ (posedge clk or posedge rst) begin
         if(rst)
             position <= 0;
-//       else if(position < (H_HEIGHT - 1))
-        else if(position < (H_WIDTH - 1))
+//       else if(position < (BG_HEIGHT_CNT - 1))
+        else if(position < (BG_WIDTH_CNT - 1))
            position <= position + 1;
         else
            position <= 0;

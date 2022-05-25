@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue May 24 22:22:18 2022
+| Date             : Wed May 25 23:51:23 2022
 | Host             : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.092        |
+| Total On-Chip Power (W)  | 0.126        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.019        |
+| Dynamic (W)              | 0.053        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
+| Max Ambient (C)          | 84.4         |
+| Junction Temperature (C) | 25.6         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     1149 |       --- |             --- |
-|   LUT as Logic |     0.002 |      656 |     20800 |            3.15 |
-|   CARRY4       |    <0.001 |      140 |      8150 |            1.72 |
-|   Register     |    <0.001 |      120 |     41600 |            0.29 |
-|   BUFG         |    <0.001 |        2 |        32 |            6.25 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.009 |     2472 |       --- |             --- |
+|   LUT as Logic |     0.008 |     1389 |     20800 |            6.68 |
+|   CARRY4       |    <0.001 |      304 |      8150 |            3.73 |
+|   Register     |    <0.001 |      232 |     41600 |            0.56 |
 |   F7/F8 Muxes  |    <0.001 |       18 |     32600 |            0.06 |
-|   Others       |     0.000 |       69 |       --- |             --- |
-| Signals        |     0.004 |     1013 |       --- |             --- |
-| Block RAM      |     0.002 |     28.5 |        50 |           57.00 |
-| I/O            |     0.009 |       16 |       106 |           15.09 |
+|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
+|   Others       |     0.000 |       85 |       --- |             --- |
+| Signals        |     0.009 |     1940 |       --- |             --- |
+| Block RAM      |     0.012 |     28.5 |        50 |           57.00 |
+| DSPs           |     0.001 |        1 |        90 |            1.11 |
+| I/O            |     0.021 |       45 |       106 |           42.45 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.092 |          |           |                 |
+| Total          |     0.126 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,16 +75,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.010 |      0.010 |
-| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
+| Vccint    |       1.000 |     0.042 |       0.032 |      0.010 |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
+| Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -140,17 +141,23 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------------------+-----------+
-| Name                    | Power (W) |
-+-------------------------+-----------+
-| top                     |     0.019 |
-|   UBG                   |     0.005 |
-|     UMEMGEN             |     0.002 |
-|     blk_mem_gen_bg_inst |     0.002 |
-|       U0                |     0.002 |
-|   UPIPE                 |     0.003 |
-|     UMEMGEN             |     0.002 |
-|   vga_inst              |     0.001 |
-+-------------------------+-----------+
++-----------------------------+-----------+
+| Name                        | Power (W) |
++-----------------------------+-----------+
+| top                         |     0.053 |
+|   UDISP                     |     0.002 |
+|     UDisp                   |     0.002 |
+|   UGAME                     |     0.024 |
+|     UBG                     |     0.011 |
+|       UMEMGEN               |     0.002 |
+|       blk_mem_gen_bg_inst   |     0.009 |
+|     UBIRD                   |     0.005 |
+|       UBIRDCTRL             |     0.002 |
+|       blk_mem_gen_bird_inst |     0.002 |
+|     UPIPE                   |     0.006 |
+|       UMEMGEN               |     0.003 |
+|       blk_mem_gen_pipe_inst |     0.003 |
+|   vga_inst                  |     0.001 |
++-----------------------------+-----------+
 
 

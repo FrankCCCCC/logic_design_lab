@@ -19,21 +19,32 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`include "global.v"
+//`include "global.v"
 
-module bg_crtl(
+module bg_crtl #(
+    parameter CNT_BITS_N = 0,
+    parameter PX_ADDR_BITS_N = 0,
+    parameter MEM_DATA_BIT_N = 0,
+    parameter BG_WIDTH_CNT = 0,
+    parameter BG_HEIGHT_CNT = 0
+)(
     input clk,
     input clk_scroll,
     input rst,
-    input [`CNT_BITS_N-1:0] h_cnt,
-    input [`CNT_BITS_N-1:0] v_cnt,
-    output [`MEM_DATA_BIT_N-1:0] dout,
+    input [CNT_BITS_N-1:0] h_cnt,
+    input [CNT_BITS_N-1:0] v_cnt,
+    output [MEM_DATA_BIT_N-1:0] dout,
     output px_valid
     );
     
-    wire [`PX_ADDR_BITS_N-1:0] pixel_addr;
+    wire [PX_ADDR_BITS_N-1:0] pixel_addr;
     
-    bg_mem_addr_gen UMEMGEN(
+    bg_mem_addr_gen #(
+        .CNT_BITS_N(CNT_BITS_N),
+        .PX_ADDR_BITS_N(PX_ADDR_BITS_N),
+        .BG_WIDTH_CNT(BG_WIDTH_CNT),
+        .BG_HEIGHT_CNT(BG_HEIGHT_CNT)
+    )UMEMGEN(
         .clk(clk_scroll),
         .rst(rst),
         .h_cnt(h_cnt),
