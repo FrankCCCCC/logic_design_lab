@@ -35,9 +35,9 @@ module display_7seg(
         d_sel_temp <= (d_sel << 1) | (d_sel >> (`SEGMENT_7_DISPALY_DIGIT_N-1));
     end
     
-    always@(posedge clk_out or negedge rst)
+    always@(posedge clk_out or posedge rst)
     begin
-        if(~rst)
+        if(rst)
         begin
             d_out <= `SEGMENT_7_EMPTY;
             d_sel <= `SEGMENT_7_DISPALY_DIGIT_N'b1110;

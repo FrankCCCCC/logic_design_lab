@@ -36,6 +36,7 @@ module bird_ctrl #(
     input clk_flap,
     input clk_move,
     input rst,
+    input is_dead,
     input btn_fly,
     input enable_move,
     input [CNT_BITS_N-1:0] h_cnt,
@@ -80,6 +81,7 @@ module bird_ctrl #(
         .clk(clk),
         .clk_move(clk_move),
         .rst(rst),
+        .is_dead(is_dead),
         .btn_fly(btn_fly),
         .pos_h_cnt(pos_h_cnt),
         .pos_v_cnt(pos_v_cnt)

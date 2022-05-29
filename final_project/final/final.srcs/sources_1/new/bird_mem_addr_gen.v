@@ -65,8 +65,8 @@ module bird_mem_addr_gen #(
     end
     
     always@(*) begin
-        if(h_h_cnt >= pos_h_cnt && h_h_cnt <= pos_h_cnt + BIRD_WIDTH_CNT &&
-            h_v_cnt >= pos_v_cnt && h_v_cnt <= pos_v_cnt + BIRD_HEIGHT_CNT) begin
+        if(h_h_cnt >= pos_h_cnt && h_h_cnt < pos_h_cnt + BIRD_WIDTH_CNT &&
+            h_v_cnt >= pos_v_cnt && h_v_cnt < pos_v_cnt + BIRD_HEIGHT_CNT) begin
             addr_h_cnt <= h_h_cnt - pos_h_cnt;
             addr_v_cnt <= h_v_cnt - pos_v_cnt;
             valid <= 1'b1;      

@@ -34,6 +34,7 @@ module bird_pos_ctrl #(
     input clk,
     input clk_move,
     input rst,
+    input is_dead,
     input btn_fly,
     output reg [CNT_BITS_N-1:0] pos_h_cnt = `POS_H_CNT_INIT,
     output reg [CNT_BITS_N-1:0] pos_v_cnt = `POS_V_CNT_INIT
@@ -49,7 +50,7 @@ module bird_pos_ctrl #(
             is_clicked_next <= 0;
             drop_count_next <= 0;
         end else begin
-            if(btn_fly && pos_v_cnt > 0) begin
+            if(btn_fly && ~is_dead &&pos_v_cnt > 0) begin
                 if(pos_v_cnt - 2 <= 1) begin
                     pos_v_cnt_next <= 0;
                 end else begin
