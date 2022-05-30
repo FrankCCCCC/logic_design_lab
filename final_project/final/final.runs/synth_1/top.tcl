@@ -19,7 +19,6 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,7 +37,7 @@ add_files D:/data/logic_design_lab/final_project/final/pipe.coe
 add_files D:/data/logic_design_lab/final_project/final/bg.coe
 add_files D:/data/logic_design_lab/final_project/final/bird.coe
 add_files D:/data/logic_design_lab/final_project/final/bg_big.coe
-add_files d:/data/logic_design_lab/final_project/final/font.coe
+add_files D:/data/logic_design_lab/final_project/final/font.coe
 read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_mem_addr_gen.v
@@ -48,6 +47,7 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/clock_divisor.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/debounce.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/global.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec2font.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec_disp.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_ctrl.v
@@ -57,13 +57,14 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/scence_ctrl.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/score2font.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7_frequency_divider.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/text_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/vga_controller.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v
 }
-read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_font/blk_mem_gen_font.xci
+read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_font/blk_mem_gen_font.xci
 set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_font/blk_mem_gen_font_ooc.xdc]
 
 read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe.xci

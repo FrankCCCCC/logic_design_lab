@@ -25,22 +25,22 @@ module score2font #(
     parameter DEC_BITS_N = 0,
     parameter ALPHABET_BITS_N = 0
 )(
-    input [SCORE_BITS_N-1:0] num,
-    output [ALPHABET_BITS_N-1:0] d0_font_font, d1_font, d2_font, d3_font
+    input [SCORE_BITS_N-1:0] score,
+    output [ALPHABET_BITS_N-1:0] d0_font, d1_font, d2_font, d3_font
 );
     wire [DEC_BITS_N-1:0] d0, d1, d2, d3;
 
-    assign d0 = num % 10;
-    assign d1 = ((num % 100) - (num % 10) ) / 10;
-    assign d2 = ((num % 1000) - (num % 100)) / 100;
-    assign d3 = num / 1000;
+    assign d0 = score % 10;
+    assign d1 = ((score % 100) - (score % 10) ) / 10;
+    assign d2 = ((score % 1000) - (score % 100)) / 100;
+    assign d3 = score / 1000;
 
     dec2font #(
         .DEC_BITS_N(DEC_BITS_N),
         .ALPHABET_BITS_N(ALPHABET_BITS_N)
     ) U0 (
         .dec(d0),
-        .font(d0_font_font)
+        .font(d0_font)
     );
 
     dec2font #(
@@ -48,7 +48,7 @@ module score2font #(
         .ALPHABET_BITS_N(ALPHABET_BITS_N)
     ) U1 (
         .dec(d1),
-        .font(d1_font_font)
+        .font(d1_font)
     );
 
     dec2font #(
@@ -56,7 +56,7 @@ module score2font #(
         .ALPHABET_BITS_N(ALPHABET_BITS_N)
     ) U2 (
         .dec(d2),
-        .font(d2_font_font)
+        .font(d2_font)
     );
 
     dec2font #(
@@ -64,6 +64,6 @@ module score2font #(
         .ALPHABET_BITS_N(ALPHABET_BITS_N)
     ) U3 (
         .dec(d3),
-        .font(d3_font_font)
+        .font(d3_font)
     );
 endmodule

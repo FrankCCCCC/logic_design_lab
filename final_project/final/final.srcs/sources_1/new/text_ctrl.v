@@ -34,7 +34,7 @@ module text_ctrl #(
     input [CNT_BITS_N-1:0] v_cnt,
     input [CNT_BITS_N-1:0] pos_h_cnt,
     input [CNT_BITS_N-1:0] pos_v_cnt,
-    input [ALPHABET_BITS_N * ALPHABET_N - 1:0] alphabets_1d,
+    input [0:ALPHABET_BITS_N * ALPHABET_N - 1] alphabets_1d,
     output [MEM_DATA_BIT_N-1:0] dout,
     output px_valid 
 );

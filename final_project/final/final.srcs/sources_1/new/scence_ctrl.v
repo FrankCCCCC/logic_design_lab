@@ -43,21 +43,31 @@ module scence_ctrl#(
     // Text variables
     localparam ALPHABET_BITS_N = `ALPHABET_BITS_N;
     localparam ALPHABET_N = 10;
+    localparam DEC_BITS_N = 4;
+
+    wire [ALPHABET_BITS_N-1:0] d0_font, d1_font, d2_font, d3_font;
 
     reg [3:0] state = `PLAY_STATE;
     
     reg [ALPHABET_BITS_N * ALPHABET_N - 1:0] alphabets_1d = {ALPHABET_N{`ALPHA_SPACE}};
     reg [CNT_BITS_N-1:0] pos_h_cnt = 0;
     reg [CNT_BITS_N-1:0] pos_v_cnt = 0;
-    
-    // assign alphabets_1d[ALPHABET_BITS_N-1:0] = `ALPHA_D;
-    // assign alphabets_1d[ALPHABET_BITS_N * 2-1:ALPHABET_BITS_N] = `ALPHA_C;
-    // assign alphabets_1d[ALPHABET_BITS_N * 3-1:ALPHABET_BITS_N * 2] = `ALPHA_B;
-    // assign alphabets_1d[ALPHABET_BITS_N * 4-1:ALPHABET_BITS_N * 3] = `ALPHA_A;
+
+    score2font #(
+        .SCORE_BITS_N(SCORE_BITS_N),
+        .DEC_BITS_N(DEC_BITS_N),
+        .ALPHABET_BITS_N(ALPHABET_BITS_N)
+    ) USCORE (
+        .score(score),
+        .d0_font(d0_font), 
+        .d1_font(d1_font), 
+        .d2_font(d2_font), 
+        .d3_font(d3_font)
+    );
 
     always@(*)begin
         if(state == `PLAY_STATE) begin
-            alphabets_1d <= {`ALPHA_S, `ALPHA_C, `ALPHA_O, `ALPHA_R, `ALPHA_E, `ALPHA_COLON, `ALPHA_0, `ALPHA_1, `ALPHA_2, `ALPHA_3};
+            alphabets_1d <= {`ALPHA_S, `ALPHA_C, `ALPHA_O, `ALPHA_R, `ALPHA_E, `ALPHA_COLON, d3_font, d2_font, d1_font, d0_font};
             pos_h_cnt <= 120;
             pos_v_cnt <= 5;
         end
