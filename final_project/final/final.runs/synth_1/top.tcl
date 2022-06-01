@@ -45,8 +45,9 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_mem_addr_gen.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_pos_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/clock_divisor.v
-  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/debounce.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/global.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/ctrl.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/debounce.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec2font.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec_disp.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v

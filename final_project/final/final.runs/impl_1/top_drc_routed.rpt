@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Mon May 30 09:37:10 2022
+| Date         : Wed Jun  1 21:08:31 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
 | Design       : top
@@ -24,7 +24,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 50
+             Violations found: 55
 +-----------+----------+----------------------------+------------+
 | Rule      | Severity | Description                | Violations |
 +-----------+----------+----------------------------+------------+
@@ -32,7 +32,7 @@ Table of Contents
 | DPIP-1    | Warning  | Input pipelining           | 2          |
 | DPOP-1    | Warning  | PREG Output pipelining     | 1          |
 | DPOP-2    | Warning  | MREG Output pipelining     | 1          |
-| PDRC-153  | Warning  | Gated clock check          | 4          |
+| PDRC-153  | Warning  | Gated clock check          | 9          |
 | REQP-1839 | Warning  | RAMB36 async control check | 20         |
 | REQP-1840 | Warning  | RAMB18 async control check | 20         |
 +-----------+----------+----------------------------+------------+
@@ -71,32 +71,57 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net UGAME/USCENCE/USCORE/U0/font_reg[4]_i_2_n_0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/USCORE/U0/font_reg[4]_i_2/O, cell UGAME/USCENCE/USCORE/U0/font_reg[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net UGAME/UCTRL/E[0] is a gated clock net sourced by a combinational pin UGAME/UCTRL/alphabets_1d_reg[85]_i_2/O, cell UGAME/UCTRL/alphabets_1d_reg[85]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net UGAME/USCENCE/USCORE/U1/font_reg[4]_i_2__0_n_0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/USCORE/U1/font_reg[4]_i_2__0/O, cell UGAME/USCENCE/USCORE/U1/font_reg[4]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net UGAME/UCTRL/font_reg[4]_i_9__0_0[0] is a gated clock net sourced by a combinational pin UGAME/UCTRL/font_reg[4]_i_2__0/O, cell UGAME/UCTRL/font_reg[4]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net UGAME/USCENCE/USCORE/U2/font_reg[4]_i_2__1_n_0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/USCORE/U2/font_reg[4]_i_2__1/O, cell UGAME/USCENCE/USCORE/U2/font_reg[4]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net UGAME/UCTRL/score_reg[10]_1[0] is a gated clock net sourced by a combinational pin UGAME/UCTRL/font_reg[4]_i_2__2/O, cell UGAME/UCTRL/font_reg[4]_i_2__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net UGAME/USCENCE/USCORE/U3/font_reg[4]_i_2__2_n_0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/USCORE/U3/font_reg[4]_i_2__2/O, cell UGAME/USCENCE/USCORE/U3/font_reg[4]_i_2__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net UGAME/UCTRL/score_reg[3]_6[0] is a gated clock net sourced by a combinational pin UGAME/UCTRL/font_reg[4]_i_2/O, cell UGAME/UCTRL/font_reg[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net UGAME/USCENCE/USCORE/U2/font_reg[4]_i_2__1_n_0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/USCORE/U2/font_reg[4]_i_2__1/O, cell UGAME/USCENCE/USCORE/U2/font_reg[4]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net UGAME/USCENCE/pos_v_cnt_reg[0]/G0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/pos_v_cnt_reg[0]/L3_2/O, cell UGAME/USCENCE/pos_v_cnt_reg[0]/L3_2 (in UGAME/USCENCE/pos_v_cnt_reg[0] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net UGAME/USCENCE/pos_v_cnt_reg[2]/G0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/pos_v_cnt_reg[2]/L3_2/O, cell UGAME/USCENCE/pos_v_cnt_reg[2]/L3_2 (in UGAME/USCENCE/pos_v_cnt_reg[2] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net UGAME/USCENCE/pos_v_cnt_reg[4]/G0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/pos_v_cnt_reg[4]/L3_2/O, cell UGAME/USCENCE/pos_v_cnt_reg[4]/L3_2 (in UGAME/USCENCE/pos_v_cnt_reg[4] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net UGAME/USCENCE/pos_v_cnt_reg[6]/G0 is a gated clock net sourced by a combinational pin UGAME/USCENCE/pos_v_cnt_reg[6]/L3_2/O, cell UGAME/USCENCE/pos_v_cnt_reg[6]/L3_2 (in UGAME/USCENCE/pos_v_cnt_reg[6] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 REQP-1839#1 Warning
 RAMB36 async control check  
-The RAMB36E1 UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B has an input control pin UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B/ADDRARDADDR[13] (net: UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[13]) which is driven by a register (UGAME/UBG/UMEMGEN/position_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B has an input control pin UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B/ADDRARDADDR[13] (net: UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[13]) which is driven by a register (UGAME/UBG/UMEMGEN/position_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#2 Warning
 RAMB36 async control check  
-The RAMB36E1 UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B has an input control pin UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B/ADDRARDADDR[13] (net: UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[13]) which is driven by a register (UGAME/UBG/UMEMGEN/position_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B has an input control pin UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B/ADDRARDADDR[13] (net: UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[13]) which is driven by a register (UGAME/UBG/UMEMGEN/position_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#3 Warning
@@ -191,12 +216,12 @@ Related violations: <none>
 
 REQP-1840#1 Warning
 RAMB18 async control check  
-The RAMB18E1 UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram has an input control pin UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[11] (net: UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[11]) which is driven by a register (UGAME/UBG/UMEMGEN/position_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram has an input control pin UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[11] (net: UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[11]) which is driven by a register (UGAME/UBG/UMEMGEN/position_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#2 Warning
 RAMB18 async control check  
-The RAMB18E1 UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram has an input control pin UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[11] (net: UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[11]) which is driven by a register (UGAME/UBG/UMEMGEN/position_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram has an input control pin UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[11] (net: UGAME/UBG/blk_mem_gen_bg_inst/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[11]) which is driven by a register (UGAME/UBG/UMEMGEN/position_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#3 Warning

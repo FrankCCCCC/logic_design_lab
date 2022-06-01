@@ -31,13 +31,17 @@ module bg_ctrl #(
     input clk,
     input clk_scroll,
     input rst,
+    input is_visible,
     input [CNT_BITS_N-1:0] h_cnt,
     input [CNT_BITS_N-1:0] v_cnt,
     output [MEM_DATA_BIT_N-1:0] dout,
     output px_valid
     );
     
+    wire px_valid_0;
     wire [PX_ADDR_BITS_N-1:0] pixel_addr;
+
+    assign px_valid = is_visible & px_valid_0;
     
     bg_mem_addr_gen #(
         .CNT_BITS_N(CNT_BITS_N),
@@ -50,7 +54,7 @@ module bg_ctrl #(
         .h_cnt(h_cnt),
         .v_cnt(v_cnt),
         .pixel_addr(pixel_addr),
-        .valid(px_valid)
+        .valid(px_valid_0)
     );
     
     blk_mem_gen_bg_big blk_mem_gen_bg_inst(    

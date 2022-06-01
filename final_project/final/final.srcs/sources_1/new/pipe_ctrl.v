@@ -32,6 +32,7 @@ module pipe_ctrl #(
     input clk,
     input clk_scroll,
     input rst,
+    input is_visible,
     input [CNT_BITS_N-1:0] h_cnt,
     input [CNT_BITS_N-1:0] v_cnt,
     output [CNT_BITS_N-1:0] pos,
@@ -43,7 +44,7 @@ module pipe_ctrl #(
     wire px_valid_0, px_valid_1;
     
     assign px_valid_1 = (dout == `DEFAULT_COLOR_PIPE)? 1'b0 : 1'b1;
-    assign px_valid = px_valid_0 & px_valid_1;
+    assign px_valid = is_visible & px_valid_0 & px_valid_1;
     
     pipe_mem_addr_gen #(
         .CNT_BITS_N(CNT_BITS_N),

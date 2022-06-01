@@ -50,7 +50,7 @@ module bird_pos_ctrl #(
             is_clicked_next <= 0;
             drop_count_next <= 0;
         end else begin
-            if(btn_fly && ~is_dead &&pos_v_cnt > 0) begin
+            if(btn_fly && ~is_dead && pos_v_cnt > 0) begin
                 if(pos_v_cnt - 2 <= 1) begin
                     pos_v_cnt_next <= 0;
                 end else begin
@@ -58,7 +58,7 @@ module bird_pos_ctrl #(
                 end
                 drop_count_next <= 0;
                 is_clicked_next <= 1;
-            end else if(~btn_fly && is_clicked && pos_v_cnt < HEIGHT_CNT) begin
+            end else if((is_dead && pos_v_cnt_next < HEIGHT_CNT) || (~btn_fly && is_clicked && pos_v_cnt < HEIGHT_CNT)) begin
                 pos_v_cnt_next <= pos_v_cnt + drop_count * drop_count / 32;
                 drop_count_next <= drop_count + 1;
             end

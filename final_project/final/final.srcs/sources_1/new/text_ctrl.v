@@ -30,6 +30,7 @@ module text_ctrl #(
 )(
     input clk,
     input rst,
+    input is_visible,
     input [CNT_BITS_N-1:0] h_cnt,
     input [CNT_BITS_N-1:0] v_cnt,
     input [CNT_BITS_N-1:0] pos_h_cnt,
@@ -62,6 +63,9 @@ module text_ctrl #(
 //    assign alphabets_1d[ALPHABET_BITS_N * 2-1:ALPHABET_BITS_N] = `ALPHA_C;
 //    assign alphabets_1d[ALPHABET_BITS_N * 3-1:ALPHABET_BITS_N * 2] = `ALPHA_B;
 //    assign alphabets_1d[ALPHABET_BITS_N * 4-1:ALPHABET_BITS_N * 3] = `ALPHA_A;
+    
+    wire px_valid_0;
+    assign px_valid = is_visible & px_valid_0;
 
     initial begin
 //        alphabets[0] = `ALPHA_A;
@@ -101,12 +105,13 @@ module text_ctrl #(
     ) UTEXT (
         .clk(clk),
         .rst(rst),
+        .is_visible(is_visible),
         .h_cnt(h_cnt),
         .v_cnt(v_cnt),
         .pos_h_cnt(text_h_cnt),
         .pos_v_cnt(text_v_cnt),
         .alphabet(alphabet),
         .dout(dout),
-        .px_valid(px_valid)
+        .px_valid(px_valid_0)
     );
 endmodule

@@ -36,11 +36,14 @@ module bird_ctrl #(
     input clk_flap,
     input clk_move,
     input rst,
+    input is_visible,
     input is_dead,
     input btn_fly,
     input enable_move,
     input [CNT_BITS_N-1:0] h_cnt,
     input [CNT_BITS_N-1:0] v_cnt,
+    output [CNT_BITS_N-1:0] pos_h_cnt,
+    output [CNT_BITS_N-1:0] pos_v_cnt,
     output [MEM_DATA_BIT_N-1:0] dout,
     output px_valid 
 );
@@ -48,11 +51,8 @@ module bird_ctrl #(
     wire [PX_ADDR_BITS_N-1:0] pixel_addr;
     wire px_valid_0, px_valid_1;
     
-    wire [CNT_BITS_N-1:0] pos_h_cnt;
-    wire [CNT_BITS_N-1:0] pos_v_cnt;
-    
     assign px_valid_1 = (dout == `DEFAULT_COLOR_BIRD)? 1'b0 : 1'b1;
-    assign px_valid = px_valid_0 & px_valid_1;
+    assign px_valid = is_visible & px_valid_0 & px_valid_1;
     
     bird_mem_addr_gen #(
         .CNT_BITS_N(CNT_BITS_N),

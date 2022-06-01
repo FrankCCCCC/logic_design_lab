@@ -15,6 +15,7 @@ module font_ctrl #(
 )(
     input clk,
     input rst,
+    input is_visible,
     input [CNT_BITS_N-1:0] h_cnt,
     input [CNT_BITS_N-1:0] v_cnt,
     input [CNT_BITS_N-1:0] pos_h_cnt,
@@ -28,7 +29,7 @@ module font_ctrl #(
     wire px_valid_0, px_valid_1;
     
     assign px_valid_1 = (dout == `FONT_COLOR)? 1'b1 : 1'b0;
-    assign px_valid = px_valid_0 & px_valid_1;
+    assign px_valid = is_visible & px_valid_0 & px_valid_1;
     // assign px_valid = px_valid_0;
     
     font_mem_addr_gen #(

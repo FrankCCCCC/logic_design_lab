@@ -36,7 +36,7 @@ module top(
    wire [CNT_BITS_N-1:0] v_cnt;  //480
    wire bg_px_valid, pipe_px_valid, bird_px_valid;
    
-   wire push_debounced_u;
+   wire push_debounced_u, push_onepulse_d;
    
 //   reg [MEM_DATA_BIT_N-1:0] pixel;
     wire [MEM_DATA_BIT_N-1:0] pixel;
@@ -54,11 +54,18 @@ module top(
         .clk22(clk_22)
     );
     
-    onepulse UOP(
+    onepulse UOPU(
         .clk(clk),
         .rst(~rst),
         .push(btn_u),
         .push_debounced(push_debounced_u)
+    );
+
+    onepulse UOPD(
+        .clk(clk),
+        .rst(~rst),
+        .push(btn_d),
+        .push_onepulse(push_onepulse_d)
     );
     
 //    // Background variables
@@ -147,6 +154,7 @@ module top(
         .clk_move(clk_21),
         .rst(rst),
         .push_debounced_u(push_debounced_u),
+        .push_onepulse_d(push_onepulse_d),
         .h_cnt(h_cnt),
         .v_cnt(v_cnt),
         .pixel(pixel),
