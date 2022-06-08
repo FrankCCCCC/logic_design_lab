@@ -265,6 +265,15 @@ set_property IOSTANDARD LVCMOS33 [get_ports hsync]
 set_property PACKAGE_PIN R19 [get_ports vsync]
 set_property IOSTANDARD LVCMOS33 [get_ports vsync]
 
+# Audio
+set_property PACKAGE_PIN A14 [get_ports {mclk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {mclk}]
+set_property PACKAGE_PIN A16 [get_ports {lrck}]
+set_property IOSTANDARD LVCMOS33 [get_ports {lrck}]
+set_property PACKAGE_PIN B15 [get_ports {sck}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sck}]
+set_property PACKAGE_PIN B16 [get_ports {sdin}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sdin}]
 
 ##USB-RS232 Interface
 #set_property IOSTANDARD LVCMOS33 [get_ports RsRx]

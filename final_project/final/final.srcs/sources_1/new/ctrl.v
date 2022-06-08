@@ -43,10 +43,10 @@ module ctrl #(
     output reg [SCORE_BITS_N-1:0] score = 0,
     output reg is_game_over = 1'b0,
     output reg is_dead = 1'b0,
-    output reg is_start = 1'b0
+    output reg is_start = 1'b0,
+    output reg is_bump = 1'b0
 );
     reg [`STATE_BITS_N-1:0] state = `START_STATE;
-    reg is_bump = 0;
 
     // Merge layers
     always@(*) begin

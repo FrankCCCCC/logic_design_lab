@@ -59,3 +59,21 @@
 `define ALPHA_X `ALPHABET_BITS_N'd48
 `define ALPHA_Y `ALPHABET_BITS_N'd49
 `define ALPHA_Z `ALPHABET_BITS_N'd50
+
+// Music Control
+`define MUSIC_ADDR_BITS_N 10
+`define MUSIC_DATA_BITS_N 22
+//`define MUSIC_CNT_BITS_N 10
+`define MUSIC_CNT_LIMIT 1024
+`define SONG_ID_BITS_N 4
+
+`define FRUIT_PUDDING_SONG_ID 'd0
+`define ANGRY_BIRD_SONG_ID 'd1
+`define FLAP_SONG_ID 'd2
+`define BUMP_SONG_ID 'd3
+`define NONE_SONG_ID 'd4
+
+`define FRUIT_PUDDING_CNT_LIMIT 340
+`define ANGRY_BIRD_CNT_LIMIT 340
+`define FLAP_CNT_LIMIT 2
+`define BUMP_CNT_LIMIT 12

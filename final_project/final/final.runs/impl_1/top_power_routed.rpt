@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Wed Jun  1 21:08:35 2022
+| Date             : Wed Jun  8 23:49:07 2022
 | Host             : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.153        |
+| Total On-Chip Power (W)  | 0.161        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.080        |
+| Dynamic (W)              | 0.087        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.2         |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.024 |     3871 |       --- |             --- |
-|   LUT as Logic |     0.022 |     2218 |     20800 |           10.66 |
-|   CARRY4       |     0.002 |      480 |      8150 |            5.89 |
-|   Register     |    <0.001 |      344 |     41600 |            0.83 |
-|   F7/F8 Muxes  |    <0.001 |       18 |     32600 |            0.06 |
+| Clocks         |     0.004 |        3 |       --- |             --- |
+| Slice Logic    |     0.026 |     4368 |       --- |             --- |
+|   LUT as Logic |     0.024 |     2506 |     20800 |           12.05 |
+|   CARRY4       |     0.002 |      497 |      8150 |            6.10 |
+|   Register     |    <0.001 |      458 |     41600 |            1.10 |
+|   F7/F8 Muxes  |    <0.001 |       52 |     32600 |            0.16 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |      123 |       --- |             --- |
-| Signals        |     0.020 |     2920 |       --- |             --- |
+|   Others       |     0.000 |      137 |       --- |             --- |
+| Signals        |     0.021 |     3263 |       --- |             --- |
 | Block RAM      |     0.014 |       30 |        50 |           60.00 |
 | DSPs           |     0.001 |        1 |        90 |            1.11 |
-| I/O            |     0.018 |       46 |       106 |           43.40 |
+| I/O            |     0.021 |       50 |       106 |           47.17 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.153 |          |           |                 |
+| Total          |     0.161 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.071 |       0.061 |      0.010 |
+| Vccint    |       1.000 |     0.076 |       0.065 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
+| Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -144,10 +144,15 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| top                         |     0.080 |
+| top                         |     0.087 |
+|   UACTRL                    |     0.005 |
+|     SCTRL                   |     0.004 |
+|       UABM                  |     0.001 |
+|       UCNT                  |     0.002 |
+|       UFPM                  |     0.001 |
 |   UDISP                     |     0.003 |
 |     UDisp                   |     0.003 |
-|   UGAME                     |     0.046 |
+|   UGAME                     |     0.045 |
 |     UBG                     |     0.011 |
 |       UMEMGEN               |     0.002 |
 |       blk_mem_gen_bg_inst   |     0.009 |
@@ -160,7 +165,7 @@ Table of Contents
 |       blk_mem_gen_pipe_inst |     0.003 |
 |     USCENCE                 |     0.010 |
 |       USCORE                |     0.006 |
-|       UTEXT                 |     0.004 |
+|       UTEXT                 |     0.003 |
 |   vga_inst                  |     0.002 |
 +-----------------------------+-----------+
 

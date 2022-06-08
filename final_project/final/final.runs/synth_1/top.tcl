@@ -18,7 +18,6 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -39,21 +38,28 @@ add_files D:/data/logic_design_lab/final_project/final/bird.coe
 add_files D:/data/logic_design_lab/final_project/final/bg_big.coe
 add_files D:/data/logic_design_lab/final_project/final/font.coe
 read_verilog -library xil_defaultlib {
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/angry_bird_mem.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/global.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/audio_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_mem_addr_gen.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_mem_addr_gen.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_pos_ctrl.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bump_mem.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/clock_divisor.v
-  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/global.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/debounce.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec2font.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec_disp.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/flap_mem.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_mem_addr_gen.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/freq_div.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/fruit_pudding_mem.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/game.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/note_gen.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/onepulse.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v
@@ -61,7 +67,10 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/score2font.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7_frequency_divider.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_ctrl.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/speaker_control.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/text_ctrl.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/up_counter.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/vga_controller.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v
 }

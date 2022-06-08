@@ -43,7 +43,8 @@ module game #(
     output [SCORE_BITS_N-1:0] score,
     output is_start,
     output is_game_over,
-    output is_dead
+    output is_dead,
+    output is_bump
 );
     wire [MEM_DATA_BIT_N-1:0] bg_pixel, pipe_pixel, bird_pixel, text_pixel;
     wire bg_px_valid, pipe_px_valid, bird_px_valid, text_px_valid;
@@ -145,7 +146,8 @@ module game #(
         .score(score),
         .is_game_over(is_game_over),
         .is_dead(is_dead),
-        .is_start(is_start)
+        .is_start(is_start),
+        .is_bump(is_bump)
     );
     
 

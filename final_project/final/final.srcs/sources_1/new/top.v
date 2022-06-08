@@ -3,51 +3,56 @@
 `define LED_N 16
 
 module top(
-   input clk,
-   input rst,
-   input btn_u,
-   input btn_m,
-   input btn_d,
-   input btn_r,
-   input btn_l,
-   output [`COLOR_BIT_N-1:0] vgaRed,
-   output [`COLOR_BIT_N-1:0] vgaGreen,
-   output [`COLOR_BIT_N-1:0] vgaBlue,
-   output [`LED_N-1:0] leds,
-   output [0:`SEGMENT_7_DISPALY_DIGIT_N-1] d_sel,
-   output [`SEGMENT_7_SEGMENT_N-1:0] d_out,
-   output hsync,
-   output vsync
-   );
+    input clk,
+    input rst,
+    input btn_u,
+    input btn_m,
+    input btn_d,
+    input btn_r,
+    input btn_l,
+    output [`COLOR_BIT_N-1:0] vgaRed,
+    output [`COLOR_BIT_N-1:0] vgaGreen,
+    output [`COLOR_BIT_N-1:0] vgaBlue,
+    output [`LED_N-1:0] leds,
+    output [0:`SEGMENT_7_DISPALY_DIGIT_N-1] d_sel,
+    output [`SEGMENT_7_SEGMENT_N-1:0] d_out,
+    output hsync,
+    output vsync,
+    output mclk, lrck, sck,
+    output sdin
+);
    
-   // Common variables
-   localparam CNT_BITS_N = `CNT_BITS_N;
-   localparam PX_ADDR_BITS_N = `PX_ADDR_BITS_N;
-   localparam MEM_DATA_BIT_N = `MEM_DATA_BIT_N;
-   localparam SCORE_BITS_N = `SCORE_BITS_N;
-   localparam WIDTH_CNT = `DISP_WIDTH >> 1;
-   localparam HEIGHT_CNT = `DISP_HEIGHT >> 1;
+    // Common variables
+    localparam CNT_BITS_N = `CNT_BITS_N;
+    localparam PX_ADDR_BITS_N = `PX_ADDR_BITS_N;
+    localparam MEM_DATA_BIT_N = `MEM_DATA_BIT_N;
+    localparam SCORE_BITS_N = `SCORE_BITS_N;
+    localparam WIDTH_CNT = `DISP_WIDTH >> 1;
+    localparam HEIGHT_CNT = `DISP_HEIGHT >> 1;
+    localparam MUSIC_ADDR_BITS_N = `MUSIC_ADDR_BITS_N;
+    localparam MUSIC_DATA_BITS_N = `MUSIC_DATA_BITS_N;
+    localparam SONG_ID_BITS_N = `SONG_ID_BITS_N;
    
-   wire clk_25MHz, clk_21, clk_22;
-   wire [PX_ADDR_BITS_N-1:0] pixel_addr;
-   wire [MEM_DATA_BIT_N-1:0] bg_pixel, pipe_pixel, bird_pixel;
-   wire valid;
-   wire [CNT_BITS_N-1:0] h_cnt; //640
-   wire [CNT_BITS_N-1:0] v_cnt;  //480
-   wire bg_px_valid, pipe_px_valid, bird_px_valid;
-   
-   wire push_debounced_u, push_onepulse_d;
-   
-//   reg [MEM_DATA_BIT_N-1:0] pixel;
+    wire clk_25MHz, clk_21, clk_22;
+    wire [PX_ADDR_BITS_N-1:0] pixel_addr;
+    wire [MEM_DATA_BIT_N-1:0] bg_pixel, pipe_pixel, bird_pixel;
+    wire valid;
+    wire [CNT_BITS_N-1:0] h_cnt; //640
+    wire [CNT_BITS_N-1:0] v_cnt;  //480
+    wire bg_px_valid, pipe_px_valid, bird_px_valid;
+    
+    wire push_debounced_u, push_onepulse_d;
+    
+    // reg [MEM_DATA_BIT_N-1:0] pixel;
     wire [MEM_DATA_BIT_N-1:0] pixel;
 
-    wire is_dead, is_game_over;
+    wire is_start, is_dead, is_game_over, is_bump;
     wire [SCORE_BITS_N-1:0] score;
+    
+    assign {vgaRed, vgaGreen, vgaBlue} = (valid==1'b1) ? pixel:12'h0;
+    assign leds = {is_dead, 14'b0, is_game_over};
    
-   assign {vgaRed, vgaGreen, vgaBlue} = (valid==1'b1) ? pixel:12'h0;
-   assign leds = {is_dead, 14'b0, is_game_over};
-   
-   clock_divisor clk_wiz_0_inst(
+    clock_divisor clk_wiz_0_inst(
         .clk(clk),
         .clk1(clk_25MHz),
         .clk21(clk_21),
@@ -159,8 +164,40 @@ module top(
         .v_cnt(v_cnt),
         .pixel(pixel),
         .score(score),
+        .is_start(is_start),
         .is_game_over(is_game_over),
-        .is_dead(is_dead)
+        .is_dead(is_dead),
+        .is_bump(is_bump)
+    );
+
+    reg [SONG_ID_BITS_N-1:0] song_id = `NONE_SONG_ID;
+    wire enable = 1'b1, is_repeat = 1'b1;
+    always@(*) begin
+        if(is_bump) begin
+            song_id <= `BUMP_SONG_ID;
+        end else if(~is_start && ~is_game_over) begin
+            song_id <= `ANGRY_BIRD_SONG_ID;
+        end else if(is_start && ~is_game_over) begin
+            song_id <= `FRUIT_PUDDING_SONG_ID;
+        end else if(is_start && is_game_over) begin
+            song_id <= `ANGRY_BIRD_SONG_ID;
+        end
+    end
+
+    audio_ctrl #(
+        .MUSIC_ADDR_BITS_N(MUSIC_ADDR_BITS_N),
+        .MUSIC_DATA_BITS_N(MUSIC_DATA_BITS_N),
+        .SONG_ID_BITS_N(SONG_ID_BITS_N)
+    ) UACTRL(
+        .clk(clk),
+        .rst_n(~rst),
+        .song_id(song_id),
+        .enable(enable),
+        .is_repeat(is_repeat),
+        .mclk(mclk), 
+        .lrck(lrck), 
+        .sck(sck),
+        .sdin(sdin)
     );
     
     vga_controller#(
