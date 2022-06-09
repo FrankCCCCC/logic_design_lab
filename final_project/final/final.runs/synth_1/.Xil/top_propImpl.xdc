@@ -105,3 +105,7 @@ set_property src_info {type:XDC file:1 line:273 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN B15 [get_ports {sck}]
 set_property src_info {type:XDC file:1 line:275 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN B16 [get_ports {sdin}]
+set_property src_info {type:XDC file:1 line:285 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C17 [get_ports PS2_CLK]
+set_property src_info {type:XDC file:1 line:288 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN B17 [get_ports PS2_DATA]

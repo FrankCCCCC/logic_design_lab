@@ -66,11 +66,14 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir D:/data/logic_design_lab/final_project/final/final.cache/wt [current_project]
   set_property parent.project_path D:/data/logic_design_lab/final_project/final/final.xpr [current_project]
+  set_property ip_repo_paths D:/data/logic_design_lab/final_project/lab08_keyboard_source [current_project]
+  update_ip_catalog
   set_property ip_output_repo D:/data/logic_design_lab/final_project/final/final.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_MEMORY [current_project]
@@ -79,6 +82,7 @@ set rc [catch {
   read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe.xci
   read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bird/blk_mem_gen_bird.xci
   read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big.xci
+  read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
   read_xdc D:/data/logic_design_lab/final_project/final/final.srcs/constrs_1/new/Basys3_Master.xdc
   link_design -top top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb

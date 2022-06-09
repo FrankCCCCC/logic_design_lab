@@ -1,7 +1,5 @@
 `include "global.v"
 
-`define LED_N 16
-
 module top(
     input clk,
     input rst,
@@ -10,6 +8,8 @@ module top(
     input btn_d,
     input btn_r,
     input btn_l,
+    inout PS2_DATA,
+    inout PS2_CLK,
     output [`COLOR_BIT_N-1:0] vgaRed,
     output [`COLOR_BIT_N-1:0] vgaGreen,
     output [`COLOR_BIT_N-1:0] vgaBlue,
@@ -32,6 +32,8 @@ module top(
     localparam MUSIC_ADDR_BITS_N = `MUSIC_ADDR_BITS_N;
     localparam MUSIC_DATA_BITS_N = `MUSIC_DATA_BITS_N;
     localparam SONG_ID_BITS_N = `SONG_ID_BITS_N;
+    localparam KB_ENCODE_OH_BITS_N = `KB_ENCODE_OH_BITS_N;
+    localparam KB_ENCODE_BITS_N = `KB_ENCODE_BITS_N;
    
     wire clk_25MHz, clk_21, clk_22;
     wire [PX_ADDR_BITS_N-1:0] pixel_addr;
@@ -46,7 +48,7 @@ module top(
     // reg [MEM_DATA_BIT_N-1:0] pixel;
     wire [MEM_DATA_BIT_N-1:0] pixel;
 
-    wire is_start, is_dead, is_game_over, is_bump;
+    wire is_start, is_dead, is_game_over, is_bump, is_overlap;
     wire [SCORE_BITS_N-1:0] score;
     
     assign {vgaRed, vgaGreen, vgaBlue} = (valid==1'b1) ? pixel:12'h0;
@@ -62,15 +64,31 @@ module top(
     onepulse UOPU(
         .clk(clk),
         .rst(~rst),
-        .push(btn_u),
+        // .push(btn_u),
+        .push(key_down[`CODE_SPACE_L]),
         .push_debounced(push_debounced_u)
     );
 
     onepulse UOPD(
         .clk(clk),
         .rst(~rst),
-        .push(btn_d),
+        // .push(btn_d),
+        .push(key_down[`CODE_ENTER_L]),
         .push_onepulse(push_onepulse_d)
+    );
+    
+    wire [KB_ENCODE_OH_BITS_N-1:0] key_down;
+    wire [KB_ENCODE_BITS_N-1:0] last_change;
+    wire key_valid;
+    
+    KeyboardDecoder U0(
+        .key_down(key_down),
+        .last_change(last_change),
+        .key_valid(key_valid),
+        .PS2_DATA(PS2_DATA),
+        .PS2_CLK(PS2_CLK),
+        .rst(rst),
+        .clk(clk)
     );
     
 //    // Background variables
@@ -167,19 +185,21 @@ module top(
         .is_start(is_start),
         .is_game_over(is_game_over),
         .is_dead(is_dead),
-        .is_bump(is_bump)
+        .is_bump(is_bump),
+        .is_overlap(is_overlap)
     );
 
     reg [SONG_ID_BITS_N-1:0] song_id = `NONE_SONG_ID;
+    reg is_play_bump = 1'b0;
     wire enable = 1'b1, is_repeat = 1'b1;
-    always@(*) begin
-        if(is_bump) begin
+    always@(posedge clk) begin
+        if(is_overlap) begin
             song_id <= `BUMP_SONG_ID;
         end else if(~is_start && ~is_game_over) begin
             song_id <= `ANGRY_BIRD_SONG_ID;
         end else if(is_start && ~is_game_over) begin
             song_id <= `FRUIT_PUDDING_SONG_ID;
-        end else if(is_start && is_game_over) begin
+        end else if(~is_start && is_game_over) begin
             song_id <= `ANGRY_BIRD_SONG_ID;
         end
     end

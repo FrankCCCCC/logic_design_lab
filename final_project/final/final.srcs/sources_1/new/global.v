@@ -1,3 +1,9 @@
+// Keyboard
+`define KB_ENCODE_BITS_N 9
+`define KB_ENCODE_OH_BITS_N 512
+`define CODE_SPACE_L `KB_ENCODE_BITS_N'b0_0010_1001
+`define CODE_ENTER_L `KB_ENCODE_BITS_N'b0_0101_1010
+
 `define DISP_WIDTH 640
 `define DISP_HEIGHT 480
 
@@ -7,6 +13,7 @@
 `define COLOR_BIT_N 4
 `define MEM_DATA_BIT_N 12
 `define ALPHABET_BITS_N 8
+`define LED_N 16
 
 // States
 `define PLAY_STATE 2

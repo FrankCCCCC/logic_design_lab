@@ -2,27 +2,30 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Jun  8 23:43:36 2022
-# Process ID: 19748
+# Start of session at: Thu Jun  9 14:21:22 2022
+# Process ID: 13876
 # Current directory: D:/data/logic_design_lab/final_project/final/final.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: D:/data/logic_design_lab/final_project/final/final.runs/synth_1/top.vds
 # Journal file: D:/data/logic_design_lab/final_project/final/final.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/data/logic_design_lab/final_project/lab08_keyboard_source'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
 Command: synth_design -top top -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6532 
+INFO: Helper process launched with PID 19656 
 WARNING: [Synth 8-2292] literal value truncated to fit in 22 bits [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bump_mem.v:32]
 WARNING: [Synth 8-2611] redeclaration of ansi port clk_out is not allowed [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7_frequency_divider.v:10]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 966.969 ; gain = 241.684
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 966.488 ; gain = 240.668
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:5]
+INFO: [Synth 8-6157] synthesizing module 'top' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:3]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
 	Parameter PX_ADDR_BITS_N bound to: 17 - type: integer 
 	Parameter MEM_DATA_BIT_N bound to: 12 - type: integer 
@@ -32,6 +35,8 @@ INFO: [Synth 8-6157] synthesizing module 'top' [D:/data/logic_design_lab/final_p
 	Parameter MUSIC_ADDR_BITS_N bound to: 10 - type: integer 
 	Parameter MUSIC_DATA_BITS_N bound to: 22 - type: integer 
 	Parameter SONG_ID_BITS_N bound to: 4 - type: integer 
+	Parameter KB_ENCODE_OH_BITS_N bound to: 512 - type: integer 
+	Parameter KB_ENCODE_BITS_N bound to: 9 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'clock_divisor' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/clock_divisor.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'clock_divisor' (1#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/clock_divisor.v:1]
 INFO: [Synth 8-6157] synthesizing module 'onepulse' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/onepulse.v:30]
@@ -39,8 +44,22 @@ INFO: [Synth 8-6157] synthesizing module 'debounce' [D:/data/logic_design_lab/fi
 INFO: [Synth 8-6155] done synthesizing module 'debounce' (2#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/debounce.v:25]
 WARNING: [Synth 8-5788] Register push_debounced_long_reg in module onepulse is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/onepulse.v:89]
 INFO: [Synth 8-6155] done synthesizing module 'onepulse' (3#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/onepulse.v:30]
-WARNING: [Synth 8-7023] instance 'UOPU' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:62]
-WARNING: [Synth 8-7023] instance 'UOPD' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:69]
+WARNING: [Synth 8-7023] instance 'UOPU' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:64]
+WARNING: [Synth 8-7023] instance 'UOPD' of module 'onepulse' has 9 connections declared, but only 4 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:72]
+INFO: [Synth 8-6157] synthesizing module 'KeyboardDecoder' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/KeyboardDecoder.v:23]
+	Parameter INIT bound to: 2'b00 
+	Parameter WAIT_FOR_SIGNAL bound to: 2'b01 
+	Parameter GET_SIGNAL_DOWN bound to: 2'b10 
+	Parameter WAIT_RELEASE bound to: 2'b11 
+	Parameter IS_INIT bound to: 8'b10101010 
+	Parameter IS_EXTEND bound to: 8'b11100000 
+	Parameter IS_BREAK bound to: 8'b11110000 
+INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (4#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'OnePulseKB' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/OnePulseKB.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'OnePulseKB' (5#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/OnePulseKB.v:53]
+INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/KeyboardDecoder.v:86]
+INFO: [Synth 8-6155] done synthesizing module 'KeyboardDecoder' (6#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/KeyboardDecoder.v:23]
 INFO: [Synth 8-6157] synthesizing module 'game' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/game.v:24]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
 	Parameter PX_ADDR_BITS_N bound to: 17 - type: integer 
@@ -67,10 +86,10 @@ INFO: [Synth 8-6157] synthesizing module 'bg_mem_addr_gen' [D:/data/logic_design
 	Parameter BG_HEIGHT_CNT bound to: 240 - type: integer 
 	Parameter SCALE bound to: 1 - type: integer 
 	Parameter BG_AREA bound to: 76800 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'bg_mem_addr_gen' (4#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_mem_addr_gen.v:25]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_bg_big' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-19748-DESKTOP-0M9JO91/realtime/blk_mem_gen_bg_big_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_bg_big' (5#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-19748-DESKTOP-0M9JO91/realtime/blk_mem_gen_bg_big_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'bg_ctrl' (6#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_ctrl.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'bg_mem_addr_gen' (7#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_mem_addr_gen.v:25]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_bg_big' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/blk_mem_gen_bg_big_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_bg_big' (8#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/blk_mem_gen_bg_big_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'bg_ctrl' (9#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bg_ctrl.v:24]
 INFO: [Synth 8-6157] synthesizing module 'pipe_ctrl' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_ctrl.v:25]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
 	Parameter PX_ADDR_BITS_N bound to: 17 - type: integer 
@@ -83,11 +102,11 @@ INFO: [Synth 8-6157] synthesizing module 'pipe_mem_addr_gen' [D:/data/logic_desi
 	Parameter PIPE_WIDTH_CNT bound to: 16 - type: integer 
 	Parameter PIPE_LEN_CNT bound to: 240 - type: integer 
 	Parameter PIPE_AREA bound to: 3840 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'pipe_mem_addr_gen' (7#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v:48]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_pipe' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-19748-DESKTOP-0M9JO91/realtime/blk_mem_gen_pipe_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_pipe' (8#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-19748-DESKTOP-0M9JO91/realtime/blk_mem_gen_pipe_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'pipe_mem_addr_gen' (10#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v:48]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_pipe' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/blk_mem_gen_pipe_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_pipe' (11#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/blk_mem_gen_pipe_stub.v:6]
 WARNING: [Synth 8-689] width (17) of port connection 'addra' does not match port width (12) of module 'blk_mem_gen_pipe' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_ctrl.v:68]
-INFO: [Synth 8-6155] done synthesizing module 'pipe_ctrl' (9#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_ctrl.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'pipe_ctrl' (12#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_ctrl.v:25]
 INFO: [Synth 8-6157] synthesizing module 'bird_ctrl' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_ctrl.v:26]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
 	Parameter PX_ADDR_BITS_N bound to: 17 - type: integer 
@@ -102,7 +121,7 @@ INFO: [Synth 8-6157] synthesizing module 'bird_mem_addr_gen' [D:/data/logic_desi
 	Parameter BIRD_WIDTH_CNT bound to: 10 - type: integer 
 	Parameter BIRD_HEIGHT_CNT bound to: 10 - type: integer 
 	Parameter BIRD_AREA bound to: 100 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'bird_mem_addr_gen' (10#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_mem_addr_gen.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'bird_mem_addr_gen' (13#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_mem_addr_gen.v:24]
 INFO: [Synth 8-6157] synthesizing module 'bird_pos_ctrl' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_pos_ctrl.v:26]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
 	Parameter PX_ADDR_BITS_N bound to: 17 - type: integer 
@@ -111,12 +130,12 @@ INFO: [Synth 8-6157] synthesizing module 'bird_pos_ctrl' [D:/data/logic_design_l
 	Parameter WIDTH_CNT bound to: 320 - type: integer 
 	Parameter HEIGHT_CNT bound to: 240 - type: integer 
 WARNING: [Synth 8-6014] Unused sequential element pos_h_cnt_next_reg was removed.  [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_pos_ctrl.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'bird_pos_ctrl' (11#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_pos_ctrl.v:26]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_bird' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-19748-DESKTOP-0M9JO91/realtime/blk_mem_gen_bird_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_bird' (12#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-19748-DESKTOP-0M9JO91/realtime/blk_mem_gen_bird_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'bird_pos_ctrl' (14#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_pos_ctrl.v:26]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_bird' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/blk_mem_gen_bird_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_bird' (15#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/blk_mem_gen_bird_stub.v:6]
 WARNING: [Synth 8-689] width (17) of port connection 'addra' does not match port width (9) of module 'blk_mem_gen_bird' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_ctrl.v:93]
-INFO: [Synth 8-6155] done synthesizing module 'bird_ctrl' (13#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_ctrl.v:26]
-WARNING: [Synth 8-7023] instance 'UBIRD' of module 'bird_ctrl' has 14 connections declared, but only 13 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/game.v:105]
+INFO: [Synth 8-6155] done synthesizing module 'bird_ctrl' (16#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_ctrl.v:26]
+WARNING: [Synth 8-7023] instance 'UBIRD' of module 'bird_ctrl' has 14 connections declared, but only 13 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/game.v:106]
 INFO: [Synth 8-6157] synthesizing module 'ctrl' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/ctrl.v:26]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
 	Parameter PX_ADDR_BITS_N bound to: 10 - type: integer 
@@ -124,7 +143,7 @@ INFO: [Synth 8-6157] synthesizing module 'ctrl' [D:/data/logic_design_lab/final_
 	Parameter SCORE_BITS_N bound to: 14 - type: integer 
 	Parameter WIDTH_CNT bound to: 320 - type: integer 
 	Parameter HEIGHT_CNT bound to: 240 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ctrl' (14#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/ctrl.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl' (17#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/ctrl.v:26]
 INFO: [Synth 8-6157] synthesizing module 'scence_ctrl' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/scence_ctrl.v:24]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
 	Parameter PX_ADDR_BITS_N bound to: 17 - type: integer 
@@ -141,8 +160,8 @@ INFO: [Synth 8-6157] synthesizing module 'dec2font' [D:/data/logic_design_lab/fi
 	Parameter DEC_BITS_N bound to: 4 - type: integer 
 	Parameter ALPHABET_BITS_N bound to: 8 - type: integer 
 INFO: [Synth 8-155] case statement is not full and has no default [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec2font.v:33]
-INFO: [Synth 8-6155] done synthesizing module 'dec2font' (15#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec2font.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'score2font' (16#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/score2font.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dec2font' (18#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec2font.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'score2font' (19#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/score2font.v:23]
 INFO: [Synth 8-6157] synthesizing module 'text_ctrl' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/text_ctrl.v:24]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
 	Parameter PX_ADDR_BITS_N bound to: 17 - type: integer 
@@ -171,21 +190,21 @@ INFO: [Synth 8-6157] synthesizing module 'font_mem_addr_gen' [D:/data/logic_desi
 	Parameter FONT_NUM_COL bound to: 8 - type: integer 
 	Parameter ALPHABET_BITS_N bound to: 8 - type: integer 
 	Parameter FONT_AREA bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'font_mem_addr_gen' (17#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_mem_addr_gen.v:24]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_font' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-19748-DESKTOP-0M9JO91/realtime/blk_mem_gen_font_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_font' (18#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-19748-DESKTOP-0M9JO91/realtime/blk_mem_gen_font_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'font_mem_addr_gen' (20#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_mem_addr_gen.v:24]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_font' [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/blk_mem_gen_font_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_font' (21#1) [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/.Xil/Vivado-13876-DESKTOP-0M9JO91/realtime/blk_mem_gen_font_stub.v:6]
 WARNING: [Synth 8-689] width (17) of port connection 'addra' does not match port width (12) of module 'blk_mem_gen_font' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_ctrl.v:58]
 WARNING: [Synth 8-3848] Net clk_flap in module/entity font_ctrl does not have driver. [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_ctrl.v:44]
-INFO: [Synth 8-6155] done synthesizing module 'font_ctrl' (19#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_ctrl.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'text_ctrl' (20#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/text_ctrl.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'scence_ctrl' (21#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/scence_ctrl.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'game' (22#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/game.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'font_ctrl' (22#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/font_ctrl.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'text_ctrl' (23#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/text_ctrl.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'scence_ctrl' (24#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/scence_ctrl.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'game' (25#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/game.v:24]
 INFO: [Synth 8-6157] synthesizing module 'audio_ctrl' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/audio_ctrl.v:24]
 	Parameter MUSIC_ADDR_BITS_N bound to: 10 - type: integer 
 	Parameter MUSIC_DATA_BITS_N bound to: 22 - type: integer 
 	Parameter SONG_ID_BITS_N bound to: 4 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'fre_div' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/freq_div.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'fre_div' (23#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/freq_div.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'fre_div' (26#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/freq_div.v:23]
 INFO: [Synth 8-6157] synthesizing module 'song_ctrl' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_ctrl.v:24]
 	Parameter MUSIC_ADDR_BITS_N bound to: 10 - type: integer 
 	Parameter MUSIC_DATA_BITS_N bound to: 22 - type: integer 
@@ -196,7 +215,7 @@ INFO: [Synth 8-6157] synthesizing module 'song_ctrl' [D:/data/logic_design_lab/f
 	Parameter BUMP_CNT_LIMIT bound to: 12 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'up_counter' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/up_counter.v:25]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'up_counter' (24#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/up_counter.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'up_counter' (27#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/up_counter.v:25]
 INFO: [Synth 8-6157] synthesizing module 'fruit_pudding_mem' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/fruit_pudding_mem.v:22]
 	Parameter MUSIC_ADDR_BITS_N bound to: 10 - type: integer 
 	Parameter MUSIC_DATA_BITS_N bound to: 22 - type: integer 
@@ -235,7 +254,7 @@ WARNING: [Synth 8-151] case item 32'b00000000000000000000000100111100 is unreach
 WARNING: [Synth 8-151] case item 32'b00000000000000000000000100111101 is unreachable [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/fruit_pudding_mem.v:58]
 WARNING: [Synth 8-151] case item 32'b00000000000000000000000100111110 is unreachable [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/fruit_pudding_mem.v:58]
 WARNING: [Synth 8-151] case item 32'b00000000000000000000000100111111 is unreachable [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/fruit_pudding_mem.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'fruit_pudding_mem' (25#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/fruit_pudding_mem.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'fruit_pudding_mem' (28#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/fruit_pudding_mem.v:22]
 INFO: [Synth 8-6157] synthesizing module 'angry_bird_mem' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/angry_bird_mem.v:22]
 	Parameter MUSIC_ADDR_BITS_N bound to: 10 - type: integer 
 	Parameter MUSIC_DATA_BITS_N bound to: 22 - type: integer 
@@ -272,14 +291,14 @@ WARNING: [Synth 8-151] case item 32'b00000000000000000000000100111000 is unreach
 WARNING: [Synth 8-151] case item 32'b00000000000000000000000100111001 is unreachable [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/angry_bird_mem.v:61]
 WARNING: [Synth 8-151] case item 32'b00000000000000000000000100111010 is unreachable [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/angry_bird_mem.v:61]
 WARNING: [Synth 8-151] case item 32'b00000000000000000000000100111011 is unreachable [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/angry_bird_mem.v:61]
-INFO: [Synth 8-6155] done synthesizing module 'angry_bird_mem' (26#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/angry_bird_mem.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'angry_bird_mem' (29#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/angry_bird_mem.v:22]
 WARNING: [Synth 8-7023] instance 'UABM' of module 'angry_bird_mem' has 4 connections declared, but only 3 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_ctrl.v:102]
 INFO: [Synth 8-6157] synthesizing module 'flap_mem' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/flap_mem.v:22]
 	Parameter MUSIC_ADDR_BITS_N bound to: 10 - type: integer 
 	Parameter MUSIC_DATA_BITS_N bound to: 22 - type: integer 
 	Parameter h_do bound to: 22'b0000101110100101110111 
 	Parameter h_mi bound to: 22'b0000100100111111011011 
-INFO: [Synth 8-6155] done synthesizing module 'flap_mem' (27#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/flap_mem.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'flap_mem' (30#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/flap_mem.v:22]
 WARNING: [Synth 8-7023] instance 'UFLM' of module 'flap_mem' has 4 connections declared, but only 3 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_ctrl.v:111]
 INFO: [Synth 8-6157] synthesizing module 'bump_mem' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bump_mem.v:22]
 	Parameter MUSIC_ADDR_BITS_N bound to: 10 - type: integer 
@@ -288,37 +307,37 @@ INFO: [Synth 8-6157] synthesizing module 'bump_mem' [D:/data/logic_design_lab/fi
 	Parameter l_so bound to: 22'b0111110010001111110000 
 	Parameter l_la bound to: 22'b0011011101111100100011 
 	Parameter l_la_b bound to: 22'b0011101011001000101001 
-INFO: [Synth 8-6155] done synthesizing module 'bump_mem' (28#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bump_mem.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'bump_mem' (31#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bump_mem.v:22]
 WARNING: [Synth 8-7023] instance 'UBPM' of module 'bump_mem' has 4 connections declared, but only 3 given [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_ctrl.v:120]
-INFO: [Synth 8-6155] done synthesizing module 'song_ctrl' (29#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_ctrl.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'song_ctrl' (32#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_ctrl.v:24]
 INFO: [Synth 8-6157] synthesizing module 'note_gen' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/note_gen.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'note_gen' (30#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/note_gen.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'note_gen' (33#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/note_gen.v:21]
 INFO: [Synth 8-6157] synthesizing module 'speaker_control' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/speaker_control.v:1]
 INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/speaker_control.v:56]
-INFO: [Synth 8-6155] done synthesizing module 'speaker_control' (31#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/speaker_control.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'audio_ctrl' (32#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/audio_ctrl.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'speaker_control' (34#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/speaker_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'audio_ctrl' (35#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/audio_ctrl.v:24]
 INFO: [Synth 8-6157] synthesizing module 'vga_controller' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/vga_controller.v:6]
 	Parameter CNT_BITS_N bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (33#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/vga_controller.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (36#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/vga_controller.v:6]
 INFO: [Synth 8-6157] synthesizing module 'dec_disp' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec_disp.v:23]
 	Parameter NUM_BITS_N bound to: 14 - type: integer 
 	Parameter SEGMENT_7_INPUT_BITS_N bound to: 4 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'segment7' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7.v:3]
 	Parameter SEGMENT_7_INPUT_BITS_N bound to: 4 - type: integer 
 INFO: [Synth 8-226] default block is never used [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'segment7' (34#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'segment7' (37#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7.v:3]
 INFO: [Synth 8-6157] synthesizing module 'display_7seg' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v:3]
 INFO: [Synth 8-6157] synthesizing module 'segment7_frequency_divider' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7_frequency_divider.v:1]
 	Parameter SEGMENT_7_FREQ_DIV_BITS bound to: 30 - type: integer 
 	Parameter SEGMENT_7_FREQ_DIV_COUNT bound to: 50000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'segment7_frequency_divider' (35#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7_frequency_divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'segment7_frequency_divider' (38#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7_frequency_divider.v:1]
 WARNING: [Synth 8-567] referenced signal 'd0' should be on the sensitivity list [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v:26]
 WARNING: [Synth 8-567] referenced signal 'd1' should be on the sensitivity list [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v:26]
 WARNING: [Synth 8-567] referenced signal 'd2' should be on the sensitivity list [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v:26]
 WARNING: [Synth 8-567] referenced signal 'd3' should be on the sensitivity list [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'display_7seg' (36#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'dec_disp' (37#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec_disp.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'top' (38#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'display_7seg' (39#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/display_7seg.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'dec_disp' (40#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/dec_disp.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (41#1) [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:3]
 WARNING: [Synth 8-3917] design top has port leds[14] driven by constant 0
 WARNING: [Synth 8-3917] design top has port leds[13] driven by constant 0
 WARNING: [Synth 8-3917] design top has port leds[12] driven by constant 0
@@ -356,11 +375,13 @@ WARNING: [Synth 8-3331] design ctrl has unconnected port bird_pos_h_cnt[1]
 WARNING: [Synth 8-3331] design ctrl has unconnected port bird_pos_h_cnt[0]
 WARNING: [Synth 8-3331] design ctrl has unconnected port bg_px_valid
 WARNING: [Synth 8-3331] design bird_ctrl has unconnected port enable_move
+WARNING: [Synth 8-3331] design top has unconnected port btn_u
 WARNING: [Synth 8-3331] design top has unconnected port btn_m
+WARNING: [Synth 8-3331] design top has unconnected port btn_d
 WARNING: [Synth 8-3331] design top has unconnected port btn_r
 WARNING: [Synth 8-3331] design top has unconnected port btn_l
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.684 ; gain = 297.398
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1023.988 ; gain = 298.168
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -373,12 +394,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1022.684 ; gain = 297.398
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1023.988 ; gain = 298.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1022.684 ; gain = 297.398
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1023.988 ; gain = 298.168
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1022.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1023.988 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -391,6 +412,8 @@ Parsing XDC File [d:/data/logic_design_lab/final_project/final/final.srcs/source
 Finished Parsing XDC File [d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bird/blk_mem_gen_bird/blk_mem_gen_bird_in_context.xdc] for cell 'UGAME/UBIRD/blk_mem_gen_bird_inst'
 Parsing XDC File [d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big/blk_mem_gen_bg_big_in_context.xdc] for cell 'UGAME/UBG/blk_mem_gen_bg_inst'
 Finished Parsing XDC File [d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big/blk_mem_gen_bg_big_in_context.xdc] for cell 'UGAME/UBG/blk_mem_gen_bg_inst'
+Parsing XDC File [d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc] for cell 'U0/inst'
+Finished Parsing XDC File [d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc] for cell 'U0/inst'
 Parsing XDC File [D:/data/logic_design_lab/final_project/final/final.srcs/constrs_1/new/Basys3_Master.xdc]
 Finished Parsing XDC File [D:/data/logic_design_lab/final_project/final/final.srcs/constrs_1/new/Basys3_Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/data/logic_design_lab/final_project/final/final.srcs/constrs_1/new/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
@@ -399,46 +422,61 @@ Parsing XDC File [D:/data/logic_design_lab/final_project/final/final.runs/synth_
 Finished Parsing XDC File [D:/data/logic_design_lab/final_project/final/final.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1148.934 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1154.254 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1148.934 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1154.254 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'UGAME/UBG/blk_mem_gen_bg_inst' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'UGAME/UBIRD/blk_mem_gen_bird_inst' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'UGAME/UPIPE/blk_mem_gen_pipe_inst' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'UGAME/USCENCE/UTEXT/UTEXT/blk_mem_gen_font_inst' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1157.828 ; gain = 432.543
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1162.938 ; gain = 437.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1157.828 ; gain = 432.543
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1162.938 ; gain = 437.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for PS2_CLK. (constraint file  d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_CLK. (constraint file  d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for UGAME/USCENCE/UTEXT/UTEXT/blk_mem_gen_font_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for UGAME/UPIPE/blk_mem_gen_pipe_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for UGAME/UBIRD/blk_mem_gen_bird_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for UGAME/UBG/blk_mem_gen_bg_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1157.828 ; gain = 432.543
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1162.938 ; gain = 437.117
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'KeyboardDecoder'
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v:203]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v:187]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v:171]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v:155]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v:135]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/pipe_mem_addr_gen.v:186]
-INFO: [Synth 8-4471] merging register 'is_game_over_reg' into 'is_dead_reg' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/ctrl.v:70]
+INFO: [Synth 8-4471] merging register 'is_game_over_reg' into 'is_dead_reg' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/ctrl.v:71]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ctrl'
 INFO: [Synth 8-5546] ROM "data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "cnt_limit" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                               00 |                               00
+         WAIT_FOR_SIGNAL |                               01 |                               01
+         GET_SIGNAL_DOWN |                               10 |                               10
+            WAIT_RELEASE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'KeyboardDecoder'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -452,9 +490,8 @@ WARNING: [Synth 8-327] inferring latch for variable 'font_reg' [D:/data/logic_de
 WARNING: [Synth 8-327] inferring latch for variable 'pos_h_cnt_reg' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/scence_ctrl.v:74]
 WARNING: [Synth 8-327] inferring latch for variable 'pos_v_cnt_reg' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/scence_ctrl.v:75]
 WARNING: [Synth 8-327] inferring latch for variable 'alphabets_1d_reg' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/scence_ctrl.v:73]
-WARNING: [Synth 8-327] inferring latch for variable 'song_id_reg' [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/top.v:177]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1157.828 ; gain = 432.543
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1162.938 ; gain = 437.117
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -484,17 +521,19 @@ Detailed RTL Component Info :
 	   2 Input     10 Bit       Adders := 10    
 	   2 Input      9 Bit       Adders := 2     
 +---Registers : 
+	              512 Bit    Registers := 1     
 	               30 Bit    Registers := 1     
 	               22 Bit    Registers := 2     
 	               17 Bit    Registers := 4     
 	               16 Bit    Registers := 2     
 	               11 Bit    Registers := 2     
-	               10 Bit    Registers := 23    
+	               10 Bit    Registers := 24    
 	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 2     
-	                4 Bit    Registers := 3     
-	                1 Bit    Registers := 20    
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 27    
 +---Muxes : 
+	   2 Input    512 Bit        Muxes := 1     
 	   2 Input     88 Bit        Muxes := 3     
 	   4 Input     22 Bit        Muxes := 1     
 	   2 Input     22 Bit        Muxes := 1     
@@ -505,6 +544,7 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit        Muxes := 2     
 	   2 Input     12 Bit        Muxes := 3     
 	   2 Input     11 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 12    
 	   3 Input     10 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 2     
@@ -515,12 +555,12 @@ Detailed RTL Component Info :
 	   3 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	   3 Input      4 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 7     
-	   2 Input      1 Bit        Muxes := 12    
-	   4 Input      1 Bit        Muxes := 3     
-	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 23    
+	   4 Input      1 Bit        Muxes := 10    
+	   3 Input      1 Bit        Muxes := 2     
 	  11 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -531,9 +571,12 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module top 
 Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
 +---Muxes : 
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
 Module debounce 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -547,6 +590,23 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
+Module OnePulseKB 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module KeyboardDecoder 
+Detailed RTL Component Info : 
++---Registers : 
+	              512 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input    512 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 7     
 Module bg_mem_addr_gen 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -608,7 +668,7 @@ Detailed RTL Component Info :
 Module ctrl 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
 +---Muxes : 
 	   2 Input     12 Bit        Muxes := 3     
 	   3 Input      3 Bit        Muxes := 1     
@@ -789,7 +849,9 @@ WARNING: [Synth 8-3331] design pipe_mem_addr_gen has unconnected port h_cnt[0]
 WARNING: [Synth 8-3331] design pipe_mem_addr_gen has unconnected port v_cnt[0]
 WARNING: [Synth 8-3331] design bg_ctrl has unconnected port h_cnt[0]
 WARNING: [Synth 8-3331] design bg_ctrl has unconnected port v_cnt[0]
+WARNING: [Synth 8-3331] design top has unconnected port btn_u
 WARNING: [Synth 8-3331] design top has unconnected port btn_m
+WARNING: [Synth 8-3331] design top has unconnected port btn_d
 WARNING: [Synth 8-3331] design top has unconnected port btn_r
 WARNING: [Synth 8-3331] design top has unconnected port btn_l
 INFO: [Synth 8-3886] merging instance 'UACTRL/SCTRL/cnt_limit_reg[0]' (FDR) to 'UACTRL/SCTRL/cnt_limit_reg[5]'
@@ -911,11 +973,10 @@ WARNING: [Synth 8-3332] Sequential element (font_reg[7]) is unused and will be r
 WARNING: [Synth 8-3332] Sequential element (pos_h_cnt_reg[9]) is unused and will be removed from module scence_ctrl.
 WARNING: [Synth 8-3332] Sequential element (pos_v_cnt_reg[9]) is unused and will be removed from module scence_ctrl.
 WARNING: [Synth 8-3332] Sequential element (alphabets_1d_reg[31]) is unused and will be removed from module scence_ctrl.
-WARNING: [Synth 8-3332] Sequential element (song_id_reg[3]) is unused and will be removed from module top.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (UGAME/USCENCE/\UTEXT/text_h_cnt_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (UGAME/\UPIPE/UMEMGEN /i_2/\pos_reg[7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1157.828 ; gain = 432.543
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1162.938 ; gain = 437.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -955,13 +1016,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:10 ; elapsed = 00:01:14 . Memory (MB): peak = 1178.102 ; gain = 452.816
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 1180.355 ; gain = 454.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 1202.188 ; gain = 476.902
+Finished Timing Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:05 . Memory (MB): peak = 1204.105 ; gain = 478.285
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -975,7 +1036,7 @@ Start Technology Mapping
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_pos_ctrl.v:72]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/bird_pos_ctrl.v:72]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:14 ; elapsed = 00:01:17 . Memory (MB): peak = 1252.125 ; gain = 526.840
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:07 . Memory (MB): peak = 1254.062 ; gain = 528.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -999,13 +1060,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:01:24 . Memory (MB): peak = 1256.688 ; gain = 531.402
+Finished IO Insertion : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 1258.652 ; gain = 532.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:21 ; elapsed = 00:01:24 . Memory (MB): peak = 1256.688 ; gain = 531.402
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 1258.652 ; gain = 532.832
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1024,25 +1085,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:22 ; elapsed = 00:01:26 . Memory (MB): peak = 1256.688 ; gain = 531.402
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 1258.652 ; gain = 532.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:22 ; elapsed = 00:01:26 . Memory (MB): peak = 1256.688 ; gain = 531.402
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:11 ; elapsed = 00:01:14 . Memory (MB): peak = 1258.652 ; gain = 532.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:22 ; elapsed = 00:01:26 . Memory (MB): peak = 1256.688 ; gain = 531.402
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 1258.652 ; gain = 532.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 1256.688 ; gain = 531.402
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 1258.652 ; gain = 532.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1052,39 +1113,40 @@ Report BlackBoxes:
 +------+-------------------+----------+
 |      |BlackBox name      |Instances |
 +------+-------------------+----------+
-|1     |blk_mem_gen_bg_big |         1|
-|2     |blk_mem_gen_bird   |         1|
-|3     |blk_mem_gen_pipe   |         1|
-|4     |blk_mem_gen_font   |         1|
+|1     |KeyboardCtrl_0     |         1|
+|2     |blk_mem_gen_bg_big |         1|
+|3     |blk_mem_gen_bird   |         1|
+|4     |blk_mem_gen_pipe   |         1|
+|5     |blk_mem_gen_font   |         1|
 +------+-------------------+----------+
 
 Report Cell Usage: 
 +------+-------------------+------+
 |      |Cell               |Count |
 +------+-------------------+------+
-|1     |blk_mem_gen_bg_big |     1|
-|2     |blk_mem_gen_bird   |     1|
-|3     |blk_mem_gen_font   |     1|
-|4     |blk_mem_gen_pipe   |     1|
-|5     |BUFG               |     3|
-|6     |CARRY4             |   497|
-|7     |DSP48E1            |     1|
-|8     |LUT1               |   141|
-|9     |LUT2               |   682|
-|10    |LUT3               |   566|
-|11    |LUT4               |   698|
-|12    |LUT5               |   379|
-|13    |LUT6               |   673|
-|14    |MUXF7              |    33|
-|15    |MUXF8              |     1|
-|16    |FDCE               |   204|
-|17    |FDPE               |    50|
-|18    |FDRE               |   139|
-|19    |LD                 |    47|
-|20    |LDC                |     1|
-|21    |LDCP               |     6|
+|1     |KeyboardCtrl_0     |     1|
+|2     |blk_mem_gen_bg_big |     1|
+|3     |blk_mem_gen_bird   |     1|
+|4     |blk_mem_gen_font   |     1|
+|5     |blk_mem_gen_pipe   |     1|
+|6     |BUFG               |     3|
+|7     |CARRY4             |   497|
+|8     |DSP48E1            |     1|
+|9     |LUT1               |   141|
+|10    |LUT2               |   690|
+|11    |LUT3               |   564|
+|12    |LUT4               |   705|
+|13    |LUT5               |   393|
+|14    |LUT6               |   664|
+|15    |MUXF7              |    33|
+|16    |MUXF8              |     1|
+|17    |FDCE               |   222|
+|18    |FDPE               |    50|
+|19    |FDRE               |   144|
+|20    |LD                 |    47|
+|21    |LDCP               |     4|
 |22    |LDP                |     1|
-|23    |IBUF               |     4|
+|23    |IBUF               |     2|
 |24    |OBUF               |    46|
 +------+-------------------+------+
 
@@ -1092,73 +1154,73 @@ Report Instance Areas:
 +------+------------------+---------------------------+------+
 |      |Instance          |Module                     |Cells |
 +------+------------------+---------------------------+------+
-|1     |top               |                           |  4220|
-|2     |  UACTRL          |audio_ctrl                 |   472|
-|3     |    SCTRL         |song_ctrl                  |   354|
-|4     |      UABM        |angry_bird_mem             |   111|
-|5     |      UCNT        |up_counter                 |   102|
-|6     |      UFPM        |fruit_pudding_mem          |   112|
-|7     |    U0            |note_gen                   |    64|
-|8     |    U1            |speaker_control            |    24|
-|9     |    UFQ           |fre_div                    |    30|
-|10    |  UDISP           |dec_disp                   |   213|
-|11    |    UDisp         |display_7seg               |   199|
-|12    |      U0          |segment7_frequency_divider |    44|
-|13    |    USEG_A        |segment7                   |     7|
-|14    |    USEG_B        |segment7_5                 |     7|
-|15    |  UGAME           |game                       |  2202|
-|16    |    UBG           |bg_ctrl                    |   125|
-|17    |      UMEMGEN     |bg_mem_addr_gen            |   113|
-|18    |    UBIRD         |bird_ctrl                  |   199|
-|19    |      UBIRDCTRL   |bird_pos_ctrl              |   109|
-|20    |      UMEMGEN     |bird_mem_addr_gen          |    76|
-|21    |    UCTRL         |ctrl                       |   901|
-|22    |    UPIPE         |pipe_ctrl                  |   418|
-|23    |      UMEMGEN     |pipe_mem_addr_gen          |   403|
-|24    |    USCENCE       |scence_ctrl                |   559|
-|25    |      USCORE      |score2font                 |   406|
-|26    |        U0        |dec2font                   |     5|
-|27    |        U1        |dec2font_2                 |   112|
-|28    |        U2        |dec2font_3                 |   284|
-|29    |        U3        |dec2font_4                 |     5|
-|30    |      UTEXT       |text_ctrl                  |   120|
-|31    |        UTEXT     |font_ctrl                  |    61|
-|32    |          UMEMGEN |font_mem_addr_gen          |    11|
-|33    |  UOPD            |onepulse                   |    89|
-|34    |    U0            |debounce_1                 |    47|
-|35    |  UOPU            |onepulse_0                 |     6|
-|36    |    U0            |debounce                   |     6|
-|37    |  clk_wiz_0_inst  |clock_divisor              |    29|
-|38    |  vga_inst        |vga_controller             |   568|
+|1     |top               |                           |  4268|
+|2     |  U0              |KeyboardDecoder            |    55|
+|3     |    op            |OnePulseKB                 |     5|
+|4     |  UACTRL          |audio_ctrl                 |   472|
+|5     |    SCTRL         |song_ctrl                  |   354|
+|6     |      UABM        |angry_bird_mem             |   111|
+|7     |      UCNT        |up_counter                 |   102|
+|8     |      UFPM        |fruit_pudding_mem          |   112|
+|9     |    U0            |note_gen                   |    64|
+|10    |    U1            |speaker_control            |    24|
+|11    |    UFQ           |fre_div                    |    30|
+|12    |  UDISP           |dec_disp                   |   213|
+|13    |    UDisp         |display_7seg               |   199|
+|14    |      U0          |segment7_frequency_divider |    44|
+|15    |    USEG_A        |segment7                   |     7|
+|16    |    USEG_B        |segment7_5                 |     7|
+|17    |  UGAME           |game                       |  2200|
+|18    |    UBG           |bg_ctrl                    |   125|
+|19    |      UMEMGEN     |bg_mem_addr_gen            |   113|
+|20    |    UBIRD         |bird_ctrl                  |   213|
+|21    |      UBIRDCTRL   |bird_pos_ctrl              |   112|
+|22    |      UMEMGEN     |bird_mem_addr_gen          |    87|
+|23    |    UCTRL         |ctrl                       |   900|
+|24    |    UPIPE         |pipe_ctrl                  |   417|
+|25    |      UMEMGEN     |pipe_mem_addr_gen          |   402|
+|26    |    USCENCE       |scence_ctrl                |   545|
+|27    |      USCORE      |score2font                 |   406|
+|28    |        U0        |dec2font                   |     5|
+|29    |        U1        |dec2font_2                 |   112|
+|30    |        U2        |dec2font_3                 |   284|
+|31    |        U3        |dec2font_4                 |     5|
+|32    |      UTEXT       |text_ctrl                  |   106|
+|33    |        UTEXT     |font_ctrl                  |    47|
+|34    |          UMEMGEN |font_mem_addr_gen          |    11|
+|35    |  UOPD            |onepulse                   |    89|
+|36    |    U0            |debounce_1                 |    47|
+|37    |  UOPU            |onepulse_0                 |     6|
+|38    |    U0            |debounce                   |     6|
+|39    |  clk_wiz_0_inst  |clock_divisor              |    29|
+|40    |  vga_inst        |vga_controller             |   565|
 +------+------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 1256.688 ; gain = 531.402
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 1258.652 ; gain = 532.832
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 51 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:12 ; elapsed = 00:01:23 . Memory (MB): peak = 1256.688 ; gain = 396.258
-Synthesis Optimization Complete : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 1256.688 ; gain = 531.402
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:01:10 . Memory (MB): peak = 1258.652 ; gain = 393.883
+Synthesis Optimization Complete : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 1258.652 ; gain = 532.832
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.319 . Memory (MB): peak = 1259.266 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 587 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1264.297 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 584 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 5 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1259.266 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1264.297 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 55 instances were transformed.
+  A total of 52 instances were transformed.
   LD => LDCE: 47 instances
-  LDC => LDCE: 1 instance 
-  LDCP => LDCP (GND, LDCE, LUT3(x2), VCC): 2 instances
   LDCP => LDCP (inverted pins: G) (GND, LDCE, LUT3(x2), VCC): 4 instances
   LDP => LDPE (inverted pins: G): 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-225 Infos, 129 Warnings, 0 Critical Warnings and 0 Errors encountered.
+237 Infos, 131 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:35 ; elapsed = 00:01:40 . Memory (MB): peak = 1259.266 ; gain = 802.539
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1259.266 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1264.297 ; gain = 808.449
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1264.297 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/data/logic_design_lab/final_project/final/final.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jun  8 23:45:27 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  9 14:22:53 2022...

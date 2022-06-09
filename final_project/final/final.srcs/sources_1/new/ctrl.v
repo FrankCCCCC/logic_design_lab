@@ -44,7 +44,8 @@ module ctrl #(
     output reg is_game_over = 1'b0,
     output reg is_dead = 1'b0,
     output reg is_start = 1'b0,
-    output reg is_bump = 1'b0
+    output reg is_bump = 1'b0,
+    output reg is_overlap = 1'b0
 );
     reg [`STATE_BITS_N-1:0] state = `START_STATE;
 
@@ -104,11 +105,18 @@ module ctrl #(
     always@(posedge clk or posedge rst) begin
         if(rst) begin
             is_bump <= 0;
+            is_overlap <= 1'b0;
         end else begin
             if((bird_px_valid && pipe_px_valid) || (bird_pos_v_cnt >= HEIGHT_CNT && pos < `POS_H_CNT_INIT)) begin    
                 is_bump <= 1;
+                if(bird_px_valid && pipe_px_valid) begin
+                    is_overlap <= 1'b1;
+                end else begin
+                    is_overlap <= 1'b0;
+                end
             end else begin
                 is_bump <= 0;
+                is_overlap <= 1'b0;
             end
         end
     end
