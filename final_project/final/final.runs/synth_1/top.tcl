@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
+set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -73,6 +74,7 @@ read_verilog -library xil_defaultlib {
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/segment7_frequency_divider.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_ctrl.v
+  D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/song_switch.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/speaker_control.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/text_ctrl.v
   D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/new/up_counter.v
@@ -82,11 +84,11 @@ read_verilog -library xil_defaultlib {
 read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_font/blk_mem_gen_font.xci
 set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_font/blk_mem_gen_font_ooc.xdc]
 
-read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe.xci
-set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe_ooc.xdc]
-
 read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bird/blk_mem_gen_bird.xci
 set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bird/blk_mem_gen_bird_ooc.xdc]
+
+read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe.xci
+set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe_ooc.xdc]
 
 read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big.xci
 set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big_ooc.xdc]

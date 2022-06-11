@@ -1,0 +1,235 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a35tcpg236-1",
+      "name": "font_ctrl_diag",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2"
+    },
+    "design_tree": {
+      "font_mem_addr_gen_0": "",
+      "blk_mem_gen_0": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "rst": {
+        "direction": "I"
+      },
+      "h_cnt": {
+        "direction": "I",
+        "left": "9",
+        "right": "0"
+      },
+      "v_cnt": {
+        "direction": "I",
+        "left": "9",
+        "right": "0"
+      },
+      "pos_h_cnt": {
+        "direction": "I",
+        "left": "9",
+        "right": "0"
+      },
+      "pos_v_cnt": {
+        "direction": "I",
+        "left": "9",
+        "right": "0"
+      },
+      "alphabet": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "dout": {
+        "direction": "O",
+        "left": "11",
+        "right": "0"
+      },
+      "px_valid": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "font_mem_addr_gen_0": {
+        "vlnv": "xilinx.com:module_ref:font_mem_addr_gen:1.0",
+        "xci_name": "font_ctrl_diag_font_mem_addr_gen_0_0",
+        "parameters": {
+          "ALPHABET_BITS_N": {
+            "value": "8"
+          },
+          "CNT_BITS_N": {
+            "value": "10"
+          },
+          "FONT_HEIGHT_CNT": {
+            "value": "8"
+          },
+          "FONT_NUM_COL": {
+            "value": "8"
+          },
+          "FONT_NUM_ROW": {
+            "value": "7"
+          },
+          "FONT_WIDTH_CNT": {
+            "value": "8"
+          },
+          "PX_ADDR_BITS_N": {
+            "value": "17"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "font_mem_addr_gen",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "h_cnt": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "v_cnt": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "pos_h_cnt": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "pos_v_cnt": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "alphabet": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "pixel_addr": {
+            "direction": "O",
+            "left": "16",
+            "right": "0"
+          },
+          "valid": {
+            "direction": "O"
+          }
+        }
+      },
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "font_ctrl_diag_blk_mem_gen_0_0",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../font.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Always_Enabled"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Read_Width_A": {
+            "value": "12"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "3584"
+          },
+          "Write_Width_A": {
+            "value": "12"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_1": {
+        "ports": [
+          "clk",
+          "font_mem_addr_gen_0/clk",
+          "blk_mem_gen_0/clka"
+        ]
+      },
+      "rst_1": {
+        "ports": [
+          "rst",
+          "font_mem_addr_gen_0/rst"
+        ]
+      },
+      "h_cnt_1": {
+        "ports": [
+          "h_cnt",
+          "font_mem_addr_gen_0/h_cnt"
+        ]
+      },
+      "v_cnt_1": {
+        "ports": [
+          "v_cnt",
+          "font_mem_addr_gen_0/v_cnt"
+        ]
+      },
+      "pos_h_cnt_1": {
+        "ports": [
+          "pos_h_cnt",
+          "font_mem_addr_gen_0/pos_h_cnt"
+        ]
+      },
+      "pos_v_cnt_1": {
+        "ports": [
+          "pos_v_cnt",
+          "font_mem_addr_gen_0/pos_v_cnt"
+        ]
+      },
+      "alphabet_1": {
+        "ports": [
+          "alphabet",
+          "font_mem_addr_gen_0/alphabet"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta",
+          "dout"
+        ]
+      },
+      "font_mem_addr_gen_0_pixel_addr": {
+        "ports": [
+          "font_mem_addr_gen_0/pixel_addr",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "font_mem_addr_gen_0_valid": {
+        "ports": [
+          "font_mem_addr_gen_0/valid",
+          "px_valid"
+        ]
+      }
+    }
+  }
+}

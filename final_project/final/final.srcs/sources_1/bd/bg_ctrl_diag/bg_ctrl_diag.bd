@@ -1,0 +1,186 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a35tcpg236-1",
+      "name": "bg_ctrl_diag",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2"
+    },
+    "design_tree": {
+      "bg_mem_addr_gen_0": "",
+      "blk_mem_gen_0": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "clk_scroll": {
+        "direction": "I"
+      },
+      "rst": {
+        "direction": "I"
+      },
+      "h_cnt": {
+        "direction": "I",
+        "left": "10",
+        "right": "0"
+      },
+      "v_cnt": {
+        "direction": "I",
+        "left": "10",
+        "right": "0"
+      },
+      "dout": {
+        "direction": "O",
+        "left": "17",
+        "right": "0"
+      },
+      "px_valid": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "bg_mem_addr_gen_0": {
+        "vlnv": "xilinx.com:module_ref:bg_mem_addr_gen:1.0",
+        "xci_name": "bg_ctrl_diag_bg_mem_addr_gen_0_0",
+        "parameters": {
+          "BG_HEIGHT_CNT": {
+            "value": "240"
+          },
+          "BG_WIDTH_CNT": {
+            "value": "320"
+          },
+          "CNT_BITS_N": {
+            "value": "10"
+          },
+          "PX_ADDR_BITS_N": {
+            "value": "17"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bg_mem_addr_gen",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "h_cnt": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "v_cnt": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "pixel_addr": {
+            "direction": "O",
+            "left": "16",
+            "right": "0"
+          },
+          "valid": {
+            "direction": "O"
+          }
+        }
+      },
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "bg_ctrl_diag_blk_mem_gen_0_0",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../bg_big.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Always_Enabled"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Read_Width_A": {
+            "value": "12"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "76800"
+          },
+          "Write_Width_A": {
+            "value": "12"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_scroll_1": {
+        "ports": [
+          "clk_scroll",
+          "bg_mem_addr_gen_0/clk"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "blk_mem_gen_0/clka"
+        ]
+      },
+      "rst_1": {
+        "ports": [
+          "rst",
+          "bg_mem_addr_gen_0/rst"
+        ]
+      },
+      "v_cnt_1": {
+        "ports": [
+          "v_cnt",
+          "bg_mem_addr_gen_0/v_cnt"
+        ]
+      },
+      "h_cnt_1": {
+        "ports": [
+          "h_cnt",
+          "bg_mem_addr_gen_0/h_cnt"
+        ]
+      },
+      "bg_mem_addr_gen_0_pixel_addr": {
+        "ports": [
+          "bg_mem_addr_gen_0/pixel_addr",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta",
+          "dout"
+        ]
+      },
+      "bg_mem_addr_gen_0_valid": {
+        "ports": [
+          "bg_mem_addr_gen_0/valid",
+          "px_valid"
+        ]
+      }
+    }
+  }
+}

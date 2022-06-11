@@ -1,0 +1,634 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a35tcpg236-1",
+      "name": "diagram",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2"
+    },
+    "design_tree": {
+      "game_0": "",
+      "audio_ctrl_0": "",
+      "dec_disp_0": "",
+      "onepulse_0": "",
+      "KeyboardDecoder_0": "",
+      "clock_divisor_0": "",
+      "onepulse_1": "",
+      "song_switch_0": "",
+      "vga_controller_0": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "rst": {
+        "direction": "I"
+      },
+      "PS2_DATA": {
+        "direction": "IO"
+      },
+      "PS2_CLK": {
+        "direction": "IO"
+      },
+      "hsync": {
+        "direction": "O"
+      },
+      "vsync": {
+        "direction": "O"
+      },
+      "mclk": {
+        "direction": "O"
+      },
+      "lrck": {
+        "direction": "O"
+      },
+      "sck": {
+        "direction": "O"
+      },
+      "sdin": {
+        "direction": "O"
+      },
+      "vgaRed": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "vgaBlue": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "vgaGreen": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "d_out": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "d_sel": {
+        "direction": "O",
+        "left": "0",
+        "right": "3"
+      }
+    },
+    "components": {
+      "game_0": {
+        "vlnv": "xilinx.com:module_ref:game:1.0",
+        "xci_name": "diagram_game_0_0",
+        "parameters": {
+          "CNT_BITS_N": {
+            "value": "10"
+          },
+          "HEIGHT_CNT": {
+            "value": "240"
+          },
+          "MEM_DATA_BIT_N": {
+            "value": "12"
+          },
+          "PX_ADDR_BITS_N": {
+            "value": "17"
+          },
+          "SCORE_BITS_N": {
+            "value": "14"
+          },
+          "WIDTH_CNT": {
+            "value": "320"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "game",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clk_bg_scroll": {
+            "direction": "I"
+          },
+          "clk_pipe_scroll": {
+            "direction": "I"
+          },
+          "clk_flap": {
+            "direction": "I"
+          },
+          "clk_move": {
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "push_debounced_u": {
+            "direction": "I"
+          },
+          "push_onepulse_d": {
+            "direction": "I"
+          },
+          "h_cnt": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "v_cnt": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "pixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "score": {
+            "direction": "O",
+            "left": "13",
+            "right": "0"
+          },
+          "is_start": {
+            "direction": "O"
+          },
+          "is_game_over": {
+            "direction": "O"
+          },
+          "is_dead": {
+            "direction": "O"
+          },
+          "is_bump": {
+            "direction": "O"
+          },
+          "is_overlap": {
+            "direction": "O"
+          }
+        }
+      },
+      "audio_ctrl_0": {
+        "vlnv": "xilinx.com:module_ref:audio_ctrl:1.0",
+        "xci_name": "diagram_audio_ctrl_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "audio_ctrl",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "song_id": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "enable": {
+            "direction": "I"
+          },
+          "is_repeat": {
+            "direction": "I"
+          },
+          "mclk": {
+            "direction": "O"
+          },
+          "lrck": {
+            "direction": "O"
+          },
+          "sck": {
+            "direction": "O"
+          },
+          "sdin": {
+            "direction": "O"
+          }
+        }
+      },
+      "dec_disp_0": {
+        "vlnv": "xilinx.com:module_ref:dec_disp:1.0",
+        "xci_name": "diagram_dec_disp_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "dec_disp",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "num": {
+            "direction": "I",
+            "left": "13",
+            "right": "0"
+          },
+          "d_sel": {
+            "direction": "O",
+            "left": "0",
+            "right": "3"
+          },
+          "d_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "onepulse_0": {
+        "vlnv": "xilinx.com:module_ref:onepulse:1.0",
+        "xci_name": "diagram_onepulse_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "onepulse",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "push": {
+            "direction": "I"
+          },
+          "push_onepulse": {
+            "direction": "O"
+          },
+          "push_onepulse_long": {
+            "direction": "O"
+          },
+          "push_debounced": {
+            "direction": "O"
+          },
+          "push_debounced_long": {
+            "direction": "O"
+          },
+          "push_sig": {
+            "direction": "O"
+          },
+          "push_sig_long": {
+            "direction": "O"
+          }
+        }
+      },
+      "KeyboardDecoder_0": {
+        "vlnv": "xilinx.com:module_ref:KeyboardDecoder:1.0",
+        "xci_name": "diagram_KeyboardDecoder_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "KeyboardDecoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "key_down": {
+            "direction": "O",
+            "left": "511",
+            "right": "0"
+          },
+          "last_change": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "key_valid": {
+            "direction": "O"
+          },
+          "PS2_DATA": {
+            "direction": "IO"
+          },
+          "PS2_CLK": {
+            "type": "clk",
+            "direction": "IO"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          }
+        }
+      },
+      "clock_divisor_0": {
+        "vlnv": "xilinx.com:module_ref:clock_divisor:1.0",
+        "xci_name": "diagram_clock_divisor_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clock_divisor",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clk1": {
+            "direction": "O"
+          },
+          "clk21": {
+            "direction": "O"
+          },
+          "clk22": {
+            "direction": "O"
+          }
+        }
+      },
+      "onepulse_1": {
+        "vlnv": "xilinx.com:module_ref:onepulse:1.0",
+        "xci_name": "diagram_onepulse_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "onepulse",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "push": {
+            "direction": "I"
+          },
+          "push_onepulse": {
+            "direction": "O"
+          },
+          "push_onepulse_long": {
+            "direction": "O"
+          },
+          "push_debounced": {
+            "direction": "O"
+          },
+          "push_debounced_long": {
+            "direction": "O"
+          },
+          "push_sig": {
+            "direction": "O"
+          },
+          "push_sig_long": {
+            "direction": "O"
+          }
+        }
+      },
+      "song_switch_0": {
+        "vlnv": "xilinx.com:module_ref:song_switch:1.0",
+        "xci_name": "diagram_song_switch_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "song_switch",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "is_start": {
+            "direction": "I"
+          },
+          "is_game_over": {
+            "direction": "I"
+          },
+          "is_overlap": {
+            "direction": "I"
+          },
+          "song_id": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          }
+        }
+      },
+      "vga_controller_0": {
+        "vlnv": "xilinx.com:module_ref:vga_controller:1.0",
+        "xci_name": "diagram_vga_controller_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "vga_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pclk": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "hsync": {
+            "direction": "O"
+          },
+          "vsync": {
+            "direction": "O"
+          },
+          "valid": {
+            "direction": "O"
+          },
+          "h_cnt": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "v_cnt": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_1": {
+        "ports": [
+          "clk",
+          "clock_divisor_0/clk",
+          "game_0/clk",
+          "onepulse_0/clk",
+          "onepulse_1/clk",
+          "KeyboardDecoder_0/clk",
+          "song_switch_0/clk",
+          "dec_disp_0/clk",
+          "audio_ctrl_0/clk"
+        ]
+      },
+      "rst_1": {
+        "ports": [
+          "rst",
+          "onepulse_1/rst",
+          "onepulse_0/rst",
+          "KeyboardDecoder_0/rst",
+          "game_0/rst",
+          "vga_controller_0/reset",
+          "dec_disp_0/rst",
+          "audio_ctrl_0/rst_n"
+        ]
+      },
+      "KeyboardDecoder_0_key_down": {
+        "ports": [
+          "KeyboardDecoder_0/key_down",
+          "onepulse_0/push",
+          "onepulse_1/push"
+        ]
+      },
+      "onepulse_0_push_debounced": {
+        "ports": [
+          "onepulse_0/push_debounced",
+          "game_0/push_debounced_u"
+        ]
+      },
+      "onepulse_1_push_onepulse": {
+        "ports": [
+          "onepulse_1/push_onepulse",
+          "game_0/push_onepulse_d"
+        ]
+      },
+      "clock_divisor_0_clk22": {
+        "ports": [
+          "clock_divisor_0/clk22",
+          "game_0/clk_bg_scroll",
+          "game_0/clk_flap"
+        ]
+      },
+      "clock_divisor_0_clk21": {
+        "ports": [
+          "clock_divisor_0/clk21",
+          "game_0/clk_pipe_scroll",
+          "game_0/clk_move"
+        ]
+      },
+      "game_0_is_start": {
+        "ports": [
+          "game_0/is_start",
+          "song_switch_0/is_start"
+        ]
+      },
+      "game_0_is_game_over": {
+        "ports": [
+          "game_0/is_game_over",
+          "song_switch_0/is_game_over"
+        ]
+      },
+      "game_0_is_overlap": {
+        "ports": [
+          "game_0/is_overlap",
+          "song_switch_0/is_overlap"
+        ]
+      },
+      "game_0_score": {
+        "ports": [
+          "game_0/score",
+          "dec_disp_0/num"
+        ]
+      },
+      "clock_divisor_0_clk1": {
+        "ports": [
+          "clock_divisor_0/clk1",
+          "vga_controller_0/pclk"
+        ]
+      },
+      "song_switch_0_song_id": {
+        "ports": [
+          "song_switch_0/song_id",
+          "audio_ctrl_0/song_id"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "PS2_DATA",
+          "KeyboardDecoder_0/PS2_DATA"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "PS2_CLK",
+          "KeyboardDecoder_0/PS2_CLK"
+        ]
+      },
+      "vga_controller_0_hsync": {
+        "ports": [
+          "vga_controller_0/hsync",
+          "hsync"
+        ]
+      },
+      "vga_controller_0_vsync": {
+        "ports": [
+          "vga_controller_0/vsync",
+          "vsync"
+        ]
+      },
+      "audio_ctrl_0_mclk": {
+        "ports": [
+          "audio_ctrl_0/mclk",
+          "mclk"
+        ]
+      },
+      "audio_ctrl_0_lrck": {
+        "ports": [
+          "audio_ctrl_0/lrck",
+          "lrck"
+        ]
+      },
+      "audio_ctrl_0_sck": {
+        "ports": [
+          "audio_ctrl_0/sck",
+          "sck"
+        ]
+      },
+      "audio_ctrl_0_sdin": {
+        "ports": [
+          "audio_ctrl_0/sdin",
+          "sdin"
+        ]
+      },
+      "game_0_pixel": {
+        "ports": [
+          "game_0/pixel",
+          "vgaRed",
+          "vgaBlue",
+          "vgaGreen"
+        ]
+      },
+      "vga_controller_0_h_cnt": {
+        "ports": [
+          "vga_controller_0/h_cnt",
+          "game_0/h_cnt"
+        ]
+      },
+      "vga_controller_0_v_cnt": {
+        "ports": [
+          "vga_controller_0/v_cnt",
+          "game_0/v_cnt"
+        ]
+      },
+      "dec_disp_0_d_out": {
+        "ports": [
+          "dec_disp_0/d_out",
+          "d_out"
+        ]
+      },
+      "dec_disp_0_d_sel": {
+        "ports": [
+          "dec_disp_0/d_sel",
+          "d_sel"
+        ]
+      }
+    }
+  }
+}

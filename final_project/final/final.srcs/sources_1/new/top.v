@@ -189,20 +189,32 @@ module top(
         .is_overlap(is_overlap)
     );
 
-    reg [SONG_ID_BITS_N-1:0] song_id = `NONE_SONG_ID;
-    reg is_play_bump = 1'b0;
+//    reg [SONG_ID_BITS_N-1:0] song_id = `NONE_SONG_ID;
+//    reg is_play_bump = 1'b0;
+//    wire enable = 1'b1, is_repeat = 1'b1;
+//    always@(posedge clk) begin
+//        if(is_overlap) begin
+//            song_id <= `BUMP_SONG_ID;
+//        end else if(~is_start && ~is_game_over) begin
+//            song_id <= `ANGRY_BIRD_SONG_ID;
+//        end else if(is_start && ~is_game_over) begin
+//            song_id <= `FRUIT_PUDDING_SONG_ID;
+//        end else if(~is_start && is_game_over) begin
+//            song_id <= `ANGRY_BIRD_SONG_ID;
+//        end
+//    end
+
+    wire [SONG_ID_BITS_N-1:0] song_id;
     wire enable = 1'b1, is_repeat = 1'b1;
-    always@(posedge clk) begin
-        if(is_overlap) begin
-            song_id <= `BUMP_SONG_ID;
-        end else if(~is_start && ~is_game_over) begin
-            song_id <= `ANGRY_BIRD_SONG_ID;
-        end else if(is_start && ~is_game_over) begin
-            song_id <= `FRUIT_PUDDING_SONG_ID;
-        end else if(~is_start && is_game_over) begin
-            song_id <= `ANGRY_BIRD_SONG_ID;
-        end
-    end
+    song_switch #(
+        .SONG_ID_BITS_N(SONG_ID_BITS_N)
+    )USS(
+        .clk(clk),
+        .is_start(is_start), 
+        .is_game_over(is_game_over), 
+        .is_overlap(is_overlap),
+        .song_id(song_id)
+    );
 
     audio_ctrl #(
         .MUSIC_ADDR_BITS_N(MUSIC_ADDR_BITS_N),

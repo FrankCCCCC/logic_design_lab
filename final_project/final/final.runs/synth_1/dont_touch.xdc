@@ -5,3 +5,23 @@
 
 # IP: ip/blk_mem_gen_font/blk_mem_gen_font.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==blk_mem_gen_font || ORIG_REF_NAME==blk_mem_gen_font} -quiet] -quiet
+
+# IP: ip/blk_mem_gen_bird/blk_mem_gen_bird.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==blk_mem_gen_bird || ORIG_REF_NAME==blk_mem_gen_bird} -quiet] -quiet
+
+# IP: ip/blk_mem_gen_pipe/blk_mem_gen_pipe.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==blk_mem_gen_pipe || ORIG_REF_NAME==blk_mem_gen_pipe} -quiet] -quiet
+
+# IP: ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==blk_mem_gen_bg_big || ORIG_REF_NAME==blk_mem_gen_bg_big} -quiet] -quiet
+
+# IP: ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==KeyboardCtrl_0 || ORIG_REF_NAME==KeyboardCtrl_0} -quiet] -quiet
+
+# XDC: ip/blk_mem_gen_font/blk_mem_gen_font_ooc.xdc
+
+# XDC: ip/blk_mem_gen_bird/blk_mem_gen_bird_ooc.xdc
+
+# XDC: ip/blk_mem_gen_pipe/blk_mem_gen_pipe_ooc.xdc
+
+# XDC: ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big_ooc.xdc

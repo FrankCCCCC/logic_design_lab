@@ -1,0 +1,31 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.5",
+   "Default View_TopLeft":"-248,-59",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port clk_scroll -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
+preplace port rst -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port px_valid -pg 1 -lvl 3 -x 510 -y 250 -defaultsOSRD
+preplace portBus h_cnt -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
+preplace portBus v_cnt -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace portBus dout -pg 1 -lvl 3 -x 510 -y 220 -defaultsOSRD
+preplace inst bg_mem_addr_gen_0 -pg 1 -lvl 1 -x 150 -y 240 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 2 -x 390 -y 110 -defaultsOSRD
+preplace netloc clk_scroll_1 1 0 1 20J 190n
+preplace netloc clk_1 1 0 2 NJ 100 NJ
+preplace netloc rst_1 1 0 1 20J 220n
+preplace netloc v_cnt_1 1 0 1 20J 270n
+preplace netloc h_cnt_1 1 0 1 NJ 250
+preplace netloc bg_mem_addr_gen_0_pixel_addr 1 1 1 280 80n
+preplace netloc blk_mem_gen_0_douta 1 1 2 290 220 NJ
+preplace netloc bg_mem_addr_gen_0_valid 1 1 2 NJ 250 NJ
+levelinfo -pg 1 0 150 390 510
+pagesize -pg 1 -db -bbox -sgen -120 0 630 330
+"
+}
+{
+   "da_clkrst_cnt":"1"
+}
