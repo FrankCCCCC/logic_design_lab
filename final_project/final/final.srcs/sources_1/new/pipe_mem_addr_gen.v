@@ -30,20 +30,38 @@
 `define PHASE3_CNT 106
 `define PHASE4_CNT 0
 
-`define PIPE_NUM 6
+`define PIPE_NUM 15
 `define PIPE0_LEN 60
 `define PIPE1_LEN 80
-`define PIPE2_LEN 100
-`define PIPE3_LEN 120
-`define PIPE4_LEN 140
-`define PIPE5_LEN 160
+`define PIPE2_LEN 40
+`define PIPE3_LEN 100
+`define PIPE4_LEN 120
+`define PIPE5_LEN 90
+`define PIPE6_LEN 130
+`define PIPE7_LEN 140
+`define PIPE8_LEN 160
+`define PIPE9_LEN 100
+`define PIPE10_LEN 20
+`define PIPE11_LEN 10
+`define PIPE12_LEN 30
+`define PIPE13_LEN 40
+`define PIPE14_LEN 70
 
-`define PIPE0_GAP 40
-`define PIPE1_GAP 40
-`define PIPE2_GAP 40
-`define PIPE3_GAP 60
+`define PIPE0_GAP 60
+`define PIPE1_GAP 60
+`define PIPE2_GAP 60
+`define PIPE3_GAP 65
 `define PIPE4_GAP 60
-`define PIPE5_GAP 60
+`define PIPE5_GAP 70
+`define PIPE6_GAP 65
+`define PIPE7_GAP 50
+`define PIPE8_GAP 67
+`define PIPE9_GAP 70
+`define PIPE10_GAP 60
+`define PIPE11_GAP 50
+`define PIPE12_GAP 70
+`define PIPE13_GAP 65
+`define PIPE14_GAP 65
 
 module pipe_mem_addr_gen #(
     parameter CNT_BITS_N = 0,
@@ -79,6 +97,15 @@ module pipe_mem_addr_gen #(
         pipe_gaps[3] = `PIPE3_GAP;
         pipe_gaps[4] = `PIPE4_GAP;
         pipe_gaps[5] = `PIPE5_GAP;
+        pipe_gaps[6] = `PIPE6_GAP;
+        pipe_gaps[7] = `PIPE7_GAP;
+        pipe_gaps[8] = `PIPE8_GAP;
+        pipe_gaps[9] = `PIPE9_GAP;
+        pipe_gaps[10] = `PIPE10_GAP;
+        pipe_gaps[11] = `PIPE11_GAP;
+        pipe_gaps[12] = `PIPE12_GAP;
+        pipe_gaps[13] = `PIPE13_GAP;
+        pipe_gaps[14] = `PIPE14_GAP;
         
         pipe_lens[0] = `PIPE0_LEN;
         pipe_lens[1] = `PIPE1_LEN;
@@ -86,6 +113,15 @@ module pipe_mem_addr_gen #(
         pipe_lens[3] = `PIPE3_LEN;
         pipe_lens[4] = `PIPE4_LEN;
         pipe_lens[5] = `PIPE5_LEN;
+        pipe_lens[6] = `PIPE6_LEN;
+        pipe_lens[7] = `PIPE7_LEN;
+        pipe_lens[8] = `PIPE8_LEN;
+        pipe_lens[9] = `PIPE9_LEN;
+        pipe_lens[10] = `PIPE10_LEN;
+        pipe_lens[11] = `PIPE11_LEN;
+        pipe_lens[12] = `PIPE12_LEN;
+        pipe_lens[13] = `PIPE13_LEN;
+        pipe_lens[14] = `PIPE14_LEN;
     end
     
     reg [CNT_BITS_N-1:0] pos_next = `PHASE1_CNT;
@@ -103,6 +139,15 @@ module pipe_mem_addr_gen #(
             pipe_gaps[3] <= `PIPE3_GAP;
             pipe_gaps[4] <= `PIPE4_GAP;
             pipe_gaps[5] <= `PIPE5_GAP;
+            pipe_gaps[6] <= `PIPE6_GAP;
+            pipe_gaps[7] <= `PIPE7_GAP;
+            pipe_gaps[8] <= `PIPE8_GAP;
+            pipe_gaps[9] <= `PIPE9_GAP;
+            pipe_gaps[10] <= `PIPE10_GAP;
+            pipe_gaps[11] <= `PIPE11_GAP;
+            pipe_gaps[12] <= `PIPE12_GAP;
+            pipe_gaps[13] <= `PIPE13_GAP;
+            pipe_gaps[14] <= `PIPE14_GAP;
             
             pipe_lens[0] <= `PIPE0_LEN;
             pipe_lens[1] <= `PIPE1_LEN;
@@ -110,25 +155,52 @@ module pipe_mem_addr_gen #(
             pipe_lens[3] <= `PIPE3_LEN;
             pipe_lens[4] <= `PIPE4_LEN;
             pipe_lens[5] <= `PIPE5_LEN;
+            pipe_lens[6] <= `PIPE6_LEN;
+            pipe_lens[7] <= `PIPE7_LEN;
+            pipe_lens[8] <= `PIPE8_LEN;
+            pipe_lens[9] <= `PIPE9_LEN;
+            pipe_lens[10] <= `PIPE10_LEN;
+            pipe_lens[11] <= `PIPE11_LEN;
+            pipe_lens[12] <= `PIPE12_LEN;
+            pipe_lens[13] <= `PIPE13_LEN;
+            pipe_lens[14] <= `PIPE14_LEN;
         end else if(pos_next >= 0 && pos_next < `PHASE1_CNT) begin
             pos <= pos_next;
         end else begin
             pos <= `PHASE1_CNT;
             is_pass_first_pipe <= 1;
             
-            pipe_gaps[5] <= pipe_gaps[0];
+            pipe_gaps[14] <= pipe_gaps[0];
             pipe_gaps[0] <= pipe_gaps[1];
             pipe_gaps[1] <= pipe_gaps[2];
             pipe_gaps[2] <= pipe_gaps[3];
             pipe_gaps[3] <= pipe_gaps[4];
             pipe_gaps[4] <= pipe_gaps[5];
+            pipe_gaps[5] <= pipe_gaps[6];
+            pipe_gaps[6] <= pipe_gaps[7];
+            pipe_gaps[7] <= pipe_gaps[8];
+            pipe_gaps[8] <= pipe_gaps[9];
+            pipe_gaps[9] <= pipe_gaps[10];
+            pipe_gaps[10] <= pipe_gaps[11];
+            pipe_gaps[11] <= pipe_gaps[12];
+            pipe_gaps[12] <= pipe_gaps[13];
+            pipe_gaps[13] <= pipe_gaps[14];
             
-            pipe_lens[5] <= pipe_lens[0];
+            pipe_lens[14] <= pipe_lens[0];
             pipe_lens[0] <= pipe_lens[1];
             pipe_lens[1] <= pipe_lens[2];
             pipe_lens[2] <= pipe_lens[3];
             pipe_lens[3] <= pipe_lens[4];
             pipe_lens[4] <= pipe_lens[5];
+            pipe_lens[5] <= pipe_lens[6];
+            pipe_lens[6] <= pipe_lens[7];
+            pipe_lens[7] <= pipe_lens[8];
+            pipe_lens[8] <= pipe_lens[9];
+            pipe_lens[9] <= pipe_lens[10];
+            pipe_lens[10] <= pipe_lens[11];
+            pipe_lens[11] <= pipe_lens[12];
+            pipe_lens[12] <= pipe_lens[13];
+            pipe_lens[13] <= pipe_lens[14];
         end
     end
     

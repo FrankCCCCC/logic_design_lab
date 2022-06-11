@@ -56,9 +56,13 @@ module fruit_pudding_mem #(
     
     always@(*)begin
         case (addr)
-            'd0: data = none;//row_subsection
-            'd1: data = none;
-            'd2: data = none;//2_1
+            // 'd0: data = none;//row_subsection
+            // 'd1: data = none;
+            // 'd2: data = none;//2_1
+            'd0: data = h_fa;
+            'd1: data = h_fa;
+            'd2: data = h_re;
+
             'd3: data = h_fa;
             'd4: data = h_fa;	
             'd4: data = none;
@@ -316,7 +320,7 @@ module fruit_pudding_mem #(
             'd337: data = none;
             'd338: data = h_mi;
             'd339: data = h_mi;
-            'd340: data = none;  
+            // 'd340: data = none;  
         default:
             data = 'd0;
     endcase

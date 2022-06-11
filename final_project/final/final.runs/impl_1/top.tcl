@@ -82,7 +82,7 @@ set rc [catch {
   read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_pipe/blk_mem_gen_pipe.xci
   read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bird/blk_mem_gen_bird.xci
   read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big.xci
-  read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+  read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
   read_xdc D:/data/logic_design_lab/final_project/final/final.srcs/constrs_1/new/Basys3_Master.xdc
   link_design -top top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb

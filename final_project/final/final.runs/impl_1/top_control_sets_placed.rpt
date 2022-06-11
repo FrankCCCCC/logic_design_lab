@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Jun  9 14:24:00 2022
+| Date         : Fri Jun 10 20:32:59 2022
 | Host         : DESKTOP-0M9JO91 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    33 |
-|    Minimum number of control sets                        |    33 |
+| Total control sets                                       |    34 |
+|    Minimum number of control sets                        |    34 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
 | Unused register locations in slices containing registers |   155 |
@@ -39,14 +39,14 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    33 |
+| Total control sets |    34 |
 | >= 0 to < 4        |    10 |
 | >= 4 to < 6        |     5 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     4 |
 | >= 10 to < 12      |     2 |
 | >= 12 to < 14      |     2 |
-| >= 14 to < 16      |     1 |
+| >= 14 to < 16      |     2 |
 | >= 16              |     9 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             133 |           58 |
-| No           | No                    | Yes                    |             248 |           91 |
-| No           | Yes                   | No                     |              30 |           17 |
-| Yes          | No                    | No                     |              18 |           10 |
-| Yes          | No                    | Yes                    |             111 |           40 |
+| No           | No                    | No                     |             135 |           56 |
+| No           | No                    | Yes                    |             248 |           85 |
+| No           | Yes                   | No                     |              30 |           11 |
+| Yes          | No                    | No                     |              25 |           13 |
+| Yes          | No                    | Yes                    |             254 |           78 |
 | Yes          | Yes                   | No                     |              25 |            8 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,39 +73,40 @@ Table of Contents
 +-------------------------------------------------+-----------------------------------------------+---------------------------------+------------------+----------------+
 |                   Clock Signal                  |                 Enable Signal                 |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
 +-------------------------------------------------+-----------------------------------------------+---------------------------------+------------------+----------------+
-|  UGAME/USCENCE/pos_v_cnt_reg[0]/G0              |                                               |                                 |                1 |              1 |
 |  UGAME/USCENCE/pos_v_cnt_reg[2]/G0              |                                               |                                 |                1 |              1 |
+|  UGAME/USCENCE/pos_v_cnt_reg[0]/G0              |                                               |                                 |                1 |              1 |
 |  UGAME/USCENCE/pos_v_cnt_reg[4]/G0              |                                               |                                 |                1 |              1 |
 |  UGAME/USCENCE/pos_v_cnt_reg[6]/G0              |                                               |                                 |                1 |              1 |
-|  clk_wiz_0_inst/CLK                             | vga_inst/line_cnt                             |                                 |                1 |              1 |
 | ~is_start_BUFG                                  |                                               | UGAME/UCTRL/is_dead_reg_1[21]   |                1 |              1 |
-|  clk_IBUF_BUFG                                  |                                               | UGAME/UCTRL/is_dead_reg_3[0]    |                1 |              1 |
+|  clk_wiz_0_inst/CLK                             | vga_inst/line_cnt                             |                                 |                1 |              1 |
+|  clk_IBUF_BUFG                                  |                                               | UGAME/UCTRL/rst0                |                1 |              1 |
 |  clk_wiz_0_inst/CLK                             |                                               |                                 |                2 |              2 |
-|  clk_wiz_0_inst/S[0]                            | UGAME/UBIRD/UMEMGEN/phase[4]__0_i_1_n_0       | UGAME/UCTRL/is_dead_reg_3[0]    |                1 |              2 |
+|  clk_wiz_0_inst/num_reg[21]_0[0]                | UGAME/UBIRD/UMEMGEN/phase[4]__0_i_1_n_0       | UGAME/UCTRL/rst0                |                1 |              2 |
 |  UACTRL/U1/sel0[0]                              |                                               | rst_IBUF                        |                1 |              3 |
 |  clk_IBUF_BUFG                                  | U0/inst/inst/Ps2Interface_i/bits_count        | rst_IBUF                        |                1 |              4 |
-|  UGAME/UCTRL/score_reg[10]_1[0]                 |                                               |                                 |                4 |              5 |
-|  UGAME/UCTRL/font_reg[4]_i_9__0_0[0]            |                                               |                                 |                2 |              5 |
+|  UGAME/UCTRL/score_reg[10]_1[0]                 |                                               |                                 |                2 |              5 |
 |  UGAME/UCTRL/score_reg[3]_6[0]                  |                                               |                                 |                3 |              5 |
-|  UGAME/USCENCE/USCORE/U2/font_reg[4]_i_2__1_n_0 |                                               |                                 |                2 |              5 |
-|  clk_IBUF_BUFG                                  | U0/inst/inst/Ps2Interface_i/rx_finish         | rst_IBUF                        |                3 |              8 |
+|  UGAME/UCTRL/font_reg[4]_i_9__0_0[0]            |                                               |                                 |                2 |              5 |
+|  UGAME/USCENCE/USCORE/U2/font_reg[4]_i_2__1_n_0 |                                               |                                 |                3 |              5 |
+|  clk_IBUF_BUFG                                  | U0/inst/inst/Ps2Interface_i/rx_finish         | rst_IBUF                        |                2 |              8 |
 |  clk_IBUF_BUFG                                  | U0/inst/inst/Ps2Interface_i/rx_valid          | rst_IBUF                        |                2 |              8 |
 |  clk_wiz_0_inst/CLK                             | vga_inst/line_cnt                             | vga_inst/line_cnt[9]_i_1_n_0    |                3 |              9 |
-|  clk_wiz_0_inst/S[0]                            |                                               | rst_IBUF                        |                3 |              9 |
+|  clk_wiz_0_inst/num_reg[21]_0[0]                |                                               | rst_IBUF                        |                3 |              9 |
 |  clk_IBUF_BUFG                                  | U0/key                                        | rst_IBUF                        |                2 |             10 |
-|  clk_IBUF_BUFG                                  | U0/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | rst_IBUF                        |                3 |             11 |
-|  clk_wiz_0_inst/CLK                             |                                               | vga_inst/pixel_cnt[9]_i_1_n_0   |                5 |             12 |
-|  UDISP/UDisp/U0/CLK                             |                                               | rst_IBUF                        |                8 |             12 |
+|  clk_IBUF_BUFG                                  | U0/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | rst_IBUF                        |                2 |             11 |
+|  UDISP/UDisp/U0/CLK                             |                                               | rst_IBUF                        |                6 |             12 |
+|  clk_wiz_0_inst/CLK                             |                                               | vga_inst/pixel_cnt[9]_i_1_n_0   |                4 |             12 |
 |  clk_21_BUFG                                    | UGAME/UPIPE/UMEMGEN/score0                    | UGAME/UCTRL/score[0]_i_1_n_0    |                4 |             14 |
-|  clk_IBUF_BUFG                                  |                                               | UGAME/UPIPE/UMEMGEN/addr_h_cnt0 |               11 |             17 |
+|  clk_21_BUFG                                    | UGAME/UPIPE/UMEMGEN/pipe_gaps[14][6]_i_1_n_0  |                                 |                3 |             14 |
 |  clk_IBUF_BUFG                                  | UGAME/USCENCE/UTEXT/text_h_cnt                |                                 |                9 |             17 |
-|  clk_IBUF_BUFG                                  | UGAME/UBIRD/UBIRDCTRL/drop_count_next_0       | UGAME/UCTRL/is_dead_reg_3[0]    |                7 |             21 |
-|  UGAME/UCTRL/E[0]                               |                                               |                                 |               11 |             27 |
-|  UACTRL/UFQ/clk_ctl_reg_0                       |                                               | rst_IBUF                        |               10 |             28 |
-|  clk_21_BUFG                                    |                                               | UGAME/UCTRL/is_dead_reg_3[0]    |               13 |             29 |
-|  clk_21_BUFG                                    | UGAME/UPIPE/UMEMGEN/pipe_gaps[5][4]_i_1_n_0   | UGAME/UCTRL/is_dead_reg_3[0]    |               22 |             49 |
-|  clk_IBUF_BUFG                                  |                                               |                                 |               30 |             80 |
+|  clk_IBUF_BUFG                                  |                                               | UGAME/UPIPE/UMEMGEN/addr_h_cnt0 |                6 |             17 |
+|  clk_IBUF_BUFG                                  | UGAME/UBIRD/UBIRDCTRL/drop_count_next_0       | UGAME/UCTRL/rst0                |                6 |             21 |
+|  UGAME/UCTRL/E[0]                               |                                               |                                 |                9 |             27 |
+|  UACTRL/UFQ/clk_ctl_reg_0                       |                                               | rst_IBUF                        |                9 |             28 |
+|  clk_21_BUFG                                    |                                               | UGAME/UCTRL/rst0                |               10 |             29 |
+|  clk_IBUF_BUFG                                  |                                               |                                 |               31 |             82 |
 |  clk_IBUF_BUFG                                  |                                               | rst_IBUF                        |               55 |            166 |
+|  clk_21_BUFG                                    | UGAME/UPIPE/UMEMGEN/pipe_gaps[14][6]_i_1_n_0  | UGAME/UCTRL/rst0                |               63 |            192 |
 +-------------------------------------------------+-----------------------------------------------+---------------------------------+------------------+----------------+
 
 

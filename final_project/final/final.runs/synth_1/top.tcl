@@ -91,7 +91,7 @@ set_property used_in_implementation false [get_files -all d:/data/logic_design_l
 read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big.xci
 set_property used_in_implementation false [get_files -all d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/blk_mem_gen_bg_big/blk_mem_gen_bg_big_ooc.xdc]
 
-read_ip -quiet d:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+read_ip -quiet D:/data/logic_design_lab/final_project/final/final.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

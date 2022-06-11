@@ -64,7 +64,7 @@ module top(
     onepulse UOPU(
         .clk(clk),
         .rst(~rst),
-        // .push(btn_u),
+//        .push(btn_u),
         .push(key_down[`CODE_SPACE_L]),
         .push_debounced(push_debounced_u)
     );
@@ -72,7 +72,7 @@ module top(
     onepulse UOPD(
         .clk(clk),
         .rst(~rst),
-        // .push(btn_d),
+//        .push(btn_d),
         .push(key_down[`CODE_ENTER_L]),
         .push_onepulse(push_onepulse_d)
     );

@@ -59,8 +59,10 @@ module angry_bird_mem #(
     
     always@(*)begin
         case (addr)
-            'd0: data = none;	//row_subsection
-            'd1: data = none;
+            'd0: data = h_mi;
+            'd1: data = h_fa;	
+            // 'd0: data = none;	//row_subsection
+            // 'd1: data = none;
             'd2: data = none;//1_1
             'd3: data = h_mi;
             'd4: data = h_fa;	
@@ -292,9 +294,9 @@ module angry_bird_mem #(
             'd319: data = none;
             'd311: data = h_si;
             'd312: data = h_h_do;   
-            'd313: data = none;
-            'd314: data = none;
-            'd315: data = none;  
+            // 'd313: data = none;
+            // 'd314: data = none;
+            // 'd315: data = none;  
         default:
             data = 'd0;
         endcase
