@@ -439,7 +439,7 @@ The global variables are used across the whole project.
 
 此為本遊戲的頂層模組，此模組調用 ``clock_divisor`` 為背景滾動、水管滾動、小鳥移動和拍動翅膀提供 clock 作為 trigger。並將這些 clock 傳進模組``game``，並依據 VGA 座標``(h_cnt, v_cnt)``回傳 pixel 的資料，再傳進模組 ``vga_controller``，並用模組``dec_disp``使分數同步顯示於七段顯示器上。
 
-<!-- ![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/top_diag.jpg) -->
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/top_diag.png)
 
 ### Module: clock_divisor
 
@@ -477,7 +477,7 @@ For each click, the module will delay 4 clock cycle and then raise the debounce 
 
 此模組的作用在於控制背景滾動，我們用 ``bg_mem_addr_gen`` 和 ``blk_mem_gen_bg_big`` 來實現此功能。其中 ``bg_mem_addr_gen`` 產生對應該 VGA 座標所需的 pixel 的 address，並放入 ``blk_mem_gen_bg_big`` 將對應 address 的背景圖資料讀出。
 
-<!-- ![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/bg_ctrl_diag.jpg) -->
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/bg_ctrl_diag.png)
 
 #### Module: bg_mem_addr_gen
 
@@ -495,7 +495,7 @@ For each click, the module will delay 4 clock cycle and then raise the debounce 
 
 另外，``dout``輸出對應 VGA 座標的 pixel 資料，``px_valid`` 則輸出在此 VGA 座標是否需要顯示出此 pixel，會如此設計是因為水管圖片周圍其實會有一層非透明的框，因此我們就直接針對方框的顏色予以剃除，同時必須在不用畫出水管的區域讓水管這一個圖層保持透明，以方便疊圖。
 
-<!-- ![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/pipe_ctrl_diag.jpg) -->
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/pipe_ctrl_diag.png)
 
 #### Module: pipe_mem_addr_gen
 
@@ -572,7 +572,7 @@ if(is_pass_first_pipe && h_h_cnt > 0 && PIPE_WIDTH_CNT > (`PHASE1_CNT - pos) && 
 
 此模組依據玩家的輸入，控制小鳥的飛行位置，並同時實現小鳥拍打翅膀的動畫與模仿地心引力的下墜。``dout``輸出對應 VGA 座標的 pixel 資料，``px_valid`` 則輸出在此 VGA 座標是否需要顯示出此 pixel，若``px_valid=0``則此圖層為透明無色，同時，與繪製水管的考量相仿，因為小鳥的圖片周圍也有一層非透明的方框，因此必須檢測該方框顏色並予以剃除。
 
-<!-- ![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/bird_ctrl_diag.jpg) -->
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/bird_ctrl_diag.png)
 
 #### Module: bird_mem_addr_gen
 
@@ -690,7 +690,7 @@ end
 
 此模組可以依據指定位置``(pos_h_cnt, pos_v_cnt)``將單個文字``alphabet``在指定位置畫出，其中``dout``輸出對應該 VGA 座標``(h_cnt, v_cnt)``的 pixel 資料，而``px_valid``輸出該 VGA 座標是否會有文字 pixel，也就是文字圖層在該 VGA 座標是否為透明。
 
-<!-- ![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/font_ctrl_diag.jpg) -->
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/font_ctrl_diag.png)
 
 #### Module: font_mem_addr_gen
 
@@ -889,7 +889,7 @@ assign audio_sck = clk_cnt[3];     // serial clock
 
 依據 VGA 的設計，我們需要在 Horizontal Sync Pulse 與 Vertical Sync Pulse 的時間區間內拉回 Scan 到下一行或下一個 frame 的起始位置。因此，在 Horizontal Sync 的時間區間內，必須將 HSYNC 設為低電壓，而在 Vertical Sync 區間內，必須將 VSYNC 設為低電壓。而在其他時間則是在每個 clock 依序掃每個 pixel，如下圖所示。
 
-<!-- ![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/vga.jpg) -->
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/vga.png)
 
 而 pixel clock 的計算方式為 FPS * Width * Height，若為 60 FPS, 640 * 480 的螢幕的話則為 60 * 800 * 525 = 25175000 Hz = 25.175 MHz，詳細參數對應下方表格。
 
