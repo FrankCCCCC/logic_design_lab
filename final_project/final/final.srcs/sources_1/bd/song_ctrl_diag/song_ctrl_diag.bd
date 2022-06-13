@@ -1,0 +1,375 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a35tcpg236-1",
+      "name": "song_ctrl_diag",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2"
+    },
+    "design_tree": {
+      "bump_mem_0": "",
+      "up_counter_0": "",
+      "fruit_pudding_mem_0": "",
+      "song_setting_0": "",
+      "angry_bird_mem_0": "",
+      "flap_mem_0": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "rst_n": {
+        "direction": "I"
+      },
+      "is_repeat": {
+        "direction": "I"
+      },
+      "enable": {
+        "direction": "I"
+      },
+      "song_id": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "data": {
+        "direction": "O",
+        "left": "21",
+        "right": "0"
+      }
+    },
+    "components": {
+      "bump_mem_0": {
+        "vlnv": "xilinx.com:module_ref:bump_mem:1.0",
+        "xci_name": "song_ctrl_diag_bump_mem_0_0",
+        "parameters": {
+          "MUSIC_ADDR_BITS_N": {
+            "value": "10"
+          },
+          "MUSIC_DATA_BITS_N": {
+            "value": "22"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bump_mem",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "data": {
+            "direction": "O",
+            "left": "21",
+            "right": "0"
+          }
+        }
+      },
+      "up_counter_0": {
+        "vlnv": "xilinx.com:module_ref:up_counter:1.0",
+        "xci_name": "song_ctrl_diag_up_counter_0_0",
+        "parameters": {
+          "CNT_BITS_N": {
+            "value": "10"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "up_counter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "is_repeat": {
+            "direction": "I"
+          },
+          "cnt_limit": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "cnt": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          }
+        }
+      },
+      "fruit_pudding_mem_0": {
+        "vlnv": "xilinx.com:module_ref:fruit_pudding_mem:1.0",
+        "xci_name": "song_ctrl_diag_fruit_pudding_mem_0_0",
+        "parameters": {
+          "MUSIC_ADDR_BITS_N": {
+            "value": "10"
+          },
+          "MUSIC_DATA_BITS_N": {
+            "value": "22"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fruit_pudding_mem",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "data": {
+            "direction": "O",
+            "left": "21",
+            "right": "0"
+          }
+        }
+      },
+      "song_setting_0": {
+        "vlnv": "xilinx.com:module_ref:song_setting:1.0",
+        "xci_name": "song_ctrl_diag_song_setting_0_0",
+        "parameters": {
+          "MUSIC_ADDR_BITS_N": {
+            "value": "10"
+          },
+          "MUSIC_DATA_BITS_N": {
+            "value": "22"
+          },
+          "SONG_ID_BITS_N": {
+            "value": "4"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "song_setting",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "enable": {
+            "direction": "I"
+          },
+          "song_id": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "fruit_pudding_data": {
+            "direction": "I",
+            "left": "21",
+            "right": "0"
+          },
+          "angry_bird_data": {
+            "direction": "I",
+            "left": "21",
+            "right": "0"
+          },
+          "flap_data": {
+            "direction": "I",
+            "left": "21",
+            "right": "0"
+          },
+          "bump_data": {
+            "direction": "I",
+            "left": "21",
+            "right": "0"
+          },
+          "cnt_limit": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "data": {
+            "direction": "O",
+            "left": "21",
+            "right": "0"
+          }
+        }
+      },
+      "angry_bird_mem_0": {
+        "vlnv": "xilinx.com:module_ref:angry_bird_mem:1.0",
+        "xci_name": "song_ctrl_diag_angry_bird_mem_0_0",
+        "parameters": {
+          "MUSIC_ADDR_BITS_N": {
+            "value": "10"
+          },
+          "MUSIC_DATA_BITS_N": {
+            "value": "22"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "angry_bird_mem",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "data": {
+            "direction": "O",
+            "left": "21",
+            "right": "0"
+          }
+        }
+      },
+      "flap_mem_0": {
+        "vlnv": "xilinx.com:module_ref:flap_mem:1.0",
+        "xci_name": "song_ctrl_diag_flap_mem_0_0",
+        "parameters": {
+          "MUSIC_ADDR_BITS_N": {
+            "value": "10"
+          },
+          "MUSIC_DATA_BITS_N": {
+            "value": "22"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "flap_mem",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "data": {
+            "direction": "O",
+            "left": "21",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "up_counter_0_cnt": {
+        "ports": [
+          "up_counter_0/cnt",
+          "fruit_pudding_mem_0/addr",
+          "bump_mem_0/addr",
+          "flap_mem_0/addr",
+          "angry_bird_mem_0/addr"
+        ]
+      },
+      "fruit_pudding_mem_0_data": {
+        "ports": [
+          "fruit_pudding_mem_0/data",
+          "song_setting_0/fruit_pudding_data"
+        ]
+      },
+      "bump_mem_0_data": {
+        "ports": [
+          "bump_mem_0/data",
+          "song_setting_0/bump_data"
+        ]
+      },
+      "angry_bird_mem_0_data": {
+        "ports": [
+          "angry_bird_mem_0/data",
+          "song_setting_0/angry_bird_data"
+        ]
+      },
+      "flap_mem_0_data": {
+        "ports": [
+          "flap_mem_0/data",
+          "song_setting_0/flap_data"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "up_counter_0/clk",
+          "angry_bird_mem_0/clk",
+          "flap_mem_0/clk",
+          "bump_mem_0/clk",
+          "song_setting_0/clk"
+        ]
+      },
+      "rst_n_1": {
+        "ports": [
+          "rst_n",
+          "up_counter_0/rst_n",
+          "fruit_pudding_mem_0/rst_n",
+          "angry_bird_mem_0/rst_n",
+          "flap_mem_0/rst_n",
+          "bump_mem_0/rst_n"
+        ]
+      },
+      "is_repeat_1": {
+        "ports": [
+          "is_repeat",
+          "up_counter_0/is_repeat"
+        ]
+      },
+      "song_setting_0_cnt_limit": {
+        "ports": [
+          "song_setting_0/cnt_limit",
+          "up_counter_0/cnt_limit"
+        ]
+      },
+      "enable_1": {
+        "ports": [
+          "enable",
+          "song_setting_0/enable"
+        ]
+      },
+      "song_id_1": {
+        "ports": [
+          "song_id",
+          "song_setting_0/song_id"
+        ]
+      },
+      "song_setting_0_data": {
+        "ports": [
+          "song_setting_0/data",
+          "data"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.26981",
+   "Default View_TopLeft":"-605,120",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk -pg 1 -lvl 0 -x -480 -y 180 -defaultsOSRD
+preplace port rst_n -pg 1 -lvl 0 -x -480 -y 210 -defaultsOSRD
+preplace port enable -pg 1 -lvl 0 -x -480 -y 420 -defaultsOSRD
+preplace port is_repeat -pg 1 -lvl 0 -x -480 -y 450 -defaultsOSRD
+preplace port mclk -pg 1 -lvl 5 -x 920 -y 240 -defaultsOSRD
+preplace port lrck -pg 1 -lvl 5 -x 920 -y 270 -defaultsOSRD
+preplace port sck -pg 1 -lvl 5 -x 920 -y 300 -defaultsOSRD
+preplace port sdin -pg 1 -lvl 5 -x 920 -y 330 -defaultsOSRD
+preplace portBus song_id -pg 1 -lvl 0 -x -480 -y 380 -defaultsOSRD
+preplace inst fre_div_0 -pg 1 -lvl 1 -x -120 -y 290 -defaultsOSRD
+preplace inst song_ctrl_0 -pg 1 -lvl 2 -x 140 -y 370 -defaultsOSRD
+preplace inst note_gen_0 -pg 1 -lvl 3 -x 430 -y 350 -defaultsOSRD
+preplace inst speaker_control_0 -pg 1 -lvl 4 -x 720 -y 300 -defaultsOSRD
+preplace netloc fre_div_0_clk_ctl 1 1 1 -20 290n
+preplace netloc clk_1 1 0 4 -450 210 0 260 270 270 N
+preplace netloc rst_n_1 1 0 4 -460 220 -10 250 280 260 560
+preplace netloc song_ctrl_0_data 1 2 1 N 370
+preplace netloc note_gen_0_left 1 3 1 560 310n
+preplace netloc note_gen_0_right 1 3 1 570 330n
+preplace netloc song_id_1 1 0 2 NJ 380 N
+preplace netloc enable_1 1 0 2 NJ 420 -20
+preplace netloc is_repeat_1 1 0 2 NJ 450 0
+preplace netloc speaker_control_0_audio_mclk 1 4 1 870 240n
+preplace netloc speaker_control_0_audio_sck 1 4 1 870 300n
+preplace netloc speaker_control_0_audio_lrck 1 4 1 880 270n
+preplace netloc speaker_control_0_audio_sdin 1 4 1 N 330
+levelinfo -pg 1 -480 -120 140 430 720 920
+pagesize -pg 1 -db -bbox -sgen -610 -20 1000 640
+"
+}
+

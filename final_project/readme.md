@@ -79,6 +79,7 @@ header-includes:
         - ``fre_div``
         - ``song_ctrl``
             - ``up_counter``
+            - ``song_setting``
             - ``fruit_pudding_mem``
             - ``angry_bird_mem``
             - ``flap_mem``
@@ -366,10 +367,10 @@ Output:
 **Module: segment7**
 
 Input: 
-[4-1:0] i
+[3:0] i
 
 Output:
-[4-1:0] D
+[3:0] D
 
 **Module: segment7_frequency_divider**
 
@@ -382,10 +383,18 @@ clk_out
 **Module: song_ctrl**
 
 Input: 
-clk, clk_song, rst_n, [0-1:0] song_id, enable, is_repeat
+clk, clk_song, rst_n, [3:0] song_id, enable, is_repeat
 
 Output:
-[0-1:0] data
+[21:0] data
+
+**Module: song_setting**
+
+Input: 
+clk, enable, [3:0] song_id, [21:0] fruit_pudding_data, [21:0] angry_bird_data, [21:0] flap_data, [21:0] bump_data
+
+Output:
+[9:0] cnt_limit, [21:0] data
 
 **Module: song_switch**
 
@@ -393,7 +402,7 @@ Input:
 clk, is_start, is_game_over, is_overlap
 
 Output:
-[0-1:0] song_id
+[3:0] song_id
 
 **Module: speaker_control**
 
@@ -751,6 +760,8 @@ end
 
 在此模組中，利用``song_id ``來決定要播放哪首曲子、``enable``來決定被選到的曲子是否要播放、``is_repeat``來決定是否要循環重複播放該首曲子；``mclk``、``lrck``、``sck``和``sdin``則是audio的output訊號。
 
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/audio_ctrl_diag.png)
+
 #### Module: fre_div
 
 此模組主要功能是利用除頻器，產生一個音符播放的時間長度，此模組產生的 clock訊號輸出給``up_counter
@@ -763,6 +774,8 @@ end
 此模組主要功能為選擇要播放的曲子，以及控制該曲子是否要重複循環播放。``song_id``決定要播放哪首曲子、``enable``；決定被選種的曲子是否要播放；``is_repeat``決定該首曲子是否要循環播放；``data``則是要播放音符的音階。
 
 此模組還有用到``up_counter``、``fruit_pudding_mem``、``angry_bird_mem``、``flap_mem``、``bump_mem``等模組，在以下詳述。
+
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/song_ctrl_diag.png)
 
 #### Module: up_counter
 
@@ -793,6 +806,10 @@ always@(*)begin
         end
     end
 ```
+
+#### Module: song_setting
+
+此模組依據輸入的``song_id``和每支不同曲子的音階，包括``fruit_pudding_mem``、``angry_bird_data``、``flap_data``和``bump_data``，輸出對應的曲子的音階。
 
 #### Module: fruit_pudding_mem
 
@@ -836,6 +853,7 @@ always@(*)begin
 #### Module: note_gen
 
 此模組主要功能是以"papallel"的方式產生各種不同頻率的左、右聲道訊號，以形成各種不同的音階。在此模組中，有counter``"Note frequency generation"``，其運作原理和 1 Hz 的除頻器一樣，但不同的地方是，在此模組中的counter，有可以改變的``note_div``當作counting limit，透過改變``note_div``，可以產生不同頻率，進而產生不同音階。
+
 ```verilog
 // Note frequency generation
 always @(posedge clk or negedge rst_n)
@@ -871,6 +889,8 @@ assign left = (b_clk == 1'b0) ? 16'hB000 : 16'h5FFF;
 assign right = (b_clk == 1'b0) ? 16'hB000 : 16'h5FFF;
 ```
 
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/note_gen_diag.png)
+
 #### Module: speaker_control
 
 speaker在輸出時，是透過左、右聲各 16-bit 以"serial"的訊號輸出。在此模組中，``clk_cnt``會產生三種clock需要的頻率，分別是``audio_mclk``、``audio_lrck``、``audio_sck``。
@@ -884,6 +904,7 @@ assign audio_lrck = clk_cnt[8];    // left-right clock
 assign audio_sck = clk_cnt[3];     // serial clock
 ```
 
+![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/speaker_control_diag.png)
 
 ### Module: vga_controller
 
@@ -936,6 +957,8 @@ Height = (Vertical Active Video + Vertical Front Porch  + Vertical Back Porch + 
 ## Reference
 
 - [【接口时序】7、VGA接口原理与Verilog实现](https://www.cnblogs.com/liujinggang/p/9690504.html)
+  
     此部落格詳細解說了 VGA 的運作機制和各尺寸螢幕的參數表。
 - [Working with block designs in Xilinx Vivado by Vincent Claes](https://www.youtube.com/watch?v=-mXFlp7UZR8&ab_channel=fpgabe)
+  
     Vivado block design tutorial.
