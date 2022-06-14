@@ -11,7 +11,7 @@ titlepage: true,
 # titlepage-rule-color: "360049" 
 # titlepage-rule-height: 0 
 # titlepage-background: "background.pdf"
-titlepage-color: "3C9F53"
+titlepage-color: "03459C"
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 2
@@ -92,7 +92,11 @@ header-includes:
         - ``display_7seg``
             - ``segment7_frequency_divider``
 
+其中 ``blk_mem_gen_bg_big``、``blk_mem_gen_pipe``、``blk_mem_gen_bird``和``blk_mem_gen_font``三者為 Vivado 內建的 RAM IP，因此在報告中不多加贅述。
+
 ## Design Specification
+
+### Ports of Modules
 
 **Module: global**
 
@@ -107,8 +111,8 @@ Input:
 clk, rst, btn_u, btn_m, btn_d, btn_r, btn_l
 
 Output: 
-[COLOR_BIT_N-1:0] vgaRed, 
-[COLOR_BIT_N-1:0] vgaGreen, [COLOR_BIT_N-1:0] vgaBlue, [LED_N-1:0] leds,[SEGMENT_7_DISPALY_DIGIT_N-1] d_sel, [0:SEGMENT_7_SEGMENT_N-1:0] d_out, hsync, vsync, mclk, lrck, sck, sdin
+[3:0] vgaRed, 
+[3:0] vgaGreen, [3:0] vgaBlue, [15:0] leds,[0:3] d_sel, [7:0] d_out, hsync, vsync, mclk, lrck, sck, sdin
 
 **Module: clock_divisor**
 
@@ -145,6 +149,10 @@ rst, clk
 Output: 
 [511:0] key_down, [8:0] last_change, key_valid
 
+**Module: KeyboardCtrl_0**
+
+此為 lab 8 助教提供的 IP。
+
 **Module: OnePulseKB**
 
 Input:
@@ -153,62 +161,61 @@ signal, clock
 Output: 
 signal_single_pulse
 
-**Module: display_7seg**
-
-Output: 
-[0:3] d_sel, [7:0] d_out
+**Module: game**
 
 Input: 
-clk, rst, [7:0] d0, [7:0] d1, [7:0] d2, [7:0] d3
-
-**Module: angry_bird_mem**
-
-Input:
-clk, rst_n
+clk, clk_bg_scroll, clk_pipe_scroll, clk_flap, clk_move, rst, push_debounced_u, push_onepulse_d, [9:0] h_cnt, [9:0] v_cnt, 
 
 Output:
-[312-1:0]addr, [312-1:0]data
-
-**Module: audio_ctrl**
-
-Input:
-clk, rst_n, enable, is_repeat,
-[SONG_ID_BITS_N-1:0] song_id //在此``SONG_ID_BITS_N``由要撥放哪首曲子決定，
-
-Output:
-mclk, lrck, sck, sdin
+[11:0] pixel, [13:0] score, is_start, is_game_over, is_dead, is_bump, is_overlap
 
 **Module: bg_ctrl**
 
 Input: 
-clk, clk_scroll, rst, is_visible, [CNT_BITS_N-1:0] h_cnt, [CNT_BITS_N-1:0] v_cnt 
+clk, clk_scroll, rst, is_visible, [9:0] h_cnt, [9:0] v_cnt 
 
 Output:
-[MEM_DATA_BIT_N-1:0] dout, px_valid
+[11:0] dout, px_valid
 
 **Module: bg_mem_addr_gen**
 
 Input: 
-clk, rst, [CNT_BITS_N-1:0] h_cnt, [CNT_BITS_N-1:0] v_cnt
+clk, rst, [9:0] h_cnt, [9:0] v_cnt
 
 Output:
-[PX_ADDR_BITS_N-1:0] pixel_addr, valid
+[16:0] pixel_addr, valid
+
+**Module: pipe_ctrl**
+
+Input: 
+clk, clk_scroll, rst, is_visible, [9:0] h_cnt, [9:0] v_cnt
+
+Output:
+[9:0] pos, [11:0] dout, px_valid
+
+**Module: pipe_mem_addr_gen**
+
+Input: 
+clk, clk_scroll, rst, [9:0] h_cnt, [9:0] v_cnt, 
+
+Output:
+[9:0] pos, [16:0] pixel_addr, valid
 
 **Module: bird_ctrl**
 
 Input:
-clk, clk_flap, clk_move, rst, is_visible, is_dead, btn_fly, enable_move, [CNT_BITS_N-1:0] h_cnt, [CNT_BITS_N-1:0] v_cnt
+clk, clk_flap, clk_move, rst, is_visible, is_dead, btn_fly, enable_move, [9:0] h_cnt, [9:0] v_cnt
 
 Output:
-[CNT_BITS_N-1:0] pos_h_cnt, [CNT_BITS_N-1:0] pos_v_cnt, [MEM_DATA_BIT_N-1:0] dout, px_valid 
+[9:0] pos_h_cnt, [9:0] pos_v_cnt, [11:0] dout, px_valid 
 
 **Module: bird_mem_addr_gen**
 
 Input: 
-clk, rst, [CNT_BITS_N-1:0] h_cnt, [CNT_BITS_N-1:0] v_cnt, [CNT_BITS_N-1:0] pos_h_cnt, [CNT_BITS_N-1:0] pos_v_cnt
+clk, rst, [9:0] h_cnt, [9:0] v_cnt, [9:0] pos_h_cnt, [9:0] pos_v_cnt
 
 Output:
-[PX_ADDR_BITS_N-1:0] pixel_addr, valid 
+[16:0] pixel_addr, valid 
 
 **Module: bird_pos_ctrl**
 
@@ -216,185 +223,65 @@ Input:
 clk, clk_move, rst, is_dead, btn_fly
 
 Output:
-[CNT_BITS_N-1:0] pos_h_cnt, [CNT_BITS_N-1:0] pos_v_cnt
-
-**Module: bump_mem**
-
-Input: 
-clk, rst_n, [4-1:0] addr
-
-Output:
-[4-1:0] data
-
-**Module: clock_divisor**
-
-Input: 
-clk
-
-Output:
-clk1, clk21, clk22
+[9:0] pos_h_cnt, [9:0] pos_v_cnt
 
 **Module: ctrl**
 
 Input: 
-clk, clk_pipe_scroll, rst, push_debounced_u, push_onepulse_d, [CNT_BITS_N-1:0] pos, [CNT_BITS_N-1:0]bird_pos_h_cnt, [CNT_BITS_N-1:0]bird_pos_v_cnt, bg_px_valid, pipe_px_valid, bird_px_valid, text_px_valid,[MEM_DATA_BIT_N-1:0] bg_pixel, [MEM_DATA_BIT_N-1:0]pipe_pixel, [MEM_DATA_BIT_N-1:0]bird_pixel, [MEM_DATA_BIT_N-1:0]text_pixel
+clk, clk_pipe_scroll, rst, push_debounced_u, push_onepulse_d, [9:0] pos, [9:0]bird_pos_h_cnt, [9:0]bird_pos_v_cnt, bg_px_valid, pipe_px_valid, bird_px_valid, text_px_valid,[11:0] bg_pixel, [11:0]pipe_pixel, [11:0]bird_pixel, [11:0]text_pixel
 
 Output:
-[MEM_DATA_BIT_N-1:0] pixel, [SCORE_BITS_N-1:0] score, is_game_over, is_dead, is_start, is_bump,
-clkis_overlap 
-
-**Module: dec2font**
-
-Input: 
-[10-1:0] dec,
-
-Output:
-[10-1:0] font
-
-**Module: dec_disp**
-
-Input: 
-clk, rst, [24-1:0] num
-
-Output:
-[0:SEGMENT_7_DISPALY_DIGIT_N-1]d_sel, [SEGMENT_7_SEGMENT_N-1:0]d_out
-
-**Module: display_7seg**
-
-Input: 
-clk, rst, [SEGMENT_7_SEGMENT_N-1:0] d0, [SEGMENT_7_SEGMENT_N-1:0] d1, [SEGMENT_7_SEGMENT_N-1:0] d2, [SEGMENT_7_SEGMENT_N-1:0] d3
-
-Output:
-[0:SEGMENT_7_DISPALY_DIGIT_N-1] d_sel, [SEGMENT_7_SEGMENT_N-1:0] d_out, 
-
-**Module: flap_mem**
-
-Input: 
-clk, rst_n, [2-1:0] addr,
-
-Output:
-[2-1:0] data
-
-**Module: font_ctrl**
-
-Input: 
-clk, rst, is_visible, [CNT_BITS_N-1:0] h_cnt, [CNT_BITS_N-1:0] v_cnt, [CNT_BITS_N-1:0] pos_h_cnt,[CNT_BITS_N-1:0] pos_v_cnt, [ALPHABET_BITS_N-1:0] alphabet,
-
-Output:
-[MEM_DATA_BIT_N-1:0] dout, px_valid
-
-**Module: font_mem_addr_gen**
-
-Input: 
-clk, rst, [CNT_BITS_N-1:0] h_cnt, [CNT_BITS_N-1:0] v_cnt, [CNT_BITS_N-1:0] pos_h_cnt, [CNT_BITS_N-1:0] pos_v_cnt, [ALPHABET_BITS_N-1:0] alphabet
-
-Output:
-[PX_ADDR_BITS_N-1:0] pixel_addr = 0, valid 
-
-**Module: freq_div**
-
-Input: 
-clk, rst_n
-
-Output:
-clk_ctl
-
-**Module: fruit_pudding_mem**
-
-Input: 
-rst_n, [340-1:0] addr
-
-Output:
-[340-1:0] data
-
-**Module: game**
-
-Input: 
-clk, clk_bg_scroll, clk_pipe_scroll, clk_flap, clk_move, rst, push_debounced_u, push_onepulse_d, [CNT_BITS_N-1:0] h_cnt, [CNT_BITS_N-1:0] v_cnt, 
-
-Output:
-[MEM_DATA_BIT_N-1:0] pixel, [SCORE_BITS_N-1:0] score, is_start, is_game_over, is_dead, is_bump, is_overlap
-
-**Module: mem_addr_gen**
-
-Input: 
-clk, rst, [2-1:0] mode, [10-1:0] h_cnt, [10-1:0] v_cnt
-
-Output:
-[17-1:0] pixel_addr
-
-**Module: note_gen**
-
-Input: 
-clk, rst_n, [21:0] note_div
-
-Output:
-[15:0] left, [15:0] right
-
-**Module: pipe_ctrl**
-
-Input: 
-clk, clk_scroll, rst, is_visible, [0-1:0] h_cnt, [0-1:0] v_cnt
-
-Output:
-[0-1:0] pos, [0-1:0] dout, px_valid
-
-**Module: pipe_mem_addr_gen**
-
-Input: 
-clk, clk_scroll, rst, [0-1:0] h_cnt, [0-1:0] v_cnt, 
-
-Output:
-[0-1:0] pos, [0-1:0] pixel_addr, valid
+[11:0] pixel, [13:0] score, is_game_over, is_dead, is_start, is_bump,
+clkis_overlap
 
 **Module: scence_ctrl**
 
 Input: 
-clk, rst, is_visible, is_start, is_dead, is_game_over, [0-1:0] h_cnt, [0-1:0] v_cnt, [0-1:0] score, 
+clk, rst, is_visible, is_start, is_dead, is_game_over, [9:0] h_cnt, [9:0] v_cnt, [13:0] score 
 
 Output:
-[0-1:0] dout
-
+[11:0] dout
 
 **Module: score2font**
 
 Input: 
-[0-1:0] score
+[13:0] score
 
 Output:
-[0-1:0] d0_font, [0-1:0]d1_font, [0-1:0]d2_font, [0-1:0]d3_font
+[7:0] d0_font, [7:0]d1_font, [7:0]d2_font, [7:0] d3_font
 
-**Module: segment7**
+**Module: dec2font**
 
 Input: 
-[3:0] i
+[3:0] dec
 
 Output:
-[3:0] D
+[7:0] font
 
-**Module: segment7_frequency_divider**
+**Module: text_ctrl**
 
 Input: 
-clk, rst
+clk, rst, is_visible, [9:0] h_cnt, [9:0] v_cnt,[9:0] pos_h_cnt, [9:0] pos_v_cnt, 
+[0:87] alphabets_1d
 
 Output:
-clk_out
+[11:0] dout
 
-**Module: song_ctrl**
+**Module: font_ctrl**
 
 Input: 
-clk, clk_song, rst_n, [3:0] song_id, enable, is_repeat
+clk, rst, is_visible, [9:0] h_cnt, [9:0] v_cnt, [9:0] pos_h_cnt,[9:0] pos_v_cnt, [7:0] alphabet,
 
 Output:
-[21:0] data
+[11:0] dout, px_valid
 
-**Module: song_setting**
+**Module: font_mem_addr_gen**
 
 Input: 
-clk, enable, [3:0] song_id, [21:0] fruit_pudding_data, [21:0] angry_bird_data, [21:0] flap_data, [21:0] bump_data
+clk, rst, [9:0] h_cnt, [9:0] v_cnt, [9:0] pos_h_cnt, [9:0] pos_v_cnt, [7:0] alphabet
 
 Output:
-[9:0] cnt_limit, [21:0] data
+[16:0] pixel_addr, valid
 
 **Module: song_switch**
 
@@ -404,6 +291,87 @@ clk, is_start, is_game_over, is_overlap
 Output:
 [3:0] song_id
 
+**Module: audio_ctrl**
+
+Input:
+clk, rst_n, enable, is_repeat,
+[3:0] song_id 
+
+Output:
+mclk, lrck, sck, sdin
+
+**Module: freq_div**
+
+Input: 
+clk, rst_n
+
+Output:
+clk_ctl
+
+**Module: song_ctrl**
+
+Input: 
+clk, clk_song, rst_n, [3:0] song_id, enable, is_repeat
+
+Output:
+[21:0] data
+
+**Module: up_counter**
+
+Input: 
+clk, rst_n, is_repeat, [9:0] cnt_limit
+
+Output:
+[9:0] cnt
+
+**Module: song_setting**
+
+Input: 
+clk, enable, [3:0] song_id, [21:0] fruit_pudding_data, [21:0] angry_bird_data, [21:0] flap_data, [21:0] bump_data
+
+Output:
+[9:0] cnt_limit, [21:0] data
+
+**Module: fruit_pudding_mem**
+
+Input: 
+rst_n, [9:0] addr
+
+Output:
+[21:0] data
+
+**Module: angry_bird_mem**
+
+Input:
+clk, rst_n, [9:0] addr
+
+Output:
+[21:0]data
+
+**Module: flap_mem**
+
+Input: 
+clk, rst_n, [9:0] addr,
+
+Output:
+[21:0] data 
+
+**Module: bump_mem**
+
+Input: 
+clk, rst_n, [9:0] addr
+
+Output:
+[21:0] data
+
+**Module: note_gen**
+
+Input: 
+clk, rst_n, [21:0] note_div
+
+Output:
+[15:0] left, [15:0] right
+
 **Module: speaker_control**
 
 Input: 
@@ -412,31 +380,75 @@ clk, rst_n, [15:0] audio_in_left, [15:0] audio_in_right
 Output:
 audio_mclk, audio_lrck, audio_sck, audio_sdin
 
-**Module: text_ctrl**
-
-Input: 
-clk, rst, is_visible, [0-1:0] h_cnt, [0-1:0] v_cnt,[0-1:0] pos_h_cnt, [0-1:0] pos_v_cnt, 
-[0:0 * 0 - 1] alphabets_1d
-
-Output:
-[0-1:0] dout
-
-
-**Module: up_counter**
-
-Input: 
-clk, rst_n, is_repeat, [0-1:0] cnt_limit
-
-Output:
-[0-1:0] cnt
-
 **Module: vga_controller**
 
 Input: 
 pclk, reset
 
 Output:
-hsync, vsync, valid, [10:0]h_cnt, [10:0]v_cnt
+hsync, vsync, valid, [9:0]h_cnt, [9:0]v_cnt
+
+**Module: dec_disp**
+
+Input: 
+clk, rst, [13:0] num
+
+Output:
+[0:3]d_sel, [7:0]d_out
+
+**Module: segment7**
+
+Input: 
+[3:0] i
+
+Output:
+[7:0] D
+
+**Module: display_7seg**
+
+Input: 
+clk, rst, [7:0] d0, [7:0] d1, [7:0] d2, [7:0] d3
+
+Output: 
+[0:3] d_sel, [7:0] d_out
+
+**Module: segment7_frequency_divider**
+
+Input: 
+clk, rst
+
+Output:
+clk_out
+
+### I/O of The Project
+
+|clk|rst|btn_u|btn_m|btn_d|btn_r|btn_l|
+|-|-|-|-|-|-|-|
+|W5 |V17 |T18 |U18 |U17 |T17 |W19 |
+
+|vgaRed[0]|vgaRed[1]|vgaRed[2]|vgaRed[3]|vgaGreen[0]|vgaGreen[1]|
+|-|-|-|-|-|-|
+|G19|H19|J19|N19|J17|H17|
+
+|vgaGreen[2]|vgaGreen[3]|vgaBlue[0]|vgaBlue[1]|vgaBlue[2]|vgaBlue[3]|
+|-|-|-|-|-|-|
+|G17|D17|N18 |L18|K18|J18|
+
+|leds[0]|leds[1]|leds[2]|leds[3]|leds[4]|leds[5]|leds[6]|leds[7]|
+|-|-|-|-|-|-|-|-|
+|U16 |E19 |U19 |V19|W18 |U15 |U14 |U14 |
+
+|leds[8]|leds[9]|leds[10]|leds[11]|leds[12]|leds[13]|leds[14]|leds[15]|
+|-|-|-|-|-|-|-|-|
+|V13|V3|W3 |U3|P3 |N3 |P1 |L1|
+
+|dsel[0]|dsel[1]|dsel[2]|dsel[3]|d_out[0]|d_out[1]|d_out[2]|d_out[3]|d_out[4]|d_out[5]|d_out[6]|d_out[7]|
+|-|-|-|-|-|-|-|-|-|-|-|-|
+|W4|V4| U4|U2|V7|U7|V5|U5|V8|U8|W6 |W7|
+
+|hsync|vsync|mclk|lrck|sck|sdin|
+|-|-|-|-|-|-|
+|P19|R19|A14|A16|B15|B16|
 
 ## Design Implementation
 
@@ -448,7 +460,7 @@ The global variables are used across the whole project.
 
 此為本遊戲的頂層模組，此模組調用 ``clock_divisor`` 為背景滾動、水管滾動、小鳥移動和拍動翅膀提供 clock 作為 trigger。並將這些 clock 傳進模組``game``，並依據 VGA 座標``(h_cnt, v_cnt)``回傳 pixel 的資料，再傳進模組 ``vga_controller``，並用模組``dec_disp``使分數同步顯示於七段顯示器上。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/top_diag.png)
+![](./img/top_diag.png)
 
 ### Module: clock_divisor
 
@@ -456,15 +468,11 @@ The global variables are used across the whole project.
 
 ### Module: onepulse
 
-用一個計數器來計算按鈕按下的clock cycles，若按鈕按下的時間較長，會觸發``push_onepulse_long``，反之，若按鈕按下的時間較短，則會觸發``push_onepulse``。
-
-I use a counter to count the clock cycles during the button is pressed. If the counting exceed a threshold, it will trigger a long press pulse ``push_onepulse_long``. Otherwise, it will trigger a click pulse ``push_onepulse``. 
+用一個計數器來計算按鈕按下的 clock cycles，若按鈕按下的時間較長，會觸發``push_onepulse_long``，反之，若按鈕按下的時間較短，則會觸發``push_onepulse``。
 
 #### Module: debounce
 
-在每次按按鈕的時候，此模組會延遲4個clock cycle且產生一個"debounce pulse"。在模組中，使用4個registers來達成延遲4的clock cycle，並在此4個registers中的值皆為1的時候，輸出一個pulse。
-
-For each click, the module will delay 4 clock cycle and then raise the debounce pulse. I use 4 registers to represent the delay state and send a pulse while 4 registers are all 1s.
+在每次按按鈕的時候，此模組會延遲 4 個 clock cycle 並產生一個"debounce pulse"。同時，在模組中，使用 4 個 registers 來達成延遲 4的 clock cycle，並在此 4 個 registers 中的值皆為 1 的時候，輸出一個 pulse。
 
 ### Module: KeyboardDecoder
 
@@ -486,7 +494,7 @@ For each click, the module will delay 4 clock cycle and then raise the debounce 
 
 此模組的作用在於控制背景滾動，我們用 ``bg_mem_addr_gen`` 和 ``blk_mem_gen_bg_big`` 來實現此功能。其中 ``bg_mem_addr_gen`` 產生對應該 VGA 座標所需的 pixel 的 address，並放入 ``blk_mem_gen_bg_big`` 將對應 address 的背景圖資料讀出。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/bg_ctrl_diag.png)
+![](./img/bg_ctrl_diag.png)
 
 #### Module: bg_mem_addr_gen
 
@@ -496,7 +504,7 @@ For each click, the module will delay 4 clock cycle and then raise the debounce 
 
 此為 Vivado 內建的 RAM IP 模組，我們將背景圖片如下放進 RAM 中儲存並讀取。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/bg.png)
+![](./img/bg.png)
 
 ### Module: pipe_ctrl
 
@@ -504,13 +512,13 @@ For each click, the module will delay 4 clock cycle and then raise the debounce 
 
 另外，``dout``輸出對應 VGA 座標的 pixel 資料，``px_valid`` 則輸出在此 VGA 座標是否需要顯示出此 pixel，會如此設計是因為水管圖片周圍其實會有一層非透明的框，因此我們就直接針對方框的顏色予以剃除，同時必須在不用畫出水管的區域讓水管這一個圖層保持透明，以方便疊圖。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/pipe_ctrl_diag.png)
+![](./img/pipe_ctrl_diag.png)
 
 #### Module: pipe_mem_addr_gen
 
 此模組的功能在於控制水管的長度、間隔與移動方式，並對應輸入的 VGA 座標輸出 address。由於在畫面中只會出現三根水管，因此水管每移動 1/3 個螢幕就必須讓下一根水管出現，然而，每根水管必須從右到左將整個螢幕掃過一次才會消失，因此其實我們必須設計一個 shift register 如下，其中 ``pipe_gaps`` 儲存水管間的間隔，而 ``pipe_lens`` 儲存水管的高度，每當水管走過 1/3 個螢幕時，就將下一個水管 shift 進來。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/bg_phase.png)
+![](./img/bg_phase.png)
 
 ```verilog
 reg [CNT_BITS_N-1:0] pipe_gaps [`PIPE_NUM-1:0];
@@ -575,13 +583,13 @@ if(is_pass_first_pipe && h_h_cnt > 0 && PIPE_WIDTH_CNT > (`PHASE1_CNT - pos) && 
 
 此為 Vivado 內建的 RAM IP 模組，我們將水管圖片如下放進 RAM 中儲存並讀取。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/pipe.png)
+![](./img/pipe.png)
 
 ### Module: bird_ctrl
 
 此模組依據玩家的輸入，控制小鳥的飛行位置，並同時實現小鳥拍打翅膀的動畫與模仿地心引力的下墜。``dout``輸出對應 VGA 座標的 pixel 資料，``px_valid`` 則輸出在此 VGA 座標是否需要顯示出此 pixel，若``px_valid=0``則此圖層為透明無色，同時，與繪製水管的考量相仿，因為小鳥的圖片周圍也有一層非透明的方框，因此必須檢測該方框顏色並予以剃除。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/bird_ctrl_diag.png)
+![](./img/bird_ctrl_diag.png)
 
 #### Module: bird_mem_addr_gen
 
@@ -645,7 +653,7 @@ end
 
 此為 Vivado 內建的 RAM IP 模組，我們將小鳥的圖片如下放進 RAM 中儲存並讀取。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/flappy_bird_crop.png)
+![](./img/flappy_bird_crop.png)
 
 ### Module: ctrl
 
@@ -667,7 +675,7 @@ a. 開始狀態： 當``is_start=0``、``is_dead=0``，在畫面正中央顯示�
 b. 遊戲狀態： 當``is_start=1``、``is_dead=0``，在畫面頂部顯示玩家分數：**SCORE: 0001**
 c. 結束狀態： ``is_start=0``、``is_dead=1``，，在畫面正中央顯示兩行： 第一行為固定文字： **GAME OVER**，第二行為玩家分數： **SCORE: 0001**
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/scence_ctrl_diag.png)
+![](./img/scence_ctrl_diag.png)
 
 #### Module: score2font
 
@@ -693,13 +701,13 @@ always@(posedge clk) begin
 end
 ```
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/text_ctrl_diag.png)
+![](./img/text_ctrl_diag.png)
 
 ### Module: font_ctrl
 
 此模組可以依據指定位置``(pos_h_cnt, pos_v_cnt)``將單個文字``alphabet``在指定位置畫出，其中``dout``輸出對應該 VGA 座標``(h_cnt, v_cnt)``的 pixel 資料，而``px_valid``輸出該 VGA 座標是否會有文字 pixel，也就是文字圖層在該 VGA 座標是否為透明。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/font_ctrl_diag.png)
+![](./img/font_ctrl_diag.png)
 
 #### Module: font_mem_addr_gen
 
@@ -734,7 +742,7 @@ end
 
 此為 Vivado 內建的 RAM IP 模組，我們將文字圖片如下放進 RAM 中儲存並讀取。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/font.png)
+![](./img/font.png)
 
 ### Module: song_switch
 
@@ -756,11 +764,11 @@ end
 
 ### Module: audio_ctrl
 
-在此遊戲中，背景音樂的部分設計為遊戲進行中和遊戲結束分別播放"fruit pudding"和"angry bird"兩首曲子，並在小鳥拍動翅膀以及撞擊到水管時也會有音效。在曲子循環播放的部分，背景音樂是重複循環播放，並由現在是否在遊戲中決定要播放哪首曲子；而小鳥翅膀拍動的聲音以及撞擊到水管的音效，則是單次播放。此模組主要功能是將所有聲音的模組結合在一起，並經由這個模組，可以選擇要播放哪首曲子，以及該首曲子是否要重複播放。
+在此遊戲中，背景音樂的部分設計為遊戲進行中和遊戲結束分別播放"fruit pudding"和"angry bird"兩首曲子，並在小鳥拍動翅膀以及撞擊到水管時也會有音效(備註：最後此功能因為時間限制所以沒有完全實現)。在曲子循環播放的部分，背景音樂是重複循環播放，並由現在是否在遊戲中決定要播放哪首曲子；而小鳥翅膀拍動的聲音以及撞擊到水管的音效，則是單次播放。此模組主要功能是將所有聲音的模組結合在一起，並經由這個模組，可以選擇要播放哪首曲子，以及該首曲子是否要重複播放。
 
 在此模組中，利用``song_id ``來決定要播放哪首曲子、``enable``來決定被選到的曲子是否要播放、``is_repeat``來決定是否要循環重複播放該首曲子；``mclk``、``lrck``、``sck``和``sdin``則是audio的output訊號。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/audio_ctrl_diag.png)
+![](./img/audio_ctrl_diag.png)
 
 #### Module: fre_div
 
@@ -775,7 +783,7 @@ end
 
 此模組還有用到``up_counter``、``fruit_pudding_mem``、``angry_bird_mem``、``flap_mem``、``bump_mem``等模組，在以下詳述。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/song_ctrl_diag.png)
+![](./img/song_ctrl_diag.png)
 
 #### Module: up_counter
 
@@ -813,7 +821,7 @@ always@(*)begin
 
 #### Module: fruit_pudding_mem
 
-此模組主要控制遊戲進行時的背景音樂 -- "fruit pudding"這首曲子的播放，透過輸入不同音符的address``[MUSIC_ADDR_BITS_N-1:0] addr``來判斷要播放哪個音符，並用``data``將音符的音階讀出來並播放出來。
+此模組主要控制遊戲進行時的背景音樂 -- "fruit pudding"這首曲子的播放，透過輸入不同音符的 address ``[MUSIC_ADDR_BITS_N-1:0] addr``來判斷要播放哪個音符，並用``data``將音符的音階讀出來並播放出來。
 
 ```verilog
     //曲子中會用到的音符
@@ -881,7 +889,7 @@ always @*
   end
 ```
 
-此外，在此模組中還有``b_clk``控制振幅，每當counter記數到``note_div``(limit)，``b_clk``就會切換一次。當``b_clk=1``時，``[15:0] left``和``[15:0] right``(各 16-bit 的 parallel data)會是``16'h5FFF``；反之，當``b_clk=0``時，``[15:0] left``和``[15:0] right``則會是``16'hB000``。``[15:0] left``和``[15:0] right``會一直在``16'h5FFF``(波峰)和``16'hB000``(波谷)之間不斷變換其值，這就是振幅。
+此外，在此模組中還有``b_clk``控制振幅，每當 counter 記數到``note_div``(limit)，``b_clk``就會切換一次。當``b_clk=1``時，``[15:0] left``和``[15:0] right``(各 16-bit 的 parallel data)會是``16'h5FFF``；反之，當``b_clk=0``時，``[15:0] left``和``[15:0] right``則會是``16'hB000``。``[15:0] left``和``[15:0] right``會一直在``16'h5FFF``(波峰)和``16'hB000``(波谷)之間不斷變換其值，這就是振幅。
 
 ```verilog
 // Assign the amplitude of the note
@@ -889,13 +897,13 @@ assign left = (b_clk == 1'b0) ? 16'hB000 : 16'h5FFF;
 assign right = (b_clk == 1'b0) ? 16'hB000 : 16'h5FFF;
 ```
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/note_gen_diag.png)
+![](./img/note_gen_diag.png)
 
 #### Module: speaker_control
 
-speaker在輸出時，是透過左、右聲各 16-bit 以"serial"的訊號輸出。在此模組中，``clk_cnt``會產生三種clock需要的頻率，分別是``audio_mclk``、``audio_lrck``、``audio_sck``。
+speaker在輸出時，是透過左、右聲各 16-bit 以"serial"的訊號輸出。在此模組中，``clk_cnt``會產生三種 clock 需要的頻率，分別是``audio_mclk``、``audio_lrck``、``audio_sck``。
 
-此模組是以左、右聲道各 16-bit (總共 32-bit )，以"parallel"的方式輸入，並以"serial"的方式輸出。因此在"serial"的clock(``audio_sck; // serial clock``)需要比"parallel"的clock(``audio_lrck; // left-right clock``)快32倍。且``clk_cnt``每往左1-bit，即代表除以2，因此將將三種clock設定為: ``audio_mclk = clk_cnt[1]; (master clock)``、``audio_lrck = clk_cnt[8];  (left-right clock)``、``audio_sck = clk_cnt[3]; (serial clock)``
+此模組是以左、右聲道各 16-bit (總共 32-bit )，以 "parallel" 的方式輸入，並以 "serial" 的方式輸出。因此在"serial"的 clock (``audio_sck; // serial clock``)需要比 "parallel" 的 clock (``audio_lrck; // left-right clock``)快32倍。且``clk_cnt``每往左 1-bit，即代表除以2，因此將將三種clock設定為: ``audio_mclk = clk_cnt[1]; (master clock)``、``audio_lrck = clk_cnt[8];  (left-right clock)``、``audio_sck = clk_cnt[3]; (serial clock)``
 
 ```verilog
 // Assign divided clock output
@@ -904,13 +912,13 @@ assign audio_lrck = clk_cnt[8];    // left-right clock
 assign audio_sck = clk_cnt[3];     // serial clock
 ```
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/speaker_control_diag.png)
+![](./img/speaker_control_diag.png)
 
 ### Module: vga_controller
 
 依據 VGA 的設計，我們需要在 Horizontal Sync Pulse 與 Vertical Sync Pulse 的時間區間內拉回 Scan 到下一行或下一個 frame 的起始位置。因此，在 Horizontal Sync 的時間區間內，必須將 HSYNC 設為低電壓，而在 Vertical Sync 區間內，必須將 VSYNC 設為低電壓。而在其他時間則是在每個 clock 依序掃每個 pixel，如下圖所示。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/vga.png)
+![](./img/vga.png)
 
 而 pixel clock 的計算方式為 FPS * Width * Height，若為 60 FPS, 640 * 480 的螢幕的話則為 60 * 800 * 525 = 25175000 Hz = 25.175 MHz，詳細參數對應下方表格。
 
@@ -918,7 +926,7 @@ Width = (Horizontal Active Video + Horizontal Front Porch  + Horizontal Back Por
 
 Height = (Vertical Active Video + Vertical Front Porch  + Vertical Back Porch + Vertical Sync Pulse)
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/vga_table.png)
+![](./img/vga_table.png)
 
 其中 a 為 Horizontal Sync Pulse，b 為 Horizontal Back Porch，c 為 Horizontal Active Video，d 為 Horizontal Front Porch；而 f 為 Vertical Sync Pulse，g 為 Vertical Back Porch，h 為 Vertical Active Video，i 為 Vertical Front Porch。
 
@@ -926,7 +934,7 @@ Height = (Vertical Active Video + Vertical Front Porch  + Vertical Back Porch + 
 
 此模組在七段顯示器上會顯示``d0``, ``d1``, ``d2``, 和 ``d3`` 的二進制數。此模組會將二進制的``d0``, ``d1``, ``d2``, 和 ``d3`` 轉換成七段顯示模式，並將這些訊號傳入``display_7seg``模組，即可將``d0``, ``d1``, ``d2``, 和 ``d3``以七段顯示顯示出來。
 
-![](https://raw.githubusercontent.com/FrankCCCCC/tmp_img/master/img/dec_disp_diag.png)
+![](./img/dec_disp_diag.png)
 
 #### Module: segment7
 

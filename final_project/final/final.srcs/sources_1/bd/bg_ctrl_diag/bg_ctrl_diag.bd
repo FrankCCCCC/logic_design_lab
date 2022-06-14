@@ -21,23 +21,23 @@
       "rst": {
         "direction": "I"
       },
+      "px_valid": {
+        "direction": "O"
+      },
       "h_cnt": {
         "direction": "I",
-        "left": "10",
+        "left": "9",
         "right": "0"
       },
       "v_cnt": {
         "direction": "I",
-        "left": "10",
+        "left": "9",
         "right": "0"
       },
       "dout": {
         "direction": "O",
-        "left": "17",
+        "left": "11",
         "right": "0"
-      },
-      "px_valid": {
-        "direction": "O"
       }
     },
     "components": {
@@ -151,10 +151,16 @@
           "bg_mem_addr_gen_0/rst"
         ]
       },
-      "v_cnt_1": {
+      "bg_mem_addr_gen_0_pixel_addr": {
         "ports": [
-          "v_cnt",
-          "bg_mem_addr_gen_0/v_cnt"
+          "bg_mem_addr_gen_0/pixel_addr",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "bg_mem_addr_gen_0_valid": {
+        "ports": [
+          "bg_mem_addr_gen_0/valid",
+          "px_valid"
         ]
       },
       "h_cnt_1": {
@@ -163,22 +169,16 @@
           "bg_mem_addr_gen_0/h_cnt"
         ]
       },
-      "bg_mem_addr_gen_0_pixel_addr": {
+      "v_cnt_1": {
         "ports": [
-          "bg_mem_addr_gen_0/pixel_addr",
-          "blk_mem_gen_0/addra"
+          "v_cnt",
+          "bg_mem_addr_gen_0/v_cnt"
         ]
       },
       "blk_mem_gen_0_douta": {
         "ports": [
           "blk_mem_gen_0/douta",
           "dout"
-        ]
-      },
-      "bg_mem_addr_gen_0_valid": {
-        "ports": [
-          "bg_mem_addr_gen_0/valid",
-          "px_valid"
         ]
       }
     }
