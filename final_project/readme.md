@@ -903,13 +903,13 @@ assign right = (b_clk == 1'b0) ? 16'hB000 : 16'h5FFF;
 
 speaker在輸出時，是透過左、右聲各 16-bit 以"serial"的訊號輸出。在此模組中，``clk_cnt``會產生三種 clock 需要的頻率，分別是``audio_mclk``、``audio_lrck``、``audio_sck``。
 
-此模組是以左、右聲道各 16-bit (總共 32-bit )，以 "parallel" 的方式輸入，並以 "serial" 的方式輸出。因此在"serial"的 clock (``audio_sck; // serial clock``)需要比 "parallel" 的 clock (``audio_lrck; // left-right clock``)快32倍。且``clk_cnt``每往左 1-bit，即代表除以2，因此將將三種clock設定為: ``audio_mclk = clk_cnt[1]; (master clock)``、``audio_lrck = clk_cnt[8];  (left-right clock)``、``audio_sck = clk_cnt[3]; (serial clock)``
+此模組是以左、右聲道各 16-bit (總共 32-bit )，以 "parallel" 的方式輸入，並以 "serial" 的方式輸出。因此在"serial"的 clock (``audio_sck; // serial clock``)需要比 "parallel" 的 clock (``audio_lrck; // left-right clock``)快32倍。且``clk_cnt``每往左 1-bit，即代表除以2，因此將將三種clock設定為: ``audio_mclk = clk_cnt[1]; (master clock)``、``audio_lrck = clk_cnt[8];  (left-right clock)``、``audio_sck = 1'b1; (serial clock)``
 
 ```verilog
 // Assign divided clock output
 assign audio_mclk = clk_cnt[1];    // master clock
 assign audio_lrck = clk_cnt[8];    // left-right clock
-assign audio_sck = clk_cnt[3];     // serial clock
+assign audio_sck = 1'b1;     // serial clock
 ```
 
 ![](./img/speaker_control_diag.png)
